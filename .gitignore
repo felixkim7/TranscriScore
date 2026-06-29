@@ -1,0 +1,49 @@
+# 환경변수
+.env
+*.env
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+venv/
+env/
+
+# 크로마DB 관련 캐시/폴더
+*chroma_db*
+*__chroma_db__*
+*chardb_embedding/
+*imagedb_embedding/
+
+# Jupyter Notebook
+*.ipynb
+.ipynb_checkpoints
+
+# 에디터
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+
+# Vercel
+.vercel
+
+# 로그
+*.log
+
+# 임시 파일
+*.tmp
+*.bak
+
+# repomix code base
+repomix-output.xml
