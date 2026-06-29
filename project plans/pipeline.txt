@@ -1,0 +1,79 @@
+[Audio File Upload]
+        ↓
+[Audio Preprocessing]
+- format conversion
+- waveform extraction
+- spectrogram / mel-spectrogram
+- tempo and onset feature extraction
+Libraries: librosa, torchaudio, essentia, madmom
+
+        ↓
+[Source Separation using Demucs / Hybrid Transformer]
+- separate mixed audio into stems
+Model: Demucs / Hybrid Transformer Demucs
+Output: vocals, drums, bass, other
+
+        ↓
+[Stem Role Classification using CNN / Audio Spectrogram Transformer / YAMNet / Hugging Face fine-tuned classifier]
+- classify each stem by instrument or musical role
+Methods:
+  - instrument classification model
+  - mel-spectrogram CNN classifier
+  - Audio Spectrogram Transformer-style classifier
+  - YAMNet-style classifier
+Output examples:
+  - vocal melody
+  - bass guitar
+  - drums
+  - piano/guitar accompaniment
+
+        ↓
+[Audio-to-MIDI Transcription using Spotify Basic Pitch]
+- convert selected stem into note events
+Main model: Spotify Basic Pitch
+Optional piano model: ByteDance piano_transcription
+Output:
+  - pitch
+  - onset
+  - offset
+  - duration
+  - velocity
+  - confidence
+
+        ↓
+[Rhythm Quantization + Note Cleanup]
+- convert raw note events into readable notation
+Methods:
+  - beat tracking
+  - tempo estimation
+  - onset alignment
+  - rule-based quantization
+  - confidence-based filtering
+Libraries: librosa, madmom, music21, pretty_midi
+
+        ↓
+[MusicXML Generation]
+- convert cleaned note events into score format
+Libraries: music21, partitura
+Output:
+  - .musicxml score file
+
+        ↓
+[MuseScore / OpenSheetMusicDisplay Rendering]
+- render score for preview and export
+Tools:
+  - OpenSheetMusicDisplay for browser preview
+  - MuseScore CLI for PDF / PNG / SVG / MIDI / MSCZ export
+
+        ↓
+[Export + User Correction]
+- user edits uncertain notes
+- regenerate MusicXML
+- export final files
+Formats:
+  - MusicXML
+  - MIDI
+  - PDF
+  - PNG / SVG
+  - separated stems
+  - note-event JSON
