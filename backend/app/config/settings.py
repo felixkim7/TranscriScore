@@ -8,10 +8,14 @@ UPLOADS_DIR = STORAGE_DIR / "uploads"
 STEMS_DIR = STORAGE_DIR / "stems"
 INTERMEDIATE_DIR = STORAGE_DIR / "intermediate"
 MIDI_DIR = STORAGE_DIR / "midi"
+QUANTIZED_MIDI_DIR = MIDI_DIR / "quantized"
 MUSICXML_DIR = STORAGE_DIR / "musicxml"
 PDF_DIR = STORAGE_DIR / "pdf"
+MSCZ_DIR = STORAGE_DIR / "mscz"
 
 SAMPLES_DIR = PROJECT_DIR / "samples"
+
+MUSESCORE_PATH = r"C:\Program Files\MuseScore 4\bin\MuseScore4.exe"
 
 # --- classification stage (stem role classification) ---
 # Scope: Demucs already gives us vocals/drums/bass/other directly — those
@@ -33,5 +37,3 @@ CLASSIFICATION_LABELS = (
 MIN_HARMONIC_RATIO_FOR_LABEL = 0.5
 SPECTRAL_CENTROID_GUITAR_HZ = 1800.0    # guitar measured ~2400-3900Hz vs piano ~300-425Hz
 ZERO_CROSSING_RATE_GUITAR_THRESHOLD = 0.08
-
-
