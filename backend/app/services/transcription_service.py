@@ -11,8 +11,6 @@ from app.schemas.transcription import NoteEvent
 def run(input_path: str, stem_label: str = "unknown") -> List[NoteEvent]:
     """Transcribe an audio file into note events using Spotify Basic Pitch.
 
-    """Transcribe an audio file into note events using Spotify Basic Pitch.
-
     Writes the resulting MIDI to storage/midi/ and the note events as JSON to
     storage/intermediate/ (so later stages can be re-run without re-transcribing).
 
@@ -21,8 +19,6 @@ def run(input_path: str, stem_label: str = "unknown") -> List[NoteEvent]:
         stem_label: role of this stem (e.g. "piano_accompaniment"), typically
             from classification_service.classify_stem(). Defaults to
             "unknown" so existing callers that don't pass it keep working.
-    """
-
     """
     audio_path = Path(input_path)
 
