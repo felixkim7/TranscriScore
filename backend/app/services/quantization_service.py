@@ -3,13 +3,14 @@ from pathlib import Path
 from typing import List, Optional
 
 import librosa
+import numpy as np
 import pretty_midi
 
 from app.config.settings import INTERMEDIATE_DIR, QUANTIZED_MIDI_DIR
 from app.schemas.transcription import NoteEvent, QuantizationResult, QuantizedNoteEvent
 
 GRID_SUBDIVISION = 0.25  # snap to 16th notes (in beats)
-MIN_CONFIDENCE = 0.2
+CONFIDENCE_DROP_PERCENTILE = 10  # drop the bottom 10% of notes by confidence
 
 
 def run(
@@ -17,25 +18,37 @@ def run(
     audio_path: str,
     tempo_bpm: Optional[float] = None,
 ) -> QuantizationResult:
-    """Snap raw note events onto a fixed beat grid at a single global tempo.
+    """Snap raw note events onto a beat grid derived from real detected beat positions.
 
-    Backbone version: one tempo estimate for the whole clip, fixed 16th-note grid,
-    drop notes that vanish after snapping or fall below a low confidence floor.
+    Each note's onset/offset (in seconds) is mapped to a fractional beat position by
+    interpolating between the two nearest detected beats (extrapolating at the clip's
+    edges), so the grid follows the actual tempo curve instead of assuming one constant
+    BPM for the whole clip. The result is then snapped to a 16th-note subdivision.
+    Notes in the bottom CONFIDENCE_DROP_PERCENTILE of this clip's confidence
+    distribution are dropped, along with any note that collapses to zero duration
+    after snapping.
     """
+    y, sr = librosa.load(audio_path, sr=None)
+    detected_tempo, beat_frames = librosa.beat.beat_track(y=y, sr=sr, units="time")
+    detected_tempo = float(np.asarray(detected_tempo).item())
     if tempo_bpm is None:
-        y, sr = librosa.load(audio_path, sr=None)
-        tempo_bpm, _ = librosa.beat.beat_track(y=y, sr=sr)
-        tempo_bpm = float(tempo_bpm)
+        tempo_bpm = detected_tempo
 
-    beats_per_second = tempo_bpm / 60.0
+    beat_times, beat_indices = _beat_grid(beat_frames, y, sr, tempo_bpm)
+
+    confidence_floor = (
+        float(np.percentile([n.confidence for n in note_events], CONFIDENCE_DROP_PERCENTILE))
+        if note_events
+        else 0.0
+    )
 
     quantized_notes = []
     for note in note_events:
-        if note.confidence < MIN_CONFIDENCE:
+        if note.confidence < confidence_floor:
             continue
 
-        onset_beat = _snap(note.onset * beats_per_second)
-        offset_beat = _snap(note.offset * beats_per_second)
+        onset_beat = _snap(_time_to_beat(note.onset, beat_times, beat_indices))
+        offset_beat = _snap(_time_to_beat(note.offset, beat_times, beat_indices))
 
         if offset_beat <= onset_beat:
             continue
@@ -68,6 +81,35 @@ def load_quantization_result(stem_name: str) -> QuantizationResult:
             f"No saved quantization result for '{stem_name}' at {result_path}. Run quantization first."
         )
     return QuantizationResult.model_validate_json(result_path.read_text())
+
+
+def _beat_grid(beat_frames: np.ndarray, y: np.ndarray, sr: int, fallback_tempo: float):
+    """Return (beat_times, beat_indices) arrays for _time_to_beat.
+
+    Falls back to a synthetic fixed-tempo grid if librosa detects too few beats to
+    interpolate against (e.g. a very short or ambiguous clip).
+    """
+    if len(beat_frames) >= 2:
+        return np.asarray(beat_frames, dtype=float), np.arange(len(beat_frames), dtype=float)
+
+    duration = len(y) / sr
+    seconds_per_beat = 60.0 / fallback_tempo
+    n_beats = max(2, int(duration / seconds_per_beat) + 1)
+    synthetic_times = np.arange(n_beats) * seconds_per_beat
+    return synthetic_times, np.arange(n_beats, dtype=float)
+
+
+def _time_to_beat(t: float, beat_times: np.ndarray, beat_indices: np.ndarray) -> float:
+    """Map a time in seconds to a fractional beat position, extrapolating at the edges
+    (np.interp alone clamps out-of-range values instead of extrapolating, which would
+    incorrectly collapse notes before the first/after the last detected beat)."""
+    if t < beat_times[0]:
+        interval = beat_times[1] - beat_times[0]
+        return beat_indices[0] - (beat_times[0] - t) / interval
+    if t > beat_times[-1]:
+        interval = beat_times[-1] - beat_times[-2]
+        return beat_indices[-1] + (t - beat_times[-1]) / interval
+    return float(np.interp(t, beat_times, beat_indices))
 
 
 def _snap(beat: float) -> float:
