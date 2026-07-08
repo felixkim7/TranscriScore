@@ -8,6 +8,8 @@ class NoteEvent(BaseModel):
     duration: float
     velocity: int
     confidence: float
+    confidence: float
+    stem_label: str = "unknown"
 
 
 class QuantizedNoteEvent(BaseModel):
