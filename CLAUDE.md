@@ -204,13 +204,31 @@ backbone was working, the plan was to circle back and improve each stage:
       **Still open:** no key signature detection, time signature still hardcoded 4/4,
       the ~5% dropped-note rate in dense passages is a real (if rare) trade-off, not
       eliminated.
+- [x] Q4. **Transcription revisit** — `transcription_service.py` now calls Basic Pitch
+      with `onset_threshold=0.6` (was the 0.5 default). At 0.5, real piano sustain was
+      frequently split into 2+ back-to-back same-pitch fragments — verified up to 44%
+      of raw notes on one real test clip (`sample.mp3`). Tested 0.6 and 0.7 against
+      both clips using time-overlap matching (not exact-onset matching, which falsely
+      flags small timing shifts as "lost notes"): both eliminate most split-fragments
+      with **zero verified loss of real, high-confidence notes** — every apparently
+      "missing" note had a same-pitch, time-overlapping replacement. Chose 0.6 over
+      0.7 (which cut further) as the smaller deviation from Basic Pitch's own tested
+      default. Did not touch `frame_threshold`/`minimum_note_length` — tested raising
+      `minimum_note_length` first and it barely reduced the split-fragment rate (only
+      discards short notes outright), confirming `onset_threshold` was the correct
+      lever. Verified: 428/350 raw/quantized notes on `sample2.mp3`,
+      647/352 on `sample.mp3`; full pipeline (transcribe → quantize → musicxml →
+      export) runs clean on both.
+- [ ] **Key signature detection + real time-signature estimation** — prioritized ahead
+      of Q3 (export formats): MSCZ export is already working well, and since the
+      priority is giving the user a good editing surface in MuseScore, getting the
+      notation itself more correct (key/time signature) matters more right now than
+      adding more export file formats. `musicxml_service.py` currently hardcodes 4/4
+      and no key signature at all. **Next up.**
 - [ ] Q3. **Export quality** — add PDF/PNG/SVG export alongside MSCZ (same
       `export_service.py` subprocess pattern), better error surfacing if MuseScore
       CLI fails or isn't found at `MUSESCORE_PATH`, cleanup of intermediate files.
-      **Next up.**
-- [ ] Q4. **Transcription revisit (optional)** — tune Basic Pitch's `onset_threshold`/
-      `frame_threshold`/`minimum_note_length` params now that later stages exist to
-      judge the result against.
+      Deprioritized behind key/time signature work (see above).
 
 ## Known gotchas
 

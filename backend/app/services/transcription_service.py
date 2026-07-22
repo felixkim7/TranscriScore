@@ -7,6 +7,16 @@ from basic_pitch.inference import predict
 from app.config.settings import INTERMEDIATE_DIR, MIDI_DIR
 from app.schemas.transcription import NoteEvent
 
+# Raised from Basic Pitch's default (0.5): at 0.5, real piano sustain is frequently
+# split into 2+ back-to-back same-pitch note fragments (the model over-eagerly detects
+# a new onset mid-sustain) -- verified up to 44% of raw notes on one real test clip.
+# 0.6 was checked against both test clips using generous time-overlap matching (not
+# exact-onset matching, which falsely flags timing-shifted notes as "lost"): it cuts
+# split-fragment notes substantially with zero verified loss of real, high-confidence
+# notes. 0.7 cuts further but wasn't chosen -- smaller deviation from Basic Pitch's own
+# tested default while still fixing the fragmentation problem.
+ONSET_THRESHOLD = 0.6
+
 
 def run(input_path: str, stem_label: str = "unknown") -> List[NoteEvent]:
     """Transcribe an audio file into note events using Spotify Basic Pitch.
@@ -22,7 +32,7 @@ def run(input_path: str, stem_label: str = "unknown") -> List[NoteEvent]:
     """
     audio_path = Path(input_path)
 
-    _, midi_data, raw_note_events = predict(audio_path)
+    _, midi_data, raw_note_events = predict(audio_path, onset_threshold=ONSET_THRESHOLD)
 
     MIDI_DIR.mkdir(parents=True, exist_ok=True)
     midi_path = MIDI_DIR / f"{audio_path.stem}.mid"
