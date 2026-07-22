@@ -18,8 +18,10 @@ class QuantizedNoteEvent(BaseModel):
     duration_beats: float
     velocity: int
     confidence: float
+    stem_label: str = "unknown"
 
 
 class QuantizationResult(BaseModel):
     tempo_bpm: float
+    stem_label: str = "unknown"
     notes: list[QuantizedNoteEvent]

@@ -17,8 +17,9 @@ def run(input_path: str, stem_label: str = "unknown") -> List[NoteEvent]:
     Args:
         input_path: path to the audio stem to transcribe.
         stem_label: role of this stem (e.g. "piano_accompaniment"), typically
-            from classification_service.classify_stem(). Defaults to
-            "unknown" so existing callers that don't pass it keep working.
+            from classification_service.classify_stem() or a trusted Demucs
+            label (e.g. "vocals", "drums"). Defaults to "unknown" so existing
+            callers that don't pass it keep working.
     """
     audio_path = Path(input_path)
 
