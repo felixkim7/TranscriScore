@@ -3,8 +3,13 @@
 Role change from the original design: this used to classify Demucs's
 "other" stem into guitar-vs-piano, because vanilla htdemucs lumped them
 together. Now that demucs_service.py uses htdemucs_6s (which separates
-guitar and piano directly), there is no "other.wav" left in the pipeline
-to classify — see settings.py's DEMUCS_STEM_NAMES.
+guitar and piano directly), classify_stem() is no longer needed to split
+"other.wav" into an instrument guess — see settings.py's DEMUCS_STEM_NAMES.
+"other.wav" (whatever htdemucs_6s couldn't assign to any of its 5 named
+stems — often synths, strings, or ambiguous instrumentation) is still part
+of the pipeline, just trusted directly like vocals/drums rather than run
+through classify_stem(), since there's no clear guitar-vs-piano question to
+verify for it.
 
 What's left is a real, still-useful job: Demucs's own documentation flags
 its piano source as bleed-prone (guitar separation is "decent", piano has
@@ -14,10 +19,11 @@ assigned, so a badly-bled piano.wav can be caught and either corrected or
 flagged for the user (Project_Proposal.md 5.4's human-in-the-loop step),
 instead of blindly trusted.
 
-vocals.wav and drums.wav are still trusted directly with no check — Demucs
-is documented as strongest on exactly those two sources (see conversation
-history / MDX-vs-Demucs benchmark discussion), so there's no rule-based
-substitute worth building for them here.
+vocals.wav, drums.wav, bass.wav, and other.wav are all trusted directly with
+no check — Demucs is documented as strongest on vocals/drums specifically
+(see conversation history / MDX-vs-Demucs benchmark discussion), and there's
+no rule-based substitute worth building for bass or the catch-all "other"
+stem either (classify_stem() only distinguishes guitar vs. piano).
 
 No new heavy dependencies (librosa only) — avoids the TensorFlow/YAMNet
 conflict risk flagged in CLAUDE.md. Swapping in a real pretrained model

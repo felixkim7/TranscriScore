@@ -6,3 +6,8 @@ librosa
 soundfile
 basic-pitch
 music21
+demucs
+# resampy (a basic-pitch dependency) still imports pkg_resources directly, which
+# setuptools>=81 no longer bundles by default. demucs pulls in a newer setuptools
+# transitively and breaks this import chain if left unpinned.
+setuptools<81

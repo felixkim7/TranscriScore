@@ -73,12 +73,13 @@ vs. general React app plumbing.
 4. Add the correction interface last — hardest, and most dependent on the
    score-rendering piece being solid first.
 
-## Related backlog item (your side)
+## Related backlog item (your side) — done
 
-Separately from the frontend, `scripts/run_pipeline.py` (Teammate A) currently chains
-Demucs → classification → `transcription_service.run()` per stem, but stops at
-transcription. Extending it so each stem's notes also flow through
-quantization → musicxml → export (one MusicXML/MSCZ per stem, or combined into one
-multi-part score — TBD) is a backlog item tracked in `CLAUDE.md`, owned by you
-(Teammate B). This is the actual multi-stem end-to-end milestone; single-stem
-end-to-end already works.
+`scripts/run_pipeline.py` now runs the full chain: Demucs separation → classification
+verification → transcription → quantization → per-stem MusicXML (written to
+`storage/musicxml/stems/` for inspection) → one combined multi-part MusicXML/MSCZ for
+all stems together. See `CLAUDE.md`'s backlog section for the full writeup, including
+a real bug found and fixed along the way (long notes/rests silently truncated past
+`MAX_DURATION_BEATS`). The multi-stem end-to-end milestone is done; a frontend export
+button for the combined MSCZ/MusicXML just needs to point at
+`run_combined()`'s/`run_pipeline.py`'s output.
