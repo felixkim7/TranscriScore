@@ -23,6 +23,13 @@ note-correction interface.
 5. **Correction interface** — the human-in-the-loop piece: let the user click/select
    notes on the rendered score and edit them (pitch, duration, delete, etc.), matching
    the project proposal's stated goal.
+   - **Tempo picker/override**: tempo octave ambiguity (e.g. detecting 129 BPM when
+     the real tempo is 65 BPM — half/double the true value) can't be resolved from
+     audio alone; see the "Tempo octave ambiguity" entry in `CLAUDE.md`'s Known
+     Gotchas. Rather than guessing, let the user see the detected BPM and pick the
+     correct one themselves (e.g. offer the detected value alongside its half/double
+     as quick options, plus a free-entry field) — this re-quantizes note durations
+     against the corrected tempo before final export.
 6. **Export buttons** — download MusicXML / MIDI / PDF / MSCZ / stems, per the
    proposal's export list.
 

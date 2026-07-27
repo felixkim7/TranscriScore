@@ -353,6 +353,38 @@ backbone was working, the plan was to circle back and improve each stage:
   `venv/Lib/site-packages/madmom/` for Python 3.11 / modern numpy compatibility (the
   package predates both). If this becomes a recurring pain point, worth checking for
   a maintained fork or newer release before repeating these steps.
+- **Tempo octave ambiguity is a fundamental, unfixable-from-audio-alone MIR limitation
+  — not a bug, even though it looks like one.** Evaluated transcription quality against
+  a ground-truth original score (`sample2_original.musicxml` vs. our output for
+  `sample2.mp3`): `quantization_service`'s `librosa.beat.beat_track()` detected 129.2
+  BPM; the original's actual marked tempo is 65 BPM — a ratio of 1.988, i.e. almost
+  exactly double. This is the classic beat-tracker octave error (locking onto the
+  eighth-note pulse instead of the quarter-note pulse). **There is no way for the app
+  to know which reading is "correct" from audio alone** — 65 and 129 BPM are both
+  self-consistent periodicities in the same signal; disambiguating requires either the
+  score's own tempo marking (not present in audio) or genre/style priors we don't have.
+  Decided not to chase an automatic fix (e.g. biasing toward a "typical" 60-140 BPM
+  range) — evaluated as not worth the effort relative to Basic Pitch's over-detection
+  (see below). Instead, tracked as a frontend correction-interface item: see "Tempo
+  picker/override" under item 5 in `docs/frontend-plan.md` — let the user see the
+  detected BPM and correct it themselves (e.g. offer the half/double as quick options)
+  once the correction UI exists.
+- **Basic Pitch over-detects notes relative to ground truth.** Same evaluation as
+  above: for the ~20-measure passage `sample2.mp3` actually covers, the original score
+  has ~269 note events; raw Basic Pitch output has 428 (~60% overshoot), only partly
+  cleaned up by quantization (350, still ~30% over). Confidence of the excess notes is
+  spread across the normal range (median 0.57), not clustered low, so a stricter
+  confidence-percentile cutoff won't cleanly remove them without also cutting real
+  notes. Likely cause: piano sustain-pedal resonance/harmonics being picked up as
+  separate note events. `frame_threshold` (governs whether a note is detected as
+  sounding at all, frame by frame — distinct from `onset_threshold`, which only
+  governs whether a new onset re-triggers mid-sustain) was tried at 0.4/0.5/0.6:
+  0.4 cut the excess with minimal verified real-note loss (1 note on one clip, 0 on
+  the other), but was reverted after the user found it removed too much real content
+  by ear on a full listen — verification against ground-truth counts and time-overlap
+  matching didn't fully capture perceived quality loss. **Not currently applied**
+  (`frame_threshold` left at Basic Pitch's default 0.3). Revisit with a smaller step
+  (e.g. 0.32-0.35) if attempted again, and verify by listening, not just by counting.
 
 ## Housekeeping TODO
 
