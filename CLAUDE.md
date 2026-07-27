@@ -27,7 +27,7 @@ below.
 | Separate         | Teammate A  | split mix into vocals/drums/bass/other stems     | Demucs (Hybrid Transformer)            |
 | Classify (opt.)  | Teammate A  | label each stem's instrument/role                | AST / YAMNet / CNN — see gotchas       |
 | Transcribe       | **You**     | stem → note events (pitch, onset, offset, vel.)  | Spotify Basic Pitch (piano: ByteDance) |
-| Quantize/cleanup | **You**     | snap notes to a beat grid, filter low-confidence | librosa, madmom, music21, pretty_midi  |
+| Quantize/cleanup | **You**     | snap notes to a beat grid, filter low-confidence | librosa, music21, pretty_midi          |
 | MusicXML         | **You**     | note events → score                              | music21, partitura                     |
 | Render/export    | **You**     | score → PDF/PNG/SVG/MIDI; browser preview        | MuseScore CLI, OpenSheetMusicDisplay   |
 
@@ -230,48 +230,28 @@ backbone was working, the plan was to circle back and improve each stage:
       limitation: relative major/minor ambiguity (e.g. C major vs. A minor share the
       same notes) is inherent to pitch-class-only key detection, not fixable without
       deeper harmonic analysis — not something this pass addresses.
-- [x] **Real time-signature estimation** — `quantization_service._detect_time_signature()`
-      uses madmom's `RNNDownBeatProcessor` + `DBNDownBeatTrackingProcessor` for real
-      downbeat tracking (librosa has no downbeat/meter detection built in, confirmed
-      by checking its API directly). The DBN decodes the most likely beat-position
-      sequence for each candidate meter in `TIME_SIGNATURE_CANDIDATES = [3, 4]` and
-      picks whichever fits best; the numerator is read off as the max beat number in
-      the decoded sequence. Denominator is always reported as 4 (a known
-      simplification — madmom reasons in beats-per-bar, not note-value subdivisions,
-      so 6/8 vs. 3/4 can't be distinguished this way). Falls back to "4/4" on any
-      failure (verified: correctly triggers on a silent/degenerate test input rather
-      than crashing). Threaded through `QuantizationResult.time_signature` and applied
-      in `musicxml_service._build_staff_part` (replacing the previous hardcoded 4/4).
-      Verified on both real clips: `sample2.mp3` and `sample.mp3` both detected as
-      4/4, confirmed present in the written MusicXML's `<time>` element, with the
-      octave-cap invariant (0 violations) still holding on both.
-
-      **madmom install was substantially harder than expected — worth knowing about
-      if this needs reinstalling:** madmom 0.16.1 has no pre-built Windows wheel, so
-      pip must compile its Cython extensions from source, which requires (1) `Cython`
-      installed first (its `pyproject.toml` doesn't declare this correctly for pip's
-      isolated build), and (2) a C compiler — Visual Studio Build Tools (C++ workload)
-      had to be installed system-wide, since Windows has no C compiler by default.
-      Beyond that, madmom 0.16.1's own code predates several Python/numpy
-      deprecations and needed direct patching in the installed package
-      (`venv/Lib/site-packages/madmom/`) to actually run:
-      - `collections.MutableSequence` → `collections.abc.MutableSequence` in
-        `processors.py` (moved in Python 3.3+, removed 3.10+).
-      - `np.float`/`np.int`/etc. (removed in numpy>=1.24) — 99 occurrences across 19
-        files, bulk-patched to the builtin equivalents.
-      - One usage inside compiled Cython (`madmom/ml/hmm.pyx`, not patchable as text)
-        still referenced `np.int` at runtime — worked around with a compatibility
-        shim (`np.int = int` etc.) set at the top of `quantization_service.py` before
-        madmom is imported, since editing compiled `.pyx` output wasn't practical.
-      - A separate numpy behavior change (implicit ragged/inhomogeneous array
-        construction, used by `DBNDownBeatTrackingProcessor.process()` to pick the
-        best-scoring HMM) had to be patched directly in the installed
-        `downbeats.py` — modern numpy raises `ValueError` where old numpy silently
-        built an object array.
-      None of these patches are tracked by pip/requirements.txt — they live only in
-      this machine's `venv`. **If the venv is ever recreated, these steps must be
-      redone** (or a maintained madmom fork/newer release found, if one exists by
-      then) for time-signature detection to keep working.
+- [x] **Real time-signature estimation — tried via madmom, then reverted; 4/4 hardcoded
+      instead.** `quantization_service._detect_time_signature()` (madmom's
+      `RNNDownBeatProcessor` + `DBNDownBeatTrackingProcessor` for downbeat tracking)
+      worked and was verified correct on both test clips, but madmom's install cost
+      turned out to be very high for this one feature: no pre-built Windows wheel, a
+      from-source Cython + MSVC build (needed installing Visual Studio Build Tools
+      system-wide), and hand-patching 3 separate Python 3.11/numpy compatibility
+      breaks directly inside the installed package — none of which was tracked by
+      requirements.txt, so it would all need repeating on any fresh machine/venv.
+      Considered Essentia as an alternative (also referenced in the original project
+      proposal): ruled out immediately — it has no Windows wheel at all, and its
+      source build fails on Windows with an internal error in Essentia's own
+      `setup.py`, not something patchable the way madmom's deprecated-API issues were.
+      **Decision: removed madmom entirely** (`_detect_time_signature`, the numpy
+      compatibility shim, `TIME_SIGNATURE_CANDIDATES`, uninstalled from the venv and
+      from `requirements.txt`). `QuantizationResult.time_signature` is now always
+      `DEFAULT_TIME_SIGNATURE = "4/4"` — by far the most common meter, and both test
+      clips detected as 4/4 anyway, so no real accuracy was given up for these clips.
+      A time-signature picker (alongside the already-planned tempo picker) is tracked
+      in `docs/frontend-plan.md` so the user can override it for pieces genuinely in
+      3/4, 6/8, etc. Verified after removal: full pipeline runs clean on both clips,
+      octave-cap/accidental/measure-integrity invariants all still hold.
 - [x] **Fix redundant natural-sign accidentals** — after shipping key signature
       detection, sheet music was showing natural signs on notes that were already
       diatonic to the detected key (e.g. plain A and B in A major, which has no
@@ -344,15 +324,15 @@ backbone was working, the plan was to circle back and improve each stage:
   a genuinely dense chord (up to 8 simultaneous notes seen on `sample2`) will still render
   as a literal 8-note chord rather than a simplified reduction. Revisit if real playtesting
   shows chords are too dense to read, independent of the treble/bass split now being correct.
-- **madmom (time signature detection) needed manual patches applied directly to the
-  installed package inside this machine's venv — these are NOT captured by
-  requirements.txt and will need to be redone if the venv is ever recreated.** See the
-  full list under the "Real time-signature estimation" entry in the Quality backlog
-  above. In short: install `Cython` before `madmom`, install Visual Studio Build Tools
-  (C++ workload) for the Windows C compiler, then hand-patch several files in
-  `venv/Lib/site-packages/madmom/` for Python 3.11 / modern numpy compatibility (the
-  package predates both). If this becomes a recurring pain point, worth checking for
-  a maintained fork or newer release before repeating these steps.
+- **[RESOLVED — madmom removed] Real downbeat/time-signature detection was tried via
+  madmom, but its install cost (from-source Cython+MSVC build, Visual Studio Build
+  Tools, hand-patching 3 Python 3.11/numpy compatibility breaks in the installed
+  package — none tracked by requirements.txt) wasn't worth it for one feature.
+  Essentia was considered as an alternative and ruled out immediately: no Windows
+  wheel, source build fails on Windows in Essentia's own `setup.py`. Time signature
+  is now always 4/4 (see the "Real time-signature estimation" entry in the Quality
+  backlog above for the full writeup); a picker for the user to override it is
+  planned in the frontend (`docs/frontend-plan.md`).
 - **Tempo octave ambiguity is a fundamental, unfixable-from-audio-alone MIR limitation
   — not a bug, even though it looks like one.** Evaluated transcription quality against
   a ground-truth original score (`sample2_original.musicxml` vs. our output for

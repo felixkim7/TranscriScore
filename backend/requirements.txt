@@ -6,5 +6,3 @@ librosa
 soundfile
 basic-pitch
 music21
-madmom
-Cython

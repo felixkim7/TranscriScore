@@ -30,6 +30,13 @@ note-correction interface.
      correct one themselves (e.g. offer the detected value alongside its half/double
      as quick options, plus a free-entry field) — this re-quantizes note durations
      against the corrected tempo before final export.
+   - **Time signature picker/override**: `QuantizationResult.time_signature` is
+     always `4/4` — real downbeat detection (tried via madmom) was removed due to
+     install cost, and Essentia (the alternative) has no Windows wheel at all; see
+     the "Real time-signature estimation" entry in `CLAUDE.md`'s Quality backlog for
+     the full writeup. Let the user pick the actual time signature (e.g. a small set
+     of common options: 4/4, 3/4, 6/8, 2/4, plus free entry) for pieces that aren't
+     really in 4/4 — same pattern as the tempo picker above.
 6. **Export buttons** — download MusicXML / MIDI / PDF / MSCZ / stems, per the
    proposal's export list.
 

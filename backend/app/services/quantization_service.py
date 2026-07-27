@@ -6,19 +6,6 @@ import librosa
 import numpy as np
 import pretty_midi
 
-# madmom (0.16.1) predates several numpy deprecations (np.int/np.float/etc., removed
-# in numpy>=1.24) and still imports them at module load time. This shim must run
-# before the first `import madmom` anywhere in the process; harmless no-ops if numpy
-# already has these (older numpy) or if madmom is later upgraded past needing them.
-np.int = getattr(np, "int", int)
-np.float = getattr(np, "float", float)
-np.bool = getattr(np, "bool", bool)
-np.object = getattr(np, "object", object)
-np.complex = getattr(np, "complex", complex)
-np.str = getattr(np, "str", str)
-
-from madmom.features.downbeats import DBNDownBeatTrackingProcessor, RNNDownBeatProcessor  # noqa: E402
-
 from app.config.settings import INTERMEDIATE_DIR, QUANTIZED_MIDI_DIR
 from app.schemas.transcription import NoteEvent, QuantizationResult, QuantizedNoteEvent
 
@@ -26,7 +13,19 @@ GRID_SUBDIVISION = 0.25  # snap to 16th notes (in beats)
 CONFIDENCE_DROP_PERCENTILE = 10  # drop the bottom 10% of notes by confidence
 SUSTAIN_MERGE_GAP_SECONDS = 0.08  # merge same-pitch notes touching within this gap...
 SUSTAIN_MERGE_MAX_VELOCITY_INCREASE = 0  # ...only if velocity doesn't rise (decay = one held note, not a new strike)
-TIME_SIGNATURE_CANDIDATES = [3, 4]  # beats-per-bar options madmom's DBN chooses between
+
+# No automatic time-signature estimation: librosa has no downbeat/meter detection
+# built in (checked its API directly), and the two real alternatives evaluated both
+# failed on this platform — madmom needed a from-source Cython/MSVC build plus
+# hand-patching 3 separate Python 3.11/numpy compatibility breaks in the installed
+# package (not tracked by requirements.txt, and even after all that, the result
+# measured well by note-overlap counts but sounded worse by ear on a full listen);
+# Essentia has no Windows wheel at all and its source build fails immediately with
+# an internal error in its own setup.py. 4/4 is used unconditionally instead — by far
+# the most common meter, and a time-signature picker is planned in the frontend
+# correction UI (see docs/frontend-plan.md) so the user can override it, same as the
+# planned tempo picker.
+DEFAULT_TIME_SIGNATURE = "4/4"
 
 
 def run(
@@ -56,8 +55,6 @@ def run(
     detected_tempo = float(np.asarray(detected_tempo).item())
     if tempo_bpm is None:
         tempo_bpm = detected_tempo
-
-    time_signature = _detect_time_signature(audio_path)
 
     beat_times, beat_indices = _beat_grid(beat_frames, y, sr, tempo_bpm)
 
@@ -98,7 +95,7 @@ def run(
     result = QuantizationResult(
         tempo_bpm=tempo_bpm,
         stem_label=result_stem_label,
-        time_signature=time_signature,
+        time_signature=DEFAULT_TIME_SIGNATURE,
         notes=quantized_notes,
     )
 
@@ -117,33 +114,6 @@ def load_quantization_result(stem_name: str) -> QuantizationResult:
             f"No saved quantization result for '{stem_name}' at {result_path}. Run quantization first."
         )
     return QuantizationResult.model_validate_json(result_path.read_text())
-
-
-def _detect_time_signature(audio_path: str) -> str:
-    """Estimate the time signature's numerator via real downbeat tracking.
-
-    librosa has no downbeat/meter detection built in (checked its API directly),
-    so this uses madmom's RNN + dynamic Bayesian network downbeat tracker: an RNN
-    estimates per-frame beat/downbeat activation, then a DBN decodes the most likely
-    beat-position sequence for each candidate meter in TIME_SIGNATURE_CANDIDATES and
-    picks whichever fits best. The numerator is read off as the highest beat number
-    in the decoded sequence (assumes a consistent meter for the whole clip — no
-    mid-piece meter changes). Denominator is always reported as 4 (madmom's DBN
-    reasons in beats-per-bar, not note-value subdivisions, so 6/8 vs. 3/4 etc.
-    can't be distinguished this way — a known simplification).
-    Falls back to "4/4" if detection fails or the clip is too short/ambiguous for
-    the DBN to decode any beats.
-    """
-    try:
-        activations = RNNDownBeatProcessor()(audio_path)
-        decoder = DBNDownBeatTrackingProcessor(beats_per_bar=TIME_SIGNATURE_CANDIDATES, fps=100)
-        beats = decoder(activations)
-        if len(beats) == 0:
-            return "4/4"
-        numerator = int(beats[:, 1].max())
-        return f"{numerator}/4"
-    except Exception:
-        return "4/4"
 
 
 def _merge_sustained_fragments(note_events: List[NoteEvent]) -> List[NoteEvent]:
