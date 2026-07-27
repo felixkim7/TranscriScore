@@ -27,7 +27,7 @@ below.
 | Separate         | Teammate A  | split mix into vocals/drums/bass/other stems     | Demucs (Hybrid Transformer)            |
 | Classify (opt.)  | Teammate A  | label each stem's instrument/role                | AST / YAMNet / CNN — see gotchas       |
 | Transcribe       | **You**     | stem → note events (pitch, onset, offset, vel.)  | Spotify Basic Pitch (piano: ByteDance) |
-| Quantize/cleanup | **You**     | snap notes to a beat grid, filter low-confidence | librosa, madmom, music21, pretty_midi  |
+| Quantize/cleanup | **You**     | snap notes to a beat grid, filter low-confidence | librosa, music21, pretty_midi          |
 | MusicXML         | **You**     | note events → score                              | music21, partitura                     |
 | Render/export    | **You**     | score → PDF/PNG/SVG/MIDI; browser preview        | MuseScore CLI, OpenSheetMusicDisplay   |
 
@@ -219,16 +219,91 @@ backbone was working, the plan was to circle back and improve each stage:
       lever. Verified: 428/350 raw/quantized notes on `sample2.mp3`,
       647/352 on `sample.mp3`; full pipeline (transcribe → quantize → musicxml →
       export) runs clean on both.
-- [ ] **Key signature detection + real time-signature estimation** — prioritized ahead
-      of Q3 (export formats): MSCZ export is already working well, and since the
-      priority is giving the user a good editing surface in MuseScore, getting the
-      notation itself more correct (key/time signature) matters more right now than
-      adding more export file formats. `musicxml_service.py` currently hardcodes 4/4
-      and no key signature at all. **Next up.**
+- [x] **Key signature detection** — prioritized ahead of Q3 (export formats): MSCZ
+      export already works well, and getting the notation itself more correct matters
+      more right now than adding export file formats. `_detect_key()` in
+      `musicxml_service.py` uses music21's built-in Krumhansl-Schmuckler-style key
+      analysis over a flat Stream of the stem's notes (weighted by duration). Detected
+      once per stem and applied consistently to every staff (so treble/bass never
+      disagree). Verified on both real clips with strong confidence: `sample2.mp3` →
+      A major (correlation 0.847), `sample.mp3` → C minor (correlation 0.833). Known
+      limitation: relative major/minor ambiguity (e.g. C major vs. A minor share the
+      same notes) is inherent to pitch-class-only key detection, not fixable without
+      deeper harmonic analysis — not something this pass addresses.
+- [x] **Real time-signature estimation — tried via madmom, then reverted; 4/4 hardcoded
+      instead.** `quantization_service._detect_time_signature()` (madmom's
+      `RNNDownBeatProcessor` + `DBNDownBeatTrackingProcessor` for downbeat tracking)
+      worked and was verified correct on both test clips, but madmom's install cost
+      turned out to be very high for this one feature: no pre-built Windows wheel, a
+      from-source Cython + MSVC build (needed installing Visual Studio Build Tools
+      system-wide), and hand-patching 3 separate Python 3.11/numpy compatibility
+      breaks directly inside the installed package — none of which was tracked by
+      requirements.txt, so it would all need repeating on any fresh machine/venv.
+      Considered Essentia as an alternative (also referenced in the original project
+      proposal): ruled out immediately — it has no Windows wheel at all, and its
+      source build fails on Windows with an internal error in Essentia's own
+      `setup.py`, not something patchable the way madmom's deprecated-API issues were.
+      **Decision: removed madmom entirely** (`_detect_time_signature`, the numpy
+      compatibility shim, `TIME_SIGNATURE_CANDIDATES`, uninstalled from the venv and
+      from `requirements.txt`). `QuantizationResult.time_signature` is now always
+      `DEFAULT_TIME_SIGNATURE = "4/4"` — by far the most common meter, and both test
+      clips detected as 4/4 anyway, so no real accuracy was given up for these clips.
+      A time-signature picker (alongside the already-planned tempo picker) is tracked
+      in `docs/frontend-plan.md` so the user can override it for pieces genuinely in
+      3/4, 6/8, etc. Verified after removal: full pipeline runs clean on both clips,
+      octave-cap/accidental/measure-integrity invariants all still hold.
+- [x] **Fix redundant natural-sign accidentals** — after shipping key signature
+      detection, sheet music was showing natural signs on notes that were already
+      diatonic to the detected key (e.g. plain A and B in A major, which has no
+      reason to ever show either as altered). Root cause: `note.Note(midi_int)` always
+      gives the pitch an explicit `natural` Accidental object (not `None`), since
+      music21 has no spelling context from a bare MIDI number. `Part.makeAccidentals()`
+      (music21's own cautionary-accidental logic) was tried first and found to have a
+      real bug for our case: `makeAccidentalsInMeasureStream` only filters
+      `pitchPastMeasure` by "foreign to the key" when the current measure has its own
+      explicit `Key` element; when it doesn't (our normal case — music21 puts `Key`
+      only in the measure where it's set, not every measure), it falls back to
+      treating ALL of the previous measure's pitches as needing cautionary
+      re-display — confirmed on a minimal repro (20× B4 across 5 measures in A major):
+      the first note of every measure after the first kept showing as needing display,
+      even though B is fully diatonic and never once altered. Fixed by bypassing
+      `makeAccidentals()` entirely: `_suppress_redundant_accidentals()` in
+      `musicxml_service.py` compares each pitch directly against `Key.alteredPitches`
+      (the letter names the key signature actually sharpens/flattens) and sets
+      `displayStatus` accordingly — simpler and unaffected by the measure-boundary bug.
+      Verified: 258 → 30 accidentals on `sample2.mp3` (A major), 30 remaining are all
+      genuine C/G naturals (deviations from the key, correctly still shown); a
+      positive-case test (F# in C major) confirmed the fix doesn't over-suppress real
+      accidentals. Octave-cap invariant re-checked, still 0 violations on both clips.
+- [x] **Fix notes/chords overflowing past measure boundaries** — after the accidental
+      fix, rendered sheet music showed notes crossing barlines and irregular beam/tie
+      groupings. Root cause: nothing in segment construction snaps a note/chord's
+      cumulative beat position to measure boundaries, so `part.append(element)` can
+      place an element that starts inside one measure and extends past the barline
+      into the next. `makeMeasures()` alone doesn't split/tie such elements — it just
+      lets them overflow, producing measures with more (or, for the next measure,
+      fewer) beats than the time signature allows. Confirmed directly: measures 3 and
+      4 of `sample2.mp3`'s treble part had 4.25 and 4.75 quarter-note beats instead of
+      4.0. Fixed by calling `part.makeTies(inPlace=True)` right after `makeMeasures()`
+      in `_build_staff_part` — this is music21's dedicated method for splitting
+      elements that cross barlines into properly tied fragments per measure. Verified:
+      0 measures (other than the legitimately-partial final one) deviate from 4.0
+      beats on either staff, on both real clips; re-checked the accidental-suppression
+      and octave-cap fixes still hold (30 accidentals unchanged, 0 octave violations).
 - [ ] Q3. **Export quality** — add PDF/PNG/SVG export alongside MSCZ (same
       `export_service.py` subprocess pattern), better error surfacing if MuseScore
       CLI fails or isn't found at `MUSESCORE_PATH`, cleanup of intermediate files.
       Deprioritized behind key/time signature work (see above).
+- [ ] **Extend `run_pipeline.py` to the full per-stem chain (You)** — Teammate A's new
+      `scripts/run_pipeline.py` chains Demucs separation → classification verification →
+      `transcription_service.run()` per stem (vocals/drums/guitar/piano), returning
+      `Dict[str, List[NoteEvent]]`. It stops at transcription. You own extending this
+      so each stem's note events also flow through `quantization_service.run()` →
+      `musicxml_service.run()` → `export_service.to_mscz()`, producing one MusicXML/MSCZ
+      per stem (or however multi-stem output should be organized — TBD whether stems
+      combine into one multi-part score or stay separate files, decide before
+      implementing). This is the actual multi-stem end-to-end milestone; single-stem
+      end-to-end already works (step 4, done).
 
 ## Known gotchas
 
@@ -249,6 +324,47 @@ backbone was working, the plan was to circle back and improve each stage:
   a genuinely dense chord (up to 8 simultaneous notes seen on `sample2`) will still render
   as a literal 8-note chord rather than a simplified reduction. Revisit if real playtesting
   shows chords are too dense to read, independent of the treble/bass split now being correct.
+- **[RESOLVED — madmom removed] Real downbeat/time-signature detection was tried via
+  madmom, but its install cost (from-source Cython+MSVC build, Visual Studio Build
+  Tools, hand-patching 3 Python 3.11/numpy compatibility breaks in the installed
+  package — none tracked by requirements.txt) wasn't worth it for one feature.
+  Essentia was considered as an alternative and ruled out immediately: no Windows
+  wheel, source build fails on Windows in Essentia's own `setup.py`. Time signature
+  is now always 4/4 (see the "Real time-signature estimation" entry in the Quality
+  backlog above for the full writeup); a picker for the user to override it is
+  planned in the frontend (`docs/frontend-plan.md`).
+- **Tempo octave ambiguity is a fundamental, unfixable-from-audio-alone MIR limitation
+  — not a bug, even though it looks like one.** Evaluated transcription quality against
+  a ground-truth original score (`sample2_original.musicxml` vs. our output for
+  `sample2.mp3`): `quantization_service`'s `librosa.beat.beat_track()` detected 129.2
+  BPM; the original's actual marked tempo is 65 BPM — a ratio of 1.988, i.e. almost
+  exactly double. This is the classic beat-tracker octave error (locking onto the
+  eighth-note pulse instead of the quarter-note pulse). **There is no way for the app
+  to know which reading is "correct" from audio alone** — 65 and 129 BPM are both
+  self-consistent periodicities in the same signal; disambiguating requires either the
+  score's own tempo marking (not present in audio) or genre/style priors we don't have.
+  Decided not to chase an automatic fix (e.g. biasing toward a "typical" 60-140 BPM
+  range) — evaluated as not worth the effort relative to Basic Pitch's over-detection
+  (see below). Instead, tracked as a frontend correction-interface item: see "Tempo
+  picker/override" under item 5 in `docs/frontend-plan.md` — let the user see the
+  detected BPM and correct it themselves (e.g. offer the half/double as quick options)
+  once the correction UI exists.
+- **Basic Pitch over-detects notes relative to ground truth.** Same evaluation as
+  above: for the ~20-measure passage `sample2.mp3` actually covers, the original score
+  has ~269 note events; raw Basic Pitch output has 428 (~60% overshoot), only partly
+  cleaned up by quantization (350, still ~30% over). Confidence of the excess notes is
+  spread across the normal range (median 0.57), not clustered low, so a stricter
+  confidence-percentile cutoff won't cleanly remove them without also cutting real
+  notes. Likely cause: piano sustain-pedal resonance/harmonics being picked up as
+  separate note events. `frame_threshold` (governs whether a note is detected as
+  sounding at all, frame by frame — distinct from `onset_threshold`, which only
+  governs whether a new onset re-triggers mid-sustain) was tried at 0.4/0.5/0.6:
+  0.4 cut the excess with minimal verified real-note loss (1 note on one clip, 0 on
+  the other), but was reverted after the user found it removed too much real content
+  by ear on a full listen — verification against ground-truth counts and time-overlap
+  matching didn't fully capture perceived quality loss. **Not currently applied**
+  (`frame_threshold` left at Basic Pitch's default 0.3). Revisit with a smaller step
+  (e.g. 0.32-0.35) if attempted again, and verify by listening, not just by counting.
 
 ## Housekeeping TODO
 

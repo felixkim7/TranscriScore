@@ -2,9 +2,9 @@
 <!DOCTYPE score-partwise  PUBLIC "-//Recordare//DTD MusicXML 4.0 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd">
 <score-partwise version="4.0">
   <work>
-    <work-title>sample</work-title>
+    <work-title>sample_keytime</work-title>
   </work>
-  <movement-title>sample</movement-title>
+  <movement-title>sample_keytime</movement-title>
   <identification>
     <creator type="composer">Music21</creator>
     <encoding>
@@ -22,12 +22,12 @@
     </scaling>
   </defaults>
   <part-list>
-    <score-part id="P1634ca7c07b389c0fb41e5bda57ff3dd">
+    <score-part id="Pdbad626ffe161dab6d6754b18deb0075">
       <part-name />
     </score-part>
   </part-list>
   <!--=========================== Part 1 ===========================-->
-  <part id="P1634ca7c07b389c0fb41e5bda57ff3dd">
+  <part id="Pdbad626ffe161dab6d6754b18deb0075">
     <!--========================= Measure 1 ==========================-->
     <measure implicit="no" number="1">
       <attributes>

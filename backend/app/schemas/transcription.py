@@ -24,4 +24,5 @@ class QuantizedNoteEvent(BaseModel):
 class QuantizationResult(BaseModel):
     tempo_bpm: float
     stem_label: str = "unknown"
+    time_signature: str = "4/4"
     notes: list[QuantizedNoteEvent]

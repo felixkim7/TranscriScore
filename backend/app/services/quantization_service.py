@@ -14,6 +14,19 @@ CONFIDENCE_DROP_PERCENTILE = 10  # drop the bottom 10% of notes by confidence
 SUSTAIN_MERGE_GAP_SECONDS = 0.08  # merge same-pitch notes touching within this gap...
 SUSTAIN_MERGE_MAX_VELOCITY_INCREASE = 0  # ...only if velocity doesn't rise (decay = one held note, not a new strike)
 
+# No automatic time-signature estimation: librosa has no downbeat/meter detection
+# built in (checked its API directly), and the two real alternatives evaluated both
+# failed on this platform — madmom needed a from-source Cython/MSVC build plus
+# hand-patching 3 separate Python 3.11/numpy compatibility breaks in the installed
+# package (not tracked by requirements.txt, and even after all that, the result
+# measured well by note-overlap counts but sounded worse by ear on a full listen);
+# Essentia has no Windows wheel at all and its source build fails immediately with
+# an internal error in its own setup.py. 4/4 is used unconditionally instead — by far
+# the most common meter, and a time-signature picker is planned in the frontend
+# correction UI (see docs/frontend-plan.md) so the user can override it, same as the
+# planned tempo picker.
+DEFAULT_TIME_SIGNATURE = "4/4"
+
 
 def run(
     note_events: List[NoteEvent],
@@ -79,7 +92,12 @@ def run(
     # rather than re-deriving it, and fall back to "unknown" for an empty list.
     result_stem_label = note_events[0].stem_label if note_events else "unknown"
 
-    result = QuantizationResult(tempo_bpm=tempo_bpm, stem_label=result_stem_label, notes=quantized_notes)
+    result = QuantizationResult(
+        tempo_bpm=tempo_bpm,
+        stem_label=result_stem_label,
+        time_signature=DEFAULT_TIME_SIGNATURE,
+        notes=quantized_notes,
+    )
 
     INTERMEDIATE_DIR.mkdir(parents=True, exist_ok=True)
     result_path = INTERMEDIATE_DIR / f"{Path(audio_path).stem}.quantized.json"
