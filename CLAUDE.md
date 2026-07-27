@@ -219,16 +219,111 @@ backbone was working, the plan was to circle back and improve each stage:
       lever. Verified: 428/350 raw/quantized notes on `sample2.mp3`,
       647/352 on `sample.mp3`; full pipeline (transcribe → quantize → musicxml →
       export) runs clean on both.
-- [ ] **Key signature detection + real time-signature estimation** — prioritized ahead
-      of Q3 (export formats): MSCZ export is already working well, and since the
-      priority is giving the user a good editing surface in MuseScore, getting the
-      notation itself more correct (key/time signature) matters more right now than
-      adding more export file formats. `musicxml_service.py` currently hardcodes 4/4
-      and no key signature at all. **Next up.**
+- [x] **Key signature detection** — prioritized ahead of Q3 (export formats): MSCZ
+      export already works well, and getting the notation itself more correct matters
+      more right now than adding export file formats. `_detect_key()` in
+      `musicxml_service.py` uses music21's built-in Krumhansl-Schmuckler-style key
+      analysis over a flat Stream of the stem's notes (weighted by duration). Detected
+      once per stem and applied consistently to every staff (so treble/bass never
+      disagree). Verified on both real clips with strong confidence: `sample2.mp3` →
+      A major (correlation 0.847), `sample.mp3` → C minor (correlation 0.833). Known
+      limitation: relative major/minor ambiguity (e.g. C major vs. A minor share the
+      same notes) is inherent to pitch-class-only key detection, not fixable without
+      deeper harmonic analysis — not something this pass addresses.
+- [x] **Real time-signature estimation** — `quantization_service._detect_time_signature()`
+      uses madmom's `RNNDownBeatProcessor` + `DBNDownBeatTrackingProcessor` for real
+      downbeat tracking (librosa has no downbeat/meter detection built in, confirmed
+      by checking its API directly). The DBN decodes the most likely beat-position
+      sequence for each candidate meter in `TIME_SIGNATURE_CANDIDATES = [3, 4]` and
+      picks whichever fits best; the numerator is read off as the max beat number in
+      the decoded sequence. Denominator is always reported as 4 (a known
+      simplification — madmom reasons in beats-per-bar, not note-value subdivisions,
+      so 6/8 vs. 3/4 can't be distinguished this way). Falls back to "4/4" on any
+      failure (verified: correctly triggers on a silent/degenerate test input rather
+      than crashing). Threaded through `QuantizationResult.time_signature` and applied
+      in `musicxml_service._build_staff_part` (replacing the previous hardcoded 4/4).
+      Verified on both real clips: `sample2.mp3` and `sample.mp3` both detected as
+      4/4, confirmed present in the written MusicXML's `<time>` element, with the
+      octave-cap invariant (0 violations) still holding on both.
+
+      **madmom install was substantially harder than expected — worth knowing about
+      if this needs reinstalling:** madmom 0.16.1 has no pre-built Windows wheel, so
+      pip must compile its Cython extensions from source, which requires (1) `Cython`
+      installed first (its `pyproject.toml` doesn't declare this correctly for pip's
+      isolated build), and (2) a C compiler — Visual Studio Build Tools (C++ workload)
+      had to be installed system-wide, since Windows has no C compiler by default.
+      Beyond that, madmom 0.16.1's own code predates several Python/numpy
+      deprecations and needed direct patching in the installed package
+      (`venv/Lib/site-packages/madmom/`) to actually run:
+      - `collections.MutableSequence` → `collections.abc.MutableSequence` in
+        `processors.py` (moved in Python 3.3+, removed 3.10+).
+      - `np.float`/`np.int`/etc. (removed in numpy>=1.24) — 99 occurrences across 19
+        files, bulk-patched to the builtin equivalents.
+      - One usage inside compiled Cython (`madmom/ml/hmm.pyx`, not patchable as text)
+        still referenced `np.int` at runtime — worked around with a compatibility
+        shim (`np.int = int` etc.) set at the top of `quantization_service.py` before
+        madmom is imported, since editing compiled `.pyx` output wasn't practical.
+      - A separate numpy behavior change (implicit ragged/inhomogeneous array
+        construction, used by `DBNDownBeatTrackingProcessor.process()` to pick the
+        best-scoring HMM) had to be patched directly in the installed
+        `downbeats.py` — modern numpy raises `ValueError` where old numpy silently
+        built an object array.
+      None of these patches are tracked by pip/requirements.txt — they live only in
+      this machine's `venv`. **If the venv is ever recreated, these steps must be
+      redone** (or a maintained madmom fork/newer release found, if one exists by
+      then) for time-signature detection to keep working.
+- [x] **Fix redundant natural-sign accidentals** — after shipping key signature
+      detection, sheet music was showing natural signs on notes that were already
+      diatonic to the detected key (e.g. plain A and B in A major, which has no
+      reason to ever show either as altered). Root cause: `note.Note(midi_int)` always
+      gives the pitch an explicit `natural` Accidental object (not `None`), since
+      music21 has no spelling context from a bare MIDI number. `Part.makeAccidentals()`
+      (music21's own cautionary-accidental logic) was tried first and found to have a
+      real bug for our case: `makeAccidentalsInMeasureStream` only filters
+      `pitchPastMeasure` by "foreign to the key" when the current measure has its own
+      explicit `Key` element; when it doesn't (our normal case — music21 puts `Key`
+      only in the measure where it's set, not every measure), it falls back to
+      treating ALL of the previous measure's pitches as needing cautionary
+      re-display — confirmed on a minimal repro (20× B4 across 5 measures in A major):
+      the first note of every measure after the first kept showing as needing display,
+      even though B is fully diatonic and never once altered. Fixed by bypassing
+      `makeAccidentals()` entirely: `_suppress_redundant_accidentals()` in
+      `musicxml_service.py` compares each pitch directly against `Key.alteredPitches`
+      (the letter names the key signature actually sharpens/flattens) and sets
+      `displayStatus` accordingly — simpler and unaffected by the measure-boundary bug.
+      Verified: 258 → 30 accidentals on `sample2.mp3` (A major), 30 remaining are all
+      genuine C/G naturals (deviations from the key, correctly still shown); a
+      positive-case test (F# in C major) confirmed the fix doesn't over-suppress real
+      accidentals. Octave-cap invariant re-checked, still 0 violations on both clips.
+- [x] **Fix notes/chords overflowing past measure boundaries** — after the accidental
+      fix, rendered sheet music showed notes crossing barlines and irregular beam/tie
+      groupings. Root cause: nothing in segment construction snaps a note/chord's
+      cumulative beat position to measure boundaries, so `part.append(element)` can
+      place an element that starts inside one measure and extends past the barline
+      into the next. `makeMeasures()` alone doesn't split/tie such elements — it just
+      lets them overflow, producing measures with more (or, for the next measure,
+      fewer) beats than the time signature allows. Confirmed directly: measures 3 and
+      4 of `sample2.mp3`'s treble part had 4.25 and 4.75 quarter-note beats instead of
+      4.0. Fixed by calling `part.makeTies(inPlace=True)` right after `makeMeasures()`
+      in `_build_staff_part` — this is music21's dedicated method for splitting
+      elements that cross barlines into properly tied fragments per measure. Verified:
+      0 measures (other than the legitimately-partial final one) deviate from 4.0
+      beats on either staff, on both real clips; re-checked the accidental-suppression
+      and octave-cap fixes still hold (30 accidentals unchanged, 0 octave violations).
 - [ ] Q3. **Export quality** — add PDF/PNG/SVG export alongside MSCZ (same
       `export_service.py` subprocess pattern), better error surfacing if MuseScore
       CLI fails or isn't found at `MUSESCORE_PATH`, cleanup of intermediate files.
       Deprioritized behind key/time signature work (see above).
+- [ ] **Extend `run_pipeline.py` to the full per-stem chain (You)** — Teammate A's new
+      `scripts/run_pipeline.py` chains Demucs separation → classification verification →
+      `transcription_service.run()` per stem (vocals/drums/guitar/piano), returning
+      `Dict[str, List[NoteEvent]]`. It stops at transcription. You own extending this
+      so each stem's note events also flow through `quantization_service.run()` →
+      `musicxml_service.run()` → `export_service.to_mscz()`, producing one MusicXML/MSCZ
+      per stem (or however multi-stem output should be organized — TBD whether stems
+      combine into one multi-part score or stay separate files, decide before
+      implementing). This is the actual multi-stem end-to-end milestone; single-stem
+      end-to-end already works (step 4, done).
 
 ## Known gotchas
 
@@ -249,6 +344,15 @@ backbone was working, the plan was to circle back and improve each stage:
   a genuinely dense chord (up to 8 simultaneous notes seen on `sample2`) will still render
   as a literal 8-note chord rather than a simplified reduction. Revisit if real playtesting
   shows chords are too dense to read, independent of the treble/bass split now being correct.
+- **madmom (time signature detection) needed manual patches applied directly to the
+  installed package inside this machine's venv — these are NOT captured by
+  requirements.txt and will need to be redone if the venv is ever recreated.** See the
+  full list under the "Real time-signature estimation" entry in the Quality backlog
+  above. In short: install `Cython` before `madmom`, install Visual Studio Build Tools
+  (C++ workload) for the Windows C compiler, then hand-patch several files in
+  `venv/Lib/site-packages/madmom/` for Python 3.11 / modern numpy compatibility (the
+  package predates both). If this becomes a recurring pain point, worth checking for
+  a maintained fork or newer release before repeating these steps.
 
 ## Housekeeping TODO
 

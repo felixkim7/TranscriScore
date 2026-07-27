@@ -1,7 +1,7 @@
 from pathlib import Path
 from typing import List, NamedTuple
 
-from music21 import chord, clef, duration, instrument, layout, metadata, meter, note, stream, tempo
+from music21 import chord, clef, duration, instrument, key, layout, metadata, meter, note, stream, tempo
 
 from app.config.settings import MUSICXML_DIR
 from app.schemas.transcription import QuantizationResult
@@ -37,23 +37,26 @@ def run(result: QuantizationResult, output_name: str) -> Path:
       simplification, not something fixed in this pass.
 
     Backbone version: a single sweep-line pass over ALL notes combined produces one
-    definitive timeline of which pitches are sounding at every moment. No key
-    signature detection (see quality TODOs).
+    definitive timeline of which pitches are sounding at every moment. Key signature
+    is detected once from all of this stem's notes (_detect_key, music21's built-in
+    Krumhansl-Schmuckler-style analysis) and applied to every staff, so treble/bass
+    never disagree on key.
     """
     segments = _sweep_line_segments(result.notes)
+    detected_key = _detect_key(result.notes)
 
     score = stream.Score()
     score.metadata = metadata.Metadata(title=output_name)
 
     if result.stem_label == "guitar_accompaniment":
         part = _build_staff_part(
-            segments, result.tempo_bpm, clef.TrebleClef(),
+            segments, result.tempo_bpm, clef.TrebleClef(), detected_key, result.time_signature,
             part_instrument=instrument.Guitar(), as_part_staff=False,
         )
         score.insert(0, part)
     elif result.stem_label == "bass":
         part = _build_staff_part(
-            segments, result.tempo_bpm, clef.BassClef(),
+            segments, result.tempo_bpm, clef.BassClef(), detected_key, result.time_signature,
             part_instrument=instrument.ElectricBass(), as_part_staff=False,
         )
         score.insert(0, part)
@@ -63,8 +66,14 @@ def run(result: QuantizationResult, output_name: str) -> Path:
         bass_notes = _drop_octave_overflow(bass_notes)
         treble_segments = _sweep_line_segments(treble_notes)
         bass_segments = _sweep_line_segments(bass_notes)
-        treble = _build_staff_part(treble_segments, result.tempo_bpm, clef.TrebleClef(), as_part_staff=True)
-        bass = _build_staff_part(bass_segments, result.tempo_bpm, clef.BassClef(), as_part_staff=True)
+        treble = _build_staff_part(
+            treble_segments, result.tempo_bpm, clef.TrebleClef(), detected_key,
+            result.time_signature, as_part_staff=True,
+        )
+        bass = _build_staff_part(
+            bass_segments, result.tempo_bpm, clef.BassClef(), detected_key,
+            result.time_signature, as_part_staff=True,
+        )
         score.insert(0, treble)
         score.insert(0, bass)
         score.insert(0, layout.StaffGroup(
@@ -76,6 +85,22 @@ def run(result: QuantizationResult, output_name: str) -> Path:
     score.write("musicxml", fp=str(output_path))
 
     return output_path
+
+
+def _detect_key(notes) -> key.Key:
+    """Detect the key signature from a stem's note events.
+
+    Uses music21's built-in key-finding (Krumhansl-Schmuckler-style pitch-class
+    profile matching) over a flat Stream of the stem's notes, weighted by duration.
+    Verified on both real test clips with strong confidence (correlation coefficient
+    ~0.83-0.85); relative major/minor ambiguity is an inherent limitation of
+    pitch-class-only key detection (e.g. C major vs. A minor share the same notes),
+    not something fixable without deeper harmonic analysis.
+    """
+    s = stream.Stream()
+    for n in notes:
+        s.append(note.Note(n.pitch, quarterLength=max(0.1, n.duration_beats)))
+    return s.analyze("key")
 
 
 def _sweep_line_segments(notes) -> List[Segment]:
@@ -218,6 +243,8 @@ def _build_staff_part(
     segments: List[Segment],
     tempo_bpm: float,
     staff_clef,
+    staff_key: key.Key,
+    time_signature: str = "4/4",
     part_instrument=None,
     as_part_staff: bool = True,
 ) -> stream.Part:
@@ -225,7 +252,10 @@ def _build_staff_part(
     if part_instrument is not None:
         part.append(part_instrument)
     part.append(staff_clef)
-    part.append(meter.TimeSignature("4/4"))
+    # Build a fresh Key instance per part rather than inserting the same object into
+    # multiple streams (music21 elements are generally not meant to be shared).
+    part.append(key.Key(staff_key.tonic.name, staff_key.mode))
+    part.append(meter.TimeSignature(time_signature))
     part.append(tempo.MetronomeMark(number=round(tempo_bpm)))
 
     cursor = 0.0
@@ -246,4 +276,51 @@ def _build_staff_part(
 
         cursor = seg.end_beat
 
+    part = part.makeMeasures()
+    # A note/chord's cumulative beat position can land anywhere relative to measure
+    # boundaries (nothing about segment construction above snaps to them), so
+    # makeMeasures() alone can leave an element straddling a barline — printed
+    # overflowing the measure rather than split into tied fragments across it. That's
+    # what was producing measures with more/fewer beats than the time signature allows
+    # and the resulting visual mess (notes crossing barlines, odd beam groupings).
+    # makeTies() finds those cases and splits them into proper tied notes per measure.
+    part.makeTies(inPlace=True)
+    _suppress_redundant_accidentals(part, staff_key)
+
     return part
+
+
+def _suppress_redundant_accidentals(part: stream.Part, staff_key: key.Key) -> None:
+    """Hide accidental display on every pitch that already matches the key signature.
+
+    Notes/chords are built from bare MIDI pitch numbers, which music21 always gives
+    an explicit "natural" Accidental object (not None) since it has no spelling
+    context at note-creation time. Left as-is, every diatonic note (e.g. A and B in
+    A major) prints a redundant natural sign.
+
+    music21's own `Part.makeAccidentals()` (Krumhansl-style cautionary-accidental
+    logic) was tried first but has a real bug for our case: when a later measure has
+    no explicit Key element (normal — music21 only puts the Key in the measure where
+    it's set, not every measure), `makeAccidentalsInMeasureStream` builds
+    `pitchPastMeasure` from ALL of the previous measure's pitches instead of only
+    the ones foreign to the key (the filtering it does apply in the sibling
+    "elif ksLast" branch) — so it treats the first note of every later measure as a
+    cautionary case needing re-display, regardless of whether the key signature
+    already covers it. Confirmed on a minimal repro (20x B4 across 5 measures in A
+    major): first-of-measure kept showing True/needs-display in every measure after
+    the first, even though B is fully diatonic and never altered anywhere.
+
+    Simpler and correct: compare each pitch directly against Key.alteredPitches
+    (the letter names the key signature actually sharpens/flattens). If they match,
+    hide the accidental; only a genuine deviation from the key gets to display.
+    """
+    sharp_letters = {p.name[0] for p in staff_key.alteredPitches if p.name.endswith("#")}
+    flat_letters = {p.name[0] for p in staff_key.alteredPitches if p.name.endswith("-")}
+
+    for n in part.recurse().notes:
+        pitches = n.pitches if n.isChord else [n.pitch]
+        for p in pitches:
+            if p.accidental is None:
+                continue
+            implied_alter = 1 if p.step in sharp_letters else (-1 if p.step in flat_letters else 0)
+            p.accidental.displayStatus = p.alter != implied_alter
