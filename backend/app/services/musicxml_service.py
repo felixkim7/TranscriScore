@@ -26,8 +26,8 @@ def run(result: QuantizationResult, output_name: str) -> Path:
       currently produced by demucs_service.run() — DEMUCS_STEM_NAMES in
       settings.py only returns vocals/drums/guitar/piano — kept here in
       case bass gets added back to the pipeline later.)
-        - anything else (piano_accompaniment / unknown_accompaniment / no label
-    — this currently includes "vocals" and "drums" too, since neither has
+    - anything else (piano_accompaniment / unknown_accompaniment / no label
+      — this currently includes "vocals" and "drums" too, since neither has
       its own branch yet): two-staff (treble/bass) piano grand staff. Each
       note is assigned to treble or bass exactly once (_assign_staff_per_note),
       based on the notes sounding at its onset, so a single sustained note
@@ -70,7 +70,6 @@ def run(result: QuantizationResult, output_name: str) -> Path:
         score.insert(0, layout.StaffGroup(
             [treble, bass], name="Piano", abbreviation="Pno.", symbol="brace"
         ))
-
 
     MUSICXML_DIR.mkdir(parents=True, exist_ok=True)
     output_path = MUSICXML_DIR / f"{output_name}.musicxml"
