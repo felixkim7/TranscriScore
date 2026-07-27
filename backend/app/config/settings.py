@@ -17,23 +17,26 @@ SAMPLES_DIR = PROJECT_DIR / "samples"
 
 MUSESCORE_PATH = r"C:\Program Files\MuseScore 4\bin\MuseScore4.exe"
 
-# --- classification stage (stem role classification) ---
-# Scope: Demucs already gives us vocals/drums/bass/other directly — those
-# four labels are used as-is, no ML needed. This classifier only runs on
-# other.wav, to split it into guitar vs piano accompaniment.
+# --- separation stage (Demucs) ---
+# htdemucs_6s is the only Demucs variant with guitar/piano as their own
+# stems (vanilla htdemucs lumps them into "other"). We only want
+# guitar/drums/vocals/piano out of the 6 it produces — bass.wav and
+# other.wav still get written to disk by Demucs itself (it always computes
+# all 6), demucs_service.run() just doesn't read them back.
+DEMUCS_MODEL = "htdemucs_6s"
+DEMUCS_STEM_NAMES = ("vocals", "drums", "guitar", "piano")
+
+# --- classification stage ---
+# NOT used to split "other.wav" anymore (there is no other.wav in the
+# pipeline now — see DEMUCS_STEM_NAMES above). Its job now is verifying
+# Demucs's own guitar.wav/piano.wav labels, since Demucs's docs flag the
+# piano source specifically as bleed-prone. See classification_service.py.
 CLASSIFICATION_SAMPLE_RATE = 22050
 CLASSIFICATION_LABELS = (
     "piano_accompaniment",
     "guitar_accompaniment",
     "unknown_accompaniment",
 )
-# Heuristic thresholds — validated against synthetic piano/guitar/drum-noise
-# test signals (see backend/scripts/test_classification.py), not real audio.
-# Real tonal content (piano, guitar) measured harmonic_ratio 0.94-0.99;
-# pure percussive/noise content measured 0.00 — 0.5 leaves a wide margin.
-# Demucs's "other" stem is its noisiest/least-clean output (drum/vocal bleed
-# is common), so this check exists specifically to catch that bleed rather
-# than force a guitar/piano guess on non-tonal content.
 MIN_HARMONIC_RATIO_FOR_LABEL = 0.5
-SPECTRAL_CENTROID_GUITAR_HZ = 1800.0    # guitar measured ~2400-3900Hz vs piano ~300-425Hz
+SPECTRAL_CENTROID_GUITAR_HZ = 1800.0
 ZERO_CROSSING_RATE_GUITAR_THRESHOLD = 0.08

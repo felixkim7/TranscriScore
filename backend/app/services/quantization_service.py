@@ -70,10 +70,16 @@ def run(
                 duration_beats=offset_beat - onset_beat,
                 velocity=note.velocity,
                 confidence=note.confidence,
+                stem_label=note.stem_label,
             )
         )
 
-    result = QuantizationResult(tempo_bpm=tempo_bpm, notes=quantized_notes)
+    # transcription_service.run() is called once per stem, so every note in
+    # note_events shares the same stem_label — take it from the first note
+    # rather than re-deriving it, and fall back to "unknown" for an empty list.
+    result_stem_label = note_events[0].stem_label if note_events else "unknown"
+
+    result = QuantizationResult(tempo_bpm=tempo_bpm, stem_label=result_stem_label, notes=quantized_notes)
 
     INTERMEDIATE_DIR.mkdir(parents=True, exist_ok=True)
     result_path = INTERMEDIATE_DIR / f"{Path(audio_path).stem}.quantized.json"
