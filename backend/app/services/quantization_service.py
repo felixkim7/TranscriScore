@@ -11,6 +11,8 @@ from app.schemas.transcription import NoteEvent, QuantizationResult, QuantizedNo
 
 GRID_SUBDIVISION = 0.25  # snap to 16th notes (in beats)
 CONFIDENCE_DROP_PERCENTILE = 10  # drop the bottom 10% of notes by confidence
+SUSTAIN_MERGE_GAP_SECONDS = 0.08  # merge same-pitch notes touching within this gap...
+SUSTAIN_MERGE_MAX_VELOCITY_INCREASE = 0  # ...only if velocity doesn't rise (decay = one held note, not a new strike)
 
 
 def run(
@@ -20,6 +22,11 @@ def run(
 ) -> QuantizationResult:
     """Snap raw note events onto a beat grid derived from real detected beat positions.
 
+    Basic Pitch sometimes emits one continuously-held/sustained note as two or more
+    back-to-back same-pitch fragments (touching or nearly touching in time). These are
+    merged into a single note first (see _merge_sustained_fragments) using a decaying-
+    velocity check to tell a real sustain apart from a genuine repeated re-attack.
+
     Each note's onset/offset (in seconds) is mapped to a fractional beat position by
     interpolating between the two nearest detected beats (extrapolating at the clip's
     edges), so the grid follows the actual tempo curve instead of assuming one constant
@@ -28,6 +35,8 @@ def run(
     distribution are dropped, along with any note that collapses to zero duration
     after snapping.
     """
+    note_events = _merge_sustained_fragments(note_events)
+
     y, sr = librosa.load(audio_path, sr=None)
     detected_tempo, beat_frames = librosa.beat.beat_track(y=y, sr=sr, units="time")
     detected_tempo = float(np.asarray(detected_tempo).item())
@@ -87,6 +96,52 @@ def load_quantization_result(stem_name: str) -> QuantizationResult:
             f"No saved quantization result for '{stem_name}' at {result_path}. Run quantization first."
         )
     return QuantizationResult.model_validate_json(result_path.read_text())
+
+
+def _merge_sustained_fragments(note_events: List[NoteEvent]) -> List[NoteEvent]:
+    """Merge same-pitch note fragments that are really one continuous held note.
+
+    Basic Pitch occasionally emits a sustained note as two+ back-to-back notes at the
+    same pitch (near-zero gap between one's offset and the next's onset) rather than
+    one continuous note. Distinguish this from a genuine repeated re-attack using the
+    physical signature of a struck note: a real strike decays (velocity flat or drops)
+    into its sustain tail, while a fresh key press produces a new, often louder, onset.
+    Only merge consecutive same-pitch fragments where the gap is small AND velocity
+    doesn't increase; chains of 3+ fragments merge transitively into one note.
+    """
+    by_pitch: dict = {}
+    for i, n in enumerate(note_events):
+        by_pitch.setdefault(n.pitch, []).append((i, n))
+
+    merged_away = set()
+    replacements: dict = {}
+
+    for pitch, indexed_notes in by_pitch.items():
+        indexed_notes.sort(key=lambda pair: pair[1].onset)
+        current_idx, current = indexed_notes[0]
+        for next_idx, nxt in indexed_notes[1:]:
+            gap = nxt.onset - current.offset
+            is_sustain_tail = (
+                -0.01 <= gap <= SUSTAIN_MERGE_GAP_SECONDS
+                and nxt.velocity - current.velocity <= SUSTAIN_MERGE_MAX_VELOCITY_INCREASE
+            )
+            if is_sustain_tail:
+                current = NoteEvent(
+                    pitch=current.pitch,
+                    onset=current.onset,
+                    offset=nxt.offset,
+                    duration=nxt.offset - current.onset,
+                    velocity=current.velocity,
+                    confidence=max(current.confidence, nxt.confidence),
+                    stem_label=current.stem_label,
+                )
+                merged_away.add(next_idx)
+            else:
+                replacements[current_idx] = current
+                current_idx, current = next_idx, nxt
+        replacements[current_idx] = current
+
+    return [replacements[i] for i in range(len(note_events)) if i not in merged_away]
 
 
 def _beat_grid(beat_frames: np.ndarray, y: np.ndarray, sr: int, fallback_tempo: float):
