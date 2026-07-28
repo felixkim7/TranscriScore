@@ -1,0 +1,29 @@
+.score-workspace {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 16px;
+  align-items: start;
+}
+
+.score-workspace--empty,
+.score-workspace--pending,
+.score-workspace--error {
+  display: block;
+  padding: 32px 16px;
+  text-align: center;
+  border: 1px solid #ddd6c8;
+  border-radius: 6px;
+  color: #8a8272;
+  font-size: 0.95rem;
+}
+
+.score-workspace--error {
+  color: #a8402f;
+  border-color: #e3bdb3;
+}
+
+@media (max-width: 800px) {
+  .score-workspace {
+    grid-template-columns: 1fr;
+  }
+}
