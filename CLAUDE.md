@@ -168,10 +168,17 @@ steps 2-4 and 6 only need a raw/stem clip from `samples/`, not Teammate A's actu
       planned — Teammate A's `upload.py`/`stems.py` routes are effectively
       absorbed into `POST /upload`, since the pipeline already does separation
       internally; `app/api/stems.py` is still unwritten/unused.
-- [ ] 9. Frontend (OSMD preview + correction UI) — **shared**, split by feature into
-      two tracks (pipeline UX vs. score/correction) — see `docs/frontend-plan.md`
-      for the concrete split, build order, and known gaps (missing audio-serving
-      and re-quantize-on-demand endpoints).
+- [ ] 9. Frontend (upload/status/read-only OSMD preview/export — NOT an in-browser
+      correction UI) — **shared**, split by feature into two tracks (pipeline+media
+      vs. score preview+export) — see `docs/frontend-plan.md` for the concrete
+      split, build order, and known gaps (missing audio-serving endpoint).
+      Scope decision: editing happens in MuseScore (opening the downloaded
+      `.mscz`), not in the browser — this is consistent with the human-in-the-loop
+      workflow already described above ("the model produces a draft, the user
+      corrects, then re-exports" — MuseScore was always the intended correction
+      tool; the frontend's job is running the pipeline and handing off files, not
+      re-implementing a notation editor). Cuts the correction interface and
+      tempo/time-signature re-quantize-on-demand endpoints from the original plan.
 
 ## Quality backlog (your side)
 
