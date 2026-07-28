@@ -1,0 +1,11 @@
+{
+  "job_id": "6fb4aa10-157c-414e-941e-eb9d2f354b0f",
+  "status": "failed",
+  "stage": "quantizing",
+  "original_filename": "sample7.mp3",
+  "input_audio_path": "C:\\Users\\minso\\HateSlop\\final project\\TranscriScore\\backend\\storage\\uploads\\6fb4aa10-157c-414e-941e-eb9d2f354b0f.mp3",
+  "created_at": "2026-07-28T01:13:51.805150Z",
+  "updated_at": "2026-07-28T01:14:52.573471Z",
+  "error": "float division by zero",
+  "result": null
+}

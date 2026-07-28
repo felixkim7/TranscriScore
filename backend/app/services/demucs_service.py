@@ -10,6 +10,7 @@ are simply left on disk unused.
 """
 
 import subprocess
+import sys
 from pathlib import Path
 from typing import Dict
 
@@ -31,8 +32,15 @@ def run(input_path: str) -> Dict[str, Path]:
 
     STEMS_DIR.mkdir(parents=True, exist_ok=True)
 
+    # Invoke via `sys.executable -m demucs` rather than a bare "demucs" command —
+    # the bare command only resolves if the venv's Scripts/ dir happens to be on
+    # PATH (e.g. an activated venv shell). Using -m guarantees this runs under
+    # whichever Python interpreter is actually running this process, regardless of
+    # shell activation state (confirmed: bare "demucs" raised FileNotFoundError when
+    # invoked via `./venv/Scripts/python.exe scripts/run_pipeline.py` directly,
+    # despite demucs.exe existing in venv/Scripts/).
     result = subprocess.run(
-        ["demucs", "-n", DEMUCS_MODEL, "--out", str(STEMS_DIR), str(audio_path)],
+        [sys.executable, "-m", "demucs", "-n", DEMUCS_MODEL, "--out", str(STEMS_DIR), str(audio_path)],
         capture_output=True,
         text=True,
     )

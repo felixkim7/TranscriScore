@@ -161,8 +161,24 @@ steps 2-4 and 6 only need a raw/stem clip from `samples/`, not Teammate A's actu
 - [ ] 5. Demucs separation → feed a stem into step 2  (`test_demucs.py`) — **Teammate A**
 - [x] 6. Quantization/cleanup (the fiddliest stage — test against a known-tempo clip) — **You, done** (backbone: global tempo + 16th-note grid; real beat-tracking is a quality follow-up)
 - [ ] 7. Stem classification (only if needed — see gotchas) — **Teammate A**
-- [ ] 8. FastAPI routes wiring the services together — **shared**, do last, together
-- [ ] 9. Frontend (OSMD preview + correction UI) — **shared/TBD**, after 8
+- [x] 8. FastAPI routes wiring the services together — **You, done** (see full
+      writeup in the Quality backlog section below). Built the whole surface
+      (not just your owned stages) per explicit direction, rather than waiting
+      to coordinate `main.py`/`upload.py`/`stems.py` jointly as originally
+      planned — Teammate A's `upload.py`/`stems.py` routes are effectively
+      absorbed into `POST /upload`, since the pipeline already does separation
+      internally; `app/api/stems.py` is still unwritten/unused.
+- [ ] 9. Frontend (upload/status/read-only OSMD preview/export — NOT an in-browser
+      correction UI) — **shared**, split by feature into two tracks (pipeline+media
+      vs. score preview+export) — see `docs/frontend-plan.md` for the concrete
+      split, build order, and known gaps (missing audio-serving endpoint).
+      Scope decision: editing happens in MuseScore (opening the downloaded
+      `.mscz`), not in the browser — this is consistent with the human-in-the-loop
+      workflow already described above ("the model produces a draft, the user
+      corrects, then re-exports" — MuseScore was always the intended correction
+      tool; the frontend's job is running the pipeline and handing off files, not
+      re-implementing a notation editor). Cuts the correction interface and
+      tempo/time-signature re-quantize-on-demand endpoints from the original plan.
 
 ## Quality backlog (your side)
 
@@ -294,22 +310,545 @@ backbone was working, the plan was to circle back and improve each stage:
       `export_service.py` subprocess pattern), better error surfacing if MuseScore
       CLI fails or isn't found at `MUSESCORE_PATH`, cleanup of intermediate files.
       Deprioritized behind key/time signature work (see above).
-- [ ] **Extend `run_pipeline.py` to the full per-stem chain (You)** — Teammate A's new
-      `scripts/run_pipeline.py` chains Demucs separation → classification verification →
-      `transcription_service.run()` per stem (vocals/drums/guitar/piano), returning
-      `Dict[str, List[NoteEvent]]`. It stops at transcription. You own extending this
-      so each stem's note events also flow through `quantization_service.run()` →
-      `musicxml_service.run()` → `export_service.to_mscz()`, producing one MusicXML/MSCZ
-      per stem (or however multi-stem output should be organized — TBD whether stems
-      combine into one multi-part score or stay separate files, decide before
-      implementing). This is the actual multi-stem end-to-end milestone; single-stem
-      end-to-end already works (step 4, done).
+- [x] **Extend `run_pipeline.py` to the full per-stem chain (You)** — done. Decided:
+      stems combine into one multi-part MusicXML/MSCZ (not separate files per stem) —
+      the user can mute/hide/extract individual parts later in MuseScore or another
+      notation program. `run_pipeline.py` now runs Demucs separation → classification
+      verification → `transcription_service.run()` → `quantization_service.run()` per
+      stem, writes each stem's own MusicXML to `storage/musicxml/stems/` (via the new
+      `musicxml_service.write_stem_musicxml()`, for inspecting one stem's transcription
+      in isolation), then combines all stems into one score via the new
+      `musicxml_service.build_score()`/`run_combined()` and exports one MSCZ via
+      `export_service.to_mscz()`.
+
+      Bonus find while testing this: a real, pre-existing bug, not something the
+      combining work introduced but only exposed by it. `_build_staff_part()` capped
+      any segment (note, chord, OR rest) longer than `MAX_DURATION_BEATS` (4 beats) to
+      one element of that length, but still advanced its cursor by the segment's FULL
+      length — silently discarding the remainder rather than splitting it into multiple
+      consecutive elements. This mattered for combining because stems end at different
+      real times (different tempo/length) and MuseScore hard-rejects a multi-part score
+      where parts don't all have the same measure count ("Incomplete measure ...
+      Found: 0/1. Expected: 4/4."); padding a shorter stem's part out to match the
+      longest stem's length produces one large trailing rest segment, which hit exactly
+      this truncation bug. Fixed by splitting any over-length segment into a loop of
+      multiple `MAX_DURATION_BEATS`-sized elements instead of one capped element.
+      Confirmed via MuseScore's own crash logs (`%LOCALAPPDATA%/MuseScore/MuseScore4/
+      logs/`, not visible from the CLI's stdout/stderr, which was silent) — this same
+      truncation bug could in principle also have been silently dropping real note/
+      chord content over 4 beats long in ordinary (non-combined) scores; not yet
+      re-audited against real transcriptions for that case specifically.
+
+      Also had to fix the padding math itself: converting a shared "combined end time
+      in seconds" into each stem's own beats and rounding independently could still
+      land two stems on different final measure counts (their own tempos round the gap
+      differently). Fixed by computing the target as the MAX measure count across every
+      stem's own conversion of that shared end time, then padding all stems to that one
+      shared count.
+
+      Second bonus find, hit when actually running the real pipeline end-to-end (with
+      real Demucs separation, not simulated stems) on `sample.mp3`: a real, pre-existing
+      bug in `quantization_service._time_to_beat()`'s edge extrapolation. When librosa's
+      beat tracker detects its first beat far into a clip (e.g. a separated stem that's
+      mostly silence/bleed until real content starts — observed: first detected beat at
+      42s into a 53s "piano" stem), extrapolating backward to t=0 using the tight
+      interval between the first two detected beats projects across that whole silent
+      gap and produces a wildly negative beat position (observed: -101 beats). This
+      corrupted `_pad_to_end_beat()`'s assumptions (built on "segments end at some
+      positive beat," not "segments start around -101") and produced mismatched, wrong
+      measure counts downstream — a different presentation of the same "Incomplete
+      measure" MuseScore rejection as the first bug, but a completely different root
+      cause. Fixed by flooring the extrapolated result at 0 (a note genuinely can't
+      sound before the clip starts). This also changed some stems' quantized note
+      counts substantially (e.g. drums 107→4, piano 142→26 quantized notes) — not a
+      regression: those notes were never real content at negative time positions, they
+      were an artifact of the extrapolation bug placing real near-t=0 audio content at
+      fabricated large-negative beat positions, where many then collapsed/duplicate-
+      merged once correctly floored to 0.
+
+      Environment fixes needed along the way: `demucs` wasn't in `requirements.txt` or
+      installed in this venv at all (added it); installing it transitively upgraded
+      `setuptools` to a version that no longer bundles `pkg_resources`, which `resampy`
+      (a basic-pitch dependency) imports directly — broke basic-pitch's import chain
+      entirely. Pinned `setuptools<81` in `requirements.txt` to fix. Also fixed
+      `demucs_service.py` to invoke `[sys.executable, "-m", "demucs", ...]` instead of
+      a bare `"demucs"` command — the bare form only resolves if the venv's `Scripts/`
+      dir happens to be on `PATH` (e.g. an activated venv shell), and failed with
+      `FileNotFoundError` when scripts are run via `./venv/Scripts/python.exe` directly.
+
+      Full pipeline verified end-to-end on `sample.mp3` after both fixes: real Demucs
+      separation (htdemucs_6s) → classification → transcription → quantization → 4
+      per-stem MusicXML files in `storage/musicxml/stems/` → 1 combined 4-part
+      MusicXML → 1 combined MSCZ, all 4 parts matching at 32 measures, MSCZ verified
+      to open/re-export cleanly in MuseScore.
+
+      Extended again to use all 6 htdemucs_6s stems (previously bass/other were left
+      unused): `DEMUCS_STEM_NAMES` in `settings.py` now includes all 6; `run_pipeline.py`
+      trusts `bass`/`other` directly (no classifier exists for them — `classify_stem()`
+      only distinguishes guitar vs. piano); `musicxml_service.py` already had a `"bass"`
+      routing branch (single bass-clef staff) that was just unused until now, and
+      `"other_accompaniment"` falls through to the default piano-grand-staff branch.
+      Verified end-to-end with all 6 stems, all parts matching measure counts, MSCZ
+      opening cleanly.
+
+      **Tempo reconciliation across stems, done.** Previously each stem kept its own
+      independently-detected tempo in the combined score — correct measure *count*
+      (via the padding logic above) but not synchronized rhythm, since nothing aligned
+      different stems' beats to real seconds. Now: `quantization_service.detect_tempo()`
+      runs once on the ORIGINAL mixed audio (before separation) to get one reference
+      tempo — the fullest, most reliable single signal, rather than trying to vote among
+      6 separated-stem estimates of wildly varying reliability (a stem with only 3-4
+      real notes still produces a full, usually-meaningless tempo estimate).
+      `quantization_service.reconcile_tempo()` then compares every stem's own detected
+      tempo against that reference (ratio within `TEMPO_AGREEMENT_TOLERANCE`, ±8%, counts
+      as agreeing) and re-quantizes any stem that disagrees — from its raw, seconds-based
+      `NoteEvent`s (not the already-quantized beat-based notes), calling
+      `quantization_service.run()` again with `tempo_bpm` forced to the reference. This
+      actually re-derives the stem's beat grid against the shared tempo, not just
+      relabeling a number. Ratios near 2.0 or 0.5 are flagged distinctly as the classic
+      beat-tracker octave error (locked onto the eighth-note or half-note pulse) vs. a
+      more general mismatch, since it's such a common, well-understood case.
+      `run_pipeline.py`'s `main()` now runs: per-stem quantization (each stem's own
+      tempo) → reference tempo detection → reconciliation → per-stem MusicXML (written
+      only AFTER reconciliation, so the debug files in `storage/musicxml/stems/` reflect
+      the synced tempo) → combine → export. Verified on `sample.mp3`: reference tempo
+      147.66 BPM; guitar (73.83 BPM, ratio 0.50) correctly flagged as an octave error and
+      re-quantized; vocals (95.70 BPM, ratio 0.65) correctly flagged as disagreeing and
+      re-quantized; drums/bass/other/piano left alone (within tolerance). All 6 parts
+      still matched at 21 measures after reconciliation; MSCZ verified to open cleanly.
+
+      Time signature is NOT part of this reconciliation — it's still hardcoded 4/4 for
+      every stem (see `DEFAULT_TIME_SIGNATURE`), so there's nothing to disagree on yet.
+      If real time-signature detection gets added later, the same reference-audio
+      approach (detect once from the original mix, reconcile stems against it) should
+      apply there too.
+
+      Also fixed in passing: two pre-existing `print()` calls with em-dash characters
+      crashed with `UnicodeEncodeError` on this Windows machine's cp949 console
+      encoding (non-ASCII characters aren't safe in `print()` output here) — replaced
+      with plain hyphens. Only surfaced now because the new reconciliation code's
+      logging path was the first to actually execute one of these lines in a real run.
+
+      **Drum recognition, fixed — Basic Pitch was the wrong tool entirely.** User
+      reported drums were "almost not being transferred at all." Root cause confirmed
+      directly: Basic Pitch is a pitched-note (fundamental-frequency) model, not built
+      for unpitched percussion — on a real 50-second drum stem it found only 17
+      "notes," all short (~0.15-0.3s), low-confidence (amplitude 0.3-0.45), clustered
+      in one narrow pitch range. Not a threshold-tuning problem; the model has no
+      concept of a kick/snare/hi-hat.
+
+      Fixed by adding a dedicated `app/services/drum_transcription_service.py`,
+      routed to instead of `transcription_service.run()` for the drums stem only
+      (`run_pipeline.py`). Uses librosa's onset detector (built for finding transient
+      attacks, no pitch assumption) instead of Basic Pitch, then classifies each onset
+      into kick/snare/hihat and emits it as a `NoteEvent` using a General MIDI
+      percussion pitch number (36/38/42) as a stand-in "pitch" — this lets drum hits
+      flow through the existing NoteEvent → quantization → tempo-reconciliation
+      pipeline completely unchanged; only `musicxml_service.py`'s new
+      `_build_percussion_part()` (percussion clef, `note.Unpitched` at fixed staff
+      positions per GM pitch, no key signature) interprets those numbers differently
+      from a real melodic pitch.
+
+      Voice classification took two attempts. First tried spectral centroid alone
+      (same approach as `classification_service.classify_stem()`), with thresholds
+      guessed by ear — checked against 191 real onsets from a real separated drum
+      stem and found completely wrong for kick detection: every single real onset's
+      centroid landed in the 1000-7000Hz range, because a short post-onset window's
+      spectrum is dominated by broadband transient "click" energy regardless of drum
+      type, drowning out a kick's actual low-frequency body. Would have classified 0
+      of 191 onsets as kick. Fixed with a two-stage approach instead: stage 1 (kick
+      vs. not) uses the ratio of STFT energy below 150Hz to the window's total energy
+      — this showed a clean bimodal split on the same real data (most onsets near
+      ~0.0-0.1, kick-dominated ones above ~0.7); stage 2 (snare vs. hihat, only for
+      non-kick onsets) falls back to spectral centroid, at a threshold recalibrated
+      from real data's observed range — though this specific split (snare vs. hihat)
+      wasn't as cleanly bimodal in the real data checked, so it's flagged as the least
+      reliable of the three voice classifications (see settings.py's
+      `DRUM_SPECTRAL_CENTROID_SNARE_HZ` comment).
+
+      Verified end-to-end: drums note count went from Basic Pitch's ~3-17 raw notes
+      (on `sample.mp3`/`sample5.mp3`) to 110-191 raw onsets with a plausible kick/
+      snare/hihat distribution on both files (not degenerate/single-voice), full
+      pipeline run producing a combined score with the drums part correctly showing
+      a percussion clef and unpitched noteheads, matching measure count with every
+      other part, MSCZ verified to open/export cleanly.
+
+      Known simplification, not yet addressed: when multiple drum voices land in the
+      same sweep-line segment (simultaneous kick+hihat, common on a real backbeat),
+      only one is notated (kick/snare prioritized over hi-hat — see
+      `DRUM_VOICE_PRIORITY` in musicxml_service.py) rather than rendering independent
+      simultaneous noteheads on one staff — real multi-voice percussion notation was
+      out of scope for this pass.
+
+      **Per-sample output folders, fixed — a real cross-sample file collision.** User
+      reported `storage/intermediate/`, `storage/midi/`, and `storage/musicxml/`
+      wrote every stem's files flat (e.g. `drums.mid`, `piano.notes.json`), keyed only
+      by DEMUCS STEM NAME, never the original sample's name. Confirmed as a real bug:
+      running `run_pipeline.py` on two different samples silently overwrote each
+      other's same-named stem files (running on `sample.mp3` then `sample5.mp3` left
+      only `sample5`'s `drums.mid` on disk — `sample.mp3`'s was gone, no error, no
+      warning). `storage/stems/` (Demucs's own output) already avoided this by
+      nesting under `<model>/<input_sample_stem>/<demucs_stem_name>.wav` — the fix
+      extends the same pattern to the other three directories.
+
+      Added `settings.stem_output_dir(base_dir, input_stem)`: returns
+      `base_dir/input_stem/` when `input_stem` is given, or `base_dir` unchanged when
+      omitted. Threaded an optional `input_stem` parameter through every write/read
+      site that needed it: `transcription_service.run()/load_note_events()`,
+      `drum_transcription_service.run()`, `quantization_service.run()/
+      load_quantization_result()/to_midi()/reconcile_tempo()`, `musicxml_service.
+      write_stem_musicxml()`. `run_pipeline.py` now passes the original sample's
+      filename stem (e.g. `"sample5"`) through every one of these calls.
+
+      Scope decision: the single-file test scripts (`test_musicxml.py`,
+      `test_export.py`, etc. — which transcribe one file directly with no
+      separation, so `output_name` already IS the sample name) were deliberately
+      NOT changed to nest — there's no collision risk for them, and nesting would
+      have changed where their output lands for no benefit. `musicxml_service.run()`/
+      `run_combined()` (the single-stem and combined-score writers, keyed by
+      `output_name` which is always the sample name already) also didn't need
+      changes — only `write_stem_musicxml()` (keyed by Demucs stem name) had the
+      actual bug.
+
+      Verified end-to-end on `sample5.mp3`: `storage/intermediate/sample5/`,
+      `storage/midi/sample5/`, and `storage/musicxml/stems/sample5/` all created
+      correctly with all 6 stems' files nested inside; combined MSCZ still opens
+      cleanly. Cleaned up the stale flat files left over from prior runs (before this
+      fix) that were silently overwriting each other across samples.
+
+      **Drum MIDI export, added.** User noticed `storage/midi/<sample>/` was missing
+      `drums.mid` while every other stem had one. Root cause: `transcription_service.
+      run()` gets a MIDI file for free from Basic Pitch's `predict()` (which returns a
+      ready-made MIDI object alongside note events) — `drum_transcription_service.
+      run()` never had an equivalent, since librosa's onset detector has no built-in
+      MIDI export. Fixed by adding `_to_midi()` (builds a `pretty_midi.PrettyMIDI`
+      from the raw NoteEvents, same pattern as `quantization_service.to_midi()`) and
+      writing it to `storage/midi/` alongside the existing notes JSON. Uses
+      `pretty_midi.Instrument(program=0, is_drum=True)` — the `is_drum=True` flag
+      routes the instrument to General MIDI channel 10 (the standard percussion
+      channel), so pitch 36/38/42 actually plays back as kick/snare/hi-hat in any
+      MIDI player/DAW instead of sounding like a piano playing those pitches.
+      Verified: `drums.mid` now written correctly (confirmed `is_drum=True`, correct
+      pitches/timing on read-back), full pipeline re-run end-to-end with no
+      regressions, combined MSCZ still opens cleanly.
+
+      **Drum note dropout in MusicXML, fixed — a real quantization bug, not a
+      notation bug.** User reported `drums.musicxml` was "not showing most of the
+      notes" even though `drums.mid` (added above) sounded fine. Traced directly:
+      188 raw onset-detected hits going into `quantization_service.run()`, only 35
+      quantized notes coming out (an 81% drop) — the bug was in quantization, not
+      `musicxml_service.py`'s rendering. Root cause: `drum_transcription_service.py`
+      gave every hit a fixed `DRUM_ONSET_DEFAULT_DURATION_SECONDS = 0.1` regardless
+      of tempo. At the sample's ~160 BPM, a 16th note (the quantization grid's
+      snapping resolution) is ~0.094s — almost exactly the same as the fixed
+      duration, so a hit's onset and its onset+0.1s offset frequently snapped to the
+      SAME beat-grid position, and `quantization_service.run()`'s `if offset_beat <=
+      onset_beat: continue` guard (there to drop genuinely-collapsed notes) silently
+      dropped it. Confirmed directly: 156 of 188 real onsets (83%) collapsed to
+      zero duration after snapping.
+
+      Fixed by scaling each hit's duration to the gap until the NEXT onset instead
+      of a fixed value (`_hit_duration()` in drum_transcription_service.py) —
+      `DRUM_ONSET_DURATION_FRACTION_OF_GAP` (0.8) of that gap, clamped to
+      [`DRUM_ONSET_MIN_DURATION_SECONDS`, `DRUM_ONSET_MAX_DURATION_SECONDS`] = [0.15,
+      0.3]s. This scales with actual note density (short between fast hi-hat hits,
+      longer between sparse kicks) — long enough to reliably survive snapping at any
+      reasonable tempo, short enough not to visually overlap the next hit. The last
+      onset in a stem (no "next onset" to measure against) falls back to the gap
+      until the clip's end. Verified: quantized drum notes went from 35 to 151 (out
+      of 188 raw onsets, 80% survival vs. 19% before) on the same real stem; combined
+      MusicXML's drums part now shows 140 unpitched notes (vs. a much sparser count
+      before); full pipeline re-run end-to-end, all 6 parts still matching measure
+      count, MSCZ verified to open cleanly.
+
+      **Drums playing back as piano in MuseScore, fixed.** User opened the combined
+      MSCZ and heard piano-sounding playback on the drum staff, even though notation
+      looked correct (percussion clef, unpitched noteheads) and the standalone
+      `drums.mid` (fixed earlier) sounded right. Root cause: `_build_percussion_part()`
+      never assigned an `Instrument` to the part at all — with no MIDI channel/program
+      info in the MusicXML, MuseScore falls back to a default piano sound for
+      playback, even though the notation itself renders correctly as percussion.
+      This is a separate code path from `drums.mid` (`drum_transcription_service.py`'s
+      `_to_midi()`, which does set `is_drum=True` on its `pretty_midi.Instrument`) —
+      fixing MIDI export didn't touch MusicXML generation at all.
+
+      Fixed by adding `part.append(instrument.UnpitchedPercussion())` in
+      `_build_percussion_part()`, right after creating the `Part`. Confirmed this
+      writes `<midi-channel>10</midi-channel>` into the MusicXML's `<score-part>`
+      (General MIDI's standard percussion channel — same underlying concept as
+      `is_drum=True` in the pretty_midi fix, just the MusicXML equivalent), which is
+      what actually tells MuseScore to play the part back as drums instead of piano.
+      Verified: real drums stem's MusicXML now includes the midi-channel-10 block,
+      full pipeline re-run end-to-end with the combined score's drums part correctly
+      channel-assigned, MSCZ still opens/converts cleanly.
+
+      **Follow-up, tried then reverted per user instruction: playback through
+      General MIDI channel 10 sounds like "Percussion" (a single generic
+      instrument), not a real drum kit** — user reported the hi-hat's staff
+      position "sounds like a weird drum," not a hi-hat. Root cause: a single
+      shared `instrument.UnpitchedPercussion()` for the whole part has
+      `percMapPitch = None`, and music21's MusicXML writer only emits a
+      `<midi-unpitched>` element (the thing that tells a GM percussion channel
+      WHICH drum sound a note maps to) when `percMapPitch is not None` — with it
+      unset, every note falls back to one single default sound regardless of staff
+      position.
+
+      First attempt: give each note its OWN `Instrument` (`BassDrum`/`SnareDrum`/
+      `HiHatCymbal`, each with the correct `percMapPitch` built in), inserted into
+      the stream right before that note. This did make `<midi-unpitched>` appear
+      correctly per voice — but user asked to revert it, wanting one single drum-kit
+      part with notes routed to the correct drum instrument WITHIN that one part,
+      not effectively-separate per-note instrument objects. Reverted to the single
+      shared `instrument.UnpitchedPercussion()` for the whole part.
+
+      **Real root cause, found by the user directly, not by `percMapPitch` at
+      all: NOTEHEAD SHAPE.** User edited a hi-hat note by hand in MuseScore,
+      changed its notehead from the default round shape to an "x", and the correct
+      hi-hat sound played immediately — no other change. This means MuseScore picks
+      a playback sound for a note on a shared percussion channel/instrument based on
+      notehead shape at that staff position, not `percMapPitch` (which the reverted
+      per-note-Instrument attempt above was chasing down the wrong path). Standard
+      drum notation already uses this convention: round noteheads for
+      kick/snare/toms, "x" noteheads for hi-hat/cymbals — `_build_percussion_part()`
+      just wasn't setting it (every voice defaulted to `note.Unpitched`'s standard
+      "normal" round notehead).
+
+      Fixed by adding a notehead shape to `DRUM_STAFF_POSITIONS` (now
+      `pitch -> (staff_position, notehead, display_name)`) — `"normal"` for
+      kick/snare, `"x"` for hi-hat — and setting `element.notehead = notehead` on
+      each `Unpitched` note in `_build_percussion_part()`. Confirmed music21's
+      `note.notehead` attribute writes a real `<notehead>x</notehead>` MusicXML
+      element correctly (checked in isolation first). Verified end-to-end: real
+      drums stem's MusicXML now has 37 hi-hat notes correctly marked
+      `<notehead parentheses="no">x</notehead>`; full pipeline re-run on
+      `sample5.mp3`, combined score shows 40 correctly-marked hi-hat notes, MSCZ
+      verified to open/convert cleanly. Single shared `instrument.UnpitchedPercussion()`
+      kept (per user's revert instruction) — the notehead fix is independent of
+      and doesn't need the per-note-Instrument approach at all.
+
+- [x] **Vocals: dedicated single treble-clef staff + harmonic-duplicate removal —
+      done.** User reported "the vocal stem is not being turned into midi or note
+      events correctly" and asked to confirm whether vocals used a single treble
+      staff. Confirmed directly from the code they did NOT: `"vocal_melody"` had
+      no dedicated branch in `musicxml_service.build_score()`, so it fell through
+      to the piano grand-staff `else` branch — split across treble/bass "hands" by
+      pitch register via `_assign_staff_per_note()` (built for simultaneous piano
+      chords, not a single melodic line), with real melody notes at risk of being
+      misrouted mid-phrase or dropped by `_drop_octave_overflow()`.
+
+      Fixed in two parts:
+      1. Added a dedicated `"vocal_melody"` branch in `build_score()` — single
+         treble-clef staff, `instrument.Vocalist()`, same as the existing guitar/
+         bass single-staff branches (no more grand-staff split for vocals).
+      2. Investigated the actual audio→MIDI/note-event conversion and found a
+         real Basic Pitch data-quality problem: on real vocal audio, Basic Pitch
+         (a polyphonic model, no assumption a stem is monophonic) sometimes
+         detects a strong harmonic/overtone of the real sung note as if it were
+         its own simultaneous note. Confirmed directly: one segment had notes at
+         MIDI 59/71/95 all overlapping in time — exactly 0/1/3 octaves apart
+         (frequency ratios 1x/2x/8x), physically impossible for one voice to sing
+         at once. Checked across the whole stem: 64% of all time-overlapping note
+         pairs were octave-related — too systematic to be coincidental melodic
+         overlap, not a one-off glitch.
+
+      Fixed with `transcription_service._remove_harmonic_duplicates()`, gated to
+      `stem_label == "vocal_melody"` only (`MONOPHONIC_STEM_LABELS`) — chord-
+      capable stems (piano/guitar/bass) must NOT run this, since real simultaneous
+      different-octave notes are normal, correct output for them (an actual
+      chord), not a bug. Keeps the LOWEST pitch in each group of time-overlapping,
+      octave-related notes — acoustically correct (harmonics are always above the
+      fundamental, never below), and empirically right more often than a
+      confidence-based rule too (12 of 16 real overlapping pairs also had the
+      lower pitch as the higher-confidence one, but confidence isn't what the
+      rule keys on). Also rebuilds the stem's MIDI file from the cleaned note
+      events (new `transcription_service._to_midi()`) instead of writing Basic
+      Pitch's own `midi_data` object directly — that object doesn't reflect the
+      cleanup, so using it as-is would have silently kept the harmonic duplicates
+      in the MIDI while the JSON/notation were already fixed, an inconsistency
+      that would have been confusing to debug later.
+
+      Verified: real vocals stem went from 103 raw notes (many with impossible
+      octave-stacked overlaps) to 89 cleaned notes with zero remaining
+      octave-overlap pairs; rebuilt MIDI file has the same 89 notes; full pipeline
+      re-run end-to-end on `sample5.mp3`, combined score's vocals part confirmed
+      single-staff (no more `<staves>2</staves>`), all 6 parts still matching
+      measure count, MSCZ verified to open/convert cleanly. Non-vocal stems
+      (piano/guitar/bass/other) confirmed unaffected — same code path as before.
+
+- [x] **Guitar sometimes rendered as a two-staff piano grand staff instead of
+      single-staff guitar — fixed.** User checked `sample6.mp3`'s output and
+      found `guitar.musicxml` on two staves. Root cause: `classify_stem()`'s
+      re-check of Demucs's `guitar.wav` predicted `piano_accompaniment` (the
+      audio sounded more piano-like to the rule-based classifier), and
+      `run_pipeline.py` was using that PREDICTED label as the stem's final
+      `stem_label` — which also drives `musicxml_service.py`'s staff-layout
+      choice (single-staff guitar vs. two-staff piano grand staff), not just
+      the displayed instrument name. So a guitar.wav re-classified as
+      piano-sounding rendered as an actual piano grand staff.
+
+      Fixed by no longer acting on the classifier's relabel for `stem_label` at
+      all — `run_pipeline.py`'s `run_pipeline()` now always keeps
+      `stem_label = expected_label` (the label matching which Demucs stem the
+      audio actually came from: `guitar_accompaniment` for `guitar.wav`,
+      `piano_accompaniment` for `piano.wav`), and only PRINTS the classifier's
+      disagreement as a log line — it no longer changes what gets stored or how
+      the stem gets notated. Rationale: which Demucs stem produced this audio is
+      a more reliable signal for staff LAYOUT than a rule-based heuristic whose
+      thresholds were validated on synthetic test signals, not real audio (see
+      `classification_service.py`'s own docstring caveat).
+
+      Verified on `sample6.mp3` (same file, same real classifier disagreement on
+      both guitar.wav and piano.wav this run): `guitar.musicxml` now has no
+      `<staves>2</staves>` (single-staff, confirmed), `piano.musicxml` still
+      correctly has it (real piano stem, unaffected); full pipeline re-run
+      end-to-end, all 6 parts still matching measure count, MSCZ verified to
+      open/convert cleanly.
+
+- [x] **Tempo reconciliation could force a stem onto a WRONG reference tempo,
+      making its notation claim to finish playing 33-54% early — fixed with a
+      duration sanity check.** User noticed most parts' tempos looked doubled on
+      `sample6.mp3` and asked whether tempo octave ambiguity and "parts played at
+      double speed" were separate issues. They were right to push back — I'd
+      initially conflated them. Investigated properly: `quantization_service.
+      run()`'s beat grid is built ENTIRELY from real detected beat positions in
+      that stem's own audio (`_beat_grid()`/`_time_to_beat()`) — `tempo_bpm` only
+      controls the printed label, in the normal case (2+ real beats detected).
+      So forcing a stem onto the reference tempo doesn't distort its notated
+      RHYTHM... except when the reference tempo itself came from a doubled/halved
+      beat-tracker detection, which genuinely means the reference's OWN beat grid
+      packs twice (or half) as many real beats into the same real time as a
+      correctly-detected stem. Forcing that mismatched tempo NUMBER onto a
+      DIFFERENT stem's correctly-spaced beat grid produces an internally
+      inconsistent result.
+
+      User's proposed fix: compare the sheet music's calculated playback duration
+      (at its printed tempo) against the real audio length — if they don't match,
+      something is wrong. Implemented exactly this as `_passes_duration_check()`
+      in `quantization_service.py`: computes `last_note.offset_beat * 60 /
+      tempo_bpm` (the notation's implied total playback time) and compares it to
+      the real audio's actual duration (`_audio_duration_seconds()`, via
+      `soundfile.info()` — cheap, header-only read). `DURATION_RATIO_TOLERANCE`
+      (±15%) gates whether a forced-reference re-quantization is accepted.
+      Confirmed on real `sample6.mp3` data: forcing 4 stems (drums, vocals,
+      guitar, piano) onto the reference tempo dropped their notated-duration-vs-
+      real-audio ratio to 0.46-0.67 — i.e. the notation would claim to finish
+      33-54% early despite being the same real audio. `reconcile_tempo()` now
+      computes the candidate re-quantization FIRST, checks its duration ratio,
+      and only keeps it if the ratio is sane — otherwise falls back to the
+      stem's own (better) tempo, logged distinctly ("reference REJECTED... keeping
+      X's own tempo instead").
+
+      One stem (`other`) failed the duration check on BOTH its own tempo AND the
+      reference in earlier testing — a separate, deeper problem (that stem's own
+      beat detection is itself unreliable, likely sparse/noisy separated content),
+      not something tempo reconciliation can fix by choosing between two
+      candidates. Not addressed in this pass; flagged here for later.
+
+      Verified end-to-end on `sample6.mp3`: all 4 previously-wrongly-forced stems
+      now keep their own musically-consistent tempo (74/91/99/74 BPM, matching
+      their own beat detection) instead of being forced to a mismatched 148;
+      combined score's 6 parts still all match at 30 measures despite the now
+      much wider tempo spread (confirms `build_score()`'s measure-padding logic,
+      which already worked in real seconds not raw beat counts, handles this
+      correctly); MSCZ verified to open/convert cleanly.
+
+- [x] **Step 8 — FastAPI routes, done.** Async job/polling model (decided
+      explicitly, not a blocking request): the full pipeline takes several
+      minutes per file, and a multi-minute blocking HTTP request risks proxy/
+      browser timeouts and gives the frontend no way to show real progress.
+
+      New pieces:
+      - `app/services/pipeline_service.py` — the actual pipeline logic, moved
+        out of `scripts/run_pipeline.py` (now a thin CLI wrapper calling
+        `pipeline_service.run_full_pipeline()`) so both the CLI and the API call
+        the same code, not two copies. Takes an optional `on_stage(stage,
+        message)` callback for progress reporting instead of only printing.
+      - `app/schemas/job.py` — `JobStatus` (pending/processing/done/failed),
+        `JobStage` (uploaded/separating/transcribing/quantizing/
+        reconciling_tempo/rendering_musicxml/exporting), `Job`, `JobResult`,
+        `StemResult`.
+      - `app/services/job_service.py` — file-backed job store, one JSON file per
+        job at `storage/jobs/<job_id>.json`. Chosen over a database since
+        `app/models/`'s purpose (DB models vs. ML model cache) was never decided
+        and this project doesn't otherwise need real DB infrastructure; survives
+        process restarts unlike a pure in-memory dict. Not safe against truly
+        concurrent writers to the same job (read-modify-write race) — fine for a
+        single-worker dev server, would need a real lock or a database
+        otherwise.
+      - `app/api/upload.py` — `POST /upload`: validates extension (mp3/wav/flac/
+        m4a), saves the file under `storage/uploads/<job_id>.<ext>` (named after
+        the job ID, not the original filename, so same-named uploads never
+        collide), creates the job, schedules `pipeline_service.run_full_pipeline()`
+        via FastAPI's `BackgroundTasks`, returns immediately with the job.
+      - `app/api/transcribe.py` — `GET /status/{job_id}` (poll current stage),
+        `GET /result/{job_id}` (404 unknown job, 422 if the job failed — with the
+        captured error, 409 if not done yet, else the `JobResult`).
+      - `app/api/export.py` — `GET /export/{job_id}/{format}` file download,
+        `format` = `musicxml` | `mscz` | `stem-musicxml` (needs `?stem=<name>`
+        for the per-stem case). PDF/PNG/SVG isn't wired up since
+        `export_service.py` only has `to_mscz()` (still Q3, unstarted).
+      - `app/main.py` — mounts all three routers, wide-open CORS for local
+        frontend dev (tighten before any real deployment), `/health`.
+
+      Scope decision: built the WHOLE API surface (including what would have
+      been Teammate A's `upload.py`/`stems.py` in the original ownership split),
+      not just the owned transcription/export routes, per explicit direction —
+      rather than leaving `main.py` wiring for a joint session as `CLAUDE.md`'s
+      build order originally planned. A separate `app/api/stems.py` router
+      wasn't written since the pipeline already does separation internally as
+      part of `POST /upload`'s background job — there was no remaining
+      standalone "give me just the stems" use case to expose.
+
+      Real bug found via actual API testing (not caught by the many direct
+      `pipeline_service`/`scripts/run_pipeline.py` runs earlier in the project):
+      a job failed with `float division by zero` during tempo reconciliation.
+      Reproducing the exact same file directly through `pipeline_service.
+      run_full_pipeline()` succeeded cleanly — non-reproducible on demand, most
+      likely Basic Pitch (TensorFlow inference, no fixed seed) or librosa's beat
+      tracker occasionally returning a genuinely degenerate result on a
+      borderline signal. Root cause: `quantization_service.detect_tempo()` can
+      return `0.0` BPM in this edge case, and `reconcile_tempo()`'s
+      `ratio = result.tempo_bpm / reference_tempo_bpm` divides by it
+      unconditionally. Fixed with a guard: `reconcile_tempo()` now checks
+      `reference_tempo_bpm <= 0` up front and, if so, skips reconciliation
+      entirely (every stem keeps its own tempo — the same safe state as if
+      reconciliation had never run) instead of crashing the whole job over a
+      labeling step.
+
+      Also fixed while debugging that: `_process_job()`'s exception handler was
+      only capturing `str(e)` into the job's `error` field — for a bare message
+      like `"float division by zero"` there was no way to tell WHERE in the
+      pipeline it happened without reproducing the failure separately (which
+      cost real time above). Now captures and stores the full
+      `traceback.format_exc()`, also printed to the server log immediately
+      rather than only surfacing on the next status poll.
+
+      Verified end-to-end via the real running server (not just direct
+      `pipeline_service` calls): `POST /upload` on `sample7.mp3` and
+      `sample.mp3` both completed successfully after the fixes (job status
+      "done", full `JobResult` with all 6 stems); `GET /result` returns the
+      correct JSON; all three `GET /export` format variants (`musicxml`,
+      `mscz`, `stem-musicxml`) download real files of sensible size; the
+      downloaded MSCZ re-opens/converts cleanly in MuseScore (not corrupted in
+      transit). Error paths checked directly: unsupported file extension → 400,
+      unknown job ID → 404, result/export requested before the job finishes →
+      409 with a correctly-formatted stage name (fixed a `str(enum)` formatting
+      bug caught during this same testing pass — was printing
+      `JobStage.SEPARATING` instead of `separating`).
 
 ## Known gotchas
 
 - **Dependencies are heavy and conflict-prone** (torch, demucs, basic-pitch, and TensorFlow if
   using YAMNet). basic-pitch has historically pinned specific TF/coremltools versions — resolve
   this early in step 0, in a virtualenv.
+- **[RESOLVED] Installing `demucs` breaks `basic-pitch` unless `setuptools<81` is
+  pinned.** demucs pulls in a newer setuptools transitively that no longer bundles
+  `pkg_resources` by default; `resampy` (a basic-pitch dependency) still imports
+  `pkg_resources` directly and fails hard without it. `requirements.txt` now pins
+  `setuptools<81`. Also: call demucs via `[sys.executable, "-m", "demucs", ...]`
+  (as `demucs_service.py` does), not a bare `"demucs"` command — the bare form only
+  resolves on PATH in an activated venv shell and fails with `FileNotFoundError`
+  otherwise (e.g. running scripts via `./venv/Scripts/python.exe` directly).
 - **MuseScore is a system binary**, not a pip package — it must be installed separately and called
   via CLI.
 - **Basic Pitch onsets won't line up to a grid** — the quantization stage is what makes output

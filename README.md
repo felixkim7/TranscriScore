@@ -16,12 +16,19 @@ You'll also need [ffmpeg](https://ffmpeg.org/) and [MuseScore 4](https://musesco
 installed separately (system binaries, not pip packages). If ffmpeg isn't on PATH, prepend
 its `bin/` directory to `PATH` before running scripts.
 
-## Testing the transcription → export pipeline
+## The full pipeline, step by step
 
-All commands run from `backend/`. Each stage has a standalone smoke-test script in
-`scripts/`, and each one accepts `--file <path>` to run against any audio file, or a
-`--from-cache`/`--from-musicxml` flag to reuse a previous stage's output instead of
-recomputing it from scratch.
+The backend is split into two halves, owned by the two of us (see `CLAUDE.md` for the
+full team-ownership breakdown):
+
+- **Upload → preprocessing → separation → classification** (Teammate A)
+- **Transcription → quantization → MusicXML → export** (Teammate B, this repo owner)
+
+All commands below run from `backend/`. Every stage has a standalone smoke-test script
+in `scripts/` so you can run and inspect each step in isolation, plus `run_pipeline.py`
+which chains the whole thing for one input file. There's also a FastAPI HTTP layer
+(`app/main.py`, `app/api/*.py`) that wraps the same pipeline behind an async job API —
+see "Running the server" below.
 
 ### 0. Environment check (confirms audio loads at all)
 
@@ -31,15 +38,41 @@ recomputing it from scratch.
 
 No arguments — picks the first file in `samples/` and confirms librosa/ffmpeg can load it.
 
-### 1. Transcription only (audio → MIDI + note events)
+### 1. Source separation (Teammate A) — mixed audio → stems
+
+```
+./venv/Scripts/python.exe scripts/test_demucs.py ../samples/YOUR_FILE.mp3
+```
+
+Runs Demucs (`htdemucs_6s` model) and splits the input into `vocals.wav`, `drums.wav`,
+`guitar.wav`, and `piano.wav`. Saves to `storage/stems/htdemucs_6s/YOUR_FILE/`.
+(`bass.wav`/`other.wav` are also written by Demucs itself but not read back — see
+`DEMUCS_STEM_NAMES` in `app/config/settings.py`.)
+
+### 2. Stem-label classification (Teammate A) — sanity-check Demucs's labels
+
+```
+./venv/Scripts/python.exe scripts/test_classification.py
+```
+
+Picks the first file in `samples/` and runs the rule-based classifier
+(`classify_stem`) that distinguishes guitar vs. piano accompaniment by spectral
+features. In the real pipeline this re-checks Demucs's own `guitar.wav`/`piano.wav`
+labels rather than classifying from scratch, since Demucs's docs flag piano
+separation as bleed-prone; `vocals.wav`/`drums.wav` are trusted directly with no
+check. See `app/services/classification_service.py` for the full rationale.
+
+### 3. Transcription (Teammate B) — audio → MIDI + note events
 
 ```
 ./venv/Scripts/python.exe scripts/test_basic_pitch.py --file ../samples/YOUR_FILE.mp3
 ```
 
-Saves: `storage/midi/YOUR_FILE.mid`, `storage/intermediate/YOUR_FILE.notes.json`
+Runs Spotify's Basic Pitch on a single audio file (a stem, or a full mixed clip —
+this stage doesn't care which). Saves: `storage/midi/YOUR_FILE.mid`,
+`storage/intermediate/YOUR_FILE.notes.json`
 
-### 2. Quantization only
+### 4. Quantization (Teammate B)
 
 Reusing a previous transcription (skips re-running Basic Pitch):
 
@@ -58,7 +91,7 @@ Or fresh (re-transcribes first):
 
 Saves: `storage/midi/quantized/YOUR_FILE.mid`, `storage/intermediate/YOUR_FILE.quantized.json`
 
-### 3. MusicXML only
+### 5. MusicXML (Teammate B)
 
 Reusing a previous quantization:
 
@@ -74,7 +107,7 @@ Or fresh (re-transcribes + re-quantizes):
 
 Saves: `storage/musicxml/YOUR_FILE.musicxml`
 
-### 4. Export only (MusicXML → MSCZ)
+### 6. Export (Teammate B) — MusicXML → MSCZ
 
 ```
 ./venv/Scripts/python.exe scripts/test_export.py --from-musicxml YOUR_FILE
@@ -85,23 +118,97 @@ Or from a saved quantization (`--from-cache YOUR_FILE`), or fully fresh
 
 Saves: `storage/mscz/YOUR_FILE.mscz`
 
-### Full pipeline in one shot (audio → MSCZ)
+### Single-file end-to-end (audio → MSCZ, transcription-only side)
 
 ```
 ./venv/Scripts/python.exe scripts/test_export.py --file ../samples/YOUR_FILE.mp3
 ```
 
-This is the true end-to-end test — runs transcription → quantization → MusicXML → export
-in one command.
+Runs transcription → quantization → MusicXML → export in one command, on one audio
+file directly (no separation/classification). Good for testing the transcription→export
+half in isolation against a solo instrument sample.
+
+### Full pipeline (separation → classification → transcription → combined MSCZ)
+
+```
+./venv/Scripts/python.exe scripts/run_pipeline.py ../samples/YOUR_FILE.mp3
+```
+
+This is the real multi-stem chain, end to end: Demucs separation → label verification
+(classification) → Basic Pitch transcription → quantization, run per stem (vocals,
+drums, guitar, piano) on a mixed input clip, then all stems are combined into **one**
+multi-part MusicXML/MSCZ (each stem is its own part — mute/hide/extract individual
+parts later in MuseScore or another notation program; stems aren't kept as separate
+final files).
+
+Saves:
+- `storage/musicxml/stems/<stem_name>.musicxml` — each stem's own transcription,
+  written individually before combining, for inspecting/debugging one stem in
+  isolation (e.g. checking the piano part's notation without the whole band).
+- `storage/musicxml/YOUR_FILE.musicxml` — the final combined multi-part score.
+- `storage/mscz/YOUR_FILE.mscz` — the combined score exported to MuseScore format.
+
+Stems that end up shorter than the longest stem (different tempo/audio length) are
+padded with trailing rests so every part has the same number of measures — required
+for MuseScore to accept a multi-part file at all (it hard-rejects mismatched measure
+counts across parts).
+
+## Running the server
+
+The FastAPI app wraps the same pipeline behind an HTTP API, so a frontend (or `curl`)
+can kick off a transcription without going through `run_pipeline.py` directly. Runs
+from `backend/`:
+
+```
+./venv/Scripts/python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 8000
+```
+
+Add `--reload` while developing so the server restarts automatically on code changes.
+Once it's up:
+
+- `http://127.0.0.1:8000/health` — liveness check
+- `http://127.0.0.1:8000/docs` — interactive Swagger UI (try requests from the browser)
+
+### API shape
+
+Processing is async — the pipeline takes several minutes per file (Demucs separation +
+transcribing all 6 stems), so `POST /upload` returns immediately with a job ID instead
+of blocking; poll `GET /status/{job_id}` until it's done, then fetch the result.
+
+| Endpoint | Method | Does |
+|---|---|---|
+| `/upload` | POST | Accepts an audio file (`.mp3`/`.wav`/`.flac`/`.m4a`, multipart form field `file`), saves it, starts the pipeline in the background, returns a `Job` with a `job_id` |
+| `/status/{job_id}` | GET | Current `status` (pending/processing/done/failed) and `stage` (separating/transcribing/quantizing/reconciling_tempo/rendering_musicxml/exporting) |
+| `/result/{job_id}` | GET | Once done: combined MusicXML/MSCZ paths + per-stem breakdown (tempo, note count, stem MusicXML path). 409 if not finished yet, 422 if the job failed |
+| `/export/{job_id}/{format}` | GET | Downloads the actual file. `format` is `musicxml`, `mscz`, or `stem-musicxml` (needs `?stem=<name>`, e.g. `?stem=guitar`) |
+
+Example with `curl`:
+
+```
+curl -X POST http://127.0.0.1:8000/upload -F "file=@../samples/YOUR_FILE.mp3;type=audio/mpeg"
+# -> {"job_id": "...", "status": "pending", ...}
+
+curl http://127.0.0.1:8000/status/YOUR_JOB_ID
+# -> poll until "status": "done"
+
+curl http://127.0.0.1:8000/result/YOUR_JOB_ID
+
+curl -o output.mscz http://127.0.0.1:8000/export/YOUR_JOB_ID/mscz
+```
+
+Job records persist to `storage/jobs/<job_id>.json`; uploaded files land in
+`storage/uploads/<job_id>.<ext>` (named after the job ID, not the original filename, so
+two uploads sharing a name never collide).
 
 ### Quick reference
 
-| Script                 | `--file <path>` | `--from-cache <name>`               | `--from-musicxml <name>`  |
-|-------------------------|:---:|:---:|:---:|
-| `test_env.py`           | — (auto-picks first file) | — | — |
-| `test_basic_pitch.py`   | ✓ | — | — |
-| `test_quantization.py`  | ✓ | ✓ (skips transcription) | — |
-| `test_musicxml.py`      | ✓ | ✓ (skips transcription+quantization) | — |
-| `test_export.py`        | ✓ | ✓ (skips transcription+quantization) | ✓ (skips everything but export) |
-
-`test_demucs.py` is Teammate A's script (source separation) and is not yet implemented.
+| Script                    | Owner | `--file <path>` | `--from-cache <name>`                | `--from-musicxml <name>`          |
+|----------------------------|-------|:---:|:---:|:---:|
+| `test_env.py`              | —     | — (auto-picks first file) | — | — |
+| `test_demucs.py`           | A     | ✓ (positional arg, no flag) | — | — |
+| `test_classification.py`   | A     | — (auto-picks first file) | — | — |
+| `test_basic_pitch.py`      | B     | ✓ | — | — |
+| `test_quantization.py`     | B     | ✓ | ✓ (skips transcription) | — |
+| `test_musicxml.py`         | B     | ✓ | ✓ (skips transcription+quantization) | — |
+| `test_export.py`           | B     | ✓ | ✓ (skips transcription+quantization) | ✓ (skips everything but export) |
+| `run_pipeline.py`          | A→B   | ✓ (positional arg, no flag) | — | — |

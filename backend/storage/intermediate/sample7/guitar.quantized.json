@@ -1,0 +1,3418 @@
+{
+  "tempo_bpm": 114.84375,
+  "stem_label": "guitar_accompaniment",
+  "time_signature": "4/4",
+  "notes": [
+    {
+      "pitch": 47,
+      "onset_beat": 157.5,
+      "offset_beat": 160.75,
+      "duration_beats": 3.25,
+      "velocity": 72,
+      "confidence": 0.5659906268119812,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 68,
+      "onset_beat": 157.0,
+      "offset_beat": 157.75,
+      "duration_beats": 0.75,
+      "velocity": 42,
+      "confidence": 0.3320971429347992,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 157.0,
+      "offset_beat": 160.75,
+      "duration_beats": 3.75,
+      "velocity": 50,
+      "confidence": 0.3944190442562103,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 59,
+      "onset_beat": 156.5,
+      "offset_beat": 157.5,
+      "duration_beats": 1.0,
+      "velocity": 63,
+      "confidence": 0.4982433319091797,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 69,
+      "onset_beat": 156.5,
+      "offset_beat": 156.75,
+      "duration_beats": 0.25,
+      "velocity": 57,
+      "confidence": 0.4467504322528839,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 155.75,
+      "offset_beat": 156.25,
+      "duration_beats": 0.5,
+      "velocity": 50,
+      "confidence": 0.3931528329849243,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 45,
+      "onset_beat": 155.75,
+      "offset_beat": 156.5,
+      "duration_beats": 0.75,
+      "velocity": 48,
+      "confidence": 0.3812260627746582,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 45,
+      "onset_beat": 154.0,
+      "offset_beat": 155.25,
+      "duration_beats": 1.25,
+      "velocity": 54,
+      "confidence": 0.42873549461364746,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 57,
+      "onset_beat": 154.0,
+      "offset_beat": 154.5,
+      "duration_beats": 0.5,
+      "velocity": 61,
+      "confidence": 0.48332399129867554,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 64,
+      "onset_beat": 153.5,
+      "offset_beat": 157.0,
+      "duration_beats": 3.5,
+      "velocity": 53,
+      "confidence": 0.414315789937973,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 57,
+      "onset_beat": 151.5,
+      "offset_beat": 152.25,
+      "duration_beats": 0.75,
+      "velocity": 55,
+      "confidence": 0.43610110878944397,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 66,
+      "onset_beat": 150.5,
+      "offset_beat": 150.75,
+      "duration_beats": 0.25,
+      "velocity": 56,
+      "confidence": 0.4381045997142792,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 50,
+      "onset_beat": 150.25,
+      "offset_beat": 150.75,
+      "duration_beats": 0.5,
+      "velocity": 71,
+      "confidence": 0.5610128045082092,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 57,
+      "onset_beat": 150.0,
+      "offset_beat": 150.75,
+      "duration_beats": 0.75,
+      "velocity": 53,
+      "confidence": 0.41532132029533386,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 57,
+      "onset_beat": 149.25,
+      "offset_beat": 149.5,
+      "duration_beats": 0.25,
+      "velocity": 58,
+      "confidence": 0.45743870735168457,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 66,
+      "onset_beat": 148.75,
+      "offset_beat": 149.25,
+      "duration_beats": 0.5,
+      "velocity": 62,
+      "confidence": 0.48742732405662537,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 62,
+      "onset_beat": 148.0,
+      "offset_beat": 152.25,
+      "duration_beats": 4.25,
+      "velocity": 77,
+      "confidence": 0.6074295043945312,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 50,
+      "onset_beat": 148.0,
+      "offset_beat": 149.75,
+      "duration_beats": 1.75,
+      "velocity": 78,
+      "confidence": 0.6116361021995544,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 38,
+      "onset_beat": 147.5,
+      "offset_beat": 150.0,
+      "duration_beats": 2.5,
+      "velocity": 76,
+      "confidence": 0.5956376791000366,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 62,
+      "onset_beat": 147.0,
+      "offset_beat": 148.0,
+      "duration_beats": 1.0,
+      "velocity": 70,
+      "confidence": 0.5503455400466919,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 66,
+      "onset_beat": 146.75,
+      "offset_beat": 148.25,
+      "duration_beats": 1.5,
+      "velocity": 61,
+      "confidence": 0.4796287417411804,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 62,
+      "onset_beat": 146.5,
+      "offset_beat": 147.0,
+      "duration_beats": 0.5,
+      "velocity": 60,
+      "confidence": 0.4706646502017975,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 66,
+      "onset_beat": 145.75,
+      "offset_beat": 146.25,
+      "duration_beats": 0.5,
+      "velocity": 65,
+      "confidence": 0.5088555216789246,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 62,
+      "onset_beat": 145.0,
+      "offset_beat": 146.25,
+      "duration_beats": 1.25,
+      "velocity": 60,
+      "confidence": 0.47240889072418213,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 66,
+      "onset_beat": 144.75,
+      "offset_beat": 145.0,
+      "duration_beats": 0.25,
+      "velocity": 56,
+      "confidence": 0.4435291886329651,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 57,
+      "onset_beat": 144.75,
+      "offset_beat": 148.25,
+      "duration_beats": 3.5,
+      "velocity": 50,
+      "confidence": 0.39065220952033997,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 62,
+      "onset_beat": 144.5,
+      "offset_beat": 145.0,
+      "duration_beats": 0.5,
+      "velocity": 49,
+      "confidence": 0.3821980953216553,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 67,
+      "onset_beat": 144.25,
+      "offset_beat": 144.5,
+      "duration_beats": 0.25,
+      "velocity": 61,
+      "confidence": 0.48052534461021423,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 55,
+      "onset_beat": 144.25,
+      "offset_beat": 144.5,
+      "duration_beats": 0.25,
+      "velocity": 70,
+      "confidence": 0.5539258718490601,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 50,
+      "onset_beat": 144.25,
+      "offset_beat": 146.0,
+      "duration_beats": 1.75,
+      "velocity": 64,
+      "confidence": 0.501975417137146,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 143.5,
+      "offset_beat": 144.0,
+      "duration_beats": 0.5,
+      "velocity": 67,
+      "confidence": 0.5261325240135193,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 55,
+      "onset_beat": 143.5,
+      "offset_beat": 144.25,
+      "duration_beats": 0.75,
+      "velocity": 61,
+      "confidence": 0.48354363441467285,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 55,
+      "onset_beat": 143.0,
+      "offset_beat": 143.5,
+      "duration_beats": 0.5,
+      "velocity": 50,
+      "confidence": 0.39222872257232666,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 52,
+      "onset_beat": 142.5,
+      "offset_beat": 143.75,
+      "duration_beats": 1.25,
+      "velocity": 70,
+      "confidence": 0.5477046370506287,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 52,
+      "onset_beat": 141.75,
+      "offset_beat": 142.5,
+      "duration_beats": 0.75,
+      "velocity": 46,
+      "confidence": 0.3604889512062073,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 141.25,
+      "offset_beat": 143.5,
+      "duration_beats": 2.25,
+      "velocity": 63,
+      "confidence": 0.4971795976161957,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 69,
+      "onset_beat": 139.75,
+      "offset_beat": 140.0,
+      "duration_beats": 0.25,
+      "velocity": 45,
+      "confidence": 0.3574749529361725,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 139.75,
+      "offset_beat": 140.75,
+      "duration_beats": 1.0,
+      "velocity": 57,
+      "confidence": 0.44808122515678406,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 45,
+      "onset_beat": 139.0,
+      "offset_beat": 139.75,
+      "duration_beats": 0.75,
+      "velocity": 54,
+      "confidence": 0.4253764748573303,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 138.0,
+      "offset_beat": 139.75,
+      "duration_beats": 1.75,
+      "velocity": 55,
+      "confidence": 0.4292025566101074,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 45,
+      "onset_beat": 138.0,
+      "offset_beat": 138.75,
+      "duration_beats": 0.75,
+      "velocity": 50,
+      "confidence": 0.39392396807670593,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 52,
+      "onset_beat": 138.0,
+      "offset_beat": 138.5,
+      "duration_beats": 0.5,
+      "velocity": 54,
+      "confidence": 0.4250631332397461,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 45,
+      "onset_beat": 137.25,
+      "offset_beat": 138.0,
+      "duration_beats": 0.75,
+      "velocity": 58,
+      "confidence": 0.452847421169281,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 57,
+      "onset_beat": 137.0,
+      "offset_beat": 138.75,
+      "duration_beats": 1.75,
+      "velocity": 67,
+      "confidence": 0.5302487015724182,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 57,
+      "onset_beat": 136.75,
+      "offset_beat": 137.0,
+      "duration_beats": 0.25,
+      "velocity": 49,
+      "confidence": 0.3854420483112335,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 45,
+      "onset_beat": 136.5,
+      "offset_beat": 137.25,
+      "duration_beats": 0.75,
+      "velocity": 55,
+      "confidence": 0.43561458587646484,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 136.5,
+      "offset_beat": 137.25,
+      "duration_beats": 0.75,
+      "velocity": 62,
+      "confidence": 0.4907960891723633,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 59,
+      "onset_beat": 136.0,
+      "offset_beat": 136.5,
+      "duration_beats": 0.5,
+      "velocity": 62,
+      "confidence": 0.484911173582077,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 66,
+      "onset_beat": 135.0,
+      "offset_beat": 135.75,
+      "duration_beats": 0.75,
+      "velocity": 47,
+      "confidence": 0.3677446246147156,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 57,
+      "onset_beat": 134.0,
+      "offset_beat": 135.5,
+      "duration_beats": 1.5,
+      "velocity": 61,
+      "confidence": 0.4793092608451843,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 62,
+      "onset_beat": 133.5,
+      "offset_beat": 136.0,
+      "duration_beats": 2.5,
+      "velocity": 82,
+      "confidence": 0.6434734463691711,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 57,
+      "onset_beat": 133.25,
+      "offset_beat": 134.0,
+      "duration_beats": 0.75,
+      "velocity": 45,
+      "confidence": 0.35444656014442444,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 50,
+      "onset_beat": 133.25,
+      "offset_beat": 133.75,
+      "duration_beats": 0.5,
+      "velocity": 57,
+      "confidence": 0.4474969506263733,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 57,
+      "onset_beat": 131.0,
+      "offset_beat": 131.25,
+      "duration_beats": 0.25,
+      "velocity": 60,
+      "confidence": 0.4702337384223938,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 62,
+      "onset_beat": 130.5,
+      "offset_beat": 133.5,
+      "duration_beats": 3.0,
+      "velocity": 74,
+      "confidence": 0.5800732970237732,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 45,
+      "onset_beat": 129.0,
+      "offset_beat": 130.25,
+      "duration_beats": 1.25,
+      "velocity": 54,
+      "confidence": 0.4257276952266693,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 62,
+      "onset_beat": 128.75,
+      "offset_beat": 130.5,
+      "duration_beats": 1.75,
+      "velocity": 64,
+      "confidence": 0.5016816258430481,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 50,
+      "onset_beat": 128.5,
+      "offset_beat": 130.25,
+      "duration_beats": 1.75,
+      "velocity": 53,
+      "confidence": 0.4151693284511566,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 62,
+      "onset_beat": 127.75,
+      "offset_beat": 128.75,
+      "duration_beats": 1.0,
+      "velocity": 54,
+      "confidence": 0.4254058599472046,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 126.75,
+      "offset_beat": 127.25,
+      "duration_beats": 0.5,
+      "velocity": 64,
+      "confidence": 0.5019894242286682,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 59,
+      "onset_beat": 126.75,
+      "offset_beat": 127.25,
+      "duration_beats": 0.5,
+      "velocity": 58,
+      "confidence": 0.45389971137046814,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 45,
+      "onset_beat": 126.25,
+      "offset_beat": 126.5,
+      "duration_beats": 0.25,
+      "velocity": 56,
+      "confidence": 0.44377583265304565,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 69,
+      "onset_beat": 126.25,
+      "offset_beat": 126.75,
+      "duration_beats": 0.5,
+      "velocity": 69,
+      "confidence": 0.5406270027160645,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 66,
+      "onset_beat": 125.75,
+      "offset_beat": 126.25,
+      "duration_beats": 0.5,
+      "velocity": 82,
+      "confidence": 0.644700825214386,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 64,
+      "onset_beat": 125.25,
+      "offset_beat": 125.75,
+      "duration_beats": 0.5,
+      "velocity": 70,
+      "confidence": 0.5522899031639099,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 124.75,
+      "offset_beat": 125.25,
+      "duration_beats": 0.5,
+      "velocity": 69,
+      "confidence": 0.5441454648971558,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 64,
+      "onset_beat": 122.75,
+      "offset_beat": 124.5,
+      "duration_beats": 1.75,
+      "velocity": 45,
+      "confidence": 0.35732367634773254,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 122.25,
+      "offset_beat": 124.0,
+      "duration_beats": 1.75,
+      "velocity": 59,
+      "confidence": 0.4620107412338257,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 69,
+      "onset_beat": 121.5,
+      "offset_beat": 122.0,
+      "duration_beats": 0.5,
+      "velocity": 50,
+      "confidence": 0.3973557949066162,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 121.0,
+      "offset_beat": 121.75,
+      "duration_beats": 0.75,
+      "velocity": 51,
+      "confidence": 0.4038659930229187,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 64,
+      "onset_beat": 120.25,
+      "offset_beat": 122.0,
+      "duration_beats": 1.75,
+      "velocity": 48,
+      "confidence": 0.38089096546173096,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 120.25,
+      "offset_beat": 121.0,
+      "duration_beats": 0.75,
+      "velocity": 57,
+      "confidence": 0.4453069567680359,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 47,
+      "onset_beat": 119.25,
+      "offset_beat": 119.5,
+      "duration_beats": 0.25,
+      "velocity": 69,
+      "confidence": 0.5413315892219543,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 59,
+      "onset_beat": 118.5,
+      "offset_beat": 119.25,
+      "duration_beats": 0.75,
+      "velocity": 67,
+      "confidence": 0.5301818251609802,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 116.25,
+      "offset_beat": 117.0,
+      "duration_beats": 0.75,
+      "velocity": 86,
+      "confidence": 0.6747292876243591,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 59,
+      "onset_beat": 115.5,
+      "offset_beat": 116.25,
+      "duration_beats": 0.75,
+      "velocity": 47,
+      "confidence": 0.367451936006546,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 59,
+      "onset_beat": 113.5,
+      "offset_beat": 114.75,
+      "duration_beats": 1.25,
+      "velocity": 67,
+      "confidence": 0.531036376953125,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 59,
+      "onset_beat": 113.25,
+      "offset_beat": 113.5,
+      "duration_beats": 0.25,
+      "velocity": 59,
+      "confidence": 0.46185997128486633,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 47,
+      "onset_beat": 113.25,
+      "offset_beat": 115.5,
+      "duration_beats": 2.25,
+      "velocity": 71,
+      "confidence": 0.5611817240715027,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 59,
+      "onset_beat": 112.5,
+      "offset_beat": 113.25,
+      "duration_beats": 0.75,
+      "velocity": 56,
+      "confidence": 0.4381854236125946,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 54,
+      "onset_beat": 112.5,
+      "offset_beat": 112.75,
+      "duration_beats": 0.25,
+      "velocity": 57,
+      "confidence": 0.4518773853778839,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 47,
+      "onset_beat": 112.0,
+      "offset_beat": 113.25,
+      "duration_beats": 1.25,
+      "velocity": 66,
+      "confidence": 0.5203105807304382,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 111.0,
+      "offset_beat": 111.25,
+      "duration_beats": 0.25,
+      "velocity": 52,
+      "confidence": 0.40959179401397705,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 54,
+      "onset_beat": 111.0,
+      "offset_beat": 111.25,
+      "duration_beats": 0.25,
+      "velocity": 42,
+      "confidence": 0.3301210403442383,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 109.0,
+      "offset_beat": 110.5,
+      "duration_beats": 1.5,
+      "velocity": 72,
+      "confidence": 0.5677812695503235,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 107.0,
+      "offset_beat": 107.25,
+      "duration_beats": 0.25,
+      "velocity": 52,
+      "confidence": 0.40732312202453613,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 104.5,
+      "offset_beat": 109.75,
+      "duration_beats": 5.25,
+      "velocity": 66,
+      "confidence": 0.5190065503120422,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 104.25,
+      "offset_beat": 106.25,
+      "duration_beats": 2.0,
+      "velocity": 75,
+      "confidence": 0.5901771783828735,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 52,
+      "onset_beat": 103.5,
+      "offset_beat": 103.75,
+      "duration_beats": 0.25,
+      "velocity": 45,
+      "confidence": 0.35055291652679443,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 62,
+      "onset_beat": 103.0,
+      "offset_beat": 104.0,
+      "duration_beats": 1.0,
+      "velocity": 78,
+      "confidence": 0.6134533882141113,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 52,
+      "onset_beat": 103.0,
+      "offset_beat": 103.25,
+      "duration_beats": 0.25,
+      "velocity": 52,
+      "confidence": 0.40842950344085693,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 57,
+      "onset_beat": 100.0,
+      "offset_beat": 100.75,
+      "duration_beats": 0.75,
+      "velocity": 51,
+      "confidence": 0.39938491582870483,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 45,
+      "onset_beat": 100.0,
+      "offset_beat": 103.0,
+      "duration_beats": 3.0,
+      "velocity": 75,
+      "confidence": 0.5911583304405212,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 52,
+      "onset_beat": 99.5,
+      "offset_beat": 99.75,
+      "duration_beats": 0.25,
+      "velocity": 52,
+      "confidence": 0.4067281186580658,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 45,
+      "onset_beat": 99.5,
+      "offset_beat": 100.0,
+      "duration_beats": 0.5,
+      "velocity": 71,
+      "confidence": 0.5567790269851685,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 45,
+      "onset_beat": 99.0,
+      "offset_beat": 99.5,
+      "duration_beats": 0.5,
+      "velocity": 54,
+      "confidence": 0.4243287146091461,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 45,
+      "onset_beat": 98.0,
+      "offset_beat": 98.75,
+      "duration_beats": 0.75,
+      "velocity": 69,
+      "confidence": 0.5397592186927795,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 69,
+      "onset_beat": 97.5,
+      "offset_beat": 97.75,
+      "duration_beats": 0.25,
+      "velocity": 55,
+      "confidence": 0.435380220413208,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 64,
+      "onset_beat": 97.5,
+      "offset_beat": 98.25,
+      "duration_beats": 0.75,
+      "velocity": 48,
+      "confidence": 0.37594708800315857,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 45,
+      "onset_beat": 96.0,
+      "offset_beat": 96.75,
+      "duration_beats": 0.75,
+      "velocity": 61,
+      "confidence": 0.4819445312023163,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 57,
+      "onset_beat": 96.0,
+      "offset_beat": 96.75,
+      "duration_beats": 0.75,
+      "velocity": 44,
+      "confidence": 0.34831181168556213,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 95.5,
+      "offset_beat": 95.75,
+      "duration_beats": 0.25,
+      "velocity": 68,
+      "confidence": 0.537255585193634,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 45,
+      "onset_beat": 95.5,
+      "offset_beat": 96.0,
+      "duration_beats": 0.5,
+      "velocity": 58,
+      "confidence": 0.4582165479660034,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 59,
+      "onset_beat": 94.0,
+      "offset_beat": 94.25,
+      "duration_beats": 0.25,
+      "velocity": 43,
+      "confidence": 0.33841878175735474,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 93.5,
+      "offset_beat": 95.5,
+      "duration_beats": 2.0,
+      "velocity": 55,
+      "confidence": 0.43266597390174866,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 52,
+      "onset_beat": 93.5,
+      "offset_beat": 93.75,
+      "duration_beats": 0.25,
+      "velocity": 48,
+      "confidence": 0.37932088971138,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 52,
+      "onset_beat": 93.0,
+      "offset_beat": 93.25,
+      "duration_beats": 0.25,
+      "velocity": 47,
+      "confidence": 0.36775797605514526,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 47,
+      "onset_beat": 92.75,
+      "offset_beat": 93.25,
+      "duration_beats": 0.5,
+      "velocity": 54,
+      "confidence": 0.42756444215774536,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 64,
+      "onset_beat": 92.0,
+      "offset_beat": 92.25,
+      "duration_beats": 0.25,
+      "velocity": 53,
+      "confidence": 0.41919612884521484,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 68,
+      "onset_beat": 91.5,
+      "offset_beat": 92.5,
+      "duration_beats": 1.0,
+      "velocity": 44,
+      "confidence": 0.3491608798503876,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 47,
+      "onset_beat": 90.5,
+      "offset_beat": 91.0,
+      "duration_beats": 0.5,
+      "velocity": 59,
+      "confidence": 0.4611262381076813,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 62,
+      "onset_beat": 88.75,
+      "offset_beat": 89.75,
+      "duration_beats": 1.0,
+      "velocity": 93,
+      "confidence": 0.7289010286331177,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 68,
+      "onset_beat": 88.5,
+      "offset_beat": 89.25,
+      "duration_beats": 0.75,
+      "velocity": 45,
+      "confidence": 0.35662221908569336,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 59,
+      "onset_beat": 88.5,
+      "offset_beat": 88.75,
+      "duration_beats": 0.25,
+      "velocity": 62,
+      "confidence": 0.4919990599155426,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 88.0,
+      "offset_beat": 88.5,
+      "duration_beats": 0.5,
+      "velocity": 59,
+      "confidence": 0.46341460943222046,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 59,
+      "onset_beat": 87.5,
+      "offset_beat": 88.5,
+      "duration_beats": 1.0,
+      "velocity": 45,
+      "confidence": 0.35462650656700134,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 87.0,
+      "offset_beat": 87.5,
+      "duration_beats": 0.5,
+      "velocity": 72,
+      "confidence": 0.5661929845809937,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 66,
+      "onset_beat": 87.0,
+      "offset_beat": 87.25,
+      "duration_beats": 0.25,
+      "velocity": 49,
+      "confidence": 0.38365432620048523,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 47,
+      "onset_beat": 86.0,
+      "offset_beat": 87.5,
+      "duration_beats": 1.5,
+      "velocity": 78,
+      "confidence": 0.6166068315505981,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 62,
+      "onset_beat": 86.0,
+      "offset_beat": 86.75,
+      "duration_beats": 0.75,
+      "velocity": 71,
+      "confidence": 0.5555354356765747,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 59,
+      "onset_beat": 84.5,
+      "offset_beat": 84.75,
+      "duration_beats": 0.25,
+      "velocity": 56,
+      "confidence": 0.44057002663612366,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 59,
+      "onset_beat": 84.0,
+      "offset_beat": 84.5,
+      "duration_beats": 0.5,
+      "velocity": 43,
+      "confidence": 0.34249141812324524,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 47,
+      "onset_beat": 81.5,
+      "offset_beat": 86.0,
+      "duration_beats": 4.5,
+      "velocity": 73,
+      "confidence": 0.5748097896575928,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 47,
+      "onset_beat": 81.0,
+      "offset_beat": 81.5,
+      "duration_beats": 0.5,
+      "velocity": 70,
+      "confidence": 0.5475489497184753,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 62,
+      "onset_beat": 80.25,
+      "offset_beat": 82.0,
+      "duration_beats": 1.75,
+      "velocity": 87,
+      "confidence": 0.6846534013748169,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 49,
+      "onset_beat": 79.0,
+      "offset_beat": 79.25,
+      "duration_beats": 0.25,
+      "velocity": 62,
+      "confidence": 0.48971518874168396,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 79.0,
+      "offset_beat": 79.25,
+      "duration_beats": 0.25,
+      "velocity": 60,
+      "confidence": 0.47400104999542236,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 49,
+      "onset_beat": 77.5,
+      "offset_beat": 77.75,
+      "duration_beats": 0.25,
+      "velocity": 53,
+      "confidence": 0.4211108982563019,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 77.0,
+      "offset_beat": 77.25,
+      "duration_beats": 0.25,
+      "velocity": 45,
+      "confidence": 0.35198691487312317,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 54,
+      "onset_beat": 76.5,
+      "offset_beat": 77.0,
+      "duration_beats": 0.5,
+      "velocity": 84,
+      "confidence": 0.663305401802063,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 54,
+      "onset_beat": 76.0,
+      "offset_beat": 76.5,
+      "duration_beats": 0.5,
+      "velocity": 65,
+      "confidence": 0.5119365453720093,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 66,
+      "onset_beat": 76.0,
+      "offset_beat": 76.75,
+      "duration_beats": 0.75,
+      "velocity": 47,
+      "confidence": 0.3724639117717743,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 49,
+      "onset_beat": 76.0,
+      "offset_beat": 77.25,
+      "duration_beats": 1.25,
+      "velocity": 46,
+      "confidence": 0.3612917363643646,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 75.5,
+      "offset_beat": 76.0,
+      "duration_beats": 0.5,
+      "velocity": 72,
+      "confidence": 0.5676112174987793,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 49,
+      "onset_beat": 75.5,
+      "offset_beat": 75.75,
+      "duration_beats": 0.25,
+      "velocity": 50,
+      "confidence": 0.39601483941078186,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 75.0,
+      "offset_beat": 75.25,
+      "duration_beats": 0.25,
+      "velocity": 59,
+      "confidence": 0.4639613628387451,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 74.5,
+      "offset_beat": 75.0,
+      "duration_beats": 0.5,
+      "velocity": 45,
+      "confidence": 0.35311710834503174,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 73.5,
+      "offset_beat": 74.25,
+      "duration_beats": 0.75,
+      "velocity": 56,
+      "confidence": 0.4377879798412323,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 58,
+      "onset_beat": 73.0,
+      "offset_beat": 75.0,
+      "duration_beats": 2.0,
+      "velocity": 96,
+      "confidence": 0.7523934245109558,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 49,
+      "onset_beat": 73.0,
+      "offset_beat": 73.75,
+      "duration_beats": 0.75,
+      "velocity": 54,
+      "confidence": 0.4221516251564026,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 54,
+      "onset_beat": 73.0,
+      "offset_beat": 74.5,
+      "duration_beats": 1.5,
+      "velocity": 52,
+      "confidence": 0.4115336835384369,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 72.5,
+      "offset_beat": 73.0,
+      "duration_beats": 0.5,
+      "velocity": 49,
+      "confidence": 0.38553646206855774,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 58,
+      "onset_beat": 72.5,
+      "offset_beat": 73.0,
+      "duration_beats": 0.5,
+      "velocity": 87,
+      "confidence": 0.6835494041442871,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 54,
+      "onset_beat": 72.5,
+      "offset_beat": 72.75,
+      "duration_beats": 0.25,
+      "velocity": 49,
+      "confidence": 0.38442501425743103,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 62,
+      "onset_beat": 71.5,
+      "offset_beat": 72.0,
+      "duration_beats": 0.5,
+      "velocity": 77,
+      "confidence": 0.6096036434173584,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 59,
+      "onset_beat": 71.5,
+      "offset_beat": 71.75,
+      "duration_beats": 0.25,
+      "velocity": 61,
+      "confidence": 0.47916364669799805,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 71.5,
+      "offset_beat": 72.0,
+      "duration_beats": 0.5,
+      "velocity": 70,
+      "confidence": 0.5474570393562317,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 71.0,
+      "offset_beat": 71.5,
+      "duration_beats": 0.5,
+      "velocity": 66,
+      "confidence": 0.523404598236084,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 52,
+      "onset_beat": 70.0,
+      "offset_beat": 70.75,
+      "duration_beats": 0.75,
+      "velocity": 53,
+      "confidence": 0.41688433289527893,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 57,
+      "onset_beat": 70.0,
+      "offset_beat": 70.25,
+      "duration_beats": 0.25,
+      "velocity": 54,
+      "confidence": 0.4235554039478302,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 57,
+      "onset_beat": 69.5,
+      "offset_beat": 69.75,
+      "duration_beats": 0.25,
+      "velocity": 55,
+      "confidence": 0.4318278729915619,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 45,
+      "onset_beat": 69.5,
+      "offset_beat": 71.5,
+      "duration_beats": 2.0,
+      "velocity": 58,
+      "confidence": 0.45892468094825745,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 45,
+      "onset_beat": 68.0,
+      "offset_beat": 69.25,
+      "duration_beats": 1.25,
+      "velocity": 79,
+      "confidence": 0.6222403049468994,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 64,
+      "onset_beat": 68.0,
+      "offset_beat": 68.25,
+      "duration_beats": 0.25,
+      "velocity": 53,
+      "confidence": 0.41499853134155273,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 45,
+      "onset_beat": 67.5,
+      "offset_beat": 68.0,
+      "duration_beats": 0.5,
+      "velocity": 78,
+      "confidence": 0.6131837964057922,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 52,
+      "onset_beat": 67.0,
+      "offset_beat": 67.75,
+      "duration_beats": 0.75,
+      "velocity": 47,
+      "confidence": 0.3679857552051544,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 45,
+      "onset_beat": 66.0,
+      "offset_beat": 66.25,
+      "duration_beats": 0.25,
+      "velocity": 58,
+      "confidence": 0.4547661542892456,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 52,
+      "onset_beat": 65.5,
+      "offset_beat": 65.75,
+      "duration_beats": 0.25,
+      "velocity": 54,
+      "confidence": 0.42740699648857117,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 64.5,
+      "offset_beat": 67.0,
+      "duration_beats": 2.5,
+      "velocity": 67,
+      "confidence": 0.5297160148620605,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 52,
+      "onset_beat": 64.5,
+      "offset_beat": 65.0,
+      "duration_beats": 0.5,
+      "velocity": 60,
+      "confidence": 0.4722578823566437,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 45,
+      "onset_beat": 64.0,
+      "offset_beat": 64.5,
+      "duration_beats": 0.5,
+      "velocity": 50,
+      "confidence": 0.39171889424324036,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 45,
+      "onset_beat": 63.5,
+      "offset_beat": 63.75,
+      "duration_beats": 0.25,
+      "velocity": 57,
+      "confidence": 0.450653076171875,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 62,
+      "onset_beat": 63.0,
+      "offset_beat": 63.75,
+      "duration_beats": 0.75,
+      "velocity": 66,
+      "confidence": 0.5184938907623291,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 47,
+      "onset_beat": 63.0,
+      "offset_beat": 63.25,
+      "duration_beats": 0.25,
+      "velocity": 63,
+      "confidence": 0.49804213643074036,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 59,
+      "onset_beat": 63.0,
+      "offset_beat": 63.25,
+      "duration_beats": 0.25,
+      "velocity": 47,
+      "confidence": 0.37167829275131226,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 63.0,
+      "offset_beat": 64.0,
+      "duration_beats": 1.0,
+      "velocity": 71,
+      "confidence": 0.5613441467285156,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 47,
+      "onset_beat": 62.0,
+      "offset_beat": 62.75,
+      "duration_beats": 0.75,
+      "velocity": 68,
+      "confidence": 0.5341857075691223,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 64,
+      "onset_beat": 61.5,
+      "offset_beat": 62.25,
+      "duration_beats": 0.75,
+      "velocity": 71,
+      "confidence": 0.5623133182525635,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 64,
+      "onset_beat": 60.75,
+      "offset_beat": 61.5,
+      "duration_beats": 0.75,
+      "velocity": 64,
+      "confidence": 0.5013917088508606,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 47,
+      "onset_beat": 60.5,
+      "offset_beat": 61.25,
+      "duration_beats": 0.75,
+      "velocity": 59,
+      "confidence": 0.46730276942253113,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 64,
+      "onset_beat": 59.0,
+      "offset_beat": 59.25,
+      "duration_beats": 0.25,
+      "velocity": 57,
+      "confidence": 0.4486028552055359,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 52,
+      "onset_beat": 59.0,
+      "offset_beat": 60.5,
+      "duration_beats": 1.5,
+      "velocity": 52,
+      "confidence": 0.40973949432373047,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 62,
+      "onset_beat": 56.5,
+      "offset_beat": 59.25,
+      "duration_beats": 2.75,
+      "velocity": 90,
+      "confidence": 0.7116571664810181,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 62,
+      "onset_beat": 56.25,
+      "offset_beat": 56.5,
+      "duration_beats": 0.25,
+      "velocity": 87,
+      "confidence": 0.6887314319610596,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 56.0,
+      "offset_beat": 61.75,
+      "duration_beats": 5.75,
+      "velocity": 59,
+      "confidence": 0.46368199586868286,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 54,
+      "onset_beat": 55.0,
+      "offset_beat": 55.25,
+      "duration_beats": 0.25,
+      "velocity": 49,
+      "confidence": 0.38654616475105286,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 59,
+      "onset_beat": 54.0,
+      "offset_beat": 55.75,
+      "duration_beats": 1.75,
+      "velocity": 84,
+      "confidence": 0.6578205227851868,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 47,
+      "onset_beat": 54.0,
+      "offset_beat": 54.75,
+      "duration_beats": 0.75,
+      "velocity": 70,
+      "confidence": 0.5512188673019409,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 47,
+      "onset_beat": 53.5,
+      "offset_beat": 54.0,
+      "duration_beats": 0.5,
+      "velocity": 63,
+      "confidence": 0.4978887438774109,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 62,
+      "onset_beat": 48.5,
+      "offset_beat": 52.0,
+      "duration_beats": 3.5,
+      "velocity": 99,
+      "confidence": 0.7777991890907288,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 62,
+      "onset_beat": 48.25,
+      "offset_beat": 48.5,
+      "duration_beats": 0.25,
+      "velocity": 82,
+      "confidence": 0.6481200456619263,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 47,
+      "onset_beat": 48.0,
+      "offset_beat": 52.75,
+      "duration_beats": 4.75,
+      "velocity": 73,
+      "confidence": 0.5784472227096558,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 47.0,
+      "offset_beat": 47.25,
+      "duration_beats": 0.25,
+      "velocity": 49,
+      "confidence": 0.3870924711227417,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 66,
+      "onset_beat": 46.5,
+      "offset_beat": 46.75,
+      "duration_beats": 0.25,
+      "velocity": 52,
+      "confidence": 0.411910742521286,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 45.5,
+      "offset_beat": 47.25,
+      "duration_beats": 1.75,
+      "velocity": 65,
+      "confidence": 0.512961745262146,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 49,
+      "onset_beat": 45.0,
+      "offset_beat": 45.75,
+      "duration_beats": 0.75,
+      "velocity": 58,
+      "confidence": 0.45431604981422424,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 44.5,
+      "offset_beat": 44.75,
+      "duration_beats": 0.25,
+      "velocity": 69,
+      "confidence": 0.5470929145812988,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 44.0,
+      "offset_beat": 44.25,
+      "duration_beats": 0.25,
+      "velocity": 48,
+      "confidence": 0.3785851299762726,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 43.5,
+      "offset_beat": 43.75,
+      "duration_beats": 0.25,
+      "velocity": 43,
+      "confidence": 0.3410460948944092,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 54,
+      "onset_beat": 42.5,
+      "offset_beat": 42.75,
+      "duration_beats": 0.25,
+      "velocity": 47,
+      "confidence": 0.36759400367736816,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 49,
+      "onset_beat": 42.5,
+      "offset_beat": 43.75,
+      "duration_beats": 1.25,
+      "velocity": 66,
+      "confidence": 0.5194686055183411,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 49,
+      "onset_beat": 42.0,
+      "offset_beat": 42.5,
+      "duration_beats": 0.5,
+      "velocity": 55,
+      "confidence": 0.4292791485786438,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 54,
+      "onset_beat": 42.0,
+      "offset_beat": 42.25,
+      "duration_beats": 0.25,
+      "velocity": 44,
+      "confidence": 0.3432915210723877,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 41.5,
+      "offset_beat": 44.5,
+      "duration_beats": 3.0,
+      "velocity": 59,
+      "confidence": 0.4668232202529907,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 66,
+      "onset_beat": 41.5,
+      "offset_beat": 41.75,
+      "duration_beats": 0.25,
+      "velocity": 52,
+      "confidence": 0.40674933791160583,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 49,
+      "onset_beat": 41.5,
+      "offset_beat": 41.75,
+      "duration_beats": 0.25,
+      "velocity": 53,
+      "confidence": 0.4206317961215973,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 66,
+      "onset_beat": 41.0,
+      "offset_beat": 41.25,
+      "duration_beats": 0.25,
+      "velocity": 56,
+      "confidence": 0.43883126974105835,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 41.0,
+      "offset_beat": 41.25,
+      "duration_beats": 0.25,
+      "velocity": 54,
+      "confidence": 0.4221614599227905,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 58,
+      "onset_beat": 40.5,
+      "offset_beat": 42.0,
+      "duration_beats": 1.5,
+      "velocity": 75,
+      "confidence": 0.5937091708183289,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 40.0,
+      "offset_beat": 40.5,
+      "duration_beats": 0.5,
+      "velocity": 42,
+      "confidence": 0.33102449774742126,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 40.0,
+      "offset_beat": 41.25,
+      "duration_beats": 1.25,
+      "velocity": 63,
+      "confidence": 0.49696028232574463,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 59,
+      "onset_beat": 39.5,
+      "offset_beat": 40.0,
+      "duration_beats": 0.5,
+      "velocity": 84,
+      "confidence": 0.659687340259552,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 39.5,
+      "offset_beat": 39.75,
+      "duration_beats": 0.25,
+      "velocity": 46,
+      "confidence": 0.36041876673698425,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 57,
+      "onset_beat": 38.5,
+      "offset_beat": 38.75,
+      "duration_beats": 0.25,
+      "velocity": 44,
+      "confidence": 0.3481203615665436,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 57,
+      "onset_beat": 37.5,
+      "offset_beat": 37.75,
+      "duration_beats": 0.25,
+      "velocity": 59,
+      "confidence": 0.46403414011001587,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 52,
+      "onset_beat": 35.0,
+      "offset_beat": 35.25,
+      "duration_beats": 0.25,
+      "velocity": 49,
+      "confidence": 0.3888019621372223,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 57,
+      "onset_beat": 34.0,
+      "offset_beat": 34.25,
+      "duration_beats": 0.25,
+      "velocity": 56,
+      "confidence": 0.4370758533477783,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 52,
+      "onset_beat": 34.0,
+      "offset_beat": 34.25,
+      "duration_beats": 0.25,
+      "velocity": 54,
+      "confidence": 0.4225771129131317,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 57,
+      "onset_beat": 33.0,
+      "offset_beat": 33.25,
+      "duration_beats": 0.25,
+      "velocity": 67,
+      "confidence": 0.5310035347938538,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 52,
+      "onset_beat": 33.0,
+      "offset_beat": 33.75,
+      "duration_beats": 0.75,
+      "velocity": 55,
+      "confidence": 0.4292437434196472,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 57,
+      "onset_beat": 32.5,
+      "offset_beat": 33.0,
+      "duration_beats": 0.5,
+      "velocity": 56,
+      "confidence": 0.43842774629592896,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 45,
+      "onset_beat": 32.5,
+      "offset_beat": 39.25,
+      "duration_beats": 6.75,
+      "velocity": 79,
+      "confidence": 0.6247437000274658,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 31.0,
+      "offset_beat": 32.0,
+      "duration_beats": 1.0,
+      "velocity": 76,
+      "confidence": 0.5991921424865723,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 68,
+      "onset_beat": 31.0,
+      "offset_beat": 31.25,
+      "duration_beats": 0.25,
+      "velocity": 52,
+      "confidence": 0.4126400947570801,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 52,
+      "onset_beat": 31.0,
+      "offset_beat": 31.75,
+      "duration_beats": 0.75,
+      "velocity": 49,
+      "confidence": 0.38899052143096924,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 47,
+      "onset_beat": 31.0,
+      "offset_beat": 31.25,
+      "duration_beats": 0.25,
+      "velocity": 53,
+      "confidence": 0.4180161654949188,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 59,
+      "onset_beat": 30.25,
+      "offset_beat": 30.75,
+      "duration_beats": 0.5,
+      "velocity": 53,
+      "confidence": 0.4203917980194092,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 59,
+      "onset_beat": 29.75,
+      "offset_beat": 30.25,
+      "duration_beats": 0.5,
+      "velocity": 42,
+      "confidence": 0.33159637451171875,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 52,
+      "onset_beat": 29.75,
+      "offset_beat": 30.25,
+      "duration_beats": 0.5,
+      "velocity": 61,
+      "confidence": 0.47850126028060913,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 64,
+      "onset_beat": 28.5,
+      "offset_beat": 28.75,
+      "duration_beats": 0.25,
+      "velocity": 58,
+      "confidence": 0.4563423693180084,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 28.5,
+      "offset_beat": 29.5,
+      "duration_beats": 1.0,
+      "velocity": 52,
+      "confidence": 0.40800347924232483,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 52,
+      "onset_beat": 28.0,
+      "offset_beat": 29.0,
+      "duration_beats": 1.0,
+      "velocity": 73,
+      "confidence": 0.572467029094696,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 64,
+      "onset_beat": 28.0,
+      "offset_beat": 28.5,
+      "duration_beats": 0.5,
+      "velocity": 43,
+      "confidence": 0.3357338011264801,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 47,
+      "onset_beat": 28.0,
+      "offset_beat": 28.25,
+      "duration_beats": 0.25,
+      "velocity": 61,
+      "confidence": 0.47662603855133057,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 52,
+      "onset_beat": 27.0,
+      "offset_beat": 27.5,
+      "duration_beats": 0.5,
+      "velocity": 67,
+      "confidence": 0.5311988592147827,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 59,
+      "onset_beat": 27.0,
+      "offset_beat": 28.25,
+      "duration_beats": 1.25,
+      "velocity": 53,
+      "confidence": 0.41590023040771484,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 59,
+      "onset_beat": 26.5,
+      "offset_beat": 27.0,
+      "duration_beats": 0.5,
+      "velocity": 52,
+      "confidence": 0.41012054681777954,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 47,
+      "onset_beat": 26.5,
+      "offset_beat": 27.25,
+      "duration_beats": 0.75,
+      "velocity": 63,
+      "confidence": 0.4925064742565155,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 52,
+      "onset_beat": 26.5,
+      "offset_beat": 27.0,
+      "duration_beats": 0.5,
+      "velocity": 62,
+      "confidence": 0.48706766963005066,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 52,
+      "onset_beat": 24.5,
+      "offset_beat": 25.25,
+      "duration_beats": 0.75,
+      "velocity": 57,
+      "confidence": 0.4484482407569885,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 24.0,
+      "offset_beat": 26.75,
+      "duration_beats": 2.75,
+      "velocity": 73,
+      "confidence": 0.5778998136520386,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 52,
+      "onset_beat": 23.5,
+      "offset_beat": 24.25,
+      "duration_beats": 0.75,
+      "velocity": 45,
+      "confidence": 0.3506397306919098,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 59,
+      "onset_beat": 21.5,
+      "offset_beat": 21.75,
+      "duration_beats": 0.25,
+      "velocity": 61,
+      "confidence": 0.47638753056526184,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 59,
+      "onset_beat": 21.0,
+      "offset_beat": 21.25,
+      "duration_beats": 0.25,
+      "velocity": 55,
+      "confidence": 0.43169841170310974,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 59,
+      "onset_beat": 20.5,
+      "offset_beat": 20.75,
+      "duration_beats": 0.25,
+      "velocity": 51,
+      "confidence": 0.39784011244773865,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 47,
+      "onset_beat": 18.5,
+      "offset_beat": 22.75,
+      "duration_beats": 4.25,
+      "velocity": 82,
+      "confidence": 0.6443151235580444,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 47,
+      "onset_beat": 18.0,
+      "offset_beat": 18.5,
+      "duration_beats": 0.5,
+      "velocity": 74,
+      "confidence": 0.5831289291381836,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 66,
+      "onset_beat": 16.5,
+      "offset_beat": 16.75,
+      "duration_beats": 0.25,
+      "velocity": 54,
+      "confidence": 0.42188119888305664,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 47,
+      "onset_beat": 16.0,
+      "offset_beat": 18.0,
+      "duration_beats": 2.0,
+      "velocity": 72,
+      "confidence": 0.5645041465759277,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 47,
+      "onset_beat": 15.5,
+      "offset_beat": 16.0,
+      "duration_beats": 0.5,
+      "velocity": 61,
+      "confidence": 0.48052623867988586,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 49,
+      "onset_beat": 14.5,
+      "offset_beat": 15.0,
+      "duration_beats": 0.5,
+      "velocity": 54,
+      "confidence": 0.4232269823551178,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 49,
+      "onset_beat": 12.5,
+      "offset_beat": 13.75,
+      "duration_beats": 1.25,
+      "velocity": 68,
+      "confidence": 0.5332054495811462,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 12.5,
+      "offset_beat": 12.75,
+      "duration_beats": 0.25,
+      "velocity": 58,
+      "confidence": 0.454746276140213,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 66,
+      "onset_beat": 11.5,
+      "offset_beat": 11.75,
+      "duration_beats": 0.25,
+      "velocity": 47,
+      "confidence": 0.373869925737381,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 49,
+      "onset_beat": 11.0,
+      "offset_beat": 11.25,
+      "duration_beats": 0.25,
+      "velocity": 68,
+      "confidence": 0.5370078682899475,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 10.5,
+      "offset_beat": 14.75,
+      "duration_beats": 4.25,
+      "velocity": 68,
+      "confidence": 0.5389504432678223,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 49,
+      "onset_beat": 9.5,
+      "offset_beat": 11.0,
+      "duration_beats": 1.5,
+      "velocity": 62,
+      "confidence": 0.491749107837677,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 54,
+      "onset_beat": 9.0,
+      "offset_beat": 9.25,
+      "duration_beats": 0.25,
+      "velocity": 42,
+      "confidence": 0.330875426530838,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 66,
+      "onset_beat": 8.5,
+      "offset_beat": 8.75,
+      "duration_beats": 0.25,
+      "velocity": 51,
+      "confidence": 0.4053453505039215,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 8.5,
+      "offset_beat": 8.75,
+      "duration_beats": 0.25,
+      "velocity": 53,
+      "confidence": 0.41774260997772217,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 8.0,
+      "offset_beat": 10.5,
+      "duration_beats": 2.5,
+      "velocity": 75,
+      "confidence": 0.5894893407821655,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 7.5,
+      "offset_beat": 8.25,
+      "duration_beats": 0.75,
+      "velocity": 49,
+      "confidence": 0.3820950984954834,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 64,
+      "onset_beat": 6.5,
+      "offset_beat": 6.75,
+      "duration_beats": 0.25,
+      "velocity": 55,
+      "confidence": 0.43223974108695984,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 52,
+      "onset_beat": 6.5,
+      "offset_beat": 6.75,
+      "duration_beats": 0.25,
+      "velocity": 51,
+      "confidence": 0.4047541916370392,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 45,
+      "onset_beat": 6.5,
+      "offset_beat": 7.0,
+      "duration_beats": 0.5,
+      "velocity": 66,
+      "confidence": 0.5207560062408447,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 64,
+      "onset_beat": 6.0,
+      "offset_beat": 6.25,
+      "duration_beats": 0.25,
+      "velocity": 63,
+      "confidence": 0.49897608160972595,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 57,
+      "onset_beat": 5.5,
+      "offset_beat": 6.25,
+      "duration_beats": 0.75,
+      "velocity": 54,
+      "confidence": 0.42427003383636475,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 57,
+      "onset_beat": 4.5,
+      "offset_beat": 4.75,
+      "duration_beats": 0.25,
+      "velocity": 59,
+      "confidence": 0.4626001715660095,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 57,
+      "onset_beat": 3.5,
+      "offset_beat": 3.75,
+      "duration_beats": 0.25,
+      "velocity": 51,
+      "confidence": 0.40182164311408997,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 57,
+      "onset_beat": 3.0,
+      "offset_beat": 3.25,
+      "duration_beats": 0.25,
+      "velocity": 43,
+      "confidence": 0.3351176679134369,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 45,
+      "onset_beat": 3.0,
+      "offset_beat": 5.75,
+      "duration_beats": 2.75,
+      "velocity": 86,
+      "confidence": 0.6783023476600647,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 45,
+      "onset_beat": 2.5,
+      "offset_beat": 3.0,
+      "duration_beats": 0.5,
+      "velocity": 79,
+      "confidence": 0.6191527247428894,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 52,
+      "onset_beat": 1.0,
+      "offset_beat": 1.25,
+      "duration_beats": 0.25,
+      "velocity": 45,
+      "confidence": 0.35414886474609375,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 57,
+      "onset_beat": 1.0,
+      "offset_beat": 1.25,
+      "duration_beats": 0.25,
+      "velocity": 49,
+      "confidence": 0.3849160671234131,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 57,
+      "onset_beat": 0.0,
+      "offset_beat": 0.25,
+      "duration_beats": 0.25,
+      "velocity": 45,
+      "confidence": 0.35522839426994324,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 45,
+      "onset_beat": 0.0,
+      "offset_beat": 2.5,
+      "duration_beats": 2.5,
+      "velocity": 72,
+      "confidence": 0.5637908577919006,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 64.0,
+      "offset_beat": 64.5,
+      "duration_beats": 0.5,
+      "velocity": 66,
+      "confidence": 0.5211681723594666,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 159.25,
+      "offset_beat": 160.5,
+      "duration_beats": 1.25,
+      "velocity": 71,
+      "confidence": 0.5620794892311096,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 62,
+      "onset_beat": 118.0,
+      "offset_beat": 118.75,
+      "duration_beats": 0.75,
+      "velocity": 72,
+      "confidence": 0.570493221282959,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 45,
+      "onset_beat": 121.25,
+      "offset_beat": 122.0,
+      "duration_beats": 0.75,
+      "velocity": 65,
+      "confidence": 0.511074423789978,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 76.75,
+      "offset_beat": 78.25,
+      "duration_beats": 1.5,
+      "velocity": 53,
+      "confidence": 0.4210206866264343,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 38,
+      "onset_beat": 145.25,
+      "offset_beat": 147.5,
+      "duration_beats": 2.25,
+      "velocity": 61,
+      "confidence": 0.4815332293510437,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 66,
+      "onset_beat": 133.5,
+      "offset_beat": 133.75,
+      "duration_beats": 0.25,
+      "velocity": 68,
+      "confidence": 0.5317341685295105,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 45,
+      "onset_beat": 97.0,
+      "offset_beat": 98.0,
+      "duration_beats": 1.0,
+      "velocity": 58,
+      "confidence": 0.45305007696151733,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 49,
+      "onset_beat": 46.0,
+      "offset_beat": 47.25,
+      "duration_beats": 1.25,
+      "velocity": 50,
+      "confidence": 0.3921966850757599,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 62,
+      "onset_beat": 82.5,
+      "offset_beat": 83.0,
+      "duration_beats": 0.5,
+      "velocity": 66,
+      "confidence": 0.5182940363883972,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 52,
+      "onset_beat": 39.0,
+      "offset_beat": 39.25,
+      "duration_beats": 0.25,
+      "velocity": 67,
+      "confidence": 0.5299457311630249,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 47,
+      "onset_beat": 91.75,
+      "offset_beat": 92.75,
+      "duration_beats": 1.0,
+      "velocity": 51,
+      "confidence": 0.39828214049339294,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 50,
+      "onset_beat": 134.0,
+      "offset_beat": 135.75,
+      "duration_beats": 1.75,
+      "velocity": 51,
+      "confidence": 0.405499130487442,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 110.25,
+      "offset_beat": 111.25,
+      "duration_beats": 1.0,
+      "velocity": 53,
+      "confidence": 0.4144359230995178,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 14.5,
+      "offset_beat": 14.75,
+      "duration_beats": 0.25,
+      "velocity": 65,
+      "confidence": 0.5154430270195007,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 64,
+      "onset_beat": 126.75,
+      "offset_beat": 127.0,
+      "duration_beats": 0.25,
+      "velocity": 61,
+      "confidence": 0.4782434105873108,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 49,
+      "onset_beat": 74.0,
+      "offset_beat": 74.75,
+      "duration_beats": 0.75,
+      "velocity": 51,
+      "confidence": 0.4050212502479553,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 38.0,
+      "offset_beat": 38.25,
+      "duration_beats": 0.25,
+      "velocity": 67,
+      "confidence": 0.5254115462303162,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 50,
+      "onset_beat": 130.5,
+      "offset_beat": 133.25,
+      "duration_beats": 2.75,
+      "velocity": 53,
+      "confidence": 0.42104005813598633,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 64,
+      "onset_beat": 60.25,
+      "offset_beat": 60.75,
+      "duration_beats": 0.5,
+      "velocity": 49,
+      "confidence": 0.3867477774620056,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 91.0,
+      "offset_beat": 93.25,
+      "duration_beats": 2.25,
+      "velocity": 52,
+      "confidence": 0.40574684739112854,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 45,
+      "onset_beat": 128.25,
+      "offset_beat": 129.0,
+      "duration_beats": 0.75,
+      "velocity": 50,
+      "confidence": 0.3948594331741333,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 47,
+      "onset_beat": 94.0,
+      "offset_beat": 94.25,
+      "duration_beats": 0.25,
+      "velocity": 61,
+      "confidence": 0.47967901825904846,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 137.5,
+      "offset_beat": 138.0,
+      "duration_beats": 0.5,
+      "velocity": 62,
+      "confidence": 0.4896232783794403,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 54,
+      "onset_beat": 118.25,
+      "offset_beat": 119.0,
+      "duration_beats": 0.75,
+      "velocity": 48,
+      "confidence": 0.3810819685459137,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 49,
+      "onset_beat": 104.5,
+      "offset_beat": 105.25,
+      "duration_beats": 0.75,
+      "velocity": 50,
+      "confidence": 0.3974646031856537,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 66,
+      "onset_beat": 117.0,
+      "offset_beat": 117.5,
+      "duration_beats": 0.5,
+      "velocity": 63,
+      "confidence": 0.4954683780670166,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 23.0,
+      "offset_beat": 24.0,
+      "duration_beats": 1.0,
+      "velocity": 51,
+      "confidence": 0.4021589159965515,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 127.5,
+      "offset_beat": 129.25,
+      "duration_beats": 1.75,
+      "velocity": 62,
+      "confidence": 0.48601678013801575,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 49,
+      "onset_beat": 40.0,
+      "offset_beat": 41.25,
+      "duration_beats": 1.25,
+      "velocity": 46,
+      "confidence": 0.3625929355621338,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 59,
+      "onset_beat": 124.0,
+      "offset_beat": 124.5,
+      "duration_beats": 0.5,
+      "velocity": 62,
+      "confidence": 0.4911748468875885,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 89.5,
+      "offset_beat": 90.75,
+      "duration_beats": 1.25,
+      "velocity": 47,
+      "confidence": 0.3670978844165802,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 70,
+      "onset_beat": 40.5,
+      "offset_beat": 41.0,
+      "duration_beats": 0.5,
+      "velocity": 62,
+      "confidence": 0.4873827397823334,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 78.5,
+      "offset_beat": 78.75,
+      "duration_beats": 0.25,
+      "velocity": 58,
+      "confidence": 0.4581263065338135,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 47,
+      "onset_beat": 116.0,
+      "offset_beat": 116.75,
+      "duration_beats": 0.75,
+      "velocity": 58,
+      "confidence": 0.4583579897880554,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 45,
+      "onset_beat": 120.0,
+      "offset_beat": 120.5,
+      "duration_beats": 0.5,
+      "velocity": 56,
+      "confidence": 0.4433634281158447,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 67,
+      "onset_beat": 142.5,
+      "offset_beat": 143.0,
+      "duration_beats": 0.5,
+      "velocity": 58,
+      "confidence": 0.4583345949649811,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 45,
+      "onset_beat": 152.5,
+      "offset_beat": 154.0,
+      "duration_beats": 1.5,
+      "velocity": 47,
+      "confidence": 0.36691609025001526,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 49,
+      "onset_beat": 78.5,
+      "offset_beat": 78.75,
+      "duration_beats": 0.25,
+      "velocity": 62,
+      "confidence": 0.48466387391090393,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 62,
+      "onset_beat": 83.5,
+      "offset_beat": 83.75,
+      "duration_beats": 0.25,
+      "velocity": 55,
+      "confidence": 0.43570441007614136,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 47,
+      "onset_beat": 90.0,
+      "offset_beat": 90.5,
+      "duration_beats": 0.5,
+      "velocity": 58,
+      "confidence": 0.45940837264060974,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 70.25,
+      "offset_beat": 70.5,
+      "duration_beats": 0.25,
+      "velocity": 54,
+      "confidence": 0.42582225799560547,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 47,
+      "onset_beat": 89.0,
+      "offset_beat": 89.75,
+      "duration_beats": 0.75,
+      "velocity": 45,
+      "confidence": 0.3520624041557312,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 45,
+      "onset_beat": 140.25,
+      "offset_beat": 141.0,
+      "duration_beats": 0.75,
+      "velocity": 52,
+      "confidence": 0.41124579310417175,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 45,
+      "onset_beat": 65.0,
+      "offset_beat": 65.25,
+      "duration_beats": 0.25,
+      "velocity": 57,
+      "confidence": 0.44869884848594666,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 5.75,
+      "offset_beat": 6.25,
+      "duration_beats": 0.5,
+      "velocity": 44,
+      "confidence": 0.34602636098861694,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 125.75,
+      "offset_beat": 126.0,
+      "duration_beats": 0.25,
+      "velocity": 55,
+      "confidence": 0.4336221516132355,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 66,
+      "onset_beat": 134.25,
+      "offset_beat": 134.75,
+      "duration_beats": 0.5,
+      "velocity": 50,
+      "confidence": 0.3958519697189331,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 52,
+      "onset_beat": 98.5,
+      "offset_beat": 99.25,
+      "duration_beats": 0.75,
+      "velocity": 44,
+      "confidence": 0.3431159555912018,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 59,
+      "onset_beat": 91.0,
+      "offset_beat": 91.5,
+      "duration_beats": 0.5,
+      "velocity": 54,
+      "confidence": 0.42234963178634644,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 57,
+      "onset_beat": 153.0,
+      "offset_beat": 153.5,
+      "duration_beats": 0.5,
+      "velocity": 50,
+      "confidence": 0.3932361602783203,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 57,
+      "onset_beat": 130.5,
+      "offset_beat": 131.0,
+      "duration_beats": 0.5,
+      "velocity": 53,
+      "confidence": 0.42025622725486755,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 50,
+      "onset_beat": 147.25,
+      "offset_beat": 148.0,
+      "duration_beats": 0.75,
+      "velocity": 48,
+      "confidence": 0.37693414092063904,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 59,
+      "onset_beat": 158.0,
+      "offset_beat": 158.25,
+      "duration_beats": 0.25,
+      "velocity": 54,
+      "confidence": 0.42432114481925964,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 30.5,
+      "offset_beat": 31.0,
+      "duration_beats": 0.5,
+      "velocity": 45,
+      "confidence": 0.35743388533592224,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 45,
+      "onset_beat": 151.5,
+      "offset_beat": 152.0,
+      "duration_beats": 0.5,
+      "velocity": 50,
+      "confidence": 0.3906182646751404,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 66,
+      "onset_beat": 149.5,
+      "offset_beat": 150.5,
+      "duration_beats": 1.0,
+      "velocity": 49,
+      "confidence": 0.3862113356590271,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 52,
+      "onset_beat": 141.25,
+      "offset_beat": 141.75,
+      "duration_beats": 0.5,
+      "velocity": 44,
+      "confidence": 0.3494751751422882,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 59,
+      "onset_beat": 63.5,
+      "offset_beat": 63.75,
+      "duration_beats": 0.25,
+      "velocity": 55,
+      "confidence": 0.4344118535518646,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 64,
+      "onset_beat": 141.0,
+      "offset_beat": 141.5,
+      "duration_beats": 0.5,
+      "velocity": 52,
+      "confidence": 0.4066571891307831,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 47,
+      "onset_beat": 59.0,
+      "offset_beat": 59.75,
+      "duration_beats": 0.75,
+      "velocity": 47,
+      "confidence": 0.37282413244247437,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 66,
+      "onset_beat": 128.5,
+      "offset_beat": 128.75,
+      "duration_beats": 0.25,
+      "velocity": 55,
+      "confidence": 0.4368898570537567,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 64,
+      "onset_beat": 152.25,
+      "offset_beat": 153.5,
+      "duration_beats": 1.25,
+      "velocity": 42,
+      "confidence": 0.33458417654037476,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 64,
+      "onset_beat": 136.25,
+      "offset_beat": 136.75,
+      "duration_beats": 0.5,
+      "velocity": 46,
+      "confidence": 0.3649534285068512,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 59,
+      "onset_beat": 112.25,
+      "offset_beat": 112.5,
+      "duration_beats": 0.25,
+      "velocity": 51,
+      "confidence": 0.3996310532093048,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 87.5,
+      "offset_beat": 88.0,
+      "duration_beats": 0.5,
+      "velocity": 48,
+      "confidence": 0.37939926981925964,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 64,
+      "onset_beat": 93.25,
+      "offset_beat": 93.5,
+      "duration_beats": 0.25,
+      "velocity": 52,
+      "confidence": 0.40785837173461914,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 64,
+      "onset_beat": 158.5,
+      "offset_beat": 158.75,
+      "duration_beats": 0.25,
+      "velocity": 53,
+      "confidence": 0.4171566665172577,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 7.5,
+      "offset_beat": 8.0,
+      "duration_beats": 0.5,
+      "velocity": 50,
+      "confidence": 0.3911116123199463,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 54,
+      "onset_beat": 44.75,
+      "offset_beat": 45.25,
+      "duration_beats": 0.5,
+      "velocity": 51,
+      "confidence": 0.39773035049438477,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 62.25,
+      "offset_beat": 63.0,
+      "duration_beats": 0.75,
+      "velocity": 51,
+      "confidence": 0.4039277732372284,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 64,
+      "onset_beat": 62.5,
+      "offset_beat": 62.75,
+      "duration_beats": 0.25,
+      "velocity": 51,
+      "confidence": 0.40394672751426697,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 142.0,
+      "offset_beat": 143.0,
+      "duration_beats": 1.0,
+      "velocity": 47,
+      "confidence": 0.369051456451416,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 64,
+      "onset_beat": 159.25,
+      "offset_beat": 160.5,
+      "duration_beats": 1.25,
+      "velocity": 50,
+      "confidence": 0.39160847663879395,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 27.0,
+      "offset_beat": 27.75,
+      "duration_beats": 0.75,
+      "velocity": 49,
+      "confidence": 0.38744378089904785,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 38,
+      "onset_beat": 131.5,
+      "offset_beat": 132.0,
+      "duration_beats": 0.5,
+      "velocity": 51,
+      "confidence": 0.4028419852256775,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 55.5,
+      "offset_beat": 55.75,
+      "duration_beats": 0.25,
+      "velocity": 54,
+      "confidence": 0.424468070268631,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 52,
+      "onset_beat": 157.25,
+      "offset_beat": 158.0,
+      "duration_beats": 0.75,
+      "velocity": 52,
+      "confidence": 0.40944528579711914,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 64,
+      "onset_beat": 143.25,
+      "offset_beat": 144.0,
+      "duration_beats": 0.75,
+      "velocity": 46,
+      "confidence": 0.36305737495422363,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 52,
+      "onset_beat": 62.5,
+      "offset_beat": 62.75,
+      "duration_beats": 0.25,
+      "velocity": 53,
+      "confidence": 0.4169687032699585,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 57,
+      "onset_beat": 132.0,
+      "offset_beat": 133.25,
+      "duration_beats": 1.25,
+      "velocity": 42,
+      "confidence": 0.329403281211853,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 45,
+      "onset_beat": 124.75,
+      "offset_beat": 125.75,
+      "duration_beats": 1.0,
+      "velocity": 44,
+      "confidence": 0.34412121772766113,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 50,
+      "onset_beat": 151.5,
+      "offset_beat": 152.25,
+      "duration_beats": 0.75,
+      "velocity": 44,
+      "confidence": 0.34492555260658264,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 66,
+      "onset_beat": 130.5,
+      "offset_beat": 131.75,
+      "duration_beats": 1.25,
+      "velocity": 46,
+      "confidence": 0.3608916699886322,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 52,
+      "onset_beat": 137.75,
+      "offset_beat": 138.0,
+      "duration_beats": 0.25,
+      "velocity": 50,
+      "confidence": 0.3898494243621826,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 154.0,
+      "offset_beat": 154.75,
+      "duration_beats": 0.75,
+      "velocity": 42,
+      "confidence": 0.3296859860420227,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 64,
+      "onset_beat": 119.5,
+      "offset_beat": 120.25,
+      "duration_beats": 0.75,
+      "velocity": 44,
+      "confidence": 0.3479655086994171,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 47,
+      "onset_beat": 80.0,
+      "offset_beat": 81.0,
+      "duration_beats": 1.0,
+      "velocity": 52,
+      "confidence": 0.4068443477153778,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 158.25,
+      "offset_beat": 158.5,
+      "duration_beats": 0.25,
+      "velocity": 49,
+      "confidence": 0.3861868977546692,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 45,
+      "onset_beat": 131.0,
+      "offset_beat": 131.25,
+      "duration_beats": 0.25,
+      "velocity": 50,
+      "confidence": 0.39444267749786377,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 45,
+      "onset_beat": 32.0,
+      "offset_beat": 32.5,
+      "duration_beats": 0.5,
+      "velocity": 48,
+      "confidence": 0.37567055225372314,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 66,
+      "onset_beat": 146.5,
+      "offset_beat": 146.75,
+      "duration_beats": 0.25,
+      "velocity": 45,
+      "confidence": 0.3566682040691376,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 52,
+      "onset_beat": 153.25,
+      "offset_beat": 153.5,
+      "duration_beats": 0.25,
+      "velocity": 47,
+      "confidence": 0.37156248092651367,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 66,
+      "onset_beat": 132.25,
+      "offset_beat": 133.0,
+      "duration_beats": 0.75,
+      "velocity": 44,
+      "confidence": 0.3483757972717285,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 69,
+      "onset_beat": 65.0,
+      "offset_beat": 65.75,
+      "duration_beats": 0.75,
+      "velocity": 43,
+      "confidence": 0.34208089113235474,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 38,
+      "onset_beat": 135.25,
+      "offset_beat": 135.5,
+      "duration_beats": 0.25,
+      "velocity": 50,
+      "confidence": 0.3925855755805969,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 45,
+      "onset_beat": 66.5,
+      "offset_beat": 67.5,
+      "duration_beats": 1.0,
+      "velocity": 44,
+      "confidence": 0.34629592299461365,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 66,
+      "onset_beat": 151.5,
+      "offset_beat": 152.25,
+      "duration_beats": 0.75,
+      "velocity": 43,
+      "confidence": 0.34248289465904236,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 64,
+      "onset_beat": 144.25,
+      "offset_beat": 144.5,
+      "duration_beats": 0.25,
+      "velocity": 49,
+      "confidence": 0.38639184832572937,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 69,
+      "onset_beat": 133.5,
+      "offset_beat": 134.0,
+      "duration_beats": 0.5,
+      "velocity": 46,
+      "confidence": 0.36283764243125916,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 64,
+      "onset_beat": 138.0,
+      "offset_beat": 138.25,
+      "duration_beats": 0.25,
+      "velocity": 48,
+      "confidence": 0.3780401945114136,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 123.75,
+      "offset_beat": 124.25,
+      "duration_beats": 0.5,
+      "velocity": 47,
+      "confidence": 0.3738939166069031,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 69,
+      "onset_beat": 156.0,
+      "offset_beat": 156.5,
+      "duration_beats": 0.5,
+      "velocity": 44,
+      "confidence": 0.3443298041820526,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 57,
+      "onset_beat": 148.5,
+      "offset_beat": 149.25,
+      "duration_beats": 0.75,
+      "velocity": 46,
+      "confidence": 0.35968995094299316,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 139.25,
+      "offset_beat": 139.5,
+      "duration_beats": 0.25,
+      "velocity": 46,
+      "confidence": 0.3610970377922058,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 52,
+      "onset_beat": 102.5,
+      "offset_beat": 103.0,
+      "duration_beats": 0.5,
+      "velocity": 44,
+      "confidence": 0.3492022752761841,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 64,
+      "onset_beat": 140.25,
+      "offset_beat": 140.75,
+      "duration_beats": 0.5,
+      "velocity": 43,
+      "confidence": 0.3415718674659729,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 70,
+      "onset_beat": 73.5,
+      "offset_beat": 74.0,
+      "duration_beats": 0.5,
+      "velocity": 45,
+      "confidence": 0.3511919677257538,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 68,
+      "onset_beat": 159.25,
+      "offset_beat": 159.5,
+      "duration_beats": 0.25,
+      "velocity": 46,
+      "confidence": 0.3585962653160095,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 64,
+      "onset_beat": 29.75,
+      "offset_beat": 30.0,
+      "duration_beats": 0.25,
+      "velocity": 46,
+      "confidence": 0.35839661955833435,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 45,
+      "onset_beat": 143.25,
+      "offset_beat": 143.5,
+      "duration_beats": 0.25,
+      "velocity": 45,
+      "confidence": 0.35497456789016724,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 69,
+      "onset_beat": 137.0,
+      "offset_beat": 137.25,
+      "duration_beats": 0.25,
+      "velocity": 43,
+      "confidence": 0.33764851093292236,
+      "stem_label": "guitar_accompaniment"
+    },
+    {
+      "pitch": 66,
+      "onset_beat": 157.25,
+      "offset_beat": 157.5,
+      "duration_beats": 0.25,
+      "velocity": 43,
+      "confidence": 0.34147119522094727,
+      "stem_label": "guitar_accompaniment"
+    }
+  ]
+}

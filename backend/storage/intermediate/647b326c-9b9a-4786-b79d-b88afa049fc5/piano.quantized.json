@@ -1,0 +1,700 @@
+{
+  "tempo_bpm": 147.65625,
+  "stem_label": "piano_accompaniment",
+  "time_signature": "4/4",
+  "notes": [
+    {
+      "pitch": 51,
+      "onset_beat": 53.5,
+      "offset_beat": 54.5,
+      "duration_beats": 1.0,
+      "velocity": 68,
+      "confidence": 0.5346930027008057,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 53.25,
+      "offset_beat": 53.75,
+      "duration_beats": 0.5,
+      "velocity": 45,
+      "confidence": 0.3569205403327942,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 53.25,
+      "offset_beat": 53.75,
+      "duration_beats": 0.5,
+      "velocity": 41,
+      "confidence": 0.32185098528862,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 51,
+      "onset_beat": 53.25,
+      "offset_beat": 53.5,
+      "duration_beats": 0.25,
+      "velocity": 57,
+      "confidence": 0.4519633650779724,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 51.5,
+      "offset_beat": 52.5,
+      "duration_beats": 1.0,
+      "velocity": 52,
+      "confidence": 0.40869075059890747,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 51.0,
+      "offset_beat": 51.5,
+      "duration_beats": 0.5,
+      "velocity": 51,
+      "confidence": 0.39942094683647156,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 51,
+      "onset_beat": 51.0,
+      "offset_beat": 51.75,
+      "duration_beats": 0.75,
+      "velocity": 41,
+      "confidence": 0.32529595494270325,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 62,
+      "onset_beat": 49.5,
+      "offset_beat": 49.75,
+      "duration_beats": 0.25,
+      "velocity": 68,
+      "confidence": 0.5359588861465454,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 58,
+      "onset_beat": 49.5,
+      "offset_beat": 50.0,
+      "duration_beats": 0.5,
+      "velocity": 64,
+      "confidence": 0.5029869675636292,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 62,
+      "onset_beat": 49.0,
+      "offset_beat": 49.5,
+      "duration_beats": 0.5,
+      "velocity": 55,
+      "confidence": 0.43019917607307434,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 58,
+      "onset_beat": 49.0,
+      "offset_beat": 49.5,
+      "duration_beats": 0.5,
+      "velocity": 43,
+      "confidence": 0.3383125066757202,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 53,
+      "onset_beat": 49.0,
+      "offset_beat": 50.0,
+      "duration_beats": 1.0,
+      "velocity": 70,
+      "confidence": 0.5537402629852295,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 34,
+      "onset_beat": 49.0,
+      "offset_beat": 50.25,
+      "duration_beats": 1.25,
+      "velocity": 76,
+      "confidence": 0.6014193296432495,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 70,
+      "onset_beat": 46.0,
+      "offset_beat": 46.25,
+      "duration_beats": 0.25,
+      "velocity": 52,
+      "confidence": 0.4074493944644928,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 82,
+      "onset_beat": 46.0,
+      "offset_beat": 46.75,
+      "duration_beats": 0.75,
+      "velocity": 49,
+      "confidence": 0.38876888155937195,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 77,
+      "onset_beat": 46.0,
+      "offset_beat": 46.75,
+      "duration_beats": 0.75,
+      "velocity": 49,
+      "confidence": 0.3838943541049957,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 72,
+      "onset_beat": 38.0,
+      "offset_beat": 39.0,
+      "duration_beats": 1.0,
+      "velocity": 56,
+      "confidence": 0.43851080536842346,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 72,
+      "onset_beat": 35.5,
+      "offset_beat": 36.5,
+      "duration_beats": 1.0,
+      "velocity": 64,
+      "confidence": 0.5006632208824158,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 72,
+      "onset_beat": 35.25,
+      "offset_beat": 35.5,
+      "duration_beats": 0.25,
+      "velocity": 54,
+      "confidence": 0.42666563391685486,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 81,
+      "onset_beat": 32.0,
+      "offset_beat": 32.75,
+      "duration_beats": 0.75,
+      "velocity": 45,
+      "confidence": 0.3512645363807678,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 55,
+      "onset_beat": 31.5,
+      "offset_beat": 31.75,
+      "duration_beats": 0.25,
+      "velocity": 56,
+      "confidence": 0.44415101408958435,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 79,
+      "onset_beat": 29.75,
+      "offset_beat": 30.75,
+      "duration_beats": 1.0,
+      "velocity": 45,
+      "confidence": 0.3514086604118347,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 55,
+      "onset_beat": 24.0,
+      "offset_beat": 24.75,
+      "duration_beats": 0.75,
+      "velocity": 61,
+      "confidence": 0.4792745113372803,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 55,
+      "onset_beat": 22.5,
+      "offset_beat": 24.0,
+      "duration_beats": 1.5,
+      "velocity": 48,
+      "confidence": 0.3814719021320343,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 55,
+      "onset_beat": 16.0,
+      "offset_beat": 16.5,
+      "duration_beats": 0.5,
+      "velocity": 79,
+      "confidence": 0.6204487085342407,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 55,
+      "onset_beat": 14.5,
+      "offset_beat": 15.25,
+      "duration_beats": 0.75,
+      "velocity": 59,
+      "confidence": 0.4669053256511688,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 14.5,
+      "offset_beat": 14.75,
+      "duration_beats": 0.25,
+      "velocity": 56,
+      "confidence": 0.43848851323127747,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 55,
+      "onset_beat": 10.0,
+      "offset_beat": 10.5,
+      "duration_beats": 0.5,
+      "velocity": 69,
+      "confidence": 0.5461137294769287,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 58,
+      "onset_beat": 5.5,
+      "offset_beat": 6.0,
+      "duration_beats": 0.5,
+      "velocity": 69,
+      "confidence": 0.5455451607704163,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 3.0,
+      "offset_beat": 5.75,
+      "duration_beats": 2.75,
+      "velocity": 58,
+      "confidence": 0.45601382851600647,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 58,
+      "onset_beat": 1.25,
+      "offset_beat": 3.25,
+      "duration_beats": 2.0,
+      "velocity": 47,
+      "confidence": 0.36760005354881287,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 55,
+      "onset_beat": 8.0,
+      "offset_beat": 8.25,
+      "duration_beats": 0.25,
+      "velocity": 73,
+      "confidence": 0.5721153616905212,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 36,
+      "onset_beat": 18.0,
+      "offset_beat": 19.25,
+      "duration_beats": 1.25,
+      "velocity": 64,
+      "confidence": 0.5012214779853821,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 6.5,
+      "offset_beat": 7.25,
+      "duration_beats": 0.75,
+      "velocity": 59,
+      "confidence": 0.46332234144210815,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 55,
+      "onset_beat": 11.5,
+      "offset_beat": 12.25,
+      "duration_beats": 0.75,
+      "velocity": 50,
+      "confidence": 0.39007696509361267,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 8.0,
+      "offset_beat": 8.5,
+      "duration_beats": 0.5,
+      "velocity": 63,
+      "confidence": 0.497761994600296,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 28.0,
+      "offset_beat": 30.0,
+      "duration_beats": 2.0,
+      "velocity": 59,
+      "confidence": 0.4627585709095001,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 44.0,
+      "offset_beat": 45.75,
+      "duration_beats": 1.75,
+      "velocity": 64,
+      "confidence": 0.5046634078025818,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 34,
+      "onset_beat": 46.0,
+      "offset_beat": 49.0,
+      "duration_beats": 3.0,
+      "velocity": 58,
+      "confidence": 0.4534115791320801,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 53,
+      "onset_beat": 42.75,
+      "offset_beat": 47.75,
+      "duration_beats": 5.0,
+      "velocity": 60,
+      "confidence": 0.4703068435192108,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 72,
+      "onset_beat": 42.75,
+      "offset_beat": 44.25,
+      "duration_beats": 1.5,
+      "velocity": 55,
+      "confidence": 0.4360660910606384,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 36,
+      "onset_beat": 10.0,
+      "offset_beat": 11.25,
+      "duration_beats": 1.25,
+      "velocity": 57,
+      "confidence": 0.44982627034187317,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 55,
+      "onset_beat": 18.0,
+      "offset_beat": 18.75,
+      "duration_beats": 0.75,
+      "velocity": 56,
+      "confidence": 0.44396117329597473,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 55,
+      "onset_beat": 0.0,
+      "offset_beat": 0.25,
+      "duration_beats": 0.25,
+      "velocity": 65,
+      "confidence": 0.5088760256767273,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 3.25,
+      "offset_beat": 3.75,
+      "duration_beats": 0.5,
+      "velocity": 55,
+      "confidence": 0.4318218529224396,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 60,
+      "onset_beat": 24.0,
+      "offset_beat": 24.75,
+      "duration_beats": 0.75,
+      "velocity": 62,
+      "confidence": 0.49087631702423096,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 39,
+      "onset_beat": 50.0,
+      "offset_beat": 52.0,
+      "duration_beats": 2.0,
+      "velocity": 55,
+      "confidence": 0.4302458167076111,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 53,
+      "onset_beat": 38.75,
+      "offset_beat": 39.75,
+      "duration_beats": 1.0,
+      "velocity": 48,
+      "confidence": 0.3816201686859131,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 36,
+      "onset_beat": 20.25,
+      "offset_beat": 20.75,
+      "duration_beats": 0.5,
+      "velocity": 54,
+      "confidence": 0.4230375289916992,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 41,
+      "onset_beat": 42.25,
+      "offset_beat": 43.5,
+      "duration_beats": 1.25,
+      "velocity": 53,
+      "confidence": 0.4167883098125458,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 77,
+      "onset_beat": 44.25,
+      "offset_beat": 45.25,
+      "duration_beats": 1.0,
+      "velocity": 55,
+      "confidence": 0.4322707951068878,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 51,
+      "onset_beat": 34.0,
+      "offset_beat": 35.0,
+      "duration_beats": 1.0,
+      "velocity": 53,
+      "confidence": 0.42118221521377563,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 36,
+      "onset_beat": 13.5,
+      "offset_beat": 14.0,
+      "duration_beats": 0.5,
+      "velocity": 55,
+      "confidence": 0.43649041652679443,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 72,
+      "onset_beat": 28.25,
+      "offset_beat": 30.0,
+      "duration_beats": 1.75,
+      "velocity": 48,
+      "confidence": 0.3749632239341736,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 33.75,
+      "offset_beat": 34.75,
+      "duration_beats": 1.0,
+      "velocity": 49,
+      "confidence": 0.38441866636276245,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 36,
+      "onset_beat": 15.0,
+      "offset_beat": 15.5,
+      "duration_beats": 0.5,
+      "velocity": 52,
+      "confidence": 0.412900447845459,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 55,
+      "onset_beat": 30.75,
+      "offset_beat": 31.5,
+      "duration_beats": 0.75,
+      "velocity": 48,
+      "confidence": 0.3752179741859436,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 84,
+      "onset_beat": 43.0,
+      "offset_beat": 43.25,
+      "duration_beats": 0.25,
+      "velocity": 51,
+      "confidence": 0.4021070897579193,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 62,
+      "onset_beat": 47.25,
+      "offset_beat": 47.75,
+      "duration_beats": 0.5,
+      "velocity": 50,
+      "confidence": 0.3923913538455963,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 82,
+      "onset_beat": 35.0,
+      "offset_beat": 35.75,
+      "duration_beats": 0.75,
+      "velocity": 52,
+      "confidence": 0.41150301694869995,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 41,
+      "onset_beat": 44.0,
+      "offset_beat": 44.75,
+      "duration_beats": 0.75,
+      "velocity": 51,
+      "confidence": 0.39813748002052307,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 70,
+      "onset_beat": 34.5,
+      "offset_beat": 37.25,
+      "duration_beats": 2.75,
+      "velocity": 45,
+      "confidence": 0.3581520915031433,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 36,
+      "onset_beat": 16.0,
+      "offset_beat": 16.75,
+      "duration_beats": 0.75,
+      "velocity": 49,
+      "confidence": 0.383383572101593,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 13.25,
+      "offset_beat": 13.75,
+      "duration_beats": 0.5,
+      "velocity": 49,
+      "confidence": 0.389293372631073,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 55,
+      "onset_beat": 33.5,
+      "offset_beat": 34.0,
+      "duration_beats": 0.5,
+      "velocity": 50,
+      "confidence": 0.39622586965560913,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 55,
+      "onset_beat": 1.75,
+      "offset_beat": 2.25,
+      "duration_beats": 0.5,
+      "velocity": 50,
+      "confidence": 0.3916882574558258,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 31,
+      "onset_beat": 32.25,
+      "offset_beat": 32.75,
+      "duration_beats": 0.5,
+      "velocity": 47,
+      "confidence": 0.3694695830345154,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 36,
+      "onset_beat": 21.5,
+      "offset_beat": 22.25,
+      "duration_beats": 0.75,
+      "velocity": 42,
+      "confidence": 0.3339958190917969,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 51,
+      "onset_beat": 36.25,
+      "offset_beat": 37.25,
+      "duration_beats": 1.0,
+      "velocity": 46,
+      "confidence": 0.35929372906684875,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 51,
+      "onset_beat": 41.25,
+      "offset_beat": 41.75,
+      "duration_beats": 0.5,
+      "velocity": 47,
+      "confidence": 0.3728469908237457,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 31,
+      "onset_beat": 31.25,
+      "offset_beat": 31.75,
+      "duration_beats": 0.5,
+      "velocity": 46,
+      "confidence": 0.36034905910491943,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 67,
+      "onset_beat": 32.25,
+      "offset_beat": 32.75,
+      "duration_beats": 0.5,
+      "velocity": 44,
+      "confidence": 0.34342217445373535,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 36,
+      "onset_beat": 22.5,
+      "offset_beat": 23.25,
+      "duration_beats": 0.75,
+      "velocity": 42,
+      "confidence": 0.33083871006965637,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 42.5,
+      "offset_beat": 43.0,
+      "duration_beats": 0.5,
+      "velocity": 47,
+      "confidence": 0.36849600076675415,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 39,
+      "onset_beat": 3.25,
+      "offset_beat": 3.5,
+      "duration_beats": 0.25,
+      "velocity": 44,
+      "confidence": 0.3482491672039032,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 51,
+      "onset_beat": 40.25,
+      "offset_beat": 40.5,
+      "duration_beats": 0.25,
+      "velocity": 45,
+      "confidence": 0.3573111295700073,
+      "stem_label": "piano_accompaniment"
+    },
+    {
+      "pitch": 78,
+      "onset_beat": 31.0,
+      "offset_beat": 31.75,
+      "duration_beats": 0.75,
+      "velocity": 41,
+      "confidence": 0.32211682200431824,
+      "stem_label": "piano_accompaniment"
+    }
+  ]
+}

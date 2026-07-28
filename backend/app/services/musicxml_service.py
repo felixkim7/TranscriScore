@@ -1,14 +1,54 @@
+import math
 from pathlib import Path
-from typing import List, NamedTuple
+from typing import List, NamedTuple, Optional
 
 from music21 import chord, clef, duration, instrument, key, layout, metadata, meter, note, stream, tempo
 
-from app.config.settings import MUSICXML_DIR
+from app.config.settings import MUSICXML_DIR, MUSICXML_STEMS_DIR, stem_output_dir
 from app.schemas.transcription import QuantizationResult
 
 MAX_DURATION_BEATS = 4.0  # cap a single note/chord at one whole note (4/4 backbone)
 MIDDLE_C = 60  # decides which single octave-window is bass vs treble when only one is needed
 MAX_CHORD_SPAN = 12  # semitones (one octave); a single hand can't be asked to span more than this
+
+# General MIDI percussion pitch -> (percussion-clef staff line position, notehead
+# shape, display name), used to notate drum_transcription_service.py's kick/snare/
+# hihat hits on a standard 5-line percussion staff, matching common drum-notation
+# convention (kick below the staff, snare in the middle space, hi-hat above the
+# staff with an "x" notehead).
+#
+# The notehead shape isn't just cosmetic — it's what MuseScore actually uses to
+# pick a playback SOUND for a note on a shared percussion instrument/channel, not
+# percMapPitch (confirmed by the user directly: editing a hi-hat note in MuseScore
+# to use an "x" notehead fixed its sound immediately, with no other change).
+# Previously every voice used the default "normal" (round) notehead, so hi-hat
+# notes played back as whatever round-notehead sound MuseScore maps at that staff
+# position on the shared instrument.UnpitchedPercussion() channel — not a hi-hat.
+DRUM_STAFF_POSITIONS = {
+    36: ("F4", "normal", "Kick"),
+    38: ("C5", "normal", "Snare"),
+    42: ("G5", "x", "Hi-Hat"),
+}
+# When multiple drum voices land in the same sweep-line segment (simultaneous hits,
+# e.g. kick+hihat together), only one Unpitched notehead is notated per segment —
+# real independent multi-voice percussion notation (stacking noteheads at different
+# staff positions in one beat) is a bigger scope than this pass covers. Priority:
+# kick and snare carry the main rhythmic/downbeat information, so they're kept over
+# a simultaneous hi-hat rather than the reverse.
+DRUM_VOICE_PRIORITY = [36, 38, 42]  # kick, snare, hihat — lower index wins on overlap
+
+# Stem label -> display name used for each stem's group in a combined multi-stem
+# score (StaffGroup name/abbreviation, or the single Part's instrument name for
+# single-staff stems). Falls back to the raw stem_label (title-cased) if not listed.
+STEM_DISPLAY_NAMES = {
+    "guitar_accompaniment": "Guitar",
+    "bass": "Bass",
+    "vocal_melody": "Vocals",
+    "drums": "Drums",
+    "piano_accompaniment": "Piano",
+    "unknown_accompaniment": "Piano",
+    "other_accompaniment": "Other",
+}
 
 
 class Segment(NamedTuple):
@@ -18,70 +58,203 @@ class Segment(NamedTuple):
 
 
 def run(result: QuantizationResult, output_name: str) -> Path:
-    """Convert a QuantizationResult into a MusicXML score.
+    """Convert a single QuantizationResult into its own MusicXML score/file.
 
-    Routing by result.stem_label:
-    - "guitar_accompaniment": single treble-clef staff, Guitar instrument.
-    - "bass": single bass-clef staff, Electric Bass instrument. (Not
-      currently produced by demucs_service.run() — DEMUCS_STEM_NAMES in
-      settings.py only returns vocals/drums/guitar/piano — kept here in
-      case bass gets added back to the pipeline later.)
-    - anything else (piano_accompaniment / unknown_accompaniment / no label
-      — this currently includes "vocals" and "drums" too, since neither has
-      its own branch yet): two-staff (treble/bass) piano grand staff. Each
-      note is assigned to treble or bass exactly once (_assign_staff_per_note),
-      based on the notes sounding at its onset, so a single sustained note
-      can never flip staves mid-hold; _drop_octave_overflow then guarantees
-      neither staff's simultaneous chord width exceeds MAX_CHORD_SPAN.
-      Notating a vocal melody or drum hits as a piano grand staff is a known
-      simplification, not something fixed in this pass.
-
-    Backbone version: a single sweep-line pass over ALL notes combined produces one
-    definitive timeline of which pitches are sounding at every moment. Key signature
-    is detected once from all of this stem's notes (_detect_key, music21's built-in
-    Krumhansl-Schmuckler-style analysis) and applied to every staff, so treble/bass
-    never disagree on key.
+    This is the single-stem entry point (used by test_musicxml.py/test_export.py and
+    anywhere else only one stem's notation is needed). For combining multiple stems'
+    transcriptions into one multi-part score, see run_combined() below.
     """
-    segments = _sweep_line_segments(result.notes)
-    detected_key = _detect_key(result.notes)
-
-    score = stream.Score()
-    score.metadata = metadata.Metadata(title=output_name)
-
-    if result.stem_label == "guitar_accompaniment":
-        part = _build_staff_part(
-            segments, result.tempo_bpm, clef.TrebleClef(), detected_key, result.time_signature,
-            part_instrument=instrument.Guitar(), as_part_staff=False,
-        )
-        score.insert(0, part)
-    elif result.stem_label == "bass":
-        part = _build_staff_part(
-            segments, result.tempo_bpm, clef.BassClef(), detected_key, result.time_signature,
-            part_instrument=instrument.ElectricBass(), as_part_staff=False,
-        )
-        score.insert(0, part)
-    else:
-        treble_notes, bass_notes = _assign_staff_per_note(result.notes)
-        treble_notes = _drop_octave_overflow(treble_notes)
-        bass_notes = _drop_octave_overflow(bass_notes)
-        treble_segments = _sweep_line_segments(treble_notes)
-        bass_segments = _sweep_line_segments(bass_notes)
-        treble = _build_staff_part(
-            treble_segments, result.tempo_bpm, clef.TrebleClef(), detected_key,
-            result.time_signature, as_part_staff=True,
-        )
-        bass = _build_staff_part(
-            bass_segments, result.tempo_bpm, clef.BassClef(), detected_key,
-            result.time_signature, as_part_staff=True,
-        )
-        score.insert(0, treble)
-        score.insert(0, bass)
-        score.insert(0, layout.StaffGroup(
-            [treble, bass], name="Piano", abbreviation="Pno.", symbol="brace"
-        ))
+    score = build_score([result], title=output_name)
 
     MUSICXML_DIR.mkdir(parents=True, exist_ok=True)
     output_path = MUSICXML_DIR / f"{output_name}.musicxml"
+    score.write("musicxml", fp=str(output_path))
+
+    return output_path
+
+
+def run_combined(results: List[QuantizationResult], output_name: str) -> Path:
+    """Combine multiple stems' QuantizationResults into one multi-part MusicXML score.
+
+    Each stem becomes its own part (or treble/bass PartStaff pair, for stems that get
+    the piano grand-staff treatment) within a single Score, so the whole multi-
+    instrument transcription opens as one file — the user can mute/hide/extract
+    individual parts later in MuseScore or any other notation program, rather than
+    juggling one file per stem.
+    """
+    score = build_score(results, title=output_name)
+
+    MUSICXML_DIR.mkdir(parents=True, exist_ok=True)
+    output_path = MUSICXML_DIR / f"{output_name}.musicxml"
+    score.write("musicxml", fp=str(output_path))
+
+    return output_path
+
+
+def build_score(results: List[QuantizationResult], title: str) -> stream.Score:
+    """Build a music21 Score containing one part (or part-group) per stem.
+
+    Routing by each result's stem_label:
+    - "guitar_accompaniment": single treble-clef staff, Guitar instrument.
+    - "bass": single bass-clef staff, Electric Bass instrument.
+    - "vocal_melody": single treble-clef staff, Vocalist instrument — NOT the
+      piano grand-staff split (a vocal melody is monophonic; splitting it across
+      treble/bass "hands" by pitch register doesn't make sense for a single line
+      and can drop/misroute notes — see the branch's own comment for detail).
+    - "drums": single percussion-clef staff of Unpitched notes (kick/snare/
+      hi-hat), NOT the pitched grand-staff path — drum_transcription_service.py
+      emits GM percussion pitch numbers as a stand-in "pitch" so drum hits can
+      flow through the same NoteEvent/quantization pipeline as every other
+      stem; _build_percussion_part() is what actually interprets those numbers
+      as staff positions instead of real melodic pitches (see
+      DRUM_STAFF_POSITIONS above).
+    - anything else (piano_accompaniment / unknown_accompaniment / no label):
+      two-staff (treble/bass) piano grand staff. Each note is assigned to
+      treble or bass exactly once (_assign_staff_per_note), based on the notes
+      sounding at its onset, so a single sustained note can never flip staves
+      mid-hold; _drop_octave_overflow then guarantees neither staff's
+      simultaneous chord width exceeds MAX_CHORD_SPAN.
+
+    Each stem's key signature is detected independently from its own notes
+    (_detect_key) — stems in a mixed-instrument piece are not assumed to share a key,
+    though in practice most will agree since they're all transcribed from the same
+    underlying song.
+
+    A single result produces a one-stem score (this is what run() calls); multiple
+    results produce a combined multi-part score, one part-group per stem, in the
+    order given (this is what run_combined() calls).
+    """
+    score = stream.Score()
+    score.metadata = metadata.Metadata(title=title)
+
+    multi_stem = len(results) > 1
+    # Each stem is transcribed/quantized independently and can end at a different
+    # real duration (different tempo, different audio length after separation). A
+    # multi-part MusicXML score requires every part to have the SAME number of
+    # measures — MuseScore hard-rejects files where one part's measures run out
+    # before another's ("Incomplete measure ... Found: 0/1. Expected: 4/4.",
+    # confirmed via storage/musicxml debugging: two independently-valid single-stem
+    # files each converted fine alone, but failed combined once one part had fewer
+    # measures than another).
+    #
+    # Padding target must be based on real time (seconds), not raw beat/measure
+    # counts — a stem's beat count alone says nothing about how long it actually
+    # lasts once its own tempo is applied. But converting a shared seconds value
+    # into each stem's own beats and rounding independently can still land two
+    # stems on different measure counts (observed: a ~0.5s gap between two stems'
+    # rounded end times, purely from each stem's own tempo rounding that gap to a
+    # different number of measures). So: find the real end time of whichever stem
+    # runs longest, convert that same end time into every stem's own measure count
+    # (not just the longest one — a shorter-sounding stem's rounding can still push
+    # it past the nominal longest stem's own count), and pad every stem to the max
+    # of those conversions.
+    combined_end_seconds = max(
+        (max(n.offset_beat for n in r.notes) * 60.0 / r.tempo_bpm for r in results if r.notes),
+        default=0.0,
+    )
+    combined_measures = max(
+        (
+            math.ceil(combined_end_seconds * r.tempo_bpm / 60.0 / _beats_per_measure(r.time_signature) - 1e-9)
+            for r in results
+        ),
+        default=0,
+    )
+
+    for result in results:
+        segments = _sweep_line_segments(result.notes)
+        beats_per_measure = _beats_per_measure(result.time_signature)
+        stem_end_beat = combined_measures * beats_per_measure
+        segments = _pad_to_end_beat(segments, stem_end_beat)
+        group_name = STEM_DISPLAY_NAMES.get(result.stem_label, result.stem_label.replace("_", " ").title())
+
+        if result.stem_label == "drums":
+            # No _detect_key() here — GM percussion pitch numbers (36/38/42) aren't
+            # real melodic pitches, so key analysis on them would be meaningless.
+            # Percussion staves conventionally have no key signature at all.
+            part = _build_percussion_part(segments, result.tempo_bpm, result.time_signature)
+            if multi_stem:
+                part.partName = part.partAbbreviation = group_name
+            score.insert(0, part)
+            continue
+
+        detected_key = _detect_key(result.notes)
+
+        if result.stem_label == "guitar_accompaniment":
+            part = _build_staff_part(
+                segments, result.tempo_bpm, clef.TrebleClef(), detected_key, result.time_signature,
+                part_instrument=instrument.Guitar(), as_part_staff=False,
+            )
+            if multi_stem:
+                part.partName = part.partAbbreviation = group_name
+            score.insert(0, part)
+        elif result.stem_label == "bass":
+            part = _build_staff_part(
+                segments, result.tempo_bpm, clef.BassClef(), detected_key, result.time_signature,
+                part_instrument=instrument.ElectricBass(), as_part_staff=False,
+            )
+            if multi_stem:
+                part.partName = part.partAbbreviation = group_name
+            score.insert(0, part)
+        elif result.stem_label == "vocal_melody":
+            # Single treble-clef staff, not the piano grand-staff split — a vocal
+            # melody is monophonic (one note at a time), so splitting it across
+            # treble/bass "hands" by pitch register (_assign_staff_per_note(), built
+            # for simultaneous piano chords) doesn't apply: a melodic phrase that
+            # dips low would get incorrectly routed to the bass staff mid-phrase,
+            # or have notes dropped by _drop_octave_overflow() (built for dense
+            # simultaneous chords, not a single line). Previously fell through to
+            # the piano-grand-staff else branch below — a known simplification,
+            # fixed here.
+            part = _build_staff_part(
+                segments, result.tempo_bpm, clef.TrebleClef(), detected_key, result.time_signature,
+                part_instrument=instrument.Vocalist(), as_part_staff=False,
+            )
+            if multi_stem:
+                part.partName = part.partAbbreviation = group_name
+            score.insert(0, part)
+        else:
+            treble_notes, bass_notes = _assign_staff_per_note(result.notes)
+            treble_notes = _drop_octave_overflow(treble_notes)
+            bass_notes = _drop_octave_overflow(bass_notes)
+            treble_segments = _pad_to_end_beat(_sweep_line_segments(treble_notes), stem_end_beat)
+            bass_segments = _pad_to_end_beat(_sweep_line_segments(bass_notes), stem_end_beat)
+            treble = _build_staff_part(
+                treble_segments, result.tempo_bpm, clef.TrebleClef(), detected_key,
+                result.time_signature, as_part_staff=True,
+            )
+            bass = _build_staff_part(
+                bass_segments, result.tempo_bpm, clef.BassClef(), detected_key,
+                result.time_signature, as_part_staff=True,
+            )
+            score.insert(0, treble)
+            score.insert(0, bass)
+            score.insert(0, layout.StaffGroup(
+                [treble, bass], name=group_name, abbreviation=group_name[:4] + ".", symbol="brace"
+            ))
+
+    return score
+
+
+def write_stem_musicxml(result: QuantizationResult, output_name: str, input_stem: Optional[str] = None) -> Path:
+    """Write a single stem's MusicXML to storage/musicxml/stems/ (not storage/musicxml/).
+
+    Intended for inspecting/testing each stem's transcription individually during a
+    multi-stem run, before they're combined into one score by run_combined() — kept
+    in a separate folder from the single-stem/combined outputs in MUSICXML_DIR so
+    it's obvious which files are this intermediate, per-stem form.
+
+    input_stem: the ORIGINAL sample's filename stem (e.g. "sample5"), not
+    output_name (the Demucs stem name, e.g. "drums") — when given, nests under
+    storage/musicxml/stems/<input_stem>/ instead of writing flat, so a multi-stem
+    run on two different samples can't overwrite each other's same-named stem
+    files (e.g. two different samples both producing "drums.musicxml"). See
+    transcription_service.run()'s docstring for the full reasoning.
+    """
+    score = build_score([result], title=output_name)
+
+    stems_dir = stem_output_dir(MUSICXML_STEMS_DIR, input_stem)
+    stems_dir.mkdir(parents=True, exist_ok=True)
+    output_path = stems_dir / f"{output_name}.musicxml"
     score.write("musicxml", fp=str(output_path))
 
     return output_path
@@ -129,6 +302,29 @@ def _sweep_line_segments(notes) -> List[Segment]:
             merged.append(seg)
 
     return merged
+
+
+def _beats_per_measure(time_signature: str) -> float:
+    """Beats (quarter-note units) per measure for a "N/D" time signature string.
+
+    E.g. "4/4" -> 4.0, "6/8" -> 3.0 (six eighth notes = three quarter notes).
+    """
+    numerator, denominator = time_signature.split("/")
+    return float(numerator) * 4.0 / float(denominator)
+
+
+def _pad_to_end_beat(segments: List[Segment], end_beat: float) -> List[Segment]:
+    """Append a trailing rest segment so this part's content reaches end_beat.
+
+    Needed so every part in a combined multi-stem score has the same total length
+    (see the comment in build_score() for why — MuseScore rejects a multi-part score
+    where one part's measures run out before another's). A no-op if this stem's
+    content already reaches (or exceeds) end_beat.
+    """
+    current_end = segments[-1].end_beat if segments else 0.0
+    if end_beat <= current_end + 1e-9:
+        return segments
+    return segments + [Segment(current_end, end_beat, [])]
 
 
 def _assign_staff_per_note(notes):
@@ -263,16 +459,29 @@ def _build_staff_part(
         if seg.start_beat > cursor:
             part.append(note.Rest(duration=duration.Duration(quarterLength=seg.start_beat - cursor)))
 
-        span = min(seg.end_beat - seg.start_beat, MAX_DURATION_BEATS)
-        note_duration = duration.Duration(quarterLength=span)
+        # A segment (note, chord, or rest) longer than MAX_DURATION_BEATS must be
+        # split into multiple consecutive elements, not just truncated to one
+        # MAX_DURATION_BEATS-long element — appending only the capped element while
+        # still advancing the cursor by the segment's FULL length silently drops the
+        # remainder from the part entirely. For notes/chords this discards real
+        # transcribed content; for the trailing padding rest added by _pad_to_end_beat
+        # (see build_score()) it leaves the part short of the combined score's total
+        # length, which MuseScore hard-rejects as an "Incomplete measure" in every
+        # part after the first that ran out of appended elements.
+        remaining = seg.end_beat - seg.start_beat
+        while remaining > 1e-9:
+            span = min(remaining, MAX_DURATION_BEATS)
+            note_duration = duration.Duration(quarterLength=span)
 
-        if not seg.pitches:
-            element = note.Rest(duration=note_duration)
-        elif len(seg.pitches) == 1:
-            element = note.Note(seg.pitches[0], duration=note_duration)
-        else:
-            element = chord.Chord(seg.pitches, duration=note_duration)
-        part.append(element)
+            if not seg.pitches:
+                element = note.Rest(duration=note_duration)
+            elif len(seg.pitches) == 1:
+                element = note.Note(seg.pitches[0], duration=note_duration)
+            else:
+                element = chord.Chord(seg.pitches, duration=note_duration)
+            part.append(element)
+
+            remaining -= span
 
         cursor = seg.end_beat
 
@@ -288,6 +497,93 @@ def _build_staff_part(
     _suppress_redundant_accidentals(part, staff_key)
 
     return part
+
+
+def _build_percussion_part(
+    segments: List[Segment],
+    tempo_bpm: float,
+    time_signature: str = "4/4",
+) -> stream.Part:
+    """Build a single percussion-clef staff of Unpitched notes from drum hit segments.
+
+    Parallel to _build_staff_part() (same rest-filling, MAX_DURATION_BEATS-splitting,
+    and makeMeasures()/makeTies() cleanup), but for Unpitched percussion notation
+    instead of real pitched Note/Chord elements — no key signature (percussion
+    doesn't have one) and no accidental suppression (nothing to suppress).
+
+    Each segment's "pitches" are GM percussion pitch numbers from
+    drum_transcription_service.py (see DRUM_STAFF_POSITIONS/DRUM_VOICE_PRIORITY
+    above) — when a segment has more than one (simultaneous kick+hihat, etc), only
+    the highest-priority voice is notated; see DRUM_VOICE_PRIORITY's docstring for
+    why (real independent multi-voice percussion notation is out of scope here).
+
+    One instrument.UnpitchedPercussion() for the whole part/drum kit (not one per
+    note — that was tried and reverted: giving each note its own concrete Instrument
+    subclass (BassDrum/SnareDrum/HiHatCymbal) DID get each staff position playing
+    back as its own correct drum sound via per-instrument percMapPitch, but broke
+    the MusicXML's part-list structure — confirmed 6 real <part> elements but 7
+    <score-part> entries in a real combined score, an extra dangling <score-part>
+    with no matching <part>; MuseScore silently tolerated it but it's not valid,
+    clean MusicXML, and the real bug lives somewhere in how music21's PartExporter
+    handles multiple Instrument subclasses inserted into one stream). Reverted to
+    one shared instrument for the whole part: writes <midi-channel>10</midi-channel>
+    (General MIDI's percussion channel — this alone is what fixes playback sounding
+    like piano) but leaves percMapPitch unset, so every note falls back to one
+    single default percussion sound regardless of staff position (accepted
+    trade-off for now — a real per-voice drum-kit sound mapping is a follow-up,
+    not solved by this pass).
+    """
+    part = stream.Part()
+    part.append(instrument.UnpitchedPercussion())
+    part.append(clef.PercussionClef())
+    part.append(meter.TimeSignature(time_signature))
+    part.append(tempo.MetronomeMark(number=round(tempo_bpm)))
+
+    cursor = 0.0
+    for seg in segments:
+        if seg.start_beat > cursor:
+            part.append(note.Rest(duration=duration.Duration(quarterLength=seg.start_beat - cursor)))
+
+        drum_pitch = _pick_drum_voice(seg.pitches)
+
+        # Same over-length splitting as _build_staff_part() — see that function's
+        # comment for why this matters (silently-dropped content / MuseScore
+        # rejecting mismatched part lengths in a combined score otherwise).
+        remaining = seg.end_beat - seg.start_beat
+        while remaining > 1e-9:
+            span = min(remaining, MAX_DURATION_BEATS)
+            note_duration = duration.Duration(quarterLength=span)
+
+            if drum_pitch is None:
+                element = note.Rest(duration=note_duration)
+            else:
+                staff_position, notehead, _display_name = DRUM_STAFF_POSITIONS[drum_pitch]
+                element = note.Unpitched(displayName=staff_position, duration=note_duration)
+                element.notehead = notehead
+            part.append(element)
+
+            remaining -= span
+
+        cursor = seg.end_beat
+
+    part = part.makeMeasures()
+    part.makeTies(inPlace=True)
+
+    return part
+
+
+def _pick_drum_voice(pitches: List[int]) -> int | None:
+    """Pick which single GM percussion pitch to notate for a segment's pitch set.
+
+    Empty (rest) -> None. A single pitch -> that pitch. Multiple simultaneous
+    pitches (e.g. kick+hihat) -> whichever comes first in DRUM_VOICE_PRIORITY.
+    Any pitch not in DRUM_STAFF_POSITIONS (shouldn't happen — drum_transcription_
+    service.py only emits the 3 known GM numbers) is ignored rather than crashing.
+    """
+    known = [p for p in pitches if p in DRUM_STAFF_POSITIONS]
+    if not known:
+        return None
+    return min(known, key=lambda p: DRUM_VOICE_PRIORITY.index(p))
 
 
 def _suppress_redundant_accidentals(part: stream.Part, staff_key: key.Key) -> None:
