@@ -78,6 +78,7 @@ nothing to disagree on yet. If/when real time-signature detection is added, the
 same reference-audio approach should apply.
 """
 
+import re
 from pathlib import Path
 from typing import Callable, Dict, List, Optional
 
@@ -114,6 +115,27 @@ def _report(on_stage: Optional[ProgressCallback], stage: JobStage, message: str)
     print(message)
     if on_stage is not None:
         on_stage(stage, message)
+
+
+def readable_output_name(original_filename: str, job_id: str) -> str:
+    """Build a human-readable final-output filename stem for an API-driven job.
+
+    input_stem (== job_id, since app/api/upload.py deliberately saves uploads as
+    <job_id>.<ext> to avoid collisions between two uploads sharing a name) is fine
+    as the collision-proof key used for on-disk NESTING (stem_output_dir(),
+    stems_dir, storage/intermediate/<job_id>/, etc.), but it's a raw UUID, so using
+    it as the FINAL combined MusicXML/MSCZ filename (a flat, non-nested namespace —
+    see musicxml_service.run_combined()/export_service.to_mscz()) is what made
+    those files unreadable (surfaced by the user: storage/musicxml/ full of
+    <uuid>.musicxml instead of names like the old CLI-script runs' sample2.musicxml).
+
+    Sanitizes the ORIGINAL uploaded filename's stem for filesystem-safety, then
+    appends a short slice of the job_id so two uploads named e.g. "song.mp3" still
+    can't collide in that flat namespace.
+    """
+    stem = Path(original_filename).stem
+    safe_stem = re.sub(r"[^A-Za-z0-9_-]+", "_", stem).strip("_") or "track"
+    return f"{safe_stem}-{job_id[:8]}"
 
 
 def stem_audio_paths(input_audio_path: str, stem_names) -> Dict[str, str]:
@@ -190,6 +212,7 @@ def run_final_phase(
     input_audio_path: str,
     stem_labels: Dict[str, str],
     on_stage: Optional[ProgressCallback] = None,
+    output_name: Optional[str] = None,
 ) -> dict:
     """Phase 3: quantize -> reconcile tempo -> render MusicXML -> export.
     Assumes phases 1 and 2 already ran (separation + transcription).
@@ -199,13 +222,25 @@ def run_final_phase(
     events with load_note_events() and to know which stem produced which
     QuantizationResult.stem_label for musicxml_service's staff-layout routing.
 
+    output_name: the FINAL combined MusicXML/MSCZ filename stem (and score title).
+    Defaults to input_stem (== Path(input_audio_path).stem) when omitted, matching
+    the old behavior — which is correct for the CLI script (run_full_pipeline_no_pauses(),
+    where input_audio_path is already the sample's own readable filename) but NOT
+    for API-driven jobs, where input_audio_path is storage/uploads/<job_id>.<ext>
+    (see app/api/upload.py) so input_stem is a raw UUID. app/api/transcribe.py
+    passes readable_output_name(job.original_filename, job_id) instead, so that
+    combined output ends up readable rather than UUID-named while per-stem/
+    intermediate files (which stay job_id-nested — see stem_output_dir()) remain
+    collision-proof.
+
     Returns a dict with combined_musicxml_path, combined_mscz_path, and per-stem
     details (name, label, tempo, note count, musicxml path) — enough for
     app/api/transcribe.py to build a JobResult from.
     """
     input_audio_path = str(input_audio_path)
     input_stem = Path(input_audio_path).stem
-    output_name = input_stem
+    if output_name is None:
+        output_name = input_stem
 
     transcriptions: Dict[str, List[NoteEvent]] = {
         stem_name: transcription_service.load_note_events(stem_name, input_stem=input_stem)
@@ -233,12 +268,12 @@ def run_final_phase(
         quantized,
         {name: transcriptions[name] for name in quantized},
         stem_audio_paths(input_audio_path, quantized.keys()),
-        input_stem=output_name,
+        input_stem=input_stem,
     )
 
     _report(on_stage, JobStage.RENDERING_MUSICXML, "Rendering MusicXML...")
     for stem_name, result in quantized.items():
-        musicxml_service.write_stem_musicxml(result, output_name=stem_name, input_stem=output_name)
+        musicxml_service.write_stem_musicxml(result, output_name=stem_name, input_stem=input_stem)
     print("Per-stem MusicXML written (storage/musicxml/stems/), reconciled to the reference tempo")
 
     combined_path = musicxml_service.run_combined(list(quantized.values()), output_name=output_name)
@@ -248,7 +283,7 @@ def run_final_phase(
     mscz_path = export_service.to_mscz(str(combined_path), output_name=output_name)
     print(f"Combined MSCZ written to: {mscz_path}")
 
-    stems_dir = stem_output_dir(MUSICXML_STEMS_DIR, output_name)
+    stems_dir = stem_output_dir(MUSICXML_STEMS_DIR, input_stem)
     stem_details = [
         {
             "stem_name": stem_name,

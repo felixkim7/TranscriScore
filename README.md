@@ -218,9 +218,15 @@ curl -o output.mscz http://127.0.0.1:8000/export/YOUR_JOB_ID/mscz
 
 Job records persist to `storage/jobs/<job_id>.json`; uploaded files land in
 `storage/uploads/<job_id>.<ext>` (named after the job ID, not the original filename, so
-two uploads sharing a name never collide). Between checkpoints, nothing is held in
-memory — resumable state lives on disk (separated stems, transcribed note events) or
-in the job record itself, so a server restart mid-pause loses nothing.
+two uploads sharing a name never collide) and all intermediate/per-stem output
+(`storage/intermediate/`, `storage/musicxml/stems/`, etc.) stays nested under that same
+job ID for the same reason. The FINAL combined output — `storage/musicxml/<name>.musicxml`
+and `storage/mscz/<name>.mscz` — uses a readable name instead: the original uploaded
+filename plus a short slice of the job ID (e.g. `sample4-cf7d8563.musicxml`), so browsing
+those two folders looks like the old CLI-script runs rather than a wall of UUIDs, while
+the suffix still keeps two same-named uploads from colliding. Between checkpoints, nothing
+is held in memory — resumable state lives on disk (separated stems, transcribed note
+events) or in the job record itself, so a server restart mid-pause loses nothing.
 
 ### Quick reference
 

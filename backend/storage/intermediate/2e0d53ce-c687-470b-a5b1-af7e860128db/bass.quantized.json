@@ -1,0 +1,3904 @@
+{
+  "tempo_bpm": 161.4990234375,
+  "stem_label": "bass",
+  "time_signature": "4/4",
+  "notes": [
+    {
+      "pitch": 37,
+      "onset_beat": 677.25,
+      "offset_beat": 678.0,
+      "duration_beats": 0.75,
+      "velocity": 57,
+      "confidence": 0.4465678632259369,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 51,
+      "onset_beat": 629.25,
+      "offset_beat": 630.75,
+      "duration_beats": 1.5,
+      "velocity": 72,
+      "confidence": 0.5698191523551941,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 65,
+      "onset_beat": 598.5,
+      "offset_beat": 598.75,
+      "duration_beats": 0.25,
+      "velocity": 76,
+      "confidence": 0.5969018340110779,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 587.5,
+      "offset_beat": 587.75,
+      "duration_beats": 0.25,
+      "velocity": 67,
+      "confidence": 0.5297563672065735,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 44,
+      "onset_beat": 550.5,
+      "offset_beat": 556.5,
+      "duration_beats": 6.0,
+      "velocity": 83,
+      "confidence": 0.6507735252380371,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 25,
+      "onset_beat": 544.5,
+      "offset_beat": 549.0,
+      "duration_beats": 4.5,
+      "velocity": 66,
+      "confidence": 0.5185027718544006,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 533.5,
+      "offset_beat": 549.25,
+      "duration_beats": 15.75,
+      "velocity": 90,
+      "confidence": 0.7056406140327454,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 514.0,
+      "offset_beat": 529.25,
+      "duration_beats": 15.25,
+      "velocity": 89,
+      "confidence": 0.6994749307632446,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 54,
+      "onset_beat": 510.0,
+      "offset_beat": 510.75,
+      "duration_beats": 0.75,
+      "velocity": 45,
+      "confidence": 0.35517317056655884,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 510.0,
+      "offset_beat": 514.0,
+      "duration_beats": 4.0,
+      "velocity": 87,
+      "confidence": 0.68141108751297,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 44,
+      "onset_beat": 506.0,
+      "offset_beat": 509.75,
+      "duration_beats": 3.75,
+      "velocity": 82,
+      "confidence": 0.6494091749191284,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 39,
+      "onset_beat": 502.0,
+      "offset_beat": 506.25,
+      "duration_beats": 4.25,
+      "velocity": 93,
+      "confidence": 0.7332412600517273,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 498.0,
+      "offset_beat": 501.75,
+      "duration_beats": 3.75,
+      "velocity": 97,
+      "confidence": 0.7650003433227539,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 33,
+      "onset_beat": 492.0,
+      "offset_beat": 497.75,
+      "duration_beats": 5.75,
+      "velocity": 99,
+      "confidence": 0.7806546688079834,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 35,
+      "onset_beat": 481.75,
+      "offset_beat": 491.75,
+      "duration_beats": 10.0,
+      "velocity": 100,
+      "confidence": 0.7840246558189392,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 473.0,
+      "offset_beat": 481.5,
+      "duration_beats": 8.5,
+      "velocity": 101,
+      "confidence": 0.7941012978553772,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 465.0,
+      "offset_beat": 466.75,
+      "duration_beats": 1.75,
+      "velocity": 62,
+      "confidence": 0.49203428626060486,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 39,
+      "onset_beat": 462.0,
+      "offset_beat": 465.5,
+      "duration_beats": 3.5,
+      "velocity": 93,
+      "confidence": 0.7325745224952698,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 39,
+      "onset_beat": 461.5,
+      "offset_beat": 462.0,
+      "duration_beats": 0.5,
+      "velocity": 86,
+      "confidence": 0.6734175086021423,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 39,
+      "onset_beat": 461.0,
+      "offset_beat": 461.5,
+      "duration_beats": 0.5,
+      "velocity": 81,
+      "confidence": 0.6389102339744568,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 460.0,
+      "offset_beat": 460.5,
+      "duration_beats": 0.5,
+      "velocity": 52,
+      "confidence": 0.4055140018463135,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 458.0,
+      "offset_beat": 459.25,
+      "duration_beats": 1.25,
+      "velocity": 48,
+      "confidence": 0.37772005796432495,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 34,
+      "onset_beat": 455.5,
+      "offset_beat": 456.0,
+      "duration_beats": 0.5,
+      "velocity": 68,
+      "confidence": 0.5366984605789185,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 455.0,
+      "offset_beat": 455.5,
+      "duration_beats": 0.5,
+      "velocity": 73,
+      "confidence": 0.5766186118125916,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 34,
+      "onset_beat": 454.5,
+      "offset_beat": 454.75,
+      "duration_beats": 0.25,
+      "velocity": 62,
+      "confidence": 0.48970839381217957,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 454.0,
+      "offset_beat": 454.5,
+      "duration_beats": 0.5,
+      "velocity": 72,
+      "confidence": 0.5655236840248108,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 34,
+      "onset_beat": 452.0,
+      "offset_beat": 453.75,
+      "duration_beats": 1.75,
+      "velocity": 98,
+      "confidence": 0.7726971507072449,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 34,
+      "onset_beat": 450.0,
+      "offset_beat": 452.0,
+      "duration_beats": 2.0,
+      "velocity": 95,
+      "confidence": 0.7462894916534424,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 34,
+      "onset_beat": 449.5,
+      "offset_beat": 450.0,
+      "duration_beats": 0.5,
+      "velocity": 94,
+      "confidence": 0.7395249605178833,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 34,
+      "onset_beat": 448.75,
+      "offset_beat": 449.5,
+      "duration_beats": 0.75,
+      "velocity": 66,
+      "confidence": 0.5193966627120972,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 36,
+      "onset_beat": 446.0,
+      "offset_beat": 448.75,
+      "duration_beats": 2.75,
+      "velocity": 90,
+      "confidence": 0.7101691365242004,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 36,
+      "onset_beat": 445.5,
+      "offset_beat": 446.0,
+      "duration_beats": 0.5,
+      "velocity": 79,
+      "confidence": 0.618817925453186,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 36,
+      "onset_beat": 445.0,
+      "offset_beat": 445.5,
+      "duration_beats": 0.5,
+      "velocity": 73,
+      "confidence": 0.5764996409416199,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 442.0,
+      "offset_beat": 445.0,
+      "duration_beats": 3.0,
+      "velocity": 91,
+      "confidence": 0.7191731333732605,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 441.0,
+      "offset_beat": 442.0,
+      "duration_beats": 1.0,
+      "velocity": 87,
+      "confidence": 0.6857448220252991,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 38,
+      "onset_beat": 440.5,
+      "offset_beat": 440.75,
+      "duration_beats": 0.25,
+      "velocity": 47,
+      "confidence": 0.37279048562049866,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 39,
+      "onset_beat": 440.0,
+      "offset_beat": 440.5,
+      "duration_beats": 0.5,
+      "velocity": 86,
+      "confidence": 0.6808779835700989,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 44,
+      "onset_beat": 439.5,
+      "offset_beat": 440.0,
+      "duration_beats": 0.5,
+      "velocity": 76,
+      "confidence": 0.5947313904762268,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 44,
+      "onset_beat": 439.25,
+      "offset_beat": 439.5,
+      "duration_beats": 0.25,
+      "velocity": 69,
+      "confidence": 0.5403692126274109,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 39,
+      "onset_beat": 438.5,
+      "offset_beat": 439.25,
+      "duration_beats": 0.75,
+      "velocity": 84,
+      "confidence": 0.6578174829483032,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 436.0,
+      "offset_beat": 438.75,
+      "duration_beats": 2.75,
+      "velocity": 93,
+      "confidence": 0.732292115688324,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 39,
+      "onset_beat": 430.0,
+      "offset_beat": 433.25,
+      "duration_beats": 3.25,
+      "velocity": 98,
+      "confidence": 0.7729400396347046,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 39,
+      "onset_beat": 429.5,
+      "offset_beat": 430.0,
+      "duration_beats": 0.5,
+      "velocity": 94,
+      "confidence": 0.7440637946128845,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 426.0,
+      "offset_beat": 427.25,
+      "duration_beats": 1.25,
+      "velocity": 58,
+      "confidence": 0.4540027678012848,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 34,
+      "onset_beat": 423.5,
+      "offset_beat": 423.75,
+      "duration_beats": 0.25,
+      "velocity": 53,
+      "confidence": 0.4205338656902313,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 36,
+      "onset_beat": 423.0,
+      "offset_beat": 423.5,
+      "duration_beats": 0.5,
+      "velocity": 77,
+      "confidence": 0.6080290675163269,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 34,
+      "onset_beat": 422.5,
+      "offset_beat": 423.0,
+      "duration_beats": 0.5,
+      "velocity": 58,
+      "confidence": 0.45414239168167114,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 422.0,
+      "offset_beat": 422.5,
+      "duration_beats": 0.5,
+      "velocity": 84,
+      "confidence": 0.6579775214195251,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 34,
+      "onset_beat": 418.0,
+      "offset_beat": 421.75,
+      "duration_beats": 3.75,
+      "velocity": 85,
+      "confidence": 0.6703814268112183,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 34,
+      "onset_beat": 417.5,
+      "offset_beat": 418.0,
+      "duration_beats": 0.5,
+      "velocity": 66,
+      "confidence": 0.5203531980514526,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 34,
+      "onset_beat": 417.0,
+      "offset_beat": 417.5,
+      "duration_beats": 0.5,
+      "velocity": 53,
+      "confidence": 0.4158928096294403,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 36,
+      "onset_beat": 416.0,
+      "offset_beat": 416.75,
+      "duration_beats": 0.75,
+      "velocity": 99,
+      "confidence": 0.777732789516449,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 36,
+      "onset_beat": 414.0,
+      "offset_beat": 416.0,
+      "duration_beats": 2.0,
+      "velocity": 95,
+      "confidence": 0.7515168786048889,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 36,
+      "onset_beat": 413.5,
+      "offset_beat": 414.0,
+      "duration_beats": 0.5,
+      "velocity": 77,
+      "confidence": 0.6094681620597839,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 36,
+      "onset_beat": 413.0,
+      "offset_beat": 413.5,
+      "duration_beats": 0.5,
+      "velocity": 70,
+      "confidence": 0.5472522974014282,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 409.25,
+      "offset_beat": 413.0,
+      "duration_beats": 3.75,
+      "velocity": 98,
+      "confidence": 0.7737519145011902,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 408.75,
+      "offset_beat": 409.25,
+      "duration_beats": 0.5,
+      "velocity": 75,
+      "confidence": 0.5897535681724548,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 43,
+      "onset_beat": 408.25,
+      "offset_beat": 408.5,
+      "duration_beats": 0.25,
+      "velocity": 65,
+      "confidence": 0.5125032663345337,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 44,
+      "onset_beat": 394.75,
+      "offset_beat": 395.25,
+      "duration_beats": 0.5,
+      "velocity": 75,
+      "confidence": 0.5870186686515808,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 44,
+      "onset_beat": 386.75,
+      "offset_beat": 387.25,
+      "duration_beats": 0.5,
+      "velocity": 46,
+      "confidence": 0.3622589707374573,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 374.75,
+      "offset_beat": 375.25,
+      "duration_beats": 0.5,
+      "velocity": 46,
+      "confidence": 0.3624129891395569,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 372.0,
+      "offset_beat": 372.75,
+      "duration_beats": 0.75,
+      "velocity": 62,
+      "confidence": 0.49183619022369385,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 371.0,
+      "offset_beat": 372.0,
+      "duration_beats": 1.0,
+      "velocity": 61,
+      "confidence": 0.4823870360851288,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 369.0,
+      "offset_beat": 370.25,
+      "duration_beats": 1.25,
+      "velocity": 53,
+      "confidence": 0.4182995855808258,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 367.25,
+      "offset_beat": 368.25,
+      "duration_beats": 1.0,
+      "velocity": 49,
+      "confidence": 0.38685163855552673,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 367.0,
+      "offset_beat": 367.5,
+      "duration_beats": 0.5,
+      "velocity": 76,
+      "confidence": 0.5979536771774292,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 366.5,
+      "offset_beat": 367.0,
+      "duration_beats": 0.5,
+      "velocity": 66,
+      "confidence": 0.5213498473167419,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 365.75,
+      "offset_beat": 366.75,
+      "duration_beats": 1.0,
+      "velocity": 77,
+      "confidence": 0.6045286655426025,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 360.5,
+      "offset_beat": 366.0,
+      "duration_beats": 5.5,
+      "velocity": 92,
+      "confidence": 0.7281205058097839,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 356.0,
+      "offset_beat": 360.25,
+      "duration_beats": 4.25,
+      "velocity": 72,
+      "confidence": 0.564203143119812,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 352.0,
+      "offset_beat": 353.0,
+      "duration_beats": 1.0,
+      "velocity": 59,
+      "confidence": 0.4613972008228302,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 351.0,
+      "offset_beat": 351.5,
+      "duration_beats": 0.5,
+      "velocity": 44,
+      "confidence": 0.3481573164463043,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 348.0,
+      "offset_beat": 350.5,
+      "duration_beats": 2.5,
+      "velocity": 95,
+      "confidence": 0.7455499172210693,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 39,
+      "onset_beat": 344.0,
+      "offset_beat": 348.0,
+      "duration_beats": 4.0,
+      "velocity": 99,
+      "confidence": 0.7819949388504028,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 342.0,
+      "offset_beat": 343.5,
+      "duration_beats": 1.5,
+      "velocity": 44,
+      "confidence": 0.3479703366756439,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 28,
+      "onset_beat": 341.75,
+      "offset_beat": 343.75,
+      "duration_beats": 2.0,
+      "velocity": 75,
+      "confidence": 0.5898821353912354,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 340.0,
+      "offset_beat": 341.75,
+      "duration_beats": 1.75,
+      "velocity": 52,
+      "confidence": 0.4102170467376709,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 339.75,
+      "offset_beat": 341.75,
+      "duration_beats": 2.0,
+      "velocity": 90,
+      "confidence": 0.7123779654502869,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 35,
+      "onset_beat": 338.75,
+      "offset_beat": 339.5,
+      "duration_beats": 0.75,
+      "velocity": 88,
+      "confidence": 0.6942061185836792,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 338.0,
+      "offset_beat": 338.75,
+      "duration_beats": 0.75,
+      "velocity": 76,
+      "confidence": 0.5955747365951538,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 35,
+      "onset_beat": 337.5,
+      "offset_beat": 338.0,
+      "duration_beats": 0.5,
+      "velocity": 59,
+      "confidence": 0.4643809199333191,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 336.0,
+      "offset_beat": 338.0,
+      "duration_beats": 2.0,
+      "velocity": 51,
+      "confidence": 0.4051278829574585,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 335.0,
+      "offset_beat": 335.75,
+      "duration_beats": 0.75,
+      "velocity": 67,
+      "confidence": 0.5261406898498535,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 335.0,
+      "offset_beat": 335.5,
+      "duration_beats": 0.5,
+      "velocity": 44,
+      "confidence": 0.3473590910434723,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 332.25,
+      "offset_beat": 332.75,
+      "duration_beats": 0.5,
+      "velocity": 45,
+      "confidence": 0.35433539748191833,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 331.0,
+      "offset_beat": 331.5,
+      "duration_beats": 0.5,
+      "velocity": 45,
+      "confidence": 0.3531414270401001,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 328.5,
+      "offset_beat": 328.75,
+      "duration_beats": 0.25,
+      "velocity": 43,
+      "confidence": 0.3369424045085907,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 327.5,
+      "offset_beat": 331.75,
+      "duration_beats": 4.25,
+      "velocity": 79,
+      "confidence": 0.6217268109321594,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 327.25,
+      "offset_beat": 328.0,
+      "duration_beats": 0.75,
+      "velocity": 44,
+      "confidence": 0.3441455364227295,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 325.5,
+      "offset_beat": 327.75,
+      "duration_beats": 2.25,
+      "velocity": 87,
+      "confidence": 0.6871297955513,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 325.0,
+      "offset_beat": 325.5,
+      "duration_beats": 0.5,
+      "velocity": 84,
+      "confidence": 0.6628475189208984,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 324.0,
+      "offset_beat": 325.0,
+      "duration_beats": 1.0,
+      "velocity": 74,
+      "confidence": 0.5793048143386841,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 323.5,
+      "offset_beat": 324.0,
+      "duration_beats": 0.5,
+      "velocity": 61,
+      "confidence": 0.4788884222507477,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 322.5,
+      "offset_beat": 323.25,
+      "duration_beats": 0.75,
+      "velocity": 51,
+      "confidence": 0.4026041328907013,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 322.0,
+      "offset_beat": 322.5,
+      "duration_beats": 0.5,
+      "velocity": 47,
+      "confidence": 0.3675081133842468,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 320.5,
+      "offset_beat": 321.25,
+      "duration_beats": 0.75,
+      "velocity": 48,
+      "confidence": 0.3751108944416046,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 28,
+      "onset_beat": 319.25,
+      "offset_beat": 323.5,
+      "duration_beats": 4.25,
+      "velocity": 64,
+      "confidence": 0.5005584955215454,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 318.75,
+      "offset_beat": 319.25,
+      "duration_beats": 0.5,
+      "velocity": 55,
+      "confidence": 0.4323522448539734,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 34,
+      "onset_beat": 317.5,
+      "offset_beat": 318.0,
+      "duration_beats": 0.5,
+      "velocity": 72,
+      "confidence": 0.5702264904975891,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 35,
+      "onset_beat": 316.5,
+      "offset_beat": 317.0,
+      "duration_beats": 0.5,
+      "velocity": 80,
+      "confidence": 0.6283512115478516,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 314.0,
+      "offset_beat": 316.5,
+      "duration_beats": 2.5,
+      "velocity": 88,
+      "confidence": 0.6903088092803955,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 313.0,
+      "offset_beat": 314.0,
+      "duration_beats": 1.0,
+      "velocity": 87,
+      "confidence": 0.6842688322067261,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 44,
+      "onset_beat": 313.0,
+      "offset_beat": 313.25,
+      "duration_beats": 0.25,
+      "velocity": 44,
+      "confidence": 0.3476071357727051,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 311.5,
+      "offset_beat": 313.0,
+      "duration_beats": 1.5,
+      "velocity": 74,
+      "confidence": 0.5803407430648804,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 34,
+      "onset_beat": 307.5,
+      "offset_beat": 311.25,
+      "duration_beats": 3.75,
+      "velocity": 91,
+      "confidence": 0.7201855778694153,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 35,
+      "onset_beat": 305.0,
+      "offset_beat": 307.5,
+      "duration_beats": 2.5,
+      "velocity": 89,
+      "confidence": 0.7030012607574463,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 35,
+      "onset_beat": 304.5,
+      "offset_beat": 305.0,
+      "duration_beats": 0.5,
+      "velocity": 86,
+      "confidence": 0.6753250956535339,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 35,
+      "onset_beat": 303.5,
+      "offset_beat": 304.5,
+      "duration_beats": 1.0,
+      "velocity": 66,
+      "confidence": 0.5228190422058105,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 36,
+      "onset_beat": 303.0,
+      "offset_beat": 303.5,
+      "duration_beats": 0.5,
+      "velocity": 62,
+      "confidence": 0.48709630966186523,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 302.25,
+      "offset_beat": 303.0,
+      "duration_beats": 0.75,
+      "velocity": 78,
+      "confidence": 0.6160020232200623,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 302.0,
+      "offset_beat": 302.75,
+      "duration_beats": 0.75,
+      "velocity": 43,
+      "confidence": 0.33742305636405945,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 301.5,
+      "offset_beat": 302.5,
+      "duration_beats": 1.0,
+      "velocity": 73,
+      "confidence": 0.5779769420623779,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 300.75,
+      "offset_beat": 301.75,
+      "duration_beats": 1.0,
+      "velocity": 81,
+      "confidence": 0.6365403532981873,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 300.5,
+      "offset_beat": 301.0,
+      "duration_beats": 0.5,
+      "velocity": 75,
+      "confidence": 0.5898630619049072,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 300.25,
+      "offset_beat": 300.75,
+      "duration_beats": 0.5,
+      "velocity": 52,
+      "confidence": 0.4106115996837616,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 294.5,
+      "offset_beat": 295.0,
+      "duration_beats": 0.5,
+      "velocity": 75,
+      "confidence": 0.5908102989196777,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 293.75,
+      "offset_beat": 295.25,
+      "duration_beats": 1.5,
+      "velocity": 63,
+      "confidence": 0.4952488839626312,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 292.0,
+      "offset_beat": 294.0,
+      "duration_beats": 2.0,
+      "velocity": 92,
+      "confidence": 0.7262003421783447,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 291.5,
+      "offset_beat": 292.0,
+      "duration_beats": 0.5,
+      "velocity": 91,
+      "confidence": 0.7140750885009766,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 290.0,
+      "offset_beat": 290.5,
+      "duration_beats": 0.5,
+      "velocity": 74,
+      "confidence": 0.5831941962242126,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 39,
+      "onset_beat": 289.5,
+      "offset_beat": 290.0,
+      "duration_beats": 0.5,
+      "velocity": 88,
+      "confidence": 0.6926141381263733,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 287.5,
+      "offset_beat": 288.75,
+      "duration_beats": 1.25,
+      "velocity": 50,
+      "confidence": 0.39680391550064087,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 286.5,
+      "offset_beat": 286.75,
+      "duration_beats": 0.25,
+      "velocity": 53,
+      "confidence": 0.4147526025772095,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 34,
+      "onset_beat": 285.5,
+      "offset_beat": 286.0,
+      "duration_beats": 0.5,
+      "velocity": 69,
+      "confidence": 0.5401386618614197,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 285.0,
+      "offset_beat": 285.25,
+      "duration_beats": 0.25,
+      "velocity": 73,
+      "confidence": 0.5739660859107971,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 35,
+      "onset_beat": 284.5,
+      "offset_beat": 285.0,
+      "duration_beats": 0.5,
+      "velocity": 75,
+      "confidence": 0.5902057886123657,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 282.5,
+      "offset_beat": 284.5,
+      "duration_beats": 2.0,
+      "velocity": 90,
+      "confidence": 0.7054842710494995,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 280.25,
+      "offset_beat": 282.5,
+      "duration_beats": 2.25,
+      "velocity": 87,
+      "confidence": 0.6883822083473206,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 58,
+      "onset_beat": 278.0,
+      "offset_beat": 279.0,
+      "duration_beats": 1.0,
+      "velocity": 50,
+      "confidence": 0.3973185420036316,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 34,
+      "onset_beat": 276.0,
+      "offset_beat": 279.5,
+      "duration_beats": 3.5,
+      "velocity": 88,
+      "confidence": 0.6961194276809692,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 34,
+      "onset_beat": 275.5,
+      "offset_beat": 276.0,
+      "duration_beats": 0.5,
+      "velocity": 63,
+      "confidence": 0.4960123598575592,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 35,
+      "onset_beat": 274.0,
+      "offset_beat": 275.5,
+      "duration_beats": 1.5,
+      "velocity": 93,
+      "confidence": 0.7337305545806885,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 59,
+      "onset_beat": 274.0,
+      "offset_beat": 274.75,
+      "duration_beats": 0.75,
+      "velocity": 48,
+      "confidence": 0.37677690386772156,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 35,
+      "onset_beat": 272.0,
+      "offset_beat": 274.0,
+      "duration_beats": 2.0,
+      "velocity": 91,
+      "confidence": 0.7152559757232666,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 59,
+      "onset_beat": 272.0,
+      "offset_beat": 274.0,
+      "duration_beats": 2.0,
+      "velocity": 44,
+      "confidence": 0.3473508954048157,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 35,
+      "onset_beat": 271.5,
+      "offset_beat": 272.0,
+      "duration_beats": 0.5,
+      "velocity": 78,
+      "confidence": 0.6103415489196777,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 269.25,
+      "offset_beat": 270.0,
+      "duration_beats": 0.75,
+      "velocity": 52,
+      "confidence": 0.4106825590133667,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 266.25,
+      "offset_beat": 267.0,
+      "duration_beats": 0.75,
+      "velocity": 46,
+      "confidence": 0.3594358265399933,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 261.5,
+      "offset_beat": 262.0,
+      "duration_beats": 0.5,
+      "velocity": 80,
+      "confidence": 0.6294969320297241,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 261.0,
+      "offset_beat": 261.5,
+      "duration_beats": 0.5,
+      "velocity": 78,
+      "confidence": 0.6104519963264465,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 260.0,
+      "offset_beat": 261.0,
+      "duration_beats": 1.0,
+      "velocity": 77,
+      "confidence": 0.6044238805770874,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 259.0,
+      "offset_beat": 260.0,
+      "duration_beats": 1.0,
+      "velocity": 74,
+      "confidence": 0.5794564485549927,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 255.5,
+      "offset_beat": 258.75,
+      "duration_beats": 3.25,
+      "velocity": 58,
+      "confidence": 0.45771414041519165,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 28,
+      "onset_beat": 255.0,
+      "offset_beat": 259.0,
+      "duration_beats": 4.0,
+      "velocity": 59,
+      "confidence": 0.4679352939128876,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 255.0,
+      "offset_beat": 255.5,
+      "duration_beats": 0.5,
+      "velocity": 47,
+      "confidence": 0.3684025704860687,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 254.0,
+      "offset_beat": 254.5,
+      "duration_beats": 0.5,
+      "velocity": 67,
+      "confidence": 0.5242503881454468,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 254.0,
+      "offset_beat": 254.25,
+      "duration_beats": 0.25,
+      "velocity": 44,
+      "confidence": 0.3455730080604553,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 252.0,
+      "offset_beat": 253.75,
+      "duration_beats": 1.75,
+      "velocity": 74,
+      "confidence": 0.5850209593772888,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 247.0,
+      "offset_beat": 252.0,
+      "duration_beats": 5.0,
+      "velocity": 66,
+      "confidence": 0.5199505090713501,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 34,
+      "onset_beat": 244.0,
+      "offset_beat": 246.75,
+      "duration_beats": 2.75,
+      "velocity": 77,
+      "confidence": 0.6087449789047241,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 34,
+      "onset_beat": 243.5,
+      "offset_beat": 244.0,
+      "duration_beats": 0.5,
+      "velocity": 73,
+      "confidence": 0.5724881291389465,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 35,
+      "onset_beat": 242.0,
+      "offset_beat": 243.0,
+      "duration_beats": 1.0,
+      "velocity": 84,
+      "confidence": 0.6651396751403809,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 35,
+      "onset_beat": 241.5,
+      "offset_beat": 242.0,
+      "duration_beats": 0.5,
+      "velocity": 66,
+      "confidence": 0.5177879333496094,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 35,
+      "onset_beat": 239.25,
+      "offset_beat": 241.5,
+      "duration_beats": 2.25,
+      "velocity": 64,
+      "confidence": 0.5047562718391418,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 36,
+      "onset_beat": 239.0,
+      "offset_beat": 239.25,
+      "duration_beats": 0.25,
+      "velocity": 82,
+      "confidence": 0.6474884152412415,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 238.5,
+      "offset_beat": 239.0,
+      "duration_beats": 0.5,
+      "velocity": 76,
+      "confidence": 0.6012376546859741,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 238.0,
+      "offset_beat": 238.75,
+      "duration_beats": 0.75,
+      "velocity": 47,
+      "confidence": 0.37274035811424255,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 54,
+      "onset_beat": 238.0,
+      "offset_beat": 238.25,
+      "duration_beats": 0.25,
+      "velocity": 47,
+      "confidence": 0.3720895051956177,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 237.5,
+      "offset_beat": 238.5,
+      "duration_beats": 1.0,
+      "velocity": 82,
+      "confidence": 0.6440818905830383,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 236.5,
+      "offset_beat": 237.0,
+      "duration_beats": 0.5,
+      "velocity": 74,
+      "confidence": 0.58493572473526,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 235.75,
+      "offset_beat": 236.5,
+      "duration_beats": 0.75,
+      "velocity": 72,
+      "confidence": 0.565716028213501,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 232.25,
+      "offset_beat": 235.75,
+      "duration_beats": 3.5,
+      "velocity": 68,
+      "confidence": 0.5350388288497925,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 31,
+      "onset_beat": 230.75,
+      "offset_beat": 231.5,
+      "duration_beats": 0.75,
+      "velocity": 55,
+      "confidence": 0.43263140320777893,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 228.25,
+      "offset_beat": 230.5,
+      "duration_beats": 2.25,
+      "velocity": 87,
+      "confidence": 0.686988115310669,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 227.25,
+      "offset_beat": 228.25,
+      "duration_beats": 1.0,
+      "velocity": 83,
+      "confidence": 0.6523324847221375,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 226.0,
+      "offset_beat": 227.0,
+      "duration_beats": 1.0,
+      "velocity": 81,
+      "confidence": 0.6400884985923767,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 39,
+      "onset_beat": 225.5,
+      "offset_beat": 226.0,
+      "duration_beats": 0.5,
+      "velocity": 84,
+      "confidence": 0.6579365134239197,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 225.0,
+      "offset_beat": 225.5,
+      "duration_beats": 0.5,
+      "velocity": 54,
+      "confidence": 0.4234810471534729,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 224.0,
+      "offset_beat": 225.0,
+      "duration_beats": 1.0,
+      "velocity": 49,
+      "confidence": 0.3861900866031647,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 223.0,
+      "offset_beat": 224.0,
+      "duration_beats": 1.0,
+      "velocity": 44,
+      "confidence": 0.34603774547576904,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 222.0,
+      "offset_beat": 222.25,
+      "duration_beats": 0.25,
+      "velocity": 47,
+      "confidence": 0.37064144015312195,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 221.5,
+      "offset_beat": 222.0,
+      "duration_beats": 0.5,
+      "velocity": 55,
+      "confidence": 0.4315505623817444,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 34,
+      "onset_beat": 221.0,
+      "offset_beat": 221.5,
+      "duration_beats": 0.5,
+      "velocity": 68,
+      "confidence": 0.5319358110427856,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 35,
+      "onset_beat": 220.25,
+      "offset_beat": 220.5,
+      "duration_beats": 0.25,
+      "velocity": 75,
+      "confidence": 0.5917114019393921,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 216.0,
+      "offset_beat": 220.0,
+      "duration_beats": 4.0,
+      "velocity": 80,
+      "confidence": 0.6300191879272461,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 215.0,
+      "offset_beat": 216.0,
+      "duration_beats": 1.0,
+      "velocity": 57,
+      "confidence": 0.4488449990749359,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 34,
+      "onset_beat": 212.0,
+      "offset_beat": 214.75,
+      "duration_beats": 2.75,
+      "velocity": 79,
+      "confidence": 0.6200119853019714,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 34,
+      "onset_beat": 211.5,
+      "offset_beat": 212.0,
+      "duration_beats": 0.5,
+      "velocity": 58,
+      "confidence": 0.45622631907463074,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 34,
+      "onset_beat": 210.75,
+      "offset_beat": 211.5,
+      "duration_beats": 0.75,
+      "velocity": 51,
+      "confidence": 0.40366432070732117,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 35,
+      "onset_beat": 209.5,
+      "offset_beat": 210.75,
+      "duration_beats": 1.25,
+      "velocity": 89,
+      "confidence": 0.7047027349472046,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 35,
+      "onset_beat": 208.0,
+      "offset_beat": 209.5,
+      "duration_beats": 1.5,
+      "velocity": 81,
+      "confidence": 0.6412451267242432,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 35,
+      "onset_beat": 207.0,
+      "offset_beat": 208.0,
+      "duration_beats": 1.0,
+      "velocity": 80,
+      "confidence": 0.6282536387443542,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 200.0,
+      "offset_beat": 201.25,
+      "duration_beats": 1.25,
+      "velocity": 90,
+      "confidence": 0.7108829021453857,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 199.25,
+      "offset_beat": 200.0,
+      "duration_beats": 0.75,
+      "velocity": 79,
+      "confidence": 0.6213879585266113,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 198.5,
+      "offset_beat": 199.0,
+      "duration_beats": 0.5,
+      "velocity": 67,
+      "confidence": 0.5272502303123474,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 195.5,
+      "offset_beat": 198.5,
+      "duration_beats": 3.0,
+      "velocity": 83,
+      "confidence": 0.6531527042388916,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 192.5,
+      "offset_beat": 195.5,
+      "duration_beats": 3.0,
+      "velocity": 82,
+      "confidence": 0.6424399614334106,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 191.5,
+      "offset_beat": 192.5,
+      "duration_beats": 1.0,
+      "velocity": 75,
+      "confidence": 0.589121401309967,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 187.0,
+      "offset_beat": 191.25,
+      "duration_beats": 4.25,
+      "velocity": 63,
+      "confidence": 0.49434933066368103,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 28,
+      "onset_beat": 186.75,
+      "offset_beat": 191.0,
+      "duration_beats": 4.25,
+      "velocity": 79,
+      "confidence": 0.6216781139373779,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 182.0,
+      "offset_beat": 182.5,
+      "duration_beats": 0.5,
+      "velocity": 50,
+      "confidence": 0.3928352892398834,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 182.0,
+      "offset_beat": 182.75,
+      "duration_beats": 0.75,
+      "velocity": 83,
+      "confidence": 0.6541584730148315,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 179.0,
+      "offset_beat": 181.75,
+      "duration_beats": 2.75,
+      "velocity": 92,
+      "confidence": 0.7244919538497925,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 39,
+      "onset_beat": 175.0,
+      "offset_beat": 179.25,
+      "duration_beats": 4.25,
+      "velocity": 93,
+      "confidence": 0.7316362857818604,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 173.0,
+      "offset_beat": 174.75,
+      "duration_beats": 1.75,
+      "velocity": 53,
+      "confidence": 0.4207551181316376,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 171.0,
+      "offset_beat": 172.75,
+      "duration_beats": 1.75,
+      "velocity": 48,
+      "confidence": 0.38078516721725464,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 171.0,
+      "offset_beat": 172.75,
+      "duration_beats": 1.75,
+      "velocity": 88,
+      "confidence": 0.696484386920929,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 35,
+      "onset_beat": 169.5,
+      "offset_beat": 170.5,
+      "duration_beats": 1.0,
+      "velocity": 89,
+      "confidence": 0.6984308362007141,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 169.0,
+      "offset_beat": 169.75,
+      "duration_beats": 0.75,
+      "velocity": 80,
+      "confidence": 0.63074791431427,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 35,
+      "onset_beat": 168.75,
+      "offset_beat": 169.5,
+      "duration_beats": 0.75,
+      "velocity": 57,
+      "confidence": 0.44761741161346436,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 167.0,
+      "offset_beat": 169.0,
+      "duration_beats": 2.0,
+      "velocity": 55,
+      "confidence": 0.4314539134502411,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 163.25,
+      "offset_beat": 163.75,
+      "duration_beats": 0.5,
+      "velocity": 59,
+      "confidence": 0.46589216589927673,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 162.0,
+      "offset_beat": 162.75,
+      "duration_beats": 0.75,
+      "velocity": 69,
+      "confidence": 0.543631374835968,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 162.0,
+      "offset_beat": 162.5,
+      "duration_beats": 0.5,
+      "velocity": 45,
+      "confidence": 0.35393664240837097,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 157.5,
+      "offset_beat": 158.0,
+      "duration_beats": 0.5,
+      "velocity": 64,
+      "confidence": 0.5062592625617981,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 156.0,
+      "offset_beat": 157.75,
+      "duration_beats": 1.75,
+      "velocity": 81,
+      "confidence": 0.6374830007553101,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 155.5,
+      "offset_beat": 156.0,
+      "duration_beats": 0.5,
+      "velocity": 66,
+      "confidence": 0.5194311141967773,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 154.5,
+      "offset_beat": 155.5,
+      "duration_beats": 1.0,
+      "velocity": 51,
+      "confidence": 0.39800915122032166,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 153.25,
+      "offset_beat": 154.5,
+      "duration_beats": 1.25,
+      "velocity": 70,
+      "confidence": 0.5526248812675476,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 39,
+      "onset_beat": 153.0,
+      "offset_beat": 153.25,
+      "duration_beats": 0.25,
+      "velocity": 92,
+      "confidence": 0.723124086856842,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 151.5,
+      "offset_beat": 153.0,
+      "duration_beats": 1.5,
+      "velocity": 57,
+      "confidence": 0.45144549012184143,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 35,
+      "onset_beat": 150.0,
+      "offset_beat": 150.5,
+      "duration_beats": 0.5,
+      "velocity": 70,
+      "confidence": 0.5477556586265564,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 149.0,
+      "offset_beat": 149.5,
+      "duration_beats": 0.5,
+      "velocity": 61,
+      "confidence": 0.4804649353027344,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 149.0,
+      "offset_beat": 149.25,
+      "duration_beats": 0.25,
+      "velocity": 44,
+      "confidence": 0.3433407247066498,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 44,
+      "onset_beat": 148.25,
+      "offset_beat": 148.75,
+      "duration_beats": 0.5,
+      "velocity": 44,
+      "confidence": 0.34825634956359863,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 44,
+      "onset_beat": 145.0,
+      "offset_beat": 145.5,
+      "duration_beats": 0.5,
+      "velocity": 46,
+      "confidence": 0.36580103635787964,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 143.75,
+      "offset_beat": 148.75,
+      "duration_beats": 5.0,
+      "velocity": 90,
+      "confidence": 0.705680251121521,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 142.75,
+      "offset_beat": 143.75,
+      "duration_beats": 1.0,
+      "velocity": 84,
+      "confidence": 0.6612229347229004,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 34,
+      "onset_beat": 141.5,
+      "offset_beat": 142.75,
+      "duration_beats": 1.25,
+      "velocity": 90,
+      "confidence": 0.7062809467315674,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 34,
+      "onset_beat": 140.0,
+      "offset_beat": 141.5,
+      "duration_beats": 1.5,
+      "velocity": 89,
+      "confidence": 0.7020338773727417,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 34,
+      "onset_beat": 139.5,
+      "offset_beat": 140.0,
+      "duration_beats": 0.5,
+      "velocity": 86,
+      "confidence": 0.6786147356033325,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 34,
+      "onset_beat": 139.0,
+      "offset_beat": 139.5,
+      "duration_beats": 0.5,
+      "velocity": 66,
+      "confidence": 0.518310546875,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 35,
+      "onset_beat": 138.5,
+      "offset_beat": 139.0,
+      "duration_beats": 0.5,
+      "velocity": 76,
+      "confidence": 0.6017745733261108,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 35,
+      "onset_beat": 136.0,
+      "offset_beat": 138.5,
+      "duration_beats": 2.5,
+      "velocity": 72,
+      "confidence": 0.5673730373382568,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 35,
+      "onset_beat": 135.5,
+      "offset_beat": 136.0,
+      "duration_beats": 0.5,
+      "velocity": 62,
+      "confidence": 0.48875412344932556,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 35,
+      "onset_beat": 135.0,
+      "offset_beat": 135.5,
+      "duration_beats": 0.5,
+      "velocity": 60,
+      "confidence": 0.4729127883911133,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 36,
+      "onset_beat": 134.5,
+      "offset_beat": 135.0,
+      "duration_beats": 0.5,
+      "velocity": 68,
+      "confidence": 0.5350227952003479,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 133.25,
+      "offset_beat": 134.5,
+      "duration_beats": 1.25,
+      "velocity": 85,
+      "confidence": 0.6676740050315857,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 133.0,
+      "offset_beat": 133.5,
+      "duration_beats": 0.5,
+      "velocity": 66,
+      "confidence": 0.5204764008522034,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 132.5,
+      "offset_beat": 133.25,
+      "duration_beats": 0.75,
+      "velocity": 74,
+      "confidence": 0.5810901522636414,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 132.0,
+      "offset_beat": 132.25,
+      "duration_beats": 0.25,
+      "velocity": 56,
+      "confidence": 0.43761560320854187,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 132.0,
+      "offset_beat": 132.75,
+      "duration_beats": 0.75,
+      "velocity": 76,
+      "confidence": 0.6015378832817078,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 123.0,
+      "offset_beat": 126.0,
+      "duration_beats": 3.0,
+      "velocity": 82,
+      "confidence": 0.6457592844963074,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 119.75,
+      "offset_beat": 120.75,
+      "duration_beats": 1.0,
+      "velocity": 43,
+      "confidence": 0.33662697672843933,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 118.0,
+      "offset_beat": 118.5,
+      "duration_beats": 0.5,
+      "velocity": 71,
+      "confidence": 0.5553297996520996,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 35,
+      "onset_beat": 117.25,
+      "offset_beat": 118.0,
+      "duration_beats": 0.75,
+      "velocity": 66,
+      "confidence": 0.5165562033653259,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 117.0,
+      "offset_beat": 118.0,
+      "duration_beats": 1.0,
+      "velocity": 54,
+      "confidence": 0.4271770715713501,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 114.0,
+      "offset_beat": 116.5,
+      "duration_beats": 2.5,
+      "velocity": 95,
+      "confidence": 0.7462359070777893,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 109.75,
+      "offset_beat": 113.25,
+      "duration_beats": 3.5,
+      "velocity": 85,
+      "confidence": 0.6654317378997803,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 34,
+      "onset_beat": 109.0,
+      "offset_beat": 110.0,
+      "duration_beats": 1.0,
+      "velocity": 95,
+      "confidence": 0.747596263885498,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 34,
+      "onset_beat": 108.5,
+      "offset_beat": 109.0,
+      "duration_beats": 0.5,
+      "velocity": 82,
+      "confidence": 0.6475533246994019,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 34,
+      "onset_beat": 108.0,
+      "offset_beat": 108.5,
+      "duration_beats": 0.5,
+      "velocity": 77,
+      "confidence": 0.607886791229248,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 34,
+      "onset_beat": 107.0,
+      "offset_beat": 108.0,
+      "duration_beats": 1.0,
+      "velocity": 76,
+      "confidence": 0.6019974946975708,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 34,
+      "onset_beat": 106.0,
+      "offset_beat": 107.0,
+      "duration_beats": 1.0,
+      "velocity": 60,
+      "confidence": 0.472100168466568,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 35,
+      "onset_beat": 105.0,
+      "offset_beat": 106.0,
+      "duration_beats": 1.0,
+      "velocity": 96,
+      "confidence": 0.7526431083679199,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 35,
+      "onset_beat": 104.5,
+      "offset_beat": 105.0,
+      "duration_beats": 0.5,
+      "velocity": 90,
+      "confidence": 0.704786479473114,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 35,
+      "onset_beat": 102.5,
+      "offset_beat": 104.5,
+      "duration_beats": 2.0,
+      "velocity": 86,
+      "confidence": 0.6798710823059082,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 35,
+      "onset_beat": 102.0,
+      "offset_beat": 102.5,
+      "duration_beats": 0.5,
+      "velocity": 78,
+      "confidence": 0.6178326606750488,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 97.0,
+      "offset_beat": 97.5,
+      "duration_beats": 0.5,
+      "velocity": 47,
+      "confidence": 0.366881787776947,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 97.0,
+      "offset_beat": 97.75,
+      "duration_beats": 0.75,
+      "velocity": 79,
+      "confidence": 0.618807852268219,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 95.5,
+      "offset_beat": 96.25,
+      "duration_beats": 0.75,
+      "velocity": 46,
+      "confidence": 0.3638761639595032,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 89.25,
+      "offset_beat": 92.5,
+      "duration_beats": 3.25,
+      "velocity": 91,
+      "confidence": 0.7190366387367249,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 88.5,
+      "offset_beat": 89.25,
+      "duration_beats": 0.75,
+      "velocity": 99,
+      "confidence": 0.7807701230049133,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 39,
+      "onset_beat": 88.0,
+      "offset_beat": 88.5,
+      "duration_beats": 0.5,
+      "velocity": 87,
+      "confidence": 0.6848070025444031,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 87.5,
+      "offset_beat": 88.0,
+      "duration_beats": 0.5,
+      "velocity": 62,
+      "confidence": 0.4880959987640381,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 86.0,
+      "offset_beat": 87.5,
+      "duration_beats": 1.5,
+      "velocity": 49,
+      "confidence": 0.38190793991088867,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 85.5,
+      "offset_beat": 86.0,
+      "duration_beats": 0.5,
+      "velocity": 48,
+      "confidence": 0.37512150406837463,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 84.25,
+      "offset_beat": 84.75,
+      "duration_beats": 0.5,
+      "velocity": 43,
+      "confidence": 0.33635491132736206,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 34,
+      "onset_beat": 83.5,
+      "offset_beat": 84.0,
+      "duration_beats": 0.5,
+      "velocity": 70,
+      "confidence": 0.5549132227897644,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 35,
+      "onset_beat": 82.5,
+      "offset_beat": 83.0,
+      "duration_beats": 0.5,
+      "velocity": 76,
+      "confidence": 0.5948988199234009,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 80.5,
+      "offset_beat": 82.5,
+      "duration_beats": 2.0,
+      "velocity": 81,
+      "confidence": 0.6401482224464417,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 44,
+      "onset_beat": 78.5,
+      "offset_beat": 79.25,
+      "duration_beats": 0.75,
+      "velocity": 45,
+      "confidence": 0.3550091087818146,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 77.5,
+      "offset_beat": 80.5,
+      "duration_beats": 3.0,
+      "velocity": 61,
+      "confidence": 0.4818182587623596,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 34,
+      "onset_beat": 76.5,
+      "offset_beat": 77.25,
+      "duration_beats": 0.75,
+      "velocity": 81,
+      "confidence": 0.6362400054931641,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 34,
+      "onset_beat": 73.25,
+      "offset_beat": 76.5,
+      "duration_beats": 3.25,
+      "velocity": 77,
+      "confidence": 0.6079309582710266,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 35,
+      "onset_beat": 71.5,
+      "offset_beat": 73.0,
+      "duration_beats": 1.5,
+      "velocity": 76,
+      "confidence": 0.5984874367713928,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 35,
+      "onset_beat": 70.5,
+      "offset_beat": 71.5,
+      "duration_beats": 1.0,
+      "velocity": 75,
+      "confidence": 0.5936493277549744,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 35,
+      "onset_beat": 69.0,
+      "offset_beat": 70.5,
+      "duration_beats": 1.5,
+      "velocity": 62,
+      "confidence": 0.486358106136322,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 64.5,
+      "offset_beat": 67.5,
+      "duration_beats": 3.0,
+      "velocity": 59,
+      "confidence": 0.4643821120262146,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 63.25,
+      "offset_beat": 64.5,
+      "duration_beats": 1.25,
+      "velocity": 54,
+      "confidence": 0.4266677498817444,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 62.0,
+      "offset_beat": 63.25,
+      "duration_beats": 1.25,
+      "velocity": 52,
+      "confidence": 0.41061902046203613,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 60.0,
+      "offset_beat": 60.75,
+      "duration_beats": 0.75,
+      "velocity": 61,
+      "confidence": 0.4780336916446686,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 59.0,
+      "offset_beat": 59.5,
+      "duration_beats": 0.5,
+      "velocity": 59,
+      "confidence": 0.4622669816017151,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 59.0,
+      "offset_beat": 59.25,
+      "duration_beats": 0.25,
+      "velocity": 50,
+      "confidence": 0.3923960328102112,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 54.0,
+      "offset_beat": 54.5,
+      "duration_beats": 0.5,
+      "velocity": 44,
+      "confidence": 0.34635382890701294,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 53.75,
+      "offset_beat": 55.25,
+      "duration_beats": 1.5,
+      "velocity": 57,
+      "confidence": 0.44897425174713135,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 48.75,
+      "offset_beat": 50.25,
+      "duration_beats": 1.5,
+      "velocity": 68,
+      "confidence": 0.5367947220802307,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 45.0,
+      "offset_beat": 48.25,
+      "duration_beats": 3.25,
+      "velocity": 104,
+      "confidence": 0.8180853724479675,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 44.0,
+      "offset_beat": 45.0,
+      "duration_beats": 1.0,
+      "velocity": 77,
+      "confidence": 0.6066953539848328,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 43.0,
+      "offset_beat": 43.25,
+      "duration_beats": 0.25,
+      "velocity": 48,
+      "confidence": 0.379930704832077,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 42.0,
+      "offset_beat": 42.5,
+      "duration_beats": 0.5,
+      "velocity": 57,
+      "confidence": 0.4491300582885742,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 41.0,
+      "offset_beat": 41.25,
+      "duration_beats": 0.25,
+      "velocity": 47,
+      "confidence": 0.3690904378890991,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 40.0,
+      "offset_beat": 40.5,
+      "duration_beats": 0.5,
+      "velocity": 53,
+      "confidence": 0.4170999825000763,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 39.0,
+      "offset_beat": 39.75,
+      "duration_beats": 0.75,
+      "velocity": 80,
+      "confidence": 0.6301596164703369,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 39.0,
+      "offset_beat": 39.5,
+      "duration_beats": 0.5,
+      "velocity": 52,
+      "confidence": 0.4057588279247284,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 35.25,
+      "offset_beat": 38.75,
+      "duration_beats": 3.5,
+      "velocity": 96,
+      "confidence": 0.7577279806137085,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 34,
+      "onset_beat": 32.5,
+      "offset_beat": 35.0,
+      "duration_beats": 2.5,
+      "velocity": 101,
+      "confidence": 0.7979201078414917,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 35,
+      "onset_beat": 30.0,
+      "offset_beat": 32.5,
+      "duration_beats": 2.5,
+      "velocity": 100,
+      "confidence": 0.785631000995636,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 24.0,
+      "offset_beat": 24.75,
+      "duration_beats": 0.75,
+      "velocity": 71,
+      "confidence": 0.5582751035690308,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 24.0,
+      "offset_beat": 24.25,
+      "duration_beats": 0.25,
+      "velocity": 50,
+      "confidence": 0.3933688700199127,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 20.0,
+      "offset_beat": 20.5,
+      "duration_beats": 0.5,
+      "velocity": 47,
+      "confidence": 0.3700210750102997,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 14.75,
+      "offset_beat": 20.5,
+      "duration_beats": 5.75,
+      "velocity": 94,
+      "confidence": 0.7367681860923767,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 10.0,
+      "offset_beat": 15.0,
+      "duration_beats": 5.0,
+      "velocity": 60,
+      "confidence": 0.46963006258010864,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 8.75,
+      "offset_beat": 9.75,
+      "duration_beats": 1.0,
+      "velocity": 82,
+      "confidence": 0.6493923664093018,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 8.75,
+      "offset_beat": 9.5,
+      "duration_beats": 0.75,
+      "velocity": 47,
+      "confidence": 0.36675503849983215,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 4.75,
+      "offset_beat": 8.5,
+      "duration_beats": 3.75,
+      "velocity": 97,
+      "confidence": 0.7616230845451355,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 34,
+      "onset_beat": 2.5,
+      "offset_beat": 5.0,
+      "duration_beats": 2.5,
+      "velocity": 102,
+      "confidence": 0.8054122924804688,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 35,
+      "onset_beat": 0.0,
+      "offset_beat": 2.5,
+      "duration_beats": 2.5,
+      "velocity": 100,
+      "confidence": 0.787835419178009,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 25,
+      "onset_beat": 651.5,
+      "offset_beat": 679.0,
+      "duration_beats": 27.5,
+      "velocity": 73,
+      "confidence": 0.5764800906181335,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 25.0,
+      "offset_beat": 29.75,
+      "duration_beats": 4.75,
+      "velocity": 82,
+      "confidence": 0.6446672081947327,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 643.25,
+      "offset_beat": 647.25,
+      "duration_beats": 4.0,
+      "velocity": 82,
+      "confidence": 0.645100474357605,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 618.0,
+      "offset_beat": 619.25,
+      "duration_beats": 1.25,
+      "velocity": 75,
+      "confidence": 0.5876070261001587,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 608.5,
+      "offset_beat": 609.5,
+      "duration_beats": 1.0,
+      "velocity": 66,
+      "confidence": 0.5226820111274719,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 572.25,
+      "offset_beat": 572.75,
+      "duration_beats": 0.5,
+      "velocity": 80,
+      "confidence": 0.6282726526260376,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 58,
+      "onset_beat": 615.25,
+      "offset_beat": 615.75,
+      "duration_beats": 0.5,
+      "velocity": 85,
+      "confidence": 0.6669942140579224,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 41,
+      "onset_beat": 607.25,
+      "offset_beat": 608.25,
+      "duration_beats": 1.0,
+      "velocity": 82,
+      "confidence": 0.6418940424919128,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 632.5,
+      "offset_beat": 634.0,
+      "duration_beats": 1.5,
+      "velocity": 68,
+      "confidence": 0.5360347032546997,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 610.5,
+      "offset_beat": 611.75,
+      "duration_beats": 1.25,
+      "velocity": 69,
+      "confidence": 0.5407772660255432,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 582.5,
+      "offset_beat": 583.0,
+      "duration_beats": 0.5,
+      "velocity": 76,
+      "confidence": 0.6000645756721497,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 28,
+      "onset_beat": 10.0,
+      "offset_beat": 14.5,
+      "duration_beats": 4.5,
+      "velocity": 81,
+      "confidence": 0.6346982717514038,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 625.75,
+      "offset_beat": 626.0,
+      "duration_beats": 0.25,
+      "velocity": 80,
+      "confidence": 0.6287115216255188,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 28,
+      "onset_beat": 356.0,
+      "offset_beat": 359.75,
+      "duration_beats": 3.75,
+      "velocity": 77,
+      "confidence": 0.6032578349113464,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 28,
+      "onset_beat": 173.0,
+      "offset_beat": 174.75,
+      "duration_beats": 1.75,
+      "velocity": 81,
+      "confidence": 0.6349709033966064,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 351.0,
+      "offset_beat": 351.75,
+      "duration_beats": 0.75,
+      "velocity": 79,
+      "confidence": 0.6190733313560486,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 54,
+      "onset_beat": 626.0,
+      "offset_beat": 627.25,
+      "duration_beats": 1.25,
+      "velocity": 70,
+      "confidence": 0.5497516393661499,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 63.75,
+      "offset_beat": 67.5,
+      "duration_beats": 3.75,
+      "velocity": 77,
+      "confidence": 0.605204164981842,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 639.25,
+      "offset_beat": 641.25,
+      "duration_beats": 2.0,
+      "velocity": 69,
+      "confidence": 0.5466646552085876,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 46,
+      "onset_beat": 609.5,
+      "offset_beat": 610.5,
+      "duration_beats": 1.0,
+      "velocity": 63,
+      "confidence": 0.4979070723056793,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 28,
+      "onset_beat": 522.5,
+      "offset_beat": 528.25,
+      "duration_beats": 5.75,
+      "velocity": 78,
+      "confidence": 0.6115806698799133,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 196.75,
+      "offset_beat": 197.5,
+      "duration_beats": 0.75,
+      "velocity": 71,
+      "confidence": 0.5565139055252075,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 28,
+      "onset_beat": 336.0,
+      "offset_beat": 337.5,
+      "duration_beats": 1.5,
+      "velocity": 77,
+      "confidence": 0.6071430444717407,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 28,
+      "onset_beat": 167.0,
+      "offset_beat": 168.5,
+      "duration_beats": 1.5,
+      "velocity": 80,
+      "confidence": 0.6334594488143921,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 568.75,
+      "offset_beat": 569.25,
+      "duration_beats": 0.5,
+      "velocity": 68,
+      "confidence": 0.537651538848877,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 201.5,
+      "offset_beat": 203.75,
+      "duration_beats": 2.25,
+      "velocity": 64,
+      "confidence": 0.5061072707176208,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 295.5,
+      "offset_beat": 299.25,
+      "duration_beats": 3.75,
+      "velocity": 67,
+      "confidence": 0.5286647081375122,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 300.0,
+      "offset_beat": 300.5,
+      "duration_beats": 0.5,
+      "velocity": 56,
+      "confidence": 0.44396862387657166,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 467.5,
+      "offset_beat": 469.0,
+      "duration_beats": 1.5,
+      "velocity": 61,
+      "confidence": 0.4807373583316803,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 602.5,
+      "offset_beat": 603.25,
+      "duration_beats": 0.75,
+      "velocity": 69,
+      "confidence": 0.5415906310081482,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 629.25,
+      "offset_beat": 630.0,
+      "duration_beats": 0.75,
+      "velocity": 51,
+      "confidence": 0.4028308093547821,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 668.0,
+      "offset_beat": 676.75,
+      "duration_beats": 8.75,
+      "velocity": 57,
+      "confidence": 0.4481295347213745,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 457.25,
+      "offset_beat": 460.75,
+      "duration_beats": 3.5,
+      "velocity": 58,
+      "confidence": 0.45296087861061096,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 25,
+      "onset_beat": 648.75,
+      "offset_beat": 651.25,
+      "duration_beats": 2.5,
+      "velocity": 72,
+      "confidence": 0.5664798021316528,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 44,
+      "onset_beat": 394.0,
+      "offset_beat": 394.75,
+      "duration_beats": 0.75,
+      "velocity": 60,
+      "confidence": 0.47330453991889954,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 39,
+      "onset_beat": 636.5,
+      "offset_beat": 642.5,
+      "duration_beats": 6.0,
+      "velocity": 53,
+      "confidence": 0.41921165585517883,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 279.5,
+      "offset_beat": 280.25,
+      "duration_beats": 0.75,
+      "velocity": 67,
+      "confidence": 0.5252251029014587,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 20.0,
+      "offset_beat": 21.0,
+      "duration_beats": 1.0,
+      "velocity": 72,
+      "confidence": 0.5667941570281982,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 570.5,
+      "offset_beat": 570.75,
+      "duration_beats": 0.25,
+      "velocity": 65,
+      "confidence": 0.5140645503997803,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 620.5,
+      "offset_beat": 621.25,
+      "duration_beats": 0.75,
+      "velocity": 55,
+      "confidence": 0.43487656116485596,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 127.0,
+      "offset_beat": 132.0,
+      "duration_beats": 5.0,
+      "velocity": 61,
+      "confidence": 0.4791291058063507,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 54,
+      "onset_beat": 587.5,
+      "offset_beat": 587.75,
+      "duration_beats": 0.25,
+      "velocity": 64,
+      "confidence": 0.5011869668960571,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 263.0,
+      "offset_beat": 267.0,
+      "duration_beats": 4.0,
+      "velocity": 57,
+      "confidence": 0.4471430778503418,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 28,
+      "onset_beat": 223.0,
+      "offset_beat": 225.25,
+      "duration_beats": 2.25,
+      "velocity": 59,
+      "confidence": 0.46132269501686096,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 621.75,
+      "offset_beat": 622.5,
+      "duration_beats": 0.75,
+      "velocity": 60,
+      "confidence": 0.47091323137283325,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 58,
+      "onset_beat": 617.25,
+      "offset_beat": 617.75,
+      "duration_beats": 0.5,
+      "velocity": 66,
+      "confidence": 0.5207796692848206,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 58,
+      "onset_beat": 610.5,
+      "offset_beat": 611.5,
+      "duration_beats": 1.0,
+      "velocity": 60,
+      "confidence": 0.4695720672607422,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 150.5,
+      "offset_beat": 151.0,
+      "duration_beats": 0.5,
+      "velocity": 66,
+      "confidence": 0.5165701508522034,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 236.25,
+      "offset_beat": 236.5,
+      "duration_beats": 0.25,
+      "velocity": 57,
+      "confidence": 0.4472521245479584,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 623.5,
+      "offset_beat": 625.25,
+      "duration_beats": 1.75,
+      "velocity": 50,
+      "confidence": 0.3911481499671936,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 664.25,
+      "offset_beat": 667.25,
+      "duration_beats": 3.0,
+      "velocity": 64,
+      "confidence": 0.5025326609611511,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 41,
+      "onset_beat": 643.5,
+      "offset_beat": 644.25,
+      "duration_beats": 0.75,
+      "velocity": 59,
+      "confidence": 0.4668651521205902,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 425.0,
+      "offset_beat": 426.0,
+      "duration_beats": 1.0,
+      "velocity": 56,
+      "confidence": 0.4403698742389679,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 613.75,
+      "offset_beat": 614.5,
+      "duration_beats": 0.75,
+      "velocity": 63,
+      "confidence": 0.49552610516548157,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 432.75,
+      "offset_beat": 436.0,
+      "duration_beats": 3.25,
+      "velocity": 56,
+      "confidence": 0.4421842098236084,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 44,
+      "onset_beat": 396.25,
+      "offset_beat": 396.5,
+      "duration_beats": 0.25,
+      "velocity": 65,
+      "confidence": 0.5125279426574707,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 28,
+      "onset_beat": 352.0,
+      "offset_beat": 352.75,
+      "duration_beats": 0.75,
+      "velocity": 60,
+      "confidence": 0.47485360503196716,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 93.5,
+      "offset_beat": 97.0,
+      "duration_beats": 3.5,
+      "velocity": 50,
+      "confidence": 0.39419418573379517,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 28,
+      "onset_beat": 120.5,
+      "offset_beat": 122.75,
+      "duration_beats": 2.25,
+      "velocity": 57,
+      "confidence": 0.4449895918369293,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 650.0,
+      "offset_beat": 650.75,
+      "duration_beats": 0.75,
+      "velocity": 55,
+      "confidence": 0.4344950020313263,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 237.0,
+      "offset_beat": 237.5,
+      "duration_beats": 0.5,
+      "velocity": 57,
+      "confidence": 0.45199185609817505,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 158.5,
+      "offset_beat": 162.0,
+      "duration_beats": 3.5,
+      "velocity": 50,
+      "confidence": 0.3916425406932831,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 125.75,
+      "offset_beat": 126.25,
+      "duration_beats": 0.5,
+      "velocity": 62,
+      "confidence": 0.4908425807952881,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 41,
+      "onset_beat": 469.5,
+      "offset_beat": 470.25,
+      "duration_beats": 0.75,
+      "velocity": 63,
+      "confidence": 0.49851110577583313,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 58,
+      "onset_beat": 243.5,
+      "offset_beat": 244.75,
+      "duration_beats": 1.25,
+      "velocity": 45,
+      "confidence": 0.35502463579177856,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 28,
+      "onset_beat": 332.25,
+      "offset_beat": 333.0,
+      "duration_beats": 0.75,
+      "velocity": 59,
+      "confidence": 0.46399927139282227,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 631.25,
+      "offset_beat": 632.0,
+      "duration_beats": 0.75,
+      "velocity": 55,
+      "confidence": 0.4303104281425476,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 39,
+      "onset_beat": 549.25,
+      "offset_beat": 549.75,
+      "duration_beats": 0.5,
+      "velocity": 60,
+      "confidence": 0.46945008635520935,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 58,
+      "onset_beat": 276.0,
+      "offset_beat": 276.75,
+      "duration_beats": 0.75,
+      "velocity": 46,
+      "confidence": 0.35976332426071167,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 28,
+      "onset_beat": 153.5,
+      "offset_beat": 154.5,
+      "duration_beats": 1.0,
+      "velocity": 54,
+      "confidence": 0.4217774569988251,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 615.0,
+      "offset_beat": 616.0,
+      "duration_beats": 1.0,
+      "velocity": 56,
+      "confidence": 0.437113493680954,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 529.5,
+      "offset_beat": 530.75,
+      "duration_beats": 1.25,
+      "velocity": 54,
+      "confidence": 0.42868027091026306,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 318.25,
+      "offset_beat": 318.75,
+      "duration_beats": 0.5,
+      "velocity": 58,
+      "confidence": 0.45752236247062683,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 28,
+      "onset_beat": 40.0,
+      "offset_beat": 40.5,
+      "duration_beats": 0.5,
+      "velocity": 58,
+      "confidence": 0.45507627725601196,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 370.5,
+      "offset_beat": 371.0,
+      "duration_beats": 0.5,
+      "velocity": 53,
+      "confidence": 0.4195782244205475,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 44,
+      "onset_beat": 643.75,
+      "offset_beat": 644.25,
+      "duration_beats": 0.5,
+      "velocity": 58,
+      "confidence": 0.45317330956459045,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 28,
+      "onset_beat": 41.0,
+      "offset_beat": 41.25,
+      "duration_beats": 0.25,
+      "velocity": 57,
+      "confidence": 0.45250988006591797,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 28,
+      "onset_beat": 85.5,
+      "offset_beat": 86.5,
+      "duration_beats": 1.0,
+      "velocity": 54,
+      "confidence": 0.42432552576065063,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 28,
+      "onset_beat": 290.5,
+      "offset_beat": 291.5,
+      "duration_beats": 1.0,
+      "velocity": 47,
+      "confidence": 0.3705578148365021,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 28,
+      "onset_beat": 42.0,
+      "offset_beat": 42.25,
+      "duration_beats": 0.25,
+      "velocity": 56,
+      "confidence": 0.4422076940536499,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 220.5,
+      "offset_beat": 220.75,
+      "duration_beats": 0.25,
+      "velocity": 57,
+      "confidence": 0.4480026066303253,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 35,
+      "onset_beat": 599.25,
+      "offset_beat": 599.75,
+      "duration_beats": 0.5,
+      "velocity": 54,
+      "confidence": 0.4245982766151428,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 26.75,
+      "offset_beat": 27.75,
+      "duration_beats": 1.0,
+      "velocity": 50,
+      "confidence": 0.39746806025505066,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 27,
+      "onset_beat": 530.5,
+      "offset_beat": 531.5,
+      "duration_beats": 1.0,
+      "velocity": 48,
+      "confidence": 0.37803563475608826,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 428.25,
+      "offset_beat": 428.75,
+      "duration_beats": 0.5,
+      "velocity": 49,
+      "confidence": 0.3873874843120575,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 45,
+      "onset_beat": 494.5,
+      "offset_beat": 495.0,
+      "duration_beats": 0.5,
+      "velocity": 54,
+      "confidence": 0.42359378933906555,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 28,
+      "onset_beat": 118.75,
+      "offset_beat": 120.0,
+      "duration_beats": 1.25,
+      "velocity": 51,
+      "confidence": 0.4003583788871765,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 28,
+      "onset_beat": 152.5,
+      "offset_beat": 152.75,
+      "duration_beats": 0.25,
+      "velocity": 54,
+      "confidence": 0.4258865714073181,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 230.5,
+      "offset_beat": 230.75,
+      "duration_beats": 0.25,
+      "velocity": 55,
+      "confidence": 0.4318731725215912,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 28,
+      "onset_beat": 151.0,
+      "offset_beat": 151.75,
+      "duration_beats": 0.75,
+      "velocity": 51,
+      "confidence": 0.4016406238079071,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 39,
+      "onset_beat": 629.0,
+      "offset_beat": 630.0,
+      "duration_beats": 1.0,
+      "velocity": 45,
+      "confidence": 0.357926607131958,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 28,
+      "onset_beat": 226.5,
+      "offset_beat": 227.0,
+      "duration_beats": 0.5,
+      "velocity": 54,
+      "confidence": 0.42282480001449585,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 92.5,
+      "offset_beat": 92.75,
+      "duration_beats": 0.25,
+      "velocity": 55,
+      "confidence": 0.4313392639160156,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 149.5,
+      "offset_beat": 149.75,
+      "duration_beats": 0.25,
+      "velocity": 52,
+      "confidence": 0.4118277430534363,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 49.5,
+      "offset_beat": 50.0,
+      "duration_beats": 0.5,
+      "velocity": 55,
+      "confidence": 0.4299551546573639,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 372.0,
+      "offset_beat": 372.5,
+      "duration_beats": 0.5,
+      "velocity": 53,
+      "confidence": 0.41492190957069397,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 222.0,
+      "offset_beat": 222.25,
+      "duration_beats": 0.25,
+      "velocity": 53,
+      "confidence": 0.4163458049297333,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 54,
+      "onset_beat": 623.75,
+      "offset_beat": 624.5,
+      "duration_beats": 0.75,
+      "velocity": 54,
+      "confidence": 0.4279578924179077,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 552.75,
+      "offset_beat": 556.0,
+      "duration_beats": 3.25,
+      "velocity": 47,
+      "confidence": 0.37248677015304565,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 205.25,
+      "offset_beat": 206.0,
+      "duration_beats": 0.75,
+      "velocity": 48,
+      "confidence": 0.3818643093109131,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 28,
+      "onset_beat": 288.0,
+      "offset_beat": 289.5,
+      "duration_beats": 1.5,
+      "velocity": 54,
+      "confidence": 0.4214586615562439,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 41,
+      "onset_beat": 646.0,
+      "offset_beat": 646.5,
+      "duration_beats": 0.5,
+      "velocity": 54,
+      "confidence": 0.4213290214538574,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 34,
+      "onset_beat": 609.25,
+      "offset_beat": 609.75,
+      "duration_beats": 0.5,
+      "velocity": 51,
+      "confidence": 0.40196967124938965,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 25,
+      "onset_beat": 550.75,
+      "offset_beat": 552.25,
+      "duration_beats": 1.5,
+      "velocity": 45,
+      "confidence": 0.3577171266078949,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 166.0,
+      "offset_beat": 166.5,
+      "duration_beats": 0.5,
+      "velocity": 52,
+      "confidence": 0.4074024260044098,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 133.0,
+      "offset_beat": 133.75,
+      "duration_beats": 0.75,
+      "velocity": 45,
+      "confidence": 0.3536495268344879,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 25.25,
+      "offset_beat": 26.75,
+      "duration_beats": 1.5,
+      "velocity": 49,
+      "confidence": 0.38826513290405273,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 58,
+      "onset_beat": 310.0,
+      "offset_beat": 310.75,
+      "duration_beats": 0.75,
+      "velocity": 49,
+      "confidence": 0.3868531882762909,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 231.5,
+      "offset_beat": 232.0,
+      "duration_beats": 0.5,
+      "velocity": 50,
+      "confidence": 0.39701488614082336,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 54,
+      "onset_beat": 49.0,
+      "offset_beat": 49.5,
+      "duration_beats": 0.5,
+      "velocity": 50,
+      "confidence": 0.39346230030059814,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 606.5,
+      "offset_beat": 607.25,
+      "duration_beats": 0.75,
+      "velocity": 43,
+      "confidence": 0.335928738117218,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 54,
+      "onset_beat": 511.0,
+      "offset_beat": 512.25,
+      "duration_beats": 1.25,
+      "velocity": 47,
+      "confidence": 0.3674687147140503,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 222.5,
+      "offset_beat": 222.75,
+      "duration_beats": 0.25,
+      "velocity": 50,
+      "confidence": 0.3959852457046509,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 366.5,
+      "offset_beat": 367.25,
+      "duration_beats": 0.75,
+      "velocity": 45,
+      "confidence": 0.3518398106098175,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 62.5,
+      "offset_beat": 63.0,
+      "duration_beats": 0.5,
+      "velocity": 51,
+      "confidence": 0.3988436162471771,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 46,
+      "onset_beat": 381.75,
+      "offset_beat": 382.25,
+      "duration_beats": 0.5,
+      "velocity": 50,
+      "confidence": 0.39608636498451233,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 620.0,
+      "offset_beat": 620.5,
+      "duration_beats": 0.5,
+      "velocity": 47,
+      "confidence": 0.3711118698120117,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 261.75,
+      "offset_beat": 262.25,
+      "duration_beats": 0.5,
+      "velocity": 48,
+      "confidence": 0.3764118254184723,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 89,
+      "onset_beat": 625.0,
+      "offset_beat": 625.25,
+      "duration_beats": 0.25,
+      "velocity": 51,
+      "confidence": 0.3980165421962738,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 52,
+      "onset_beat": 398.75,
+      "offset_beat": 399.0,
+      "duration_beats": 0.25,
+      "velocity": 47,
+      "confidence": 0.36972272396087646,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 631.25,
+      "offset_beat": 632.0,
+      "duration_beats": 0.75,
+      "velocity": 46,
+      "confidence": 0.3630114495754242,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 28,
+      "onset_beat": 517.75,
+      "offset_beat": 518.25,
+      "duration_beats": 0.5,
+      "velocity": 48,
+      "confidence": 0.3786178529262543,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 651.0,
+      "offset_beat": 651.5,
+      "duration_beats": 0.5,
+      "velocity": 51,
+      "confidence": 0.3996485471725464,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 54,
+      "onset_beat": 135.5,
+      "offset_beat": 135.75,
+      "duration_beats": 0.25,
+      "velocity": 48,
+      "confidence": 0.37617266178131104,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 44,
+      "onset_beat": 215.25,
+      "offset_beat": 215.75,
+      "duration_beats": 0.5,
+      "velocity": 47,
+      "confidence": 0.3698313236236572,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 25,
+      "onset_beat": 541.5,
+      "offset_beat": 542.0,
+      "duration_beats": 0.5,
+      "velocity": 47,
+      "confidence": 0.3694796860218048,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 636.0,
+      "offset_beat": 636.75,
+      "duration_beats": 0.75,
+      "velocity": 46,
+      "confidence": 0.36288347840309143,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 54,
+      "onset_beat": 25.75,
+      "offset_beat": 26.25,
+      "duration_beats": 0.5,
+      "velocity": 46,
+      "confidence": 0.365682452917099,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 200.0,
+      "offset_beat": 200.5,
+      "duration_beats": 0.5,
+      "velocity": 46,
+      "confidence": 0.36259928345680237,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 183.0,
+      "offset_beat": 183.75,
+      "duration_beats": 0.75,
+      "velocity": 45,
+      "confidence": 0.358193963766098,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 301.0,
+      "offset_beat": 301.5,
+      "duration_beats": 0.5,
+      "velocity": 45,
+      "confidence": 0.3524189293384552,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 59,
+      "onset_beat": 169.5,
+      "offset_beat": 170.0,
+      "duration_beats": 0.5,
+      "velocity": 45,
+      "confidence": 0.3537316918373108,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 291.0,
+      "offset_beat": 291.25,
+      "duration_beats": 0.25,
+      "velocity": 44,
+      "confidence": 0.34849345684051514,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 642.0,
+      "offset_beat": 642.75,
+      "duration_beats": 0.75,
+      "velocity": 43,
+      "confidence": 0.33942076563835144,
+      "stem_label": "bass"
+    },
+    {
+      "pitch": 54,
+      "onset_beat": 617.5,
+      "offset_beat": 618.0,
+      "duration_beats": 0.5,
+      "velocity": 43,
+      "confidence": 0.33875542879104614,
+      "stem_label": "bass"
+    }
+  ]
+}
