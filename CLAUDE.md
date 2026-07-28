@@ -659,6 +659,83 @@ backbone was working, the plan was to circle back and improve each stage:
       measure count, MSCZ verified to open/convert cleanly. Non-vocal stems
       (piano/guitar/bass/other) confirmed unaffected — same code path as before.
 
+- [x] **Guitar sometimes rendered as a two-staff piano grand staff instead of
+      single-staff guitar — fixed.** User checked `sample6.mp3`'s output and
+      found `guitar.musicxml` on two staves. Root cause: `classify_stem()`'s
+      re-check of Demucs's `guitar.wav` predicted `piano_accompaniment` (the
+      audio sounded more piano-like to the rule-based classifier), and
+      `run_pipeline.py` was using that PREDICTED label as the stem's final
+      `stem_label` — which also drives `musicxml_service.py`'s staff-layout
+      choice (single-staff guitar vs. two-staff piano grand staff), not just
+      the displayed instrument name. So a guitar.wav re-classified as
+      piano-sounding rendered as an actual piano grand staff.
+
+      Fixed by no longer acting on the classifier's relabel for `stem_label` at
+      all — `run_pipeline.py`'s `run_pipeline()` now always keeps
+      `stem_label = expected_label` (the label matching which Demucs stem the
+      audio actually came from: `guitar_accompaniment` for `guitar.wav`,
+      `piano_accompaniment` for `piano.wav`), and only PRINTS the classifier's
+      disagreement as a log line — it no longer changes what gets stored or how
+      the stem gets notated. Rationale: which Demucs stem produced this audio is
+      a more reliable signal for staff LAYOUT than a rule-based heuristic whose
+      thresholds were validated on synthetic test signals, not real audio (see
+      `classification_service.py`'s own docstring caveat).
+
+      Verified on `sample6.mp3` (same file, same real classifier disagreement on
+      both guitar.wav and piano.wav this run): `guitar.musicxml` now has no
+      `<staves>2</staves>` (single-staff, confirmed), `piano.musicxml` still
+      correctly has it (real piano stem, unaffected); full pipeline re-run
+      end-to-end, all 6 parts still matching measure count, MSCZ verified to
+      open/convert cleanly.
+
+- [x] **Tempo reconciliation could force a stem onto a WRONG reference tempo,
+      making its notation claim to finish playing 33-54% early — fixed with a
+      duration sanity check.** User noticed most parts' tempos looked doubled on
+      `sample6.mp3` and asked whether tempo octave ambiguity and "parts played at
+      double speed" were separate issues. They were right to push back — I'd
+      initially conflated them. Investigated properly: `quantization_service.
+      run()`'s beat grid is built ENTIRELY from real detected beat positions in
+      that stem's own audio (`_beat_grid()`/`_time_to_beat()`) — `tempo_bpm` only
+      controls the printed label, in the normal case (2+ real beats detected).
+      So forcing a stem onto the reference tempo doesn't distort its notated
+      RHYTHM... except when the reference tempo itself came from a doubled/halved
+      beat-tracker detection, which genuinely means the reference's OWN beat grid
+      packs twice (or half) as many real beats into the same real time as a
+      correctly-detected stem. Forcing that mismatched tempo NUMBER onto a
+      DIFFERENT stem's correctly-spaced beat grid produces an internally
+      inconsistent result.
+
+      User's proposed fix: compare the sheet music's calculated playback duration
+      (at its printed tempo) against the real audio length — if they don't match,
+      something is wrong. Implemented exactly this as `_passes_duration_check()`
+      in `quantization_service.py`: computes `last_note.offset_beat * 60 /
+      tempo_bpm` (the notation's implied total playback time) and compares it to
+      the real audio's actual duration (`_audio_duration_seconds()`, via
+      `soundfile.info()` — cheap, header-only read). `DURATION_RATIO_TOLERANCE`
+      (±15%) gates whether a forced-reference re-quantization is accepted.
+      Confirmed on real `sample6.mp3` data: forcing 4 stems (drums, vocals,
+      guitar, piano) onto the reference tempo dropped their notated-duration-vs-
+      real-audio ratio to 0.46-0.67 — i.e. the notation would claim to finish
+      33-54% early despite being the same real audio. `reconcile_tempo()` now
+      computes the candidate re-quantization FIRST, checks its duration ratio,
+      and only keeps it if the ratio is sane — otherwise falls back to the
+      stem's own (better) tempo, logged distinctly ("reference REJECTED... keeping
+      X's own tempo instead").
+
+      One stem (`other`) failed the duration check on BOTH its own tempo AND the
+      reference in earlier testing — a separate, deeper problem (that stem's own
+      beat detection is itself unreliable, likely sparse/noisy separated content),
+      not something tempo reconciliation can fix by choosing between two
+      candidates. Not addressed in this pass; flagged here for later.
+
+      Verified end-to-end on `sample6.mp3`: all 4 previously-wrongly-forced stems
+      now keep their own musically-consistent tempo (74/91/99/74 BPM, matching
+      their own beat detection) instead of being forced to a mismatched 148;
+      combined score's 6 parts still all match at 30 measures despite the now
+      much wider tempo spread (confirms `build_score()`'s measure-padding logic,
+      which already worked in real seconds not raw beat counts, handles this
+      correctly); MSCZ verified to open/convert cleanly.
+
 ## Known gotchas
 
 - **Dependencies are heavy and conflict-prone** (torch, demucs, basic-pitch, and TensorFlow if

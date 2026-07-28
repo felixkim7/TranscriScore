@@ -5,6 +5,12 @@ PROJECT_DIR = BACKEND_DIR.parent
 
 STORAGE_DIR = BACKEND_DIR / "storage"
 UPLOADS_DIR = STORAGE_DIR / "uploads"
+# Job status/result records for the async API (step 8) — one JSON file per job,
+# named <job_id>.json. Simple file-backed store rather than a database: app/models/'s
+# purpose (DB models vs. ML model cache) was never decided, and a real DB is more
+# infrastructure than this project needs right now. Survives process restarts, unlike
+# a pure in-memory dict.
+JOBS_DIR = STORAGE_DIR / "jobs"
 STEMS_DIR = STORAGE_DIR / "stems"
 INTERMEDIATE_DIR = STORAGE_DIR / "intermediate"
 MIDI_DIR = STORAGE_DIR / "midi"

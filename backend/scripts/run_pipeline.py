@@ -18,7 +18,17 @@ Labeling:
 - guitar, piano: come pre-split from htdemucs_6s, but re-checked against
   classify_stem()'s rule-based features before trusting the label, since
   Demucs's own docs flag its piano source as bleed-prone. On a mismatch,
-  the re-checked label is used instead (may be "unknown_accompaniment").
+  this is only LOGGED, not acted on — stem_label always stays the Demucs-
+  identity label ("guitar_accompaniment" for guitar.wav, "piano_accompaniment"
+  for piano.wav) regardless of what the classifier guesses, because stem_label
+  also drives musicxml_service.py's notation staff layout (single-staff guitar
+  vs. two-staff piano grand staff), and the Demucs stem the audio actually came
+  from is a much more reliable signal for THAT than a rule-based heuristic
+  whose thresholds were validated on synthetic test signals, not real audio
+  (see classification_service.py). Previously the classifier's relabel was used
+  as the final stem_label, which caused a real stem misidentified as piano to
+  render as an (incorrect) two-staff grand staff instead of single-staff guitar
+  notation — confirmed on a real run.
 
 Combining: each stem is transcribed and quantized independently first (its own
 tempo/key/notes). A reference tempo is then detected once from the ORIGINAL mixed
@@ -96,12 +106,18 @@ def run_pipeline(input_audio_path: str) -> Dict[str, List[NoteEvent]]:
         matches, predicted_label = classification_service.check_stem_label_confidence(
             str(stems[stem_name]), expected_label
         )
-        final_label = expected_label if matches else predicted_label
+        # Log-only: stem_label always stays expected_label (the Demucs stem's own
+        # identity) regardless of what the classifier predicts — see this module's
+        # docstring for why. A prior version used predicted_label here, which
+        # caused a real guitar.wav (re-checked as sounding more piano-like) to
+        # render as an incorrect two-staff piano grand staff instead of single-
+        # staff guitar notation.
         if not matches:
             print(f"  [!] {stem_name}.wav: expected {expected_label!r}, "
-                  f"re-check predicted {predicted_label!r} - using {final_label!r}")
+                  f"re-check predicted {predicted_label!r} - keeping {expected_label!r} "
+                  f"(logged only, doesn't change notation layout)")
         results[stem_name] = transcription_service.run(
-            str(stems[stem_name]), stem_label=final_label, input_stem=input_stem
+            str(stems[stem_name]), stem_label=expected_label, input_stem=input_stem
         )
 
     return results

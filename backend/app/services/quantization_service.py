@@ -5,6 +5,7 @@ from typing import List, Optional
 import librosa
 import numpy as np
 import pretty_midi
+import soundfile as sf
 
 from app.config.settings import INTERMEDIATE_DIR, QUANTIZED_MIDI_DIR, stem_output_dir
 from app.schemas.transcription import NoteEvent, QuantizationResult, QuantizedNoteEvent
@@ -39,6 +40,24 @@ TEMPO_AGREEMENT_TOLERANCE = 0.08  # +/- 8%
 # instead of the quarter-note pulse) rather than a genuine tempo mismatch — flagged
 # distinctly in reconcile_tempo()'s output since it's a well-understood, common case.
 OCTAVE_RATIOS = (2.0, 0.5)
+
+# How far a re-quantized stem's NOTATED duration (last note's offset_beat, converted
+# back to seconds via the tempo it was just labeled with) may differ from the real
+# audio's actual duration before the forced tempo is rejected as invalid for that
+# stem. This catches a real, confirmed bug: forcing tempo_bpm onto a stem does NOT
+# rebuild its beat grid from that tempo — _beat_grid()/_time_to_beat() always anchor
+# to the stem's own real detected beat positions, only the printed BPM number
+# changes. If the reference tempo disagrees with a stem's own tempo by roughly an
+# octave, forcing it produces an internally-INCONSISTENT result: real beat spacing
+# from the stem's own (correct) detection, but labeled with a tempo that implies a
+# different spacing — so the notation's claimed total playback time can end up
+# wildly shorter (or longer) than the real audio. Confirmed on real data: forcing
+# 4 stems onto one sample's reference tempo dropped their notated-duration-vs-real-
+# audio ratio to 0.46-0.67 (i.e. the notation claims to finish 33-54% early even
+# though it's the same real audio). A stem failing this check keeps its OWN tempo
+# instead of the reference — its own tempo is evidently the musically correct one
+# for that stem specifically, not a disagreement needing correction.
+DURATION_RATIO_TOLERANCE = 0.15  # +/- 15%
 
 
 def detect_tempo(audio_path: str) -> float:
@@ -79,10 +98,14 @@ def reconcile_tempo(
 
     A stem's tempo is considered agreeing with the reference if their ratio is
     within TEMPO_AGREEMENT_TOLERANCE of 1.0. Anything else (including the classic
-    octave-doubling/halving error) gets re-quantized with tempo_bpm=reference_tempo_bpm
-    explicitly passed to quantization_service.run(), so its notes end up on the same
-    beat grid as every other stem — this is what actually keeps parts in sync when
-    combined, not just a relabeling of the tempo number.
+    octave-doubling/halving error) is a CANDIDATE for re-quantizing against the
+    reference — but only actually applied if doing so passes the duration-ratio
+    sanity check (see DURATION_RATIO_TOLERANCE above): the re-quantized result's
+    notated total duration must still be close to the real audio's actual duration.
+    If forcing the reference tempo would make the notation claim a wildly different
+    playback length than the real audio actually is, that's evidence the reference
+    is wrong FOR THIS STEM specifically (not that the stem disagrees) — its own
+    tempo is kept instead.
 
     Returns a new dict of stem_name -> QuantizationResult (reconciled), plus prints
     nothing itself — callers are expected to log/report using the returned data.
@@ -97,19 +120,52 @@ def reconcile_tempo(
 
         is_octave_error = any(abs(ratio - r) <= TEMPO_AGREEMENT_TOLERANCE for r in OCTAVE_RATIOS)
         reason = "octave error" if is_octave_error else "disagrees with reference"
-        print(
-            f"  [tempo] {stem_name}: {result.tempo_bpm:.2f} BPM vs. reference "
-            f"{reference_tempo_bpm:.2f} BPM (ratio {ratio:.2f}, {reason}) - "
-            f"re-quantizing against the reference tempo"
-        )
-        reconciled[stem_name] = run(
+
+        candidate = run(
             stem_note_events[stem_name],
             audio_path=stem_audio_paths[stem_name],
             tempo_bpm=reference_tempo_bpm,
             input_stem=input_stem,
         )
 
+        real_duration_seconds = _audio_duration_seconds(stem_audio_paths[stem_name])
+        duration_ok = _passes_duration_check(candidate, real_duration_seconds)
+
+        if duration_ok:
+            print(
+                f"  [tempo] {stem_name}: {result.tempo_bpm:.2f} BPM vs. reference "
+                f"{reference_tempo_bpm:.2f} BPM (ratio {ratio:.2f}, {reason}) - "
+                f"re-quantizing against the reference tempo"
+            )
+            reconciled[stem_name] = candidate
+        else:
+            print(
+                f"  [tempo] {stem_name}: {result.tempo_bpm:.2f} BPM vs. reference "
+                f"{reference_tempo_bpm:.2f} BPM (ratio {ratio:.2f}, {reason}) - "
+                f"reference REJECTED, notated duration would mismatch the real audio "
+                f"length too much - keeping {stem_name}'s own tempo instead"
+            )
+            reconciled[stem_name] = result
+
     return reconciled
+
+
+def _audio_duration_seconds(audio_path: str) -> float:
+    """Real duration (seconds) of an audio file, via its sample count/rate — much
+    cheaper than a full librosa.load() since only the header/frame count is read."""
+    info = sf.info(audio_path)
+    return info.frames / info.samplerate
+
+
+def _passes_duration_check(result: QuantizationResult, real_duration_seconds: float) -> bool:
+    """Whether a QuantizationResult's total notated duration (last note's
+    offset_beat, converted to seconds via its own tempo_bpm) is close enough to
+    the real audio's actual duration — see DURATION_RATIO_TOLERANCE."""
+    if not result.notes or real_duration_seconds <= 0:
+        return True  # nothing to check against; don't block on an edge case
+    notated_seconds = max(n.offset_beat for n in result.notes) * 60.0 / result.tempo_bpm
+    ratio = notated_seconds / real_duration_seconds
+    return abs(ratio - 1.0) <= DURATION_RATIO_TOLERANCE
 
 
 def run(
