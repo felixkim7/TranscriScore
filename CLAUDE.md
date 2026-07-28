@@ -168,10 +168,11 @@ steps 2-4 and 6 only need a raw/stem clip from `samples/`, not Teammate A's actu
       planned — Teammate A's `upload.py`/`stems.py` routes are effectively
       absorbed into `POST /upload`, since the pipeline already does separation
       internally; `app/api/stems.py` is still unwritten/unused.
-- [ ] 9. Frontend (upload/status/read-only OSMD preview/export — NOT an in-browser
+- [~] 9. Frontend (upload/status/read-only OSMD preview/export — NOT an in-browser
       correction UI) — **shared**, split by feature into two tracks (pipeline+media
       vs. score preview+export) — see `docs/frontend-plan.md` for the concrete
-      split, build order, and known gaps (missing audio-serving endpoint).
+      split and build order. Scaffolding + shared API client done (see Quality
+      backlog below); actual screens not started.
       Scope decision: editing happens in MuseScore (opening the downloaded
       `.mscz`), not in the browser — this is consistent with the human-in-the-loop
       workflow already described above ("the model produces a draft, the user
@@ -835,6 +836,63 @@ backbone was working, the plan was to circle back and improve each stage:
       409 with a correctly-formatted stage name (fixed a `str(enum)` formatting
       bug caught during this same testing pass — was printing
       `JobStage.SEPARATING` instead of `separating`).
+
+- [x] **Step 9 groundwork — React+TS scaffold, shared API client, and the missing
+      audio-serving endpoint, done.** Following the reduced frontend scope
+      (editing moved to MuseScore — see step 9's build-order entry above and
+      `docs/frontend-plan.md`), scaffolded `frontend/` (previously a 0-byte
+      `package.json` and empty folders) with Vite + React 19 + TypeScript,
+      merged from a temp `npm create vite` scaffold rather than generating
+      in-place (Vite's scaffolder wants an empty directory). Added
+      `react-router-dom` for the multi-screen flow; left `.env.example` /
+      `VITE_API_BASE_URL` as the convention for pointing the frontend at a
+      running backend (defaults to `http://127.0.0.1:8000`, matching
+      `README.md`'s "Running the server" instructions).
+
+      Built the shared typed API client both tracks depend on
+      (`frontend/src/services/`):
+      - `types.ts` — `Job`, `JobStatus`, `JobStage`, `JobResult`, `StemResult`,
+        hand-mirrored from `backend/app/schemas/job.py` (no codegen — keep both
+        in sync manually when either changes).
+      - `api.ts` — `uploadAudio()`, `getStatus()`, `getResult()` (JSON-returning,
+        throw a typed `ApiError` with `.status`/`.detail` matching FastAPI's
+        `{"detail": ...}` error shape on failure), plus `exportFileUrl()`,
+        `originalAudioUrl()`, `stemAudioUrl()` (return plain URL strings for
+        `<a href>`/audio elements, not fetch wrappers — downloads/streams
+        shouldn't go through JSON parsing).
+
+      Verified against a REAL running backend, not just typechecked: status
+      polling, result fetching, every URL builder, and an actual stem-audio
+      download (confirmed real bytes, matching content-length from an earlier
+      direct `curl` test) all worked correctly; `ApiError` confirmed it
+      correctly surfaces a real 404's `detail` message. Testing method note:
+      `api.ts` reads `import.meta.env.VITE_API_BASE_URL`, which only exists
+      under Vite's dev server/build, not plain Node — verified the rest of the
+      client's logic by stubbing just that one line in a throwaway copy run via
+      `tsx` against the real server, then deleted all scratch test files.
+      `npx tsc -b` and `npm run build` both clean on the real (unmodified)
+      source.
+
+      Also added on the backend (this was the "known gap" flagged in the
+      original frontend plan): `GET /audio/{job_id}` (original uploaded mix)
+      and `GET /audio/{job_id}/{stem}` (one separated stem's WAV) in
+      `app/api/export.py`, needed for the planned waveform + stem player
+      screen — no endpoint served raw audio bytes at all before this, only
+      notation formats via `/export`. The stem endpoint deliberately does NOT
+      require the whole job to be DONE, only that separation has finished
+      (checks the file exists on disk directly rather than gating on
+      `job.status`), so a stem player can start working while transcription/
+      quantization/export are still running for the rest of the pipeline.
+      Verified directly: real stem WAV downloaded and confirmed readable via
+      `soundfile.info()` (44.1kHz, correct duration), invalid stem name → 400
+      with the valid-stems list, unknown job → 404, original-mix media type
+      correctly varies by the uploaded file's actual extension (mp3/wav/flac/m4a)
+      rather than being hardcoded to one.
+
+      Not done: no actual screens/components — `src/{components,hooks,pages,
+      utils}/` are still empty. This was scaffolding + the shared contract only,
+      per explicit scope (`docs/frontend-plan.md`'s build order step 1);
+      building the real Track 1/Track 2 screens is still fully ahead.
 
 ## Known gotchas
 

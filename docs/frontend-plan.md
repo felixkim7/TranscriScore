@@ -3,9 +3,11 @@
 Step 9, now unblocked — step 8 (FastAPI routes) is done and verified end-to-end
 against a real running server (see `CLAUDE.md`'s Quality backlog and `README.md`'s
 "Running the server" section for the actual API shape, request/response examples,
-and a `curl` walkthrough). `frontend/` is currently an empty scaffold (0-byte
-`package.json`, empty `src/{assets,components,hooks,pages,services,utils}/`) — this
-is a from-scratch build, not a partially-started one.
+and a `curl` walkthrough). `frontend/` is scaffolded (Vite + React 19 + TypeScript,
+`react-router-dom` installed) with a shared typed API client already in place at
+`src/services/` — see "Suggested build order" step 1 below for exactly what's
+there. `src/{components,hooks,pages,utils}/` are still empty, ready for each
+track's actual screens.
 
 **Scope decision: editing happens in MuseScore, not the browser.** The frontend's
 job is to run the pipeline and hand the user finished score files — it does not
@@ -29,21 +31,16 @@ score preview, a waveform/stem player.
 | `/status/{job_id}` | GET | `Job` — `status` (pending/processing/done/failed), `stage` (separating/transcribing/quantizing/reconciling_tempo/rendering_musicxml/exporting) |
 | `/result/{job_id}` | GET | `JobResult` — combined MusicXML/MSCZ paths + per-stem list (name, label, tempo, note count, stem MusicXML path). 409 if not done, 422 if failed |
 | `/export/{job_id}/{format}` | GET | File download. `format` = `musicxml` \| `mscz` \| `stem-musicxml` (+ `?stem=<name>`) |
+| `/audio/{job_id}` | GET | The original uploaded audio (whatever format was uploaded) |
+| `/audio/{job_id}/{stem}` | GET | One separated stem's WAV audio. Doesn't require the whole job to be DONE — only that separation finished |
 
 Processing is async and takes several minutes per file (Demucs separation + 6-stem
 transcription) — every screen that waits on a job needs to poll `/status`, not just
 fire-and-forget the upload.
 
-**Known gap:** no raw-audio-file or per-stem-audio download/stream endpoint exists
-yet (only MusicXML/MSCZ). The waveform + stem player screen needs actual audio
-bytes to visualize/play — needs a new backend endpoint (e.g.
-`GET /audio/{job_id}/{stem}`, serving from `storage/stems/<model>/<job_id>/`)
-before that screen can be real. Small addition to `export.py` or a new small
-router, not a redesign — flag it to whoever picks it up.
-
-(The tempo/time-signature re-quantize-on-demand gap from the earlier version of
-this plan no longer applies — that only mattered for in-browser correction, which
-is out of scope now.)
+(The audio-serving gap and the tempo/time-signature re-quantize-on-demand gap from
+earlier versions of this plan are both resolved/no-longer-applicable — see the
+"Suggested build order" section's step 1 for what was added.)
 
 ## Screens/features
 
@@ -56,7 +53,8 @@ is out of scope now.)
    No click handling, no note selection/editing — OSMD's default rendering is
    already read-only, so this is much smaller than typical OSMD integration work.
 4. **Waveform + stem player** — visualize the original upload's waveform, play back
-   individual stems. Blocked on the missing audio-serving endpoint noted above.
+   individual stems. `originalAudioUrl()`/`stemAudioUrl()` in `src/services/api.ts`
+   are ready to use — no longer blocked.
 5. **Export buttons** — `/export/{job_id}/{musicxml,mscz,stem-musicxml}` already
    work; wire up download buttons/links for each. Point the user at "open this in
    MuseScore to edit" somewhere near the MSCZ download, since that's now the
@@ -97,19 +95,43 @@ treating the track boundary as fixed.
 
 ## Suggested build order
 
-1. **Both, together, briefly:** scaffold the actual React+TS project (currently
-   empty) — routing, a shared API client module (`src/services/`) wrapping the 4
-   endpoints above with typed responses matching `app/schemas/job.py`'s shapes, and
-   agree on the shared `Job`/`JobResult` TypeScript types so both tracks build
-   against the same contract from the start.
+1. **Done.** React+TS project scaffolded (Vite, React 19, `react-router-dom`
+   installed — not wired into any routes yet, that's each track's job), plus a
+   shared typed API client at `frontend/src/services/`:
+   - `types.ts` — `Job`, `JobStatus`, `JobStage`, `JobResult`, `StemResult`,
+     mirroring `backend/app/schemas/job.py` by hand (keep both in sync manually;
+     no codegen set up).
+   - `api.ts` — typed wrappers for all 6 backend endpoints: `uploadAudio()`,
+     `getStatus()`, `getResult()`, `exportFileUrl()`, `originalAudioUrl()`,
+     `stemAudioUrl()`. The last three return plain URL strings (for `<a href>`/
+     audio elements), not fetch wrappers — downloads/streams shouldn't go through
+     JSON parsing. Errors from the JSON-returning calls throw `ApiError` (has
+     `.status` and `.detail`, matching FastAPI's `{"detail": ...}` error shape).
+   - Base URL comes from `VITE_API_BASE_URL` (see `.env.example`; copy to
+     `.env.local` to override — defaults to `http://127.0.0.1:8000`, matching
+     `README.md`'s "Running the server" instructions).
+
+   Verified against a real running backend (not just typechecked): status
+   polling, result fetching, all URL builders, and an actual stem-audio download
+   (15MB WAV, real content-length) all confirmed working; `ApiError` confirmed
+   correctly parses a real 404's `detail` message. `npx tsc -b` and `npm run
+   build` both clean.
+
+   Also added while scaffolding (backend, needed for the stem player): `GET
+   /audio/{job_id}` (original mix) and `GET /audio/{job_id}/{stem}` (one
+   separated stem's WAV) in `backend/app/api/export.py` — this was the "known
+   gap" flagged earlier in this doc. The stem endpoint doesn't require the whole
+   job to be DONE, only that separation has finished, so Track 1's stem player
+   can start working before transcription/export finish for the rest of the
+   pipeline.
 2. **Track 1:** upload → poll → "done" state (bare-bones, no score view yet) —
    proves the whole async chain works end-to-end from the browser.
-3. **Track 2, parallel to step 2 once the API client exists:** OSMD read-only
+3. **Track 2, parallel to step 2 (the API client now exists):** OSMD read-only
    render against a MusicXML file (can start from a `curl`-uploaded job's result
    while Track 1's upload screen isn't done yet — no need to block on it), then
    export buttons.
-4. **Track 1:** waveform + stem player, once the audio-serving endpoint is added
-   (flag to Track 2 / whoever touches the backend that day — small addition).
+4. **Track 1:** waveform + stem player — the audio-serving endpoint from step 1
+   is ready, no longer blocking.
 5. **Both:** wire the two tracks into one flow (upload → status → preview + export
    + stem player all on one results page), final polish.
 

@@ -4,6 +4,15 @@ Formats: "musicxml" (combined score), "mscz" (combined MuseScore project),
 "stem-musicxml" (a single stem's MusicXML, via ?stem=<name>). PDF/PNG/SVG export
 doesn't exist yet — export_service.py only has to_mscz() (tracked as Q3 in
 CLAUDE.md's quality backlog).
+
+GET /audio/{job_id} and GET /audio/{job_id}/{stem} — stream the original upload
+or a separated stem's audio (WAV), for the frontend's waveform + stem player
+(docs/frontend-plan.md's Track 1). Added because no endpoint served raw audio
+bytes at all before this — only notation formats (MusicXML/MSCZ) were reachable
+via /export. Available as soon as separation finishes (job.stage past
+"separating"), not gated on the whole job being DONE, unlike /export — a stem
+player wants to start working while transcription/quantization/export are still
+running for the rest of the pipeline.
 """
 
 from pathlib import Path
@@ -11,6 +20,7 @@ from pathlib import Path
 from fastapi import APIRouter, HTTPException, Query
 from fastapi.responses import FileResponse
 
+from app.config.settings import DEMUCS_MODEL, DEMUCS_STEM_NAMES, STEMS_DIR
 from app.schemas.job import JobStatus
 from app.services import job_service
 
@@ -63,4 +73,62 @@ def download_export(job_id: str, format: str, stem: str | None = Query(default=N
         path=file_path,
         media_type=MEDIA_TYPES.get(format, "application/octet-stream"),
         filename=download_name,
+    )
+
+
+ORIGINAL_AUDIO_MEDIA_TYPES = {
+    ".mp3": "audio/mpeg",
+    ".wav": "audio/wav",
+    ".flac": "audio/flac",
+    ".m4a": "audio/mp4",
+}
+
+
+@router.get("/audio/{job_id}")
+def download_original_audio(job_id: str) -> FileResponse:
+    """The original uploaded audio (whatever extension was uploaded), for the
+    waveform view of the full mix before separation."""
+    job = job_service.get_job(job_id)
+    if job is None:
+        raise HTTPException(status_code=404, detail=f"No job found with id {job_id!r}")
+
+    file_path = Path(job.input_audio_path)
+    if not file_path.exists():
+        raise HTTPException(status_code=404, detail=f"Uploaded audio file is missing: {file_path}")
+
+    media_type = ORIGINAL_AUDIO_MEDIA_TYPES.get(file_path.suffix.lower(), "application/octet-stream")
+    return FileResponse(path=file_path, media_type=media_type, filename=job.original_filename)
+
+
+@router.get("/audio/{job_id}/{stem}")
+def download_stem_audio(job_id: str, stem: str) -> FileResponse:
+    """One separated stem's audio (WAV), for stem playback.
+
+    Doesn't require the job to be DONE — only that separation has actually run
+    and written this stem's file to disk. A stem player can start working while
+    later pipeline stages (transcription/quantization/export) are still running.
+    """
+    if stem not in DEMUCS_STEM_NAMES:
+        raise HTTPException(
+            status_code=400,
+            detail=f"Unknown stem {stem!r}. Valid stems: {list(DEMUCS_STEM_NAMES)}",
+        )
+
+    job = job_service.get_job(job_id)
+    if job is None:
+        raise HTTPException(status_code=404, detail=f"No job found with id {job_id!r}")
+
+    input_stem = Path(job.input_audio_path).stem
+    stem_path = STEMS_DIR / DEMUCS_MODEL / input_stem / f"{stem}.wav"
+    if not stem_path.exists():
+        raise HTTPException(
+            status_code=404,
+            detail=f"Stem {stem!r} not available yet (separation may still be running, or the job failed "
+            f"before it completed). Check GET /status/{job_id} first.",
+        )
+
+    return FileResponse(
+        path=stem_path,
+        media_type="audio/wav",
+        filename=f"{job.original_filename}.{stem}.wav",
     )
