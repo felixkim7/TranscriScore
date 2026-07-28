@@ -110,6 +110,21 @@ def reconcile_tempo(
     Returns a new dict of stem_name -> QuantizationResult (reconciled), plus prints
     nothing itself — callers are expected to log/report using the returned data.
     """
+    if reference_tempo_bpm <= 0:
+        # librosa.beat.beat_track() can return 0 BPM on a degenerate/ambiguous
+        # signal (confirmed possible via a real API run that hit this — not
+        # reproducible on demand, likely TensorFlow/librosa run-to-run variance
+        # rather than something deterministic about the specific file). A real
+        # tempo can never be <= 0, so there's nothing valid to reconcile against;
+        # skip reconciliation entirely and let every stem keep its own tempo
+        # rather than raising (dividing by a zero/negative reference below) and
+        # failing the whole job over what's ultimately a labeling step.
+        print(
+            f"  [tempo] reference tempo is {reference_tempo_bpm:.2f} BPM (invalid) - "
+            f"skipping reconciliation, every stem keeps its own tempo"
+        )
+        return dict(stem_results)
+
     reconciled = {}
     for stem_name, result in stem_results.items():
         ratio = result.tempo_bpm / reference_tempo_bpm

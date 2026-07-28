@@ -26,9 +26,9 @@ full team-ownership breakdown):
 
 All commands below run from `backend/`. Every stage has a standalone smoke-test script
 in `scripts/` so you can run and inspect each step in isolation, plus `run_pipeline.py`
-which chains the whole thing for one input file. `app/main.py` and `app/api/*.py`
-(the FastAPI HTTP layer) are not implemented yet — these scripts are the only way to
-run the pipeline today.
+which chains the whole thing for one input file. There's also a FastAPI HTTP layer
+(`app/main.py`, `app/api/*.py`) that wraps the same pipeline behind an async job API —
+see "Running the server" below.
 
 ### 0. Environment check (confirms audio loads at all)
 
@@ -152,6 +152,53 @@ Stems that end up shorter than the longest stem (different tempo/audio length) a
 padded with trailing rests so every part has the same number of measures — required
 for MuseScore to accept a multi-part file at all (it hard-rejects mismatched measure
 counts across parts).
+
+## Running the server
+
+The FastAPI app wraps the same pipeline behind an HTTP API, so a frontend (or `curl`)
+can kick off a transcription without going through `run_pipeline.py` directly. Runs
+from `backend/`:
+
+```
+./venv/Scripts/python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 8000
+```
+
+Add `--reload` while developing so the server restarts automatically on code changes.
+Once it's up:
+
+- `http://127.0.0.1:8000/health` — liveness check
+- `http://127.0.0.1:8000/docs` — interactive Swagger UI (try requests from the browser)
+
+### API shape
+
+Processing is async — the pipeline takes several minutes per file (Demucs separation +
+transcribing all 6 stems), so `POST /upload` returns immediately with a job ID instead
+of blocking; poll `GET /status/{job_id}` until it's done, then fetch the result.
+
+| Endpoint | Method | Does |
+|---|---|---|
+| `/upload` | POST | Accepts an audio file (`.mp3`/`.wav`/`.flac`/`.m4a`, multipart form field `file`), saves it, starts the pipeline in the background, returns a `Job` with a `job_id` |
+| `/status/{job_id}` | GET | Current `status` (pending/processing/done/failed) and `stage` (separating/transcribing/quantizing/reconciling_tempo/rendering_musicxml/exporting) |
+| `/result/{job_id}` | GET | Once done: combined MusicXML/MSCZ paths + per-stem breakdown (tempo, note count, stem MusicXML path). 409 if not finished yet, 422 if the job failed |
+| `/export/{job_id}/{format}` | GET | Downloads the actual file. `format` is `musicxml`, `mscz`, or `stem-musicxml` (needs `?stem=<name>`, e.g. `?stem=guitar`) |
+
+Example with `curl`:
+
+```
+curl -X POST http://127.0.0.1:8000/upload -F "file=@../samples/YOUR_FILE.mp3;type=audio/mpeg"
+# -> {"job_id": "...", "status": "pending", ...}
+
+curl http://127.0.0.1:8000/status/YOUR_JOB_ID
+# -> poll until "status": "done"
+
+curl http://127.0.0.1:8000/result/YOUR_JOB_ID
+
+curl -o output.mscz http://127.0.0.1:8000/export/YOUR_JOB_ID/mscz
+```
+
+Job records persist to `storage/jobs/<job_id>.json`; uploaded files land in
+`storage/uploads/<job_id>.<ext>` (named after the job ID, not the original filename, so
+two uploads sharing a name never collide).
 
 ### Quick reference
 

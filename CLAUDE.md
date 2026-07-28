@@ -161,8 +161,17 @@ steps 2-4 and 6 only need a raw/stem clip from `samples/`, not Teammate A's actu
 - [ ] 5. Demucs separation → feed a stem into step 2  (`test_demucs.py`) — **Teammate A**
 - [x] 6. Quantization/cleanup (the fiddliest stage — test against a known-tempo clip) — **You, done** (backbone: global tempo + 16th-note grid; real beat-tracking is a quality follow-up)
 - [ ] 7. Stem classification (only if needed — see gotchas) — **Teammate A**
-- [ ] 8. FastAPI routes wiring the services together — **shared**, do last, together
-- [ ] 9. Frontend (OSMD preview + correction UI) — **shared/TBD**, after 8
+- [x] 8. FastAPI routes wiring the services together — **You, done** (see full
+      writeup in the Quality backlog section below). Built the whole surface
+      (not just your owned stages) per explicit direction, rather than waiting
+      to coordinate `main.py`/`upload.py`/`stems.py` jointly as originally
+      planned — Teammate A's `upload.py`/`stems.py` routes are effectively
+      absorbed into `POST /upload`, since the pipeline already does separation
+      internally; `app/api/stems.py` is still unwritten/unused.
+- [ ] 9. Frontend (OSMD preview + correction UI) — **shared**, split by feature into
+      two tracks (pipeline UX vs. score/correction) — see `docs/frontend-plan.md`
+      for the concrete split, build order, and known gaps (missing audio-serving
+      and re-quantize-on-demand endpoints).
 
 ## Quality backlog (your side)
 
@@ -735,6 +744,90 @@ backbone was working, the plan was to circle back and improve each stage:
       much wider tempo spread (confirms `build_score()`'s measure-padding logic,
       which already worked in real seconds not raw beat counts, handles this
       correctly); MSCZ verified to open/convert cleanly.
+
+- [x] **Step 8 — FastAPI routes, done.** Async job/polling model (decided
+      explicitly, not a blocking request): the full pipeline takes several
+      minutes per file, and a multi-minute blocking HTTP request risks proxy/
+      browser timeouts and gives the frontend no way to show real progress.
+
+      New pieces:
+      - `app/services/pipeline_service.py` — the actual pipeline logic, moved
+        out of `scripts/run_pipeline.py` (now a thin CLI wrapper calling
+        `pipeline_service.run_full_pipeline()`) so both the CLI and the API call
+        the same code, not two copies. Takes an optional `on_stage(stage,
+        message)` callback for progress reporting instead of only printing.
+      - `app/schemas/job.py` — `JobStatus` (pending/processing/done/failed),
+        `JobStage` (uploaded/separating/transcribing/quantizing/
+        reconciling_tempo/rendering_musicxml/exporting), `Job`, `JobResult`,
+        `StemResult`.
+      - `app/services/job_service.py` — file-backed job store, one JSON file per
+        job at `storage/jobs/<job_id>.json`. Chosen over a database since
+        `app/models/`'s purpose (DB models vs. ML model cache) was never decided
+        and this project doesn't otherwise need real DB infrastructure; survives
+        process restarts unlike a pure in-memory dict. Not safe against truly
+        concurrent writers to the same job (read-modify-write race) — fine for a
+        single-worker dev server, would need a real lock or a database
+        otherwise.
+      - `app/api/upload.py` — `POST /upload`: validates extension (mp3/wav/flac/
+        m4a), saves the file under `storage/uploads/<job_id>.<ext>` (named after
+        the job ID, not the original filename, so same-named uploads never
+        collide), creates the job, schedules `pipeline_service.run_full_pipeline()`
+        via FastAPI's `BackgroundTasks`, returns immediately with the job.
+      - `app/api/transcribe.py` — `GET /status/{job_id}` (poll current stage),
+        `GET /result/{job_id}` (404 unknown job, 422 if the job failed — with the
+        captured error, 409 if not done yet, else the `JobResult`).
+      - `app/api/export.py` — `GET /export/{job_id}/{format}` file download,
+        `format` = `musicxml` | `mscz` | `stem-musicxml` (needs `?stem=<name>`
+        for the per-stem case). PDF/PNG/SVG isn't wired up since
+        `export_service.py` only has `to_mscz()` (still Q3, unstarted).
+      - `app/main.py` — mounts all three routers, wide-open CORS for local
+        frontend dev (tighten before any real deployment), `/health`.
+
+      Scope decision: built the WHOLE API surface (including what would have
+      been Teammate A's `upload.py`/`stems.py` in the original ownership split),
+      not just the owned transcription/export routes, per explicit direction —
+      rather than leaving `main.py` wiring for a joint session as `CLAUDE.md`'s
+      build order originally planned. A separate `app/api/stems.py` router
+      wasn't written since the pipeline already does separation internally as
+      part of `POST /upload`'s background job — there was no remaining
+      standalone "give me just the stems" use case to expose.
+
+      Real bug found via actual API testing (not caught by the many direct
+      `pipeline_service`/`scripts/run_pipeline.py` runs earlier in the project):
+      a job failed with `float division by zero` during tempo reconciliation.
+      Reproducing the exact same file directly through `pipeline_service.
+      run_full_pipeline()` succeeded cleanly — non-reproducible on demand, most
+      likely Basic Pitch (TensorFlow inference, no fixed seed) or librosa's beat
+      tracker occasionally returning a genuinely degenerate result on a
+      borderline signal. Root cause: `quantization_service.detect_tempo()` can
+      return `0.0` BPM in this edge case, and `reconcile_tempo()`'s
+      `ratio = result.tempo_bpm / reference_tempo_bpm` divides by it
+      unconditionally. Fixed with a guard: `reconcile_tempo()` now checks
+      `reference_tempo_bpm <= 0` up front and, if so, skips reconciliation
+      entirely (every stem keeps its own tempo — the same safe state as if
+      reconciliation had never run) instead of crashing the whole job over a
+      labeling step.
+
+      Also fixed while debugging that: `_process_job()`'s exception handler was
+      only capturing `str(e)` into the job's `error` field — for a bare message
+      like `"float division by zero"` there was no way to tell WHERE in the
+      pipeline it happened without reproducing the failure separately (which
+      cost real time above). Now captures and stores the full
+      `traceback.format_exc()`, also printed to the server log immediately
+      rather than only surfacing on the next status poll.
+
+      Verified end-to-end via the real running server (not just direct
+      `pipeline_service` calls): `POST /upload` on `sample7.mp3` and
+      `sample.mp3` both completed successfully after the fixes (job status
+      "done", full `JobResult` with all 6 stems); `GET /result` returns the
+      correct JSON; all three `GET /export` format variants (`musicxml`,
+      `mscz`, `stem-musicxml`) download real files of sensible size; the
+      downloaded MSCZ re-opens/converts cleanly in MuseScore (not corrupted in
+      transit). Error paths checked directly: unsupported file extension → 400,
+      unknown job ID → 404, result/export requested before the job finishes →
+      409 with a correctly-formatted stage name (fixed a `str(enum)` formatting
+      bug caught during this same testing pass — was printing
+      `JobStage.SEPARATING` instead of `separating`).
 
 ## Known gotchas
 

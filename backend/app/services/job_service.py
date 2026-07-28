@@ -43,6 +43,7 @@ def update_job(
     stage: Optional[JobStage] = None,
     error: Optional[str] = None,
     result=None,
+    input_audio_path: Optional[str] = None,
 ) -> Job:
     job = get_job(job_id)
     if job is None:
@@ -56,6 +57,8 @@ def update_job(
         job.error = error
     if result is not None:
         job.result = result
+    if input_audio_path is not None:
+        job.input_audio_path = input_audio_path
     job.updated_at = datetime.now(timezone.utc)
 
     _save(job)
