@@ -1,0 +1,58 @@
+{
+  "job_id": "73cfe69d-062e-42a1-99f6-9fcad5428738",
+  "status": "done",
+  "stage": "exporting",
+  "original_filename": "sample.mp3",
+  "input_audio_path": "C:\\Users\\minso\\HateSlop\\final project\\TranscriScore\\backend\\storage\\uploads\\73cfe69d-062e-42a1-99f6-9fcad5428738.mp3",
+  "created_at": "2026-07-28T02:07:45.681842Z",
+  "updated_at": "2026-07-28T02:08:55.357446Z",
+  "error": null,
+  "result": {
+    "combined_musicxml_path": "C:\\Users\\minso\\HateSlop\\final project\\TranscriScore\\backend\\storage\\musicxml\\73cfe69d-062e-42a1-99f6-9fcad5428738.musicxml",
+    "combined_mscz_path": "C:\\Users\\minso\\HateSlop\\final project\\TranscriScore\\backend\\storage\\mscz\\73cfe69d-062e-42a1-99f6-9fcad5428738.mscz",
+    "stems": [
+      {
+        "stem_name": "drums",
+        "stem_label": "drums",
+        "tempo_bpm": 147.65625,
+        "note_count": 89,
+        "musicxml_path": "C:\\Users\\minso\\HateSlop\\final project\\TranscriScore\\backend\\storage\\musicxml\\stems\\73cfe69d-062e-42a1-99f6-9fcad5428738\\drums.musicxml"
+      },
+      {
+        "stem_name": "vocals",
+        "stem_label": "vocal_melody",
+        "tempo_bpm": 73.828125,
+        "note_count": 68,
+        "musicxml_path": "C:\\Users\\minso\\HateSlop\\final project\\TranscriScore\\backend\\storage\\musicxml\\stems\\73cfe69d-062e-42a1-99f6-9fcad5428738\\vocals.musicxml"
+      },
+      {
+        "stem_name": "bass",
+        "stem_label": "bass",
+        "tempo_bpm": 143.5546875,
+        "note_count": 29,
+        "musicxml_path": "C:\\Users\\minso\\HateSlop\\final project\\TranscriScore\\backend\\storage\\musicxml\\stems\\73cfe69d-062e-42a1-99f6-9fcad5428738\\bass.musicxml"
+      },
+      {
+        "stem_name": "other",
+        "stem_label": "other_accompaniment",
+        "tempo_bpm": 151.99908088235293,
+        "note_count": 10,
+        "musicxml_path": "C:\\Users\\minso\\HateSlop\\final project\\TranscriScore\\backend\\storage\\musicxml\\stems\\73cfe69d-062e-42a1-99f6-9fcad5428738\\other.musicxml"
+      },
+      {
+        "stem_name": "guitar",
+        "stem_label": "guitar_accompaniment",
+        "tempo_bpm": 73.828125,
+        "note_count": 340,
+        "musicxml_path": "C:\\Users\\minso\\HateSlop\\final project\\TranscriScore\\backend\\storage\\musicxml\\stems\\73cfe69d-062e-42a1-99f6-9fcad5428738\\guitar.musicxml"
+      },
+      {
+        "stem_name": "piano",
+        "stem_label": "piano_accompaniment",
+        "tempo_bpm": 74.89809782608695,
+        "note_count": 64,
+        "musicxml_path": "C:\\Users\\minso\\HateSlop\\final project\\TranscriScore\\backend\\storage\\musicxml\\stems\\73cfe69d-062e-42a1-99f6-9fcad5428738\\piano.musicxml"
+      }
+    ]
+  }
+}

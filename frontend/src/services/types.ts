@@ -1,7 +1,7 @@
 // Mirrors backend/app/schemas/job.py exactly — keep these two in sync by hand.
 // If the backend schema changes, update this file in the same PR.
 
-export type JobStatus = "pending" | "processing" | "done" | "failed";
+export type JobStatus = "pending" | "processing" | "awaiting_review" | "done" | "failed";
 
 export type JobStage =
   | "uploaded"
@@ -11,6 +11,11 @@ export type JobStage =
   | "reconciling_tempo"
   | "rendering_musicxml"
   | "exporting";
+
+// Which review checkpoint a job is paused at — only meaningful when
+// status === "awaiting_review". Determines what POST /jobs/{job_id}/continue
+// runs next (see backend/app/services/pipeline_service.py's module docstring).
+export type Checkpoint = "after_separation" | "after_transcription";
 
 export interface StemResult {
   stem_name: string;
@@ -26,16 +31,29 @@ export interface JobResult {
   stems: StemResult[];
 }
 
+export interface SeparationCheckpointStem {
+  stem_name: string;
+}
+
+export interface TranscriptionCheckpointStem {
+  stem_name: string;
+  stem_label: string;
+  note_count: number;
+}
+
 export interface Job {
   job_id: string;
   status: JobStatus;
   stage: JobStage | null;
+  checkpoint: Checkpoint | null;
   original_filename: string;
   input_audio_path: string;
   created_at: string;
   updated_at: string;
   error: string | null;
   result: JobResult | null;
+  separation_checkpoint: SeparationCheckpointStem[] | null;
+  transcription_checkpoint: TranscriptionCheckpointStem[] | null;
 }
 
 // Demucs stems this project actually separates into — see

@@ -1,11 +1,18 @@
-"""POST /upload — accept an audio file, kick off the full pipeline as a
+"""POST /upload — accept an audio file, kick off Demucs separation as a
 background job, return immediately with a job ID to poll (see transcribe.py's
-GET /status/{job_id} and GET /result/{job_id}).
+GET /status/{job_id}).
 
-Async job model, not a blocking request: the full pipeline (Demucs separation +
-transcribing 6 stems) takes several minutes per file — a single blocking HTTP
-request that long risks proxy/browser timeouts and gives the frontend no way to
-show real progress.
+Async job model, not a blocking request: even just separation takes real time,
+and the full pipeline (separation + transcribing 6 stems + quantization +
+export) takes several minutes total — a single blocking HTTP request that long
+risks proxy/browser timeouts and gives the frontend no way to show real progress.
+
+Runs ONLY phase 1 (separation) before pausing at AWAITING_REVIEW — this is the
+first of two review checkpoints (see app/schemas/job.py's Checkpoint enum and
+app/services/pipeline_service.py's module docstring for the full design). The
+user reviews the separated stems (e.g. via GET /audio/{job_id}/{stem}) and calls
+POST /jobs/{job_id}/continue (transcribe.py) to run transcription next, rather
+than the whole pipeline running start-to-finish automatically.
 """
 
 import traceback
@@ -14,7 +21,7 @@ from pathlib import Path
 from fastapi import APIRouter, BackgroundTasks, HTTPException, UploadFile
 
 from app.config.settings import UPLOADS_DIR
-from app.schemas.job import Job, JobStage, JobStatus
+from app.schemas.job import Checkpoint, Job, JobStage, JobStatus, SeparationCheckpointStem
 from app.services import job_service, pipeline_service
 
 router = APIRouter(tags=["upload"])
@@ -48,13 +55,13 @@ async def upload_audio(file: UploadFile, background_tasks: BackgroundTasks) -> J
         input_audio_path=str(saved_path),
     )
 
-    background_tasks.add_task(_process_job, job.job_id)
+    background_tasks.add_task(_run_separation_phase, job.job_id)
 
     return job
 
 
-def _process_job(job_id: str) -> None:
-    """Runs in FastAPI's background task pool — the actual pipeline execution."""
+def _run_separation_phase(job_id: str) -> None:
+    """Runs in FastAPI's background task pool — phase 1 only (separation)."""
     job = job_service.get_job(job_id)
     if job is None:
         return
@@ -64,8 +71,13 @@ def _process_job(job_id: str) -> None:
 
     try:
         job_service.update_job(job_id, status=JobStatus.PROCESSING, stage=JobStage.SEPARATING)
-        result = pipeline_service.run_full_pipeline(job.input_audio_path, on_stage=on_stage)
-        job_service.update_job(job_id, status=JobStatus.DONE, result=result)
+        stem_names = pipeline_service.run_until_separation(job.input_audio_path, on_stage=on_stage)
+        job_service.update_job(
+            job_id,
+            status=JobStatus.AWAITING_REVIEW,
+            checkpoint=Checkpoint.AFTER_SEPARATION,
+            separation_checkpoint=[SeparationCheckpointStem(stem_name=name) for name in stem_names],
+        )
     except Exception:  # noqa: BLE001 — job failures must be captured, not crash the worker
         # Full traceback, not just str(e) — a bare exception message (e.g.
         # "float division by zero") gives no way to find WHERE in the pipeline it

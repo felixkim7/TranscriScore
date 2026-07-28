@@ -23,7 +23,7 @@ def main() -> None:
 
     input_audio_path = sys.argv[1]
 
-    result = pipeline_service.run_full_pipeline(input_audio_path)
+    result = pipeline_service.run_full_pipeline_no_pauses(input_audio_path)
 
     print(f"Combined MusicXML written to: {result['combined_musicxml_path']}")
     print(f"Combined MSCZ written to: {result['combined_mscz_path']}")

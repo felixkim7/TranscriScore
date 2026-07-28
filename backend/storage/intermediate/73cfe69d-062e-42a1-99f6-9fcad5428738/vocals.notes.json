@@ -1,0 +1,758 @@
+[
+  {
+    "pitch": 56,
+    "onset": 0.7430385487528345,
+    "offset": 0.9636281179138322,
+    "duration": 0.2205895691609977,
+    "velocity": 62,
+    "confidence": 0.49013227224349976,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 56,
+    "onset": 0.9752380952380952,
+    "offset": 1.1261678004535147,
+    "duration": 0.15092970521541949,
+    "velocity": 64,
+    "confidence": 0.5062641501426697,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 55,
+    "onset": 1.230657596371882,
+    "offset": 1.486077097505669,
+    "duration": 0.255419501133787,
+    "velocity": 84,
+    "confidence": 0.6612755060195923,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 56,
+    "onset": 1.5673469387755101,
+    "offset": 1.8459863945578232,
+    "duration": 0.2786394557823131,
+    "velocity": 85,
+    "confidence": 0.6689682602882385,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 58,
+    "onset": 1.9504761904761905,
+    "offset": 2.1142997732426303,
+    "duration": 0.16382358276643982,
+    "velocity": 49,
+    "confidence": 0.38342753052711487,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 63,
+    "onset": 2.4277691609977325,
+    "offset": 2.5670888888888888,
+    "duration": 0.1393197278911562,
+    "velocity": 46,
+    "confidence": 0.36156296730041504,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 62,
+    "onset": 2.7296285714285715,
+    "offset": 3.0082680272108844,
+    "duration": 0.27863945578231286,
+    "velocity": 60,
+    "confidence": 0.4740076959133148,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 58,
+    "onset": 3.159197732426304,
+    "offset": 3.4262272108843534,
+    "duration": 0.2670294784580496,
+    "velocity": 51,
+    "confidence": 0.3977011740207672,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 56,
+    "onset": 4.042839909297052,
+    "offset": 4.275039455782313,
+    "duration": 0.2321995464852611,
+    "velocity": 45,
+    "confidence": 0.35138562321662903,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 55,
+    "onset": 4.449189115646258,
+    "offset": 4.692998639455782,
+    "duration": 0.24380952380952348,
+    "velocity": 78,
+    "confidence": 0.6128350496292114,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 56,
+    "onset": 4.716218594104308,
+    "offset": 5.087737868480725,
+    "duration": 0.37151927437641685,
+    "velocity": 70,
+    "confidence": 0.547826886177063,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 58,
+    "onset": 5.18061768707483,
+    "offset": 5.343157369614512,
+    "duration": 0.16253968253968232,
+    "velocity": 49,
+    "confidence": 0.38873571157455444,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 62,
+    "onset": 5.959770068027211,
+    "offset": 7.167207709750567,
+    "duration": 1.2074376417233559,
+    "velocity": 76,
+    "confidence": 0.5972381830215454,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 56,
+    "onset": 7.271697505668935,
+    "offset": 7.619996825396825,
+    "duration": 0.3482993197278903,
+    "velocity": 53,
+    "confidence": 0.41944342851638794,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 55,
+    "onset": 7.678046712018141,
+    "offset": 7.933466213151927,
+    "duration": 0.25541950113378675,
+    "velocity": 79,
+    "confidence": 0.6242642402648926,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 56,
+    "onset": 7.933466213151927,
+    "offset": 8.329489342403628,
+    "duration": 0.39602312925170047,
+    "velocity": 76,
+    "confidence": 0.5969021916389465,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 58,
+    "onset": 8.352709297052154,
+    "offset": 8.64295873015873,
+    "duration": 0.2902494331065757,
+    "velocity": 52,
+    "confidence": 0.4100211262702942,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 62,
+    "onset": 9.223457596371881,
+    "offset": 9.513707029478457,
+    "duration": 0.2902494331065757,
+    "velocity": 68,
+    "confidence": 0.5357997417449951,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 58,
+    "onset": 9.583366893424035,
+    "offset": 10.02582993197279,
+    "duration": 0.44246303854875535,
+    "velocity": 63,
+    "confidence": 0.4957219064235687,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 56,
+    "onset": 10.501839002267575,
+    "offset": 10.699208616780046,
+    "duration": 0.19736961451247126,
+    "velocity": 51,
+    "confidence": 0.3981781601905823,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 56,
+    "onset": 10.710818594104309,
+    "offset": 10.850138321995466,
+    "duration": 0.13931972789115754,
+    "velocity": 63,
+    "confidence": 0.49806463718414307,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 55,
+    "onset": 10.919798185941044,
+    "offset": 11.186827664399093,
+    "duration": 0.26702947845804914,
+    "velocity": 85,
+    "confidence": 0.6682613492012024,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 56,
+    "onset": 11.314537414965987,
+    "offset": 11.569956916099773,
+    "duration": 0.25541950113378675,
+    "velocity": 82,
+    "confidence": 0.6491614580154419,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 58,
+    "onset": 11.581566893424037,
+    "offset": 11.906646258503402,
+    "duration": 0.32507936507936463,
+    "velocity": 61,
+    "confidence": 0.47920307517051697,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 62,
+    "onset": 12.465209070294785,
+    "offset": 13.47527709750567,
+    "duration": 1.0100680272108846,
+    "velocity": 69,
+    "confidence": 0.542483925819397,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 81,
+    "onset": 13.034097959183674,
+    "offset": 13.231467573696145,
+    "duration": 0.19736961451247126,
+    "velocity": 37,
+    "confidence": 0.2926470637321472,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 55,
+    "onset": 14.440189115646259,
+    "offset": 14.858148299319728,
+    "duration": 0.41795918367346907,
+    "velocity": 68,
+    "confidence": 0.5373145937919617,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 56,
+    "onset": 14.974248072562357,
+    "offset": 15.264497505668935,
+    "duration": 0.29024943310657747,
+    "velocity": 76,
+    "confidence": 0.5956445932388306,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 60,
+    "onset": 15.322547392290248,
+    "offset": 15.624406802721088,
+    "duration": 0.30185941043083986,
+    "velocity": 64,
+    "confidence": 0.5009658336639404,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 62,
+    "onset": 15.728896598639455,
+    "offset": 15.939160090702948,
+    "duration": 0.21026349206349337,
+    "velocity": 54,
+    "confidence": 0.4261508882045746,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 71,
+    "onset": 16.25262947845805,
+    "offset": 16.86795827664399,
+    "duration": 0.6153287981859386,
+    "velocity": 55,
+    "confidence": 0.4318866729736328,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 63,
+    "onset": 16.891178231292518,
+    "offset": 17.5877768707483,
+    "duration": 0.6965986394557824,
+    "velocity": 82,
+    "confidence": 0.6427738070487976,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 72,
+    "onset": 17.81997641723356,
+    "offset": 18.041849886621314,
+    "duration": 0.22187346938775576,
+    "velocity": 61,
+    "confidence": 0.4819551408290863,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 72,
+    "onset": 18.041849886621314,
+    "offset": 18.192779591836732,
+    "duration": 0.15092970521541815,
+    "velocity": 56,
+    "confidence": 0.4422787129878998,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 53,
+    "onset": 18.633958730158728,
+    "offset": 19.74851655328798,
+    "duration": 1.1145578231292532,
+    "velocity": 66,
+    "confidence": 0.5207810997962952,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 53,
+    "onset": 20.62054875283447,
+    "offset": 20.794698412698413,
+    "duration": 0.17414965986394293,
+    "velocity": 53,
+    "confidence": 0.4144921600818634,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 55,
+    "onset": 20.910798185941044,
+    "offset": 21.061727891156465,
+    "duration": 0.1509297052154217,
+    "velocity": 51,
+    "confidence": 0.40182414650917053,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 55,
+    "onset": 21.073337868480728,
+    "offset": 21.293927437641724,
+    "duration": 0.22058956916099604,
+    "velocity": 81,
+    "confidence": 0.6401889324188232,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 56,
+    "onset": 21.293927437641724,
+    "offset": 21.46807709750567,
+    "duration": 0.17414965986394648,
+    "velocity": 56,
+    "confidence": 0.4376736879348755,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 56,
+    "onset": 21.479687074829933,
+    "offset": 21.723496598639457,
+    "duration": 0.24380952380952436,
+    "velocity": 85,
+    "confidence": 0.6704317927360535,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 60,
+    "onset": 21.816376417233563,
+    "offset": 21.968590022675738,
+    "duration": 0.15221360544217433,
+    "velocity": 39,
+    "confidence": 0.310781329870224,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 62,
+    "onset": 22.200789569161,
+    "offset": 22.432989115646258,
+    "duration": 0.23219954648525842,
+    "velocity": 52,
+    "confidence": 0.40695562958717346,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 58,
+    "onset": 22.74645850340136,
+    "offset": 23.210857596371884,
+    "duration": 0.46439909297052395,
+    "velocity": 49,
+    "confidence": 0.38730400800704956,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 63,
+    "onset": 23.419837188208618,
+    "offset": 24.84914829931973,
+    "duration": 1.4293111111111116,
+    "velocity": 60,
+    "confidence": 0.47121545672416687,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 63,
+    "onset": 25.01168798185941,
+    "offset": 26.185579591836735,
+    "duration": 1.173891609977325,
+    "velocity": 62,
+    "confidence": 0.48903220891952515,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 55,
+    "onset": 27.12598775510204,
+    "offset": 27.346577324263038,
+    "duration": 0.22058956916099604,
+    "velocity": 68,
+    "confidence": 0.5331314206123352,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 56,
+    "onset": 27.532336961451247,
+    "offset": 27.81097641723356,
+    "duration": 0.2786394557823151,
+    "velocity": 78,
+    "confidence": 0.6121924519538879,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 62,
+    "onset": 28.729448526077096,
+    "offset": 28.915208163265305,
+    "duration": 0.18575963718820887,
+    "velocity": 63,
+    "confidence": 0.4949336051940918,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 70,
+    "onset": 29.07774784580499,
+    "offset": 29.43765714285714,
+    "duration": 0.3599092970521518,
+    "velocity": 48,
+    "confidence": 0.3770447075366974,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 56,
+    "onset": 30.00782993197279,
+    "offset": 30.27485941043084,
+    "duration": 0.26702947845804914,
+    "velocity": 60,
+    "confidence": 0.4730587899684906,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 55,
+    "onset": 30.402569160997732,
+    "offset": 30.63476870748299,
+    "duration": 0.23219954648525842,
+    "velocity": 59,
+    "confidence": 0.4649112820625305,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 56,
+    "onset": 30.77408843537415,
+    "offset": 30.983068027210884,
+    "duration": 0.20897959183673365,
+    "velocity": 77,
+    "confidence": 0.6056502461433411,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 62,
+    "onset": 31.784156462585035,
+    "offset": 32.42398911564626,
+    "duration": 0.6398326530612231,
+    "velocity": 67,
+    "confidence": 0.5298264026641846,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 56,
+    "onset": 33.84169024943311,
+    "offset": 33.992619954648525,
+    "duration": 0.15092970521541815,
+    "velocity": 42,
+    "confidence": 0.3307550549507141,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 56,
+    "onset": 34.00422993197279,
+    "offset": 34.189989569161,
+    "duration": 0.18575963718821242,
+    "velocity": 74,
+    "confidence": 0.5837597846984863,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 58,
+    "onset": 34.35252925170068,
+    "offset": 34.57311882086168,
+    "duration": 0.2205895691609996,
+    "velocity": 50,
+    "confidence": 0.3953782618045807,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 70,
+    "onset": 34.712438548752836,
+    "offset": 34.96785804988662,
+    "duration": 0.25541950113378675,
+    "velocity": 44,
+    "confidence": 0.3485131561756134,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 62,
+    "onset": 35.21166757369615,
+    "offset": 35.38581723356009,
+    "duration": 0.17414965986394293,
+    "velocity": 56,
+    "confidence": 0.44355377554893494,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 58,
+    "onset": 35.54835691609978,
+    "offset": 35.745726530612245,
+    "duration": 0.1973696145124677,
+    "velocity": 59,
+    "confidence": 0.46722638607025146,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 55,
+    "onset": 36.722248526077095,
+    "offset": 36.95444807256236,
+    "duration": 0.23219954648526198,
+    "velocity": 51,
+    "confidence": 0.40154963731765747,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 56,
+    "onset": 37.11698775510204,
+    "offset": 37.25630748299319,
+    "duration": 0.13931972789115576,
+    "velocity": 43,
+    "confidence": 0.34036874771118164,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 56,
+    "onset": 37.267917460317456,
+    "offset": 37.45367709750567,
+    "duration": 0.18575963718821242,
+    "velocity": 75,
+    "confidence": 0.5926438570022583,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 58,
+    "onset": 37.61621678004535,
+    "offset": 37.919360090702945,
+    "duration": 0.30314331065759603,
+    "velocity": 47,
+    "confidence": 0.3724561035633087,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 70,
+    "onset": 37.930970068027214,
+    "offset": 38.23282947845805,
+    "duration": 0.3018594104308363,
+    "velocity": 55,
+    "confidence": 0.43097203969955444,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 62,
+    "onset": 38.43019909297052,
+    "offset": 38.75527845804989,
+    "duration": 0.3250793650793682,
+    "velocity": 66,
+    "confidence": 0.5209894776344299,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 71,
+    "onset": 39.940780045351474,
+    "offset": 40.10331972789116,
+    "duration": 0.16253968253968765,
+    "velocity": 64,
+    "confidence": 0.5075889229774475,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 72,
+    "onset": 40.184589569161,
+    "offset": 40.33551927437642,
+    "duration": 0.15092970521542526,
+    "velocity": 53,
+    "confidence": 0.41997575759887695,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 55,
+    "onset": 40.31229931972789,
+    "offset": 40.8115283446712,
+    "duration": 0.4992290249433111,
+    "velocity": 69,
+    "confidence": 0.5426929593086243,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 56,
+    "onset": 41.00889795918368,
+    "offset": 41.18304761904762,
+    "duration": 0.17414965986394293,
+    "velocity": 70,
+    "confidence": 0.5517399311065674,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 72,
+    "onset": 41.12499773242631,
+    "offset": 41.380417233560095,
+    "duration": 0.25541950113378675,
+    "velocity": 51,
+    "confidence": 0.4007452130317688,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 72,
+    "onset": 41.39202721088436,
+    "offset": 41.65905668934241,
+    "duration": 0.26702947845804914,
+    "velocity": 61,
+    "confidence": 0.4768572151660919,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 63,
+    "onset": 42.902608163265306,
+    "offset": 43.08836780045351,
+    "duration": 0.18575963718820532,
+    "velocity": 52,
+    "confidence": 0.40805068612098694,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 82,
+    "onset": 43.053537868480724,
+    "offset": 43.19285759637188,
+    "duration": 0.13931972789115576,
+    "velocity": 51,
+    "confidence": 0.40166768431663513,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 75,
+    "onset": 43.169637641723355,
+    "offset": 43.42505714285714,
+    "duration": 0.25541950113378675,
+    "velocity": 51,
+    "confidence": 0.4046342968940735,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 72,
+    "onset": 43.8675201814059,
+    "offset": 44.00683990929706,
+    "duration": 0.13931972789115576,
+    "velocity": 44,
+    "confidence": 0.3477591574192047,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 72,
+    "onset": 44.819538321995466,
+    "offset": 45.028517913832204,
+    "duration": 0.2089795918367372,
+    "velocity": 85,
+    "confidence": 0.6728181838989258,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 65,
+    "onset": 44.854368253968254,
+    "offset": 44.99368798185941,
+    "duration": 0.13931972789115576,
+    "velocity": 46,
+    "confidence": 0.3598984181880951,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 72,
+    "onset": 45.028517913832204,
+    "offset": 45.411647165532884,
+    "duration": 0.38312925170068013,
+    "velocity": 52,
+    "confidence": 0.4132828116416931,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 55,
+    "onset": 46.26045941043084,
+    "offset": 46.446219047619046,
+    "duration": 0.18575963718820532,
+    "velocity": 83,
+    "confidence": 0.6517019867897034,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 55,
+    "onset": 46.771298412698414,
+    "offset": 46.96866802721088,
+    "duration": 0.1973696145124677,
+    "velocity": 53,
+    "confidence": 0.41970711946487427,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 55,
+    "onset": 46.980278004535144,
+    "offset": 47.42145714285714,
+    "duration": 0.4411791383219992,
+    "velocity": 77,
+    "confidence": 0.60996013879776,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 70,
+    "onset": 48.82754829931973,
+    "offset": 49.03652789115646,
+    "duration": 0.2089795918367301,
+    "velocity": 47,
+    "confidence": 0.36760446429252625,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 70,
+    "onset": 49.04813786848073,
+    "offset": 49.21067755102041,
+    "duration": 0.16253968253968054,
+    "velocity": 66,
+    "confidence": 0.5227027535438538,
+    "stem_label": "vocal_melody"
+  },
+  {
+    "pitch": 63,
+    "onset": 49.43126712018141,
+    "offset": 52.30149931972789,
+    "duration": 2.8702321995464786,
+    "velocity": 69,
+    "confidence": 0.5413880944252014,
+    "stem_label": "vocal_melody"
+  }
+]

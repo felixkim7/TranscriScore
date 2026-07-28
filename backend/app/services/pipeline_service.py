@@ -4,10 +4,31 @@ MusicXML -> combined MSCZ, for one audio file.
 
 This is the importable form of what scripts/run_pipeline.py used to run as a
 standalone script — moved here so both the CLI script and the async API
-(app/api/transcribe.py) can call the same logic without duplicating it.
-scripts/run_pipeline.py is now a thin wrapper that just prints progress to stdout;
-run_full_pipeline() below takes an optional on_stage callback instead, so the API
-can report progress via GET /status/{job_id} without depending on captured stdout.
+(app/api/upload.py, app/api/transcribe.py) can call the same logic without
+duplicating it.
+
+Split into three resumable phases (added for the review-checkpoint feature —
+the user can inspect each phase's output and decide whether to continue before
+the next one runs, rather than the whole pipeline running start-to-finish
+uninterrupted):
+
+  run_until_separation()   -> pauses after Demucs separation
+  run_transcription_phase() -> pauses after transcribing all stems
+  run_final_phase()         -> quantize -> reconcile tempo -> render -> export
+
+Each phase is a plain function, not a generator/coroutine that "pauses" in the
+Python sense — the actual pausing happens at the API layer (app/api/upload.py,
+app/api/transcribe.py): a phase function runs to completion and returns, the
+job's status is set to AWAITING_REVIEW, and nothing further runs until a
+POST /jobs/{job_id}/continue call invokes the next phase as a NEW background
+task. Between phases, all state needed to resume lives on disk (Demucs's stem
+wavs, each stem's transcribed notes JSON) or in the job record itself
+(stem_labels) — nothing is held in memory across the pause, so a server
+restart between phases doesn't lose anything.
+
+scripts/run_pipeline.py still runs all three phases back-to-back with no
+pausing (a CLI script has no "review and click continue" concept), via
+run_full_pipeline_no_pauses() at the bottom of this file.
 
 Labeling:
 - vocals, bass, other: trusted directly from Demucs, no verification. Demucs
@@ -30,10 +51,7 @@ Labeling:
   vs. two-staff piano grand staff), and the Demucs stem the audio actually came
   from is a much more reliable signal for THAT than a rule-based heuristic
   whose thresholds were validated on synthetic test signals, not real audio
-  (see classification_service.py). Previously the classifier's relabel was used
-  as the final stem_label, which caused a real stem misidentified as piano to
-  render as an (incorrect) two-staff grand staff instead of single-staff guitar
-  notation — confirmed on a real run.
+  (see classification_service.py).
 
 Combining: each stem is transcribed and quantized independently first (its own
 tempo/key/notes). A reference tempo is then detected once from the ORIGINAL mixed
@@ -63,7 +81,7 @@ same reference-audio approach should apply.
 from pathlib import Path
 from typing import Callable, Dict, List, Optional
 
-from app.config.settings import DEMUCS_MODEL, MUSICXML_STEMS_DIR, STEMS_DIR, stem_output_dir
+from app.config.settings import DEMUCS_MODEL, DEMUCS_STEM_NAMES, MUSICXML_STEMS_DIR, STEMS_DIR, stem_output_dir
 from app.schemas.job import JobStage
 from app.schemas.transcription import NoteEvent, QuantizationResult
 from app.services import (
@@ -98,48 +116,6 @@ def _report(on_stage: Optional[ProgressCallback], stage: JobStage, message: str)
         on_stage(stage, message)
 
 
-def run_transcription_stage(
-    input_audio_path: str, on_stage: Optional[ProgressCallback] = None
-) -> Dict[str, List[NoteEvent]]:
-    """Run the separate -> label -> transcribe stage for one audio file.
-
-    Returns a dict mapping stem name -> its transcribed note events.
-    """
-    input_stem = Path(input_audio_path).stem
-
-    _report(on_stage, JobStage.SEPARATING, "Separating into stems (Demucs)...")
-    stems = demucs_service.run(input_audio_path)
-
-    _report(on_stage, JobStage.TRANSCRIBING, "Transcribing stems...")
-    results: Dict[str, List[NoteEvent]] = {}
-
-    results["drums"] = drum_transcription_service.run(
-        str(stems["drums"]), stem_label="drums", input_stem=input_stem
-    )
-
-    for stem_name, stem_label in TRUSTED_STEM_LABELS.items():
-        results[stem_name] = transcription_service.run(
-            str(stems[stem_name]), stem_label=stem_label, input_stem=input_stem
-        )
-
-    for stem_name, expected_label in VERIFIED_STEM_LABELS.items():
-        matches, predicted_label = classification_service.check_stem_label_confidence(
-            str(stems[stem_name]), expected_label
-        )
-        # Log-only: stem_label always stays expected_label (the Demucs stem's own
-        # identity) regardless of what the classifier predicts — see this module's
-        # docstring for why.
-        if not matches:
-            print(f"  [!] {stem_name}.wav: expected {expected_label!r}, "
-                  f"re-check predicted {predicted_label!r} - keeping {expected_label!r} "
-                  f"(logged only, doesn't change notation layout)")
-        results[stem_name] = transcription_service.run(
-            str(stems[stem_name]), stem_label=expected_label, input_stem=input_stem
-        )
-
-    return results
-
-
 def stem_audio_paths(input_audio_path: str, stem_names) -> Dict[str, str]:
     """Map each stem name to its separated audio file on disk.
 
@@ -150,55 +126,94 @@ def stem_audio_paths(input_audio_path: str, stem_names) -> Dict[str, str]:
     return {name: str(input_stem_dir / f"{name}.wav") for name in stem_names}
 
 
-def quantize_stems(
-    input_audio_path: str, transcriptions: Dict[str, List[NoteEvent]]
-) -> Dict[str, QuantizationResult]:
-    """Quantize each stem's note events against its own independently-detected tempo.
+def run_until_separation(input_audio_path: str, on_stage: Optional[ProgressCallback] = None) -> List[str]:
+    """Phase 1: run Demucs separation only, then stop.
 
-    This is the FIRST quantization pass — before tempo reconciliation (see
-    run_full_pipeline()). Each stem's tempo/beat grid here reflects only that
-    stem's own separated audio, which may disagree with other stems (or be a
-    straight-up octave error) since separation quality and how much real
-    rhythmic content survives varies per stem.
+    Returns the list of stem names produced (matches settings.DEMUCS_STEM_NAMES —
+    Demucs itself decides what it can split out, this doesn't vary per file).
+    The actual stem audio is left on disk (storage/stems/...) for the caller to
+    serve via GET /audio/{job_id}/{stem} and for run_transcription_phase() to
+    read back later.
+    """
+    _report(on_stage, JobStage.SEPARATING, "Separating into stems (Demucs)...")
+    demucs_service.run(input_audio_path)
+    return list(DEMUCS_STEM_NAMES)
+
+
+def run_transcription_phase(
+    input_audio_path: str, on_stage: Optional[ProgressCallback] = None
+) -> Dict[str, str]:
+    """Phase 2: transcribe every stem (assumes separation already ran — phase 1),
+    then stop.
+
+    Returns a dict of stem_name -> stem_label (the label decisions made here,
+    e.g. after classification re-checks) — this needs to be persisted on the Job
+    (job_service stores it as Job.stem_labels) so run_final_phase() can rebuild
+    the same per-stem QuantizationResults later without re-running
+    classification. The actual transcribed note events are left on disk
+    (storage/intermediate/<job_id>/<stem>.notes.json, written by
+    transcription_service.run()/drum_transcription_service.run()) rather than
+    returned here or stored on the Job — reloaded via
+    transcription_service.load_note_events() in run_final_phase().
     """
     input_stem = Path(input_audio_path).stem
-    audio_paths = stem_audio_paths(input_audio_path, transcriptions.keys())
+    stems = stem_audio_paths(input_audio_path, DEMUCS_STEM_NAMES)
 
-    results: Dict[str, QuantizationResult] = {}
-    for stem_name, note_events in transcriptions.items():
-        if not note_events:
-            print(f"  [!] {stem_name}: no note events, skipping quantization")
-            continue
-        results[stem_name] = quantization_service.run(
-            note_events, audio_path=audio_paths[stem_name], input_stem=input_stem
+    _report(on_stage, JobStage.TRANSCRIBING, "Transcribing stems...")
+    stem_labels: Dict[str, str] = {}
+
+    drum_transcription_service.run(stems["drums"], stem_label="drums", input_stem=input_stem)
+    stem_labels["drums"] = "drums"
+
+    for stem_name, stem_label in TRUSTED_STEM_LABELS.items():
+        transcription_service.run(stems[stem_name], stem_label=stem_label, input_stem=input_stem)
+        stem_labels[stem_name] = stem_label
+
+    for stem_name, expected_label in VERIFIED_STEM_LABELS.items():
+        matches, predicted_label = classification_service.check_stem_label_confidence(
+            stems[stem_name], expected_label
         )
+        # Log-only: stem_label always stays expected_label (the Demucs stem's own
+        # identity) regardless of what the classifier predicts — see this
+        # module's docstring for why.
+        if not matches:
+            print(f"  [!] {stem_name}.wav: expected {expected_label!r}, "
+                  f"re-check predicted {predicted_label!r} - keeping {expected_label!r} "
+                  f"(logged only, doesn't change notation layout)")
+        transcription_service.run(stems[stem_name], stem_label=expected_label, input_stem=input_stem)
+        stem_labels[stem_name] = expected_label
 
-    return results
+    return stem_labels
 
 
-def run_full_pipeline(input_audio_path: str, on_stage: Optional[ProgressCallback] = None) -> dict:
-    """Run the complete audio -> combined MusicXML/MSCZ pipeline for one file.
+def run_final_phase(
+    input_audio_path: str,
+    stem_labels: Dict[str, str],
+    on_stage: Optional[ProgressCallback] = None,
+) -> dict:
+    """Phase 3: quantize -> reconcile tempo -> render MusicXML -> export.
+    Assumes phases 1 and 2 already ran (separation + transcription).
 
-    on_stage: optional callback(stage: JobStage, message: str), called at each
-    pipeline stage transition — lets a caller (e.g. the async job API) persist
-    progress without depending on stdout. If omitted, this only prints, same as
-    the old scripts/run_pipeline.py behavior.
+    stem_labels: stem_name -> stem_label, as returned by run_transcription_phase()
+    (and persisted on the Job in between) — needed to reload each stem's note
+    events with load_note_events() and to know which stem produced which
+    QuantizationResult.stem_label for musicxml_service's staff-layout routing.
 
     Returns a dict with combined_musicxml_path, combined_mscz_path, and per-stem
     details (name, label, tempo, note count, musicxml path) — enough for
     app/api/transcribe.py to build a JobResult from.
     """
     input_audio_path = str(input_audio_path)
-    output_name = Path(input_audio_path).stem
+    input_stem = Path(input_audio_path).stem
+    output_name = input_stem
 
-    transcriptions = run_transcription_stage(input_audio_path, on_stage)
-    print("Transcription complete")
-    for stem_name, notes in transcriptions.items():
-        print(f"  {stem_name:8s}: {len(notes)} notes"
-              + (f" (label={notes[0].stem_label})" if notes else ""))
+    transcriptions: Dict[str, List[NoteEvent]] = {
+        stem_name: transcription_service.load_note_events(stem_name, input_stem=input_stem)
+        for stem_name in stem_labels
+    }
 
     _report(on_stage, JobStage.QUANTIZING, "Quantizing notes...")
-    quantized = quantize_stems(input_audio_path, transcriptions)
+    quantized = _quantize_stems(input_audio_path, transcriptions)
     print("Quantization complete (per-stem tempo, before reconciliation)")
     for stem_name, result in quantized.items():
         print(f"  {stem_name:8s}: {result.tempo_bpm:.2f} BPM, {len(result.notes)} quantized notes")
@@ -250,3 +265,39 @@ def run_full_pipeline(input_audio_path: str, on_stage: Optional[ProgressCallback
         "combined_mscz_path": str(mscz_path),
         "stems": stem_details,
     }
+
+
+def _quantize_stems(
+    input_audio_path: str, transcriptions: Dict[str, List[NoteEvent]]
+) -> Dict[str, QuantizationResult]:
+    """Quantize each stem's note events against its own independently-detected tempo.
+
+    This is the FIRST quantization pass — before tempo reconciliation (see
+    run_final_phase()). Each stem's tempo/beat grid here reflects only that
+    stem's own separated audio, which may disagree with other stems (or be a
+    straight-up octave error) since separation quality and how much real
+    rhythmic content survives varies per stem.
+    """
+    input_stem = Path(input_audio_path).stem
+    audio_paths = stem_audio_paths(input_audio_path, transcriptions.keys())
+
+    results: Dict[str, QuantizationResult] = {}
+    for stem_name, note_events in transcriptions.items():
+        if not note_events:
+            print(f"  [!] {stem_name}: no note events, skipping quantization")
+            continue
+        results[stem_name] = quantization_service.run(
+            note_events, audio_path=audio_paths[stem_name], input_stem=input_stem
+        )
+
+    return results
+
+
+def run_full_pipeline_no_pauses(input_audio_path: str, on_stage: Optional[ProgressCallback] = None) -> dict:
+    """Run all three phases back-to-back with no review checkpoints — used by
+    scripts/run_pipeline.py (a CLI script has no "review and click continue"
+    concept) so it still works as a single command.
+    """
+    run_until_separation(input_audio_path, on_stage)
+    stem_labels = run_transcription_phase(input_audio_path, on_stage)
+    return run_final_phase(input_audio_path, stem_labels, on_stage)

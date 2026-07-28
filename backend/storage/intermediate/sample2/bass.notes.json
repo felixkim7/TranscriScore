@@ -1,0 +1,2585 @@
+[
+  {
+    "pitch": 48,
+    "onset": 71.64495056689341,
+    "offset": 71.9003700680272,
+    "duration": 0.25541950113378675,
+    "velocity": 77,
+    "confidence": 0.6063428521156311,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 72,
+    "onset": 71.17926757369615,
+    "offset": 71.51724081632652,
+    "duration": 0.337973242630369,
+    "velocity": 77,
+    "confidence": 0.6097580194473267,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 64,
+    "onset": 68.84437823129252,
+    "offset": 69.13462766439909,
+    "duration": 0.2902494331065668,
+    "velocity": 58,
+    "confidence": 0.45609694719314575,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 64,
+    "onset": 66.99710793650793,
+    "offset": 67.3221873015873,
+    "duration": 0.3250793650793753,
+    "velocity": 73,
+    "confidence": 0.5764181017875671,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 52,
+    "onset": 65.6271306122449,
+    "offset": 66.0683097505669,
+    "duration": 0.4411791383219992,
+    "velocity": 66,
+    "confidence": 0.5199253559112549,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 57,
+    "onset": 65.17305759637188,
+    "offset": 65.55618684807256,
+    "duration": 0.38312925170068013,
+    "velocity": 60,
+    "confidence": 0.47621825337409973,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 76,
+    "onset": 64.68543854875283,
+    "offset": 65.08017777777778,
+    "duration": 0.3947392290249496,
+    "velocity": 71,
+    "confidence": 0.5611589550971985,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 73,
+    "onset": 64.23264943310657,
+    "offset": 64.47645895691609,
+    "duration": 0.24380952380951726,
+    "velocity": 61,
+    "confidence": 0.4790305197238922,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 61,
+    "onset": 63.30256734693878,
+    "offset": 63.721810430839,
+    "duration": 0.4192430839002199,
+    "velocity": 78,
+    "confidence": 0.6121076941490173,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 59,
+    "onset": 62.39698911564626,
+    "offset": 62.722068480725625,
+    "duration": 0.3250793650793682,
+    "velocity": 53,
+    "confidence": 0.42036303877830505,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 73,
+    "onset": 62.15317959183673,
+    "offset": 62.385379138321994,
+    "duration": 0.23219954648526198,
+    "velocity": 66,
+    "confidence": 0.5204313397407532,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 59,
+    "onset": 61.93259002267574,
+    "offset": 62.292499319727895,
+    "duration": 0.35990929705215535,
+    "velocity": 69,
+    "confidence": 0.5399283170700073,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 64,
+    "onset": 61.466907029478456,
+    "offset": 61.74683038548753,
+    "duration": 0.27992335600907126,
+    "velocity": 43,
+    "confidence": 0.34106963872909546,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 64,
+    "onset": 59.597700680272105,
+    "offset": 60.02726984126984,
+    "duration": 0.4295691609977368,
+    "velocity": 72,
+    "confidence": 0.5647484064102173,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 71,
+    "onset": 58.679228571428574,
+    "offset": 58.86498820861678,
+    "duration": 0.18575963718820532,
+    "velocity": 63,
+    "confidence": 0.4957287311553955,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 52,
+    "onset": 58.249659410430844,
+    "offset": 58.388979138322,
+    "duration": 0.13931972789115576,
+    "velocity": 67,
+    "confidence": 0.5302174687385559,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 69,
+    "onset": 57.307967346938774,
+    "offset": 57.586606802721086,
+    "duration": 0.27863945578231153,
+    "velocity": 47,
+    "confidence": 0.36824309825897217,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 62,
+    "onset": 56.85517823129251,
+    "offset": 56.994497959183676,
+    "duration": 0.13931972789116287,
+    "velocity": 30,
+    "confidence": 0.2350897341966629,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 64,
+    "onset": 56.40238911564626,
+    "offset": 56.73907845804989,
+    "duration": 0.3366893424036306,
+    "velocity": 48,
+    "confidence": 0.3788909316062927,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 72,
+    "onset": 56.390779138321996,
+    "offset": 56.73907845804989,
+    "duration": 0.34829931972789296,
+    "velocity": 69,
+    "confidence": 0.5435778498649597,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 73,
+    "onset": 54.77570839002268,
+    "offset": 54.961468027210884,
+    "duration": 0.18575963718820532,
+    "velocity": 58,
+    "confidence": 0.45947888493537903,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 50,
+    "onset": 54.09071972789116,
+    "offset": 54.27647936507937,
+    "duration": 0.18575963718820532,
+    "velocity": 59,
+    "confidence": 0.4607089161872864,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 64,
+    "onset": 54.06749977324263,
+    "offset": 54.24164943310658,
+    "duration": 0.17414965986395003,
+    "velocity": 65,
+    "confidence": 0.5093470215797424,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 59,
+    "onset": 51.55717687074829,
+    "offset": 51.697780498866216,
+    "duration": 0.1406036281179226,
+    "velocity": 67,
+    "confidence": 0.5293776988983154,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 59,
+    "onset": 51.32497732426304,
+    "offset": 51.55717687074829,
+    "duration": 0.23219954648525487,
+    "velocity": 48,
+    "confidence": 0.3749769330024719,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 52,
+    "onset": 50.87218820861678,
+    "offset": 51.39463718820861,
+    "duration": 0.5224489795918359,
+    "velocity": 69,
+    "confidence": 0.5428979396820068,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 76,
+    "onset": 49.92017006802721,
+    "offset": 50.10592970521542,
+    "duration": 0.18575963718820532,
+    "velocity": 66,
+    "confidence": 0.5167714357376099,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 73,
+    "onset": 49.4660970521542,
+    "offset": 49.79246031746032,
+    "duration": 0.3263632653061208,
+    "velocity": 63,
+    "confidence": 0.49348893761634827,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 61,
+    "onset": 48.537298866213156,
+    "offset": 48.94364807256236,
+    "duration": 0.4063492063492049,
+    "velocity": 67,
+    "confidence": 0.5256962776184082,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 73,
+    "onset": 47.38662721088435,
+    "offset": 47.595606802721086,
+    "duration": 0.2089795918367372,
+    "velocity": 78,
+    "confidence": 0.6103604435920715,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 59,
+    "onset": 47.154427664399094,
+    "offset": 47.54916689342404,
+    "duration": 0.3947392290249425,
+    "velocity": 60,
+    "confidence": 0.475906103849411,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 64,
+    "onset": 46.69002857142857,
+    "offset": 47.07315782312925,
+    "duration": 0.38312925170068013,
+    "velocity": 49,
+    "confidence": 0.3872995376586914,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 64,
+    "onset": 44.84275827664399,
+    "offset": 45.260717460317466,
+    "duration": 0.4179591836734744,
+    "velocity": 64,
+    "confidence": 0.5060304999351501,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 76,
+    "onset": 44.38996916099774,
+    "offset": 44.63377868480726,
+    "duration": 0.24380952380952436,
+    "velocity": 45,
+    "confidence": 0.3520093858242035,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 57,
+    "onset": 44.38996916099774,
+    "offset": 44.83114829931973,
+    "duration": 0.44117913832199207,
+    "velocity": 70,
+    "confidence": 0.5546736717224121,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 48,
+    "onset": 42.07829977324263,
+    "offset": 42.36854920634921,
+    "duration": 0.290249433106581,
+    "velocity": 73,
+    "confidence": 0.57269686460495,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 72,
+    "onset": 41.61261678004536,
+    "offset": 41.82288027210884,
+    "duration": 0.21026349206348272,
+    "velocity": 73,
+    "confidence": 0.5714506506919861,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 64,
+    "onset": 41.159827664399096,
+    "offset": 41.34558730158731,
+    "duration": 0.18575963718821242,
+    "velocity": 59,
+    "confidence": 0.4631720185279846,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 64,
+    "onset": 37.46528707482993,
+    "offset": 37.72070657596372,
+    "duration": 0.25541950113378675,
+    "velocity": 68,
+    "confidence": 0.5362891554832458,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 50,
+    "onset": 36.989278004535144,
+    "offset": 37.38401723356009,
+    "duration": 0.3947392290249425,
+    "velocity": 55,
+    "confidence": 0.4293411672115326,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 59,
+    "onset": 36.78029841269841,
+    "offset": 36.95444807256236,
+    "duration": 0.17414965986395003,
+    "velocity": 69,
+    "confidence": 0.545500636100769,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 52,
+    "onset": 36.53648888888888,
+    "offset": 36.95444807256236,
+    "duration": 0.4179591836734744,
+    "velocity": 58,
+    "confidence": 0.4562925100326538,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 52,
+    "onset": 36.072089795918366,
+    "offset": 36.53648888888888,
+    "duration": 0.46439909297051685,
+    "velocity": 76,
+    "confidence": 0.5972021222114563,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 61,
+    "onset": 33.77074648526077,
+    "offset": 34.17837959183674,
+    "duration": 0.40763310657596463,
+    "velocity": 60,
+    "confidence": 0.46990904211997986,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 52,
+    "onset": 32.85355827664399,
+    "offset": 33.062537868480725,
+    "duration": 0.2089795918367372,
+    "velocity": 66,
+    "confidence": 0.5223888158798218,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 73,
+    "onset": 32.60974875283446,
+    "offset": 32.85355827664399,
+    "duration": 0.24380952380952436,
+    "velocity": 70,
+    "confidence": 0.547277569770813,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 59,
+    "onset": 32.37754920634921,
+    "offset": 32.737458503401356,
+    "duration": 0.35990929705214825,
+    "velocity": 64,
+    "confidence": 0.5057770609855652,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 64,
+    "onset": 31.913150113378684,
+    "offset": 32.238229478458045,
+    "duration": 0.3250793650793611,
+    "velocity": 47,
+    "confidence": 0.3686695098876953,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 73,
+    "onset": 31.029507936507937,
+    "offset": 31.168827664399092,
+    "duration": 0.13931972789115576,
+    "velocity": 66,
+    "confidence": 0.5219425559043884,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 74,
+    "onset": 30.530278911564626,
+    "offset": 30.66959863945578,
+    "duration": 0.13931972789115576,
+    "velocity": 53,
+    "confidence": 0.420477956533432,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 43,
+    "onset": 30.530278911564626,
+    "offset": 30.704428571428572,
+    "duration": 0.17414965986394648,
+    "velocity": 66,
+    "confidence": 0.5168957114219666,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 64,
+    "onset": 30.077489795918368,
+    "offset": 30.43739909297052,
+    "duration": 0.3599092970521518,
+    "velocity": 81,
+    "confidence": 0.6388313174247742,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 57,
+    "onset": 29.635026757369612,
+    "offset": 30.100709750566892,
+    "duration": 0.4656829931972801,
+    "velocity": 85,
+    "confidence": 0.6672938466072083,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 71,
+    "onset": 29.15901768707483,
+    "offset": 29.321557369614514,
+    "duration": 0.1625396825396841,
+    "velocity": 62,
+    "confidence": 0.4919230043888092,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 69,
+    "onset": 28.69461859410431,
+    "offset": 28.868768253968252,
+    "duration": 0.17414965986394293,
+    "velocity": 57,
+    "confidence": 0.4470950961112976,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 73,
+    "onset": 28.230219501133785,
+    "offset": 28.520468934240363,
+    "duration": 0.29024943310657747,
+    "velocity": 75,
+    "confidence": 0.5906886458396912,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 48,
+    "onset": 27.346577324263038,
+    "offset": 27.567166893424037,
+    "duration": 0.2205895691609996,
+    "velocity": 79,
+    "confidence": 0.6240614652633667,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 67,
+    "onset": 27.323357369614513,
+    "offset": 27.625216780045353,
+    "duration": 0.30185941043083986,
+    "velocity": 62,
+    "confidence": 0.4876335859298706,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 72,
+    "onset": 26.847348299319727,
+    "offset": 27.137597732426304,
+    "duration": 0.29024943310657747,
+    "velocity": 74,
+    "confidence": 0.5809934139251709,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 64,
+    "onset": 26.382949206349206,
+    "offset": 26.649978684807255,
+    "duration": 0.26702947845804914,
+    "velocity": 51,
+    "confidence": 0.39788681268692017,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 24,
+    "onset": 26.24362947845805,
+    "offset": 27.706486621315193,
+    "duration": 1.4628571428571426,
+    "velocity": 59,
+    "confidence": 0.46608445048332214,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 49,
+    "onset": 25.01168798185941,
+    "offset": 25.16261768707483,
+    "duration": 0.1509297052154217,
+    "velocity": 54,
+    "confidence": 0.4283391833305359,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 64,
+    "onset": 22.688408616780045,
+    "offset": 22.908998185941044,
+    "duration": 0.2205895691609996,
+    "velocity": 66,
+    "confidence": 0.5189047455787659,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 59,
+    "onset": 22.01502993197279,
+    "offset": 22.16595963718821,
+    "duration": 0.15092970521541815,
+    "velocity": 61,
+    "confidence": 0.4768000841140747,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 52,
+    "onset": 21.317147392290252,
+    "offset": 21.758326530612248,
+    "duration": 0.4411791383219956,
+    "velocity": 58,
+    "confidence": 0.46000680327415466,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 73,
+    "onset": 19.923950113378687,
+    "offset": 20.272249433106577,
+    "duration": 0.3482993197278894,
+    "velocity": 46,
+    "confidence": 0.36498311161994934,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 61,
+    "onset": 18.993868027210883,
+    "offset": 19.400217233560088,
+    "duration": 0.4063492063492049,
+    "velocity": 70,
+    "confidence": 0.5474963188171387,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 59,
+    "onset": 18.09989977324263,
+    "offset": 18.390149206349204,
+    "duration": 0.2902494331065739,
+    "velocity": 46,
+    "confidence": 0.3587598502635956,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 73,
+    "onset": 17.85480634920635,
+    "offset": 18.053459863945577,
+    "duration": 0.19865351473922743,
+    "velocity": 74,
+    "confidence": 0.5791100859642029,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 59,
+    "onset": 17.622606802721087,
+    "offset": 18.09989977324263,
+    "duration": 0.4772929705215425,
+    "velocity": 62,
+    "confidence": 0.489345908164978,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 73,
+    "onset": 16.241019501133785,
+    "offset": 16.63575873015873,
+    "duration": 0.39473922902494607,
+    "velocity": 59,
+    "confidence": 0.46698155999183655,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 43,
+    "onset": 15.763726530612244,
+    "offset": 15.95077006802721,
+    "duration": 0.18704353741496682,
+    "velocity": 81,
+    "confidence": 0.6385746598243713,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 64,
+    "onset": 15.310937414965986,
+    "offset": 15.659236734693877,
+    "duration": 0.3482993197278912,
+    "velocity": 79,
+    "confidence": 0.619799792766571,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 48,
+    "onset": 12.581308843537416,
+    "offset": 12.98765804988662,
+    "duration": 0.4063492063492049,
+    "velocity": 74,
+    "confidence": 0.5842502117156982,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 72,
+    "onset": 12.070469841269842,
+    "offset": 12.418769160997734,
+    "duration": 0.3482993197278912,
+    "velocity": 69,
+    "confidence": 0.5427001118659973,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 64,
+    "onset": 11.628006802721089,
+    "offset": 11.848596371882087,
+    "duration": 0.2205895691609978,
+    "velocity": 50,
+    "confidence": 0.390817791223526,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 26,
+    "onset": 9.850396371882086,
+    "offset": 10.14192970521542,
+    "duration": 0.29153333333333364,
+    "velocity": 71,
+    "confidence": 0.5613373517990112,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 50,
+    "onset": 9.769126530612244,
+    "offset": 10.014219954648526,
+    "duration": 0.24509342403628231,
+    "velocity": 57,
+    "confidence": 0.4451812505722046,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 64,
+    "onset": 9.757516553287982,
+    "offset": 9.944560090702948,
+    "duration": 0.18704353741496682,
+    "velocity": 73,
+    "confidence": 0.5739493370056152,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 64,
+    "onset": 7.921856235827665,
+    "offset": 8.201779591836734,
+    "duration": 0.2799233560090695,
+    "velocity": 78,
+    "confidence": 0.6157282590866089,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 50,
+    "onset": 7.480677097505669,
+    "offset": 7.8638063492063495,
+    "duration": 0.38312925170068013,
+    "velocity": 63,
+    "confidence": 0.49885645508766174,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 45,
+    "onset": 7.480677097505669,
+    "offset": 7.619996825396825,
+    "duration": 0.13931972789115576,
+    "velocity": 78,
+    "confidence": 0.6173110008239746,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 59,
+    "onset": 7.236867573696145,
+    "offset": 7.5271170068027216,
+    "duration": 0.2902494331065766,
+    "velocity": 63,
+    "confidence": 0.49265921115875244,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 52,
+    "onset": 6.5286589569161,
+    "offset": 7.02788798185941,
+    "duration": 0.49922902494331023,
+    "velocity": 81,
+    "confidence": 0.6401712894439697,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 73,
+    "onset": 5.157397732426304,
+    "offset": 5.470867120181405,
+    "duration": 0.31346938775510136,
+    "velocity": 51,
+    "confidence": 0.39952197670936584,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 74,
+    "onset": 4.692998639455782,
+    "offset": 5.122567800453514,
+    "duration": 0.42956916099773235,
+    "velocity": 46,
+    "confidence": 0.36335960030555725,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 61,
+    "onset": 4.228599546485261,
+    "offset": 4.64655873015873,
+    "duration": 0.41795918367346907,
+    "velocity": 73,
+    "confidence": 0.5783780217170715,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 73,
+    "onset": 3.0779278911564627,
+    "offset": 3.29851746031746,
+    "duration": 0.22058956916099737,
+    "velocity": 65,
+    "confidence": 0.5102906227111816,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 59,
+    "onset": 2.8457283446712016,
+    "offset": 3.4262272108843534,
+    "duration": 0.5804988662131518,
+    "velocity": 58,
+    "confidence": 0.45566022396087646,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 64,
+    "onset": 2.3813292517006803,
+    "offset": 2.7412385487528343,
+    "duration": 0.359909297052154,
+    "velocity": 43,
+    "confidence": 0.33977726101875305,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 73,
+    "onset": 1.4512471655328798,
+    "offset": 1.6486167800453515,
+    "duration": 0.1973696145124717,
+    "velocity": 51,
+    "confidence": 0.39963480830192566,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 74,
+    "onset": 0.9984580498866213,
+    "offset": 1.3699773242630386,
+    "duration": 0.3715192743764173,
+    "velocity": 44,
+    "confidence": 0.3471527695655823,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 43,
+    "onset": 0.9868480725623583,
+    "offset": 1.253877551020408,
+    "duration": 0.2670294784580498,
+    "velocity": 74,
+    "confidence": 0.580685019493103,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 64,
+    "onset": 0.5340589569160997,
+    "offset": 0.9984580498866213,
+    "duration": 0.4643990929705216,
+    "velocity": 80,
+    "confidence": 0.630439281463623,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 24,
+    "onset": 56.495268934240364,
+    "offset": 57.29635736961451,
+    "duration": 0.8010884353741474,
+    "velocity": 79,
+    "confidence": 0.6259381175041199,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 48,
+    "onset": 56.50687891156463,
+    "offset": 57.16864761904762,
+    "duration": 0.6617687074829917,
+    "velocity": 74,
+    "confidence": 0.5858942270278931,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 57,
+    "onset": 0.046439909297052155,
+    "offset": 0.5688888888888889,
+    "duration": 0.5224489795918368,
+    "velocity": 92,
+    "confidence": 0.7262860536575317,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 45,
+    "onset": 39.27772743764172,
+    "offset": 39.6608566893424,
+    "duration": 0.38312925170068013,
+    "velocity": 72,
+    "confidence": 0.563732922077179,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 31,
+    "onset": 28.78749841269841,
+    "offset": 29.07774784580499,
+    "duration": 0.29024943310657747,
+    "velocity": 74,
+    "confidence": 0.5834347605705261,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 24,
+    "onset": 71.30697732426304,
+    "offset": 72.07451972789116,
+    "duration": 0.7675424036281129,
+    "velocity": 79,
+    "confidence": 0.6210749745368958,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 57,
+    "onset": 59.1436276643991,
+    "offset": 59.59641678004535,
+    "duration": 0.45278911564625446,
+    "velocity": 83,
+    "confidence": 0.6554907560348511,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 48,
+    "onset": 40.776698412698416,
+    "offset": 42.066689795918364,
+    "duration": 1.2899913832199488,
+    "velocity": 66,
+    "confidence": 0.5228201150894165,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 24,
+    "onset": 12.128519727891156,
+    "offset": 12.952828117913832,
+    "duration": 0.8243083900226758,
+    "velocity": 74,
+    "confidence": 0.5832436084747314,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 48,
+    "onset": 12.198179591836736,
+    "offset": 12.569698866213152,
+    "duration": 0.37151927437641596,
+    "velocity": 73,
+    "confidence": 0.578433096408844,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 50,
+    "onset": 53.26512743764172,
+    "offset": 54.07910975056689,
+    "duration": 0.8139823129251695,
+    "velocity": 74,
+    "confidence": 0.5821228623390198,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 24,
+    "onset": 41.77644036281179,
+    "offset": 42.53108888888889,
+    "duration": 0.7546485260770979,
+    "velocity": 78,
+    "confidence": 0.6128253936767578,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 57,
+    "onset": 14.834928344671201,
+    "offset": 15.345767346938775,
+    "duration": 0.5108390022675735,
+    "velocity": 83,
+    "confidence": 0.6567907333374023,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 48,
+    "onset": 71.28375736961452,
+    "offset": 71.63334058956916,
+    "duration": 0.3495832199546385,
+    "velocity": 66,
+    "confidence": 0.5200684070587158,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 40,
+    "onset": 36.559708843537415,
+    "offset": 36.78029841269841,
+    "duration": 0.22058956916099248,
+    "velocity": 74,
+    "confidence": 0.5859115123748779,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 43,
+    "onset": 23.12958775510204,
+    "offset": 23.326957369614515,
+    "duration": 0.1973696145124748,
+    "velocity": 76,
+    "confidence": 0.5964666604995728,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 50,
+    "onset": 67.29896734693878,
+    "offset": 68.65861859410431,
+    "duration": 1.3596512471655302,
+    "velocity": 58,
+    "confidence": 0.457315057516098,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 55,
+    "onset": 72.15578956916099,
+    "offset": 72.48086893424036,
+    "duration": 0.3250793650793753,
+    "velocity": 71,
+    "confidence": 0.5628241300582886,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 64,
+    "onset": 52.19700952380953,
+    "offset": 52.47564897959184,
+    "duration": 0.27863945578231153,
+    "velocity": 76,
+    "confidence": 0.5995345711708069,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 50,
+    "onset": 40.19619954648526,
+    "offset": 40.70703854875284,
+    "duration": 0.5108390022675806,
+    "velocity": 62,
+    "confidence": 0.4867963492870331,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 40,
+    "onset": 7.004668027210885,
+    "offset": 7.190427664399093,
+    "duration": 0.18575963718820798,
+    "velocity": 70,
+    "confidence": 0.5525547862052917,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 50,
+    "onset": 23.013487981859413,
+    "offset": 24.34991927437642,
+    "duration": 1.3364312925170054,
+    "velocity": 57,
+    "confidence": 0.44801005721092224,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 45,
+    "onset": 61.49012698412698,
+    "offset": 61.86293015873016,
+    "duration": 0.37280317460317747,
+    "velocity": 74,
+    "confidence": 0.5855302810668945,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 64,
+    "onset": 24.558898866213152,
+    "offset": 24.767878458049886,
+    "duration": 0.20897959183673365,
+    "velocity": 64,
+    "confidence": 0.5036066174507141,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 59,
+    "onset": 66.161189569161,
+    "offset": 66.50948888888888,
+    "duration": 0.34829931972788586,
+    "velocity": 57,
+    "confidence": 0.4503375291824341,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 69,
+    "onset": 65.26593741496599,
+    "offset": 65.42847709750566,
+    "duration": 0.16253968253967344,
+    "velocity": 72,
+    "confidence": 0.563703179359436,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 57,
+    "onset": 6.052649886621316,
+    "offset": 6.830518367346939,
+    "duration": 0.7778684807256235,
+    "velocity": 65,
+    "confidence": 0.5155771374702454,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 57,
+    "onset": 35.60640680272109,
+    "offset": 36.223019501133784,
+    "duration": 0.6166126984126947,
+    "velocity": 58,
+    "confidence": 0.4531755745410919,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 50,
+    "onset": 42.50786893424036,
+    "offset": 43.40183718820862,
+    "duration": 0.8939682539682536,
+    "velocity": 66,
+    "confidence": 0.5225605368614197,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 50,
+    "onset": 13.254687528344672,
+    "offset": 13.904846258503401,
+    "duration": 0.6501587301587293,
+    "velocity": 72,
+    "confidence": 0.5673837661743164,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 31,
+    "onset": 37.9658,
+    "offset": 38.302489342403625,
+    "duration": 0.33668934240362347,
+    "velocity": 63,
+    "confidence": 0.49265235662460327,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 45,
+    "onset": 68.84437823129252,
+    "offset": 69.18106757369615,
+    "duration": 0.3366893424036306,
+    "velocity": 66,
+    "confidence": 0.5175051093101501,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 45,
+    "onset": 64.19781950113378,
+    "offset": 64.37196916099774,
+    "duration": 0.17414965986395714,
+    "velocity": 67,
+    "confidence": 0.5272526741027832,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 69,
+    "onset": 31.029507936507937,
+    "offset": 31.250097505668933,
+    "duration": 0.22058956916099604,
+    "velocity": 63,
+    "confidence": 0.4923948347568512,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 73,
+    "onset": 39.97560997732427,
+    "offset": 40.42839909297052,
+    "duration": 0.45278911564625446,
+    "velocity": 67,
+    "confidence": 0.5273825526237488,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 45,
+    "onset": 30.983068027210884,
+    "offset": 31.1339977324263,
+    "duration": 0.15092970521541815,
+    "velocity": 74,
+    "confidence": 0.5827926993370056,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 45,
+    "onset": 16.206189569160998,
+    "offset": 16.357119274376416,
+    "duration": 0.15092970521541815,
+    "velocity": 72,
+    "confidence": 0.5685015320777893,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 57,
+    "onset": 64.90602811791383,
+    "offset": 65.16144761904762,
+    "duration": 0.25541950113378675,
+    "velocity": 67,
+    "confidence": 0.5313481092453003,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 26,
+    "onset": 39.32416734693878,
+    "offset": 39.6608566893424,
+    "duration": 0.33668934240362347,
+    "velocity": 69,
+    "confidence": 0.5456189513206482,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 48,
+    "onset": 26.74285850340136,
+    "offset": 27.334967346938775,
+    "duration": 0.5921088435374138,
+    "velocity": 62,
+    "confidence": 0.4862363338470459,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 33,
+    "onset": 65.65035056689342,
+    "offset": 65.96381995464853,
+    "duration": 0.3134693877551058,
+    "velocity": 67,
+    "confidence": 0.5281482934951782,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 64,
+    "onset": 70.66842857142858,
+    "offset": 70.95867800453516,
+    "duration": 0.290249433106581,
+    "velocity": 69,
+    "confidence": 0.5452313423156738,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 50,
+    "onset": 54.589948752834474,
+    "offset": 55.1472276643991,
+    "duration": 0.5572789115646231,
+    "velocity": 58,
+    "confidence": 0.45301342010498047,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 33,
+    "onset": 36.118529705215416,
+    "offset": 36.31589931972789,
+    "duration": 0.1973696145124748,
+    "velocity": 67,
+    "confidence": 0.5305633544921875,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 50,
+    "onset": 22.200789569161,
+    "offset": 22.432989115646258,
+    "duration": 0.23219954648525842,
+    "velocity": 73,
+    "confidence": 0.5737484693527222,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 38,
+    "onset": 27.671656689342402,
+    "offset": 28.032849886621314,
+    "duration": 0.3611931972789115,
+    "velocity": 62,
+    "confidence": 0.4850749373435974,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 50,
+    "onset": 72.28349931972788,
+    "offset": 72.94526802721087,
+    "duration": 0.6617687074829917,
+    "velocity": 71,
+    "confidence": 0.5566547513008118,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 69,
+    "onset": 34.712438548752836,
+    "offset": 35.095567800453516,
+    "duration": 0.38312925170068013,
+    "velocity": 61,
+    "confidence": 0.4792592227458954,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 59,
+    "onset": 7.016278004535147,
+    "offset": 7.225257596371883,
+    "duration": 0.20897959183673542,
+    "velocity": 49,
+    "confidence": 0.3894660472869873,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 40,
+    "onset": 51.34819727891156,
+    "offset": 51.49912698412698,
+    "duration": 0.15092970521541815,
+    "velocity": 70,
+    "confidence": 0.5531303286552429,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 50,
+    "onset": 57.31957732426304,
+    "offset": 58.17999954648526,
+    "duration": 0.8604222222222262,
+    "velocity": 67,
+    "confidence": 0.5260753631591797,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 24,
+    "onset": 40.846358276644,
+    "offset": 41.5661768707483,
+    "duration": 0.7198185941043036,
+    "velocity": 64,
+    "confidence": 0.5024352669715881,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 69,
+    "onset": 64.26747936507937,
+    "offset": 64.62738866213152,
+    "duration": 0.35990929705215535,
+    "velocity": 62,
+    "confidence": 0.48679110407829285,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 73,
+    "onset": 34.68921859410431,
+    "offset": 35.22327755102041,
+    "duration": 0.5340589569160983,
+    "velocity": 54,
+    "confidence": 0.4244045615196228,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 55,
+    "onset": 7.190427664399093,
+    "offset": 7.434237188208617,
+    "duration": 0.24380952380952436,
+    "velocity": 57,
+    "confidence": 0.44576603174209595,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 59,
+    "onset": 36.559708843537415,
+    "offset": 36.768688435374145,
+    "duration": 0.2089795918367301,
+    "velocity": 48,
+    "confidence": 0.3748466670513153,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 69,
+    "onset": 50.39617913832199,
+    "offset": 50.907018140589564,
+    "duration": 0.5108390022675735,
+    "velocity": 61,
+    "confidence": 0.4788631200790405,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 40,
+    "onset": 66.0683097505669,
+    "offset": 66.37016916099773,
+    "duration": 0.3018594104308363,
+    "velocity": 61,
+    "confidence": 0.476766437292099,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 73,
+    "onset": 45.738010430839,
+    "offset": 45.98181995464852,
+    "duration": 0.24380952380952436,
+    "velocity": 64,
+    "confidence": 0.5026214718818665,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 52,
+    "onset": 73.02653786848072,
+    "offset": 73.32839727891155,
+    "duration": 0.3018594104308363,
+    "velocity": 56,
+    "confidence": 0.4420350193977356,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 50,
+    "onset": 37.79165034013605,
+    "offset": 38.9410380952381,
+    "duration": 1.1493877551020475,
+    "velocity": 58,
+    "confidence": 0.4574195146560669,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 69,
+    "onset": 45.830890249433104,
+    "offset": 46.0514798185941,
+    "duration": 0.2205895691609996,
+    "velocity": 59,
+    "confidence": 0.46394452452659607,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 57,
+    "onset": 2.3813292517006803,
+    "offset": 2.5206489795918365,
+    "duration": 0.1393197278911562,
+    "velocity": 66,
+    "confidence": 0.5176592469215393,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 45,
+    "onset": 9.757516553287982,
+    "offset": 10.130319727891157,
+    "duration": 0.3728031746031757,
+    "velocity": 63,
+    "confidence": 0.49867796897888184,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 53,
+    "onset": 27.787756462585033,
+    "offset": 28.230219501133785,
+    "duration": 0.4424630385487518,
+    "velocity": 67,
+    "confidence": 0.5278703570365906,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 45,
+    "onset": 17.20464761904762,
+    "offset": 17.56455691609977,
+    "duration": 0.3599092970521518,
+    "velocity": 67,
+    "confidence": 0.5254007577896118,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 33,
+    "onset": 21.35197732426304,
+    "offset": 21.66544671201814,
+    "duration": 0.31346938775510225,
+    "velocity": 65,
+    "confidence": 0.5122460126876831,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 45,
+    "onset": 2.4393791383219954,
+    "offset": 2.694798639455782,
+    "duration": 0.25541950113378675,
+    "velocity": 64,
+    "confidence": 0.5045960545539856,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 69,
+    "onset": 49.52414693877551,
+    "offset": 49.83890022675737,
+    "duration": 0.3147532879818584,
+    "velocity": 66,
+    "confidence": 0.5207327008247375,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 69,
+    "onset": 1.4512471655328798,
+    "offset": 1.822766439909297,
+    "duration": 0.3715192743764173,
+    "velocity": 53,
+    "confidence": 0.415527880191803,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 50,
+    "onset": 52.54530884353741,
+    "offset": 53.12580770975057,
+    "duration": 0.5804988662131549,
+    "velocity": 57,
+    "confidence": 0.4466570317745209,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 59,
+    "onset": 28.70622857142857,
+    "offset": 28.996478004535145,
+    "duration": 0.2902494331065739,
+    "velocity": 60,
+    "confidence": 0.4742095172405243,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 57,
+    "onset": 20.841138321995466,
+    "offset": 21.46807709750567,
+    "duration": 0.6269387755102045,
+    "velocity": 49,
+    "confidence": 0.38446369767189026,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 54,
+    "onset": 3.7977464852607707,
+    "offset": 4.042839909297052,
+    "duration": 0.24509342403628098,
+    "velocity": 60,
+    "confidence": 0.4755091369152069,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 55,
+    "onset": 28.69461859410431,
+    "offset": 29.00808798185941,
+    "duration": 0.31346938775510225,
+    "velocity": 63,
+    "confidence": 0.4932904541492462,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 73,
+    "onset": 60.51488888888888,
+    "offset": 60.921238095238095,
+    "duration": 0.406349206349212,
+    "velocity": 53,
+    "confidence": 0.41609567403793335,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 69,
+    "onset": 20.96884807256236,
+    "offset": 21.317147392290252,
+    "duration": 0.34829931972789296,
+    "velocity": 50,
+    "confidence": 0.3965253233909607,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 73,
+    "onset": 10.432179138321997,
+    "offset": 10.710818594104309,
+    "duration": 0.27863945578231153,
+    "velocity": 57,
+    "confidence": 0.4459932744503021,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 50,
+    "onset": 8.968038095238095,
+    "offset": 9.757516553287982,
+    "duration": 0.7894784580498868,
+    "velocity": 63,
+    "confidence": 0.4924922287464142,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 74,
+    "onset": 27.787756462585033,
+    "offset": 28.114119727891158,
+    "duration": 0.32636326530612436,
+    "velocity": 56,
+    "confidence": 0.4370686709880829,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 45,
+    "onset": 28.253439455782313,
+    "offset": 28.40436916099773,
+    "duration": 0.15092970521541815,
+    "velocity": 65,
+    "confidence": 0.5154821872711182,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 54,
+    "onset": 33.329567346938774,
+    "offset": 33.74752653061224,
+    "duration": 0.4179591836734673,
+    "velocity": 64,
+    "confidence": 0.5007541179656982,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 57,
+    "onset": 50.40778911564625,
+    "offset": 50.756088435374146,
+    "duration": 0.34829931972789296,
+    "velocity": 68,
+    "confidence": 0.5377776026725769,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 67,
+    "onset": 12.5232589569161,
+    "offset": 12.662578684807256,
+    "duration": 0.13931972789115576,
+    "velocity": 64,
+    "confidence": 0.5077615976333618,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 69,
+    "onset": 35.629626757369614,
+    "offset": 36.13013968253968,
+    "duration": 0.5005129251700637,
+    "velocity": 62,
+    "confidence": 0.4866056442260742,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 59,
+    "onset": 29.135797732426305,
+    "offset": 29.367997278911563,
+    "duration": 0.23219954648525842,
+    "velocity": 58,
+    "confidence": 0.46030956506729126,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 52,
+    "onset": 12.163349659863945,
+    "offset": 12.418769160997734,
+    "duration": 0.25541950113378853,
+    "velocity": 64,
+    "confidence": 0.506730318069458,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 57,
+    "onset": 17.146597732426304,
+    "offset": 17.425237188208616,
+    "duration": 0.27863945578231153,
+    "velocity": 57,
+    "confidence": 0.44994020462036133,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 52,
+    "onset": 18.157949659863945,
+    "offset": 18.45980907029478,
+    "duration": 0.3018594104308363,
+    "velocity": 60,
+    "confidence": 0.47013500332832336,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 50,
+    "onset": 24.721438548752836,
+    "offset": 24.93041814058957,
+    "duration": 0.20897959183673365,
+    "velocity": 64,
+    "confidence": 0.5056946277618408,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 52,
+    "onset": 62.37376916099773,
+    "offset": 62.675628571428575,
+    "duration": 0.3018594104308434,
+    "velocity": 49,
+    "confidence": 0.38660475611686707,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 74,
+    "onset": 15.752116553287982,
+    "offset": 16.206189569160998,
+    "duration": 0.45407301587301596,
+    "velocity": 60,
+    "confidence": 0.47516852617263794,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 45,
+    "onset": 54.05588979591837,
+    "offset": 54.40418911564626,
+    "duration": 0.34829931972789296,
+    "velocity": 54,
+    "confidence": 0.42459726333618164,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 52,
+    "onset": 58.72566848072562,
+    "offset": 59.015917913832205,
+    "duration": 0.290249433106581,
+    "velocity": 56,
+    "confidence": 0.4415009021759033,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 74,
+    "onset": 63.86113015873016,
+    "offset": 64.04688979591836,
+    "duration": 0.1857596371881982,
+    "velocity": 61,
+    "confidence": 0.47871994972229004,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 28,
+    "onset": 13.975790022675737,
+    "offset": 14.277649433106575,
+    "duration": 0.3018594104308381,
+    "velocity": 59,
+    "confidence": 0.46660611033439636,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 52,
+    "onset": 47.61882675736961,
+    "offset": 47.817480272108845,
+    "duration": 0.19865351473923454,
+    "velocity": 56,
+    "confidence": 0.4429492652416229,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 71,
+    "onset": 47.13120770975056,
+    "offset": 47.27052743764172,
+    "duration": 0.13931972789115576,
+    "velocity": 61,
+    "confidence": 0.48411229252815247,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 24,
+    "onset": 70.7845283446712,
+    "offset": 71.09799773242631,
+    "duration": 0.3134693877551058,
+    "velocity": 62,
+    "confidence": 0.48746931552886963,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 40,
+    "onset": 32.8187283446712,
+    "offset": 33.0393179138322,
+    "duration": 0.2205895691609996,
+    "velocity": 65,
+    "confidence": 0.5133986473083496,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 54,
+    "onset": 6.087479818594105,
+    "offset": 6.482219047619048,
+    "duration": 0.3947392290249434,
+    "velocity": 60,
+    "confidence": 0.47636857628822327,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 50,
+    "onset": 8.41075918367347,
+    "offset": 8.817108390022675,
+    "duration": 0.4063492063492049,
+    "velocity": 62,
+    "confidence": 0.48794642090797424,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 45,
+    "onset": 30.05426984126984,
+    "offset": 30.43739909297052,
+    "duration": 0.38312925170068013,
+    "velocity": 60,
+    "confidence": 0.4701765477657318,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 69,
+    "onset": 5.18061768707483,
+    "offset": 5.494087074829932,
+    "duration": 0.31346938775510225,
+    "velocity": 51,
+    "confidence": 0.40432456135749817,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 28,
+    "onset": 58.28448934240363,
+    "offset": 58.56312879818594,
+    "duration": 0.27863945578231153,
+    "velocity": 62,
+    "confidence": 0.48697546124458313,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 26,
+    "onset": 68.71666848072563,
+    "offset": 69.18106757369615,
+    "duration": 0.46439909297052395,
+    "velocity": 49,
+    "confidence": 0.38862302899360657,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 64,
+    "onset": 39.289337414965985,
+    "offset": 39.60280680272109,
+    "duration": 0.3134693877551058,
+    "velocity": 59,
+    "confidence": 0.4675213098526001,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 76,
+    "onset": 51.70939047619048,
+    "offset": 51.9532,
+    "duration": 0.24380952380952436,
+    "velocity": 61,
+    "confidence": 0.4809827208518982,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 73,
+    "onset": 69.51775691609977,
+    "offset": 69.69319047619048,
+    "duration": 0.17543356009070976,
+    "velocity": 62,
+    "confidence": 0.48453962802886963,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 52,
+    "onset": 7.318137414965986,
+    "offset": 7.457457142857143,
+    "duration": 0.13931972789115665,
+    "velocity": 62,
+    "confidence": 0.4859806001186371,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 54,
+    "onset": 35.629626757369614,
+    "offset": 35.88633015873015,
+    "duration": 0.2567034013605394,
+    "velocity": 60,
+    "confidence": 0.47439393401145935,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 45,
+    "onset": 54.55511882086168,
+    "offset": 54.752488435374154,
+    "duration": 0.1973696145124748,
+    "velocity": 55,
+    "confidence": 0.43540945649147034,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 64,
+    "onset": 62.385379138321994,
+    "offset": 62.59435873015873,
+    "duration": 0.2089795918367372,
+    "velocity": 47,
+    "confidence": 0.3706573247909546,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 64,
+    "onset": 17.123377777777776,
+    "offset": 17.48328707482993,
+    "duration": 0.35990929705215535,
+    "velocity": 58,
+    "confidence": 0.46024852991104126,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 49,
+    "onset": 39.75502040816327,
+    "offset": 39.91756009070295,
+    "duration": 0.16253968253968054,
+    "velocity": 61,
+    "confidence": 0.47778886556625366,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 26,
+    "onset": 51.848710204081634,
+    "offset": 52.03446984126984,
+    "duration": 0.18575963718820532,
+    "velocity": 58,
+    "confidence": 0.4592294692993164,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 52,
+    "onset": 56.46043900226757,
+    "offset": 56.73907845804989,
+    "duration": 0.27863945578231863,
+    "velocity": 63,
+    "confidence": 0.492626816034317,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 54,
+    "onset": 50.11753968253968,
+    "offset": 50.6748185941043,
+    "duration": 0.5572789115646231,
+    "velocity": 60,
+    "confidence": 0.47493675351142883,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 43,
+    "onset": 60.06209977324263,
+    "offset": 60.30590929705215,
+    "duration": 0.24380952380952436,
+    "velocity": 50,
+    "confidence": 0.3921915292739868,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 52,
+    "onset": 43.47149705215419,
+    "offset": 43.62242675736962,
+    "duration": 0.15092970521542526,
+    "velocity": 58,
+    "confidence": 0.45832476019859314,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 45,
+    "onset": 13.47527709750567,
+    "offset": 13.70747664399093,
+    "duration": 0.2321995464852602,
+    "velocity": 51,
+    "confidence": 0.40010374784469604,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 45,
+    "onset": 31.959590022675734,
+    "offset": 32.2846693877551,
+    "duration": 0.3250793650793682,
+    "velocity": 58,
+    "confidence": 0.4575992524623871,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 74,
+    "onset": 60.096929705215416,
+    "offset": 60.37556916099773,
+    "duration": 0.27863945578231153,
+    "velocity": 47,
+    "confidence": 0.37224623560905457,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 69,
+    "onset": 8.956428117913832,
+    "offset": 9.118967800453515,
+    "duration": 0.16253968253968232,
+    "velocity": 55,
+    "confidence": 0.43607673048973083,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 47,
+    "onset": 58.80693832199547,
+    "offset": 59.13201768707483,
+    "duration": 0.3250793650793611,
+    "velocity": 56,
+    "confidence": 0.44059449434280396,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 73,
+    "onset": 53.13741768707483,
+    "offset": 53.39283718820862,
+    "duration": 0.25541950113378675,
+    "velocity": 53,
+    "confidence": 0.41478919982910156,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 49,
+    "onset": 10.467009070294786,
+    "offset": 10.606328798185942,
+    "duration": 0.13931972789115576,
+    "velocity": 60,
+    "confidence": 0.4704916179180145,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 55,
+    "onset": 32.36593922902494,
+    "offset": 32.516868934240364,
+    "duration": 0.15092970521542526,
+    "velocity": 57,
+    "confidence": 0.4498130977153778,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 36,
+    "onset": 12.732238548752834,
+    "offset": 12.871558276643992,
+    "duration": 0.13931972789115754,
+    "velocity": 59,
+    "confidence": 0.46800610423088074,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 69,
+    "onset": 6.099089795918368,
+    "offset": 6.598318820861678,
+    "duration": 0.49922902494331023,
+    "velocity": 52,
+    "confidence": 0.4111480414867401,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 74,
+    "onset": 19.493097052154194,
+    "offset": 19.82978639455782,
+    "duration": 0.336689342403627,
+    "velocity": 54,
+    "confidence": 0.4257408082485199,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 69,
+    "onset": 19.947170068027212,
+    "offset": 20.31868934240363,
+    "duration": 0.37151927437641774,
+    "velocity": 48,
+    "confidence": 0.37776345014572144,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 73,
+    "onset": 25.20905759637188,
+    "offset": 25.39481723356009,
+    "duration": 0.18575963718820887,
+    "velocity": 59,
+    "confidence": 0.4672299921512604,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 57,
+    "onset": 65.67357052154195,
+    "offset": 65.81289024943311,
+    "duration": 0.13931972789116287,
+    "velocity": 58,
+    "confidence": 0.45609304308891296,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 26,
+    "onset": 7.573556916099774,
+    "offset": 7.736096598639456,
+    "duration": 0.16253968253968232,
+    "velocity": 54,
+    "confidence": 0.4247500002384186,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 45,
+    "onset": 8.004409977324263,
+    "offset": 8.143729705215419,
+    "duration": 0.13931972789115576,
+    "velocity": 54,
+    "confidence": 0.4254765510559082,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 73,
+    "onset": 57.75043038548753,
+    "offset": 57.90136009070295,
+    "duration": 0.15092970521541815,
+    "velocity": 55,
+    "confidence": 0.4355389475822449,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 69,
+    "onset": 16.33389931972789,
+    "offset": 16.542878911564625,
+    "duration": 0.20897959183673365,
+    "velocity": 53,
+    "confidence": 0.41773101687431335,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 45,
+    "onset": 46.72485850340136,
+    "offset": 46.96866802721088,
+    "duration": 0.24380952380952436,
+    "velocity": 60,
+    "confidence": 0.4687427282333374,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 50,
+    "onset": 52.18539954648526,
+    "offset": 52.35954920634921,
+    "duration": 0.17414965986395003,
+    "velocity": 55,
+    "confidence": 0.4360620379447937,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 26,
+    "onset": 37.07054784580499,
+    "offset": 37.31435736961451,
+    "duration": 0.24380952380952436,
+    "velocity": 58,
+    "confidence": 0.45819076895713806,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 28,
+    "onset": 73.03814784580499,
+    "offset": 73.32839727891155,
+    "duration": 0.2902494331065668,
+    "velocity": 56,
+    "confidence": 0.439149409532547,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 36,
+    "onset": 71.73783038548753,
+    "offset": 71.91198004535147,
+    "duration": 0.17414965986394293,
+    "velocity": 56,
+    "confidence": 0.44079726934432983,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 40,
+    "onset": 21.781546485260773,
+    "offset": 21.945370068027213,
+    "duration": 0.16382358276644027,
+    "velocity": 57,
+    "confidence": 0.4458255171775818,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 33,
+    "onset": 6.609928798185941,
+    "offset": 6.91178820861678,
+    "duration": 0.30185941043083897,
+    "velocity": 45,
+    "confidence": 0.35345733165740967,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 52,
+    "onset": 14.393749206349206,
+    "offset": 14.707218594104308,
+    "duration": 0.31346938775510225,
+    "velocity": 50,
+    "confidence": 0.3970169425010681,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 69,
+    "onset": 60.584548752834465,
+    "offset": 60.7935283446712,
+    "duration": 0.2089795918367372,
+    "velocity": 49,
+    "confidence": 0.38812151551246643,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 57,
+    "onset": 7.689656689342404,
+    "offset": 7.852196371882086,
+    "duration": 0.16253968253968232,
+    "velocity": 58,
+    "confidence": 0.4534114897251129,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 76,
+    "onset": 66.55592879818595,
+    "offset": 66.74168843537414,
+    "duration": 0.1857596371881982,
+    "velocity": 58,
+    "confidence": 0.4570830464363098,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 67,
+    "onset": 56.91322811791383,
+    "offset": 57.18025759637188,
+    "duration": 0.26702947845804914,
+    "velocity": 48,
+    "confidence": 0.3787134885787964,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 69,
+    "onset": 38.4998589569161,
+    "offset": 38.70883854875284,
+    "duration": 0.2089795918367372,
+    "velocity": 56,
+    "confidence": 0.4424181878566742,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 61,
+    "onset": 40.16136961451247,
+    "offset": 40.37034920634921,
+    "duration": 0.2089795918367372,
+    "velocity": 51,
+    "confidence": 0.40163135528564453,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 73,
+    "onset": 38.37214920634921,
+    "offset": 38.523078911564625,
+    "duration": 0.15092970521541815,
+    "velocity": 52,
+    "confidence": 0.40888306498527527,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 71,
+    "onset": 32.36593922902494,
+    "offset": 32.5052589569161,
+    "duration": 0.13931972789116287,
+    "velocity": 54,
+    "confidence": 0.4233231246471405,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 50,
+    "onset": 1.4396371882086167,
+    "offset": 1.6370068027210884,
+    "duration": 0.1973696145124717,
+    "velocity": 45,
+    "confidence": 0.35170435905456543,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 50,
+    "onset": 28.799108390022674,
+    "offset": 29.228677551020407,
+    "duration": 0.42956916099773323,
+    "velocity": 44,
+    "confidence": 0.3455149829387665,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 54,
+    "onset": 64.92924807256236,
+    "offset": 65.52135691609978,
+    "duration": 0.5921088435374173,
+    "velocity": 42,
+    "confidence": 0.3337838351726532,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 55,
+    "onset": 47.154427664399094,
+    "offset": 47.32857732426304,
+    "duration": 0.17414965986394293,
+    "velocity": 55,
+    "confidence": 0.4295051693916321,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 45,
+    "onset": 45.74962040816327,
+    "offset": 45.88894013605442,
+    "duration": 0.13931972789115576,
+    "velocity": 54,
+    "confidence": 0.4287234842777252,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 69,
+    "onset": 53.28834739229025,
+    "offset": 53.439277097505666,
+    "duration": 0.15092970521541815,
+    "velocity": 52,
+    "confidence": 0.40830838680267334,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 64,
+    "onset": 18.0766798185941,
+    "offset": 18.355319274376416,
+    "duration": 0.2786394557823151,
+    "velocity": 49,
+    "confidence": 0.38313230872154236,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 55,
+    "onset": 36.75707845804988,
+    "offset": 36.942838095238095,
+    "duration": 0.18575963718821242,
+    "velocity": 54,
+    "confidence": 0.4278920292854309,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 47,
+    "onset": 44.16937959183674,
+    "offset": 44.33191927437642,
+    "duration": 0.16253968253968054,
+    "velocity": 50,
+    "confidence": 0.3910329341888428,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 26,
+    "onset": 54.218429478458056,
+    "offset": 54.427409070294786,
+    "duration": 0.2089795918367301,
+    "velocity": 52,
+    "confidence": 0.406357079744339,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 74,
+    "onset": 49.08296780045352,
+    "offset": 49.303557369614516,
+    "duration": 0.2205895691609996,
+    "velocity": 52,
+    "confidence": 0.41031351685523987,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 26,
+    "onset": 72.19061950113378,
+    "offset": 72.55052879818594,
+    "duration": 0.35990929705215535,
+    "velocity": 44,
+    "confidence": 0.3441515564918518,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 59,
+    "onset": 14.382139229024943,
+    "offset": 14.602728798185941,
+    "duration": 0.2205895691609978,
+    "velocity": 44,
+    "confidence": 0.34596461057662964,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 48,
+    "onset": 70.35495918367347,
+    "offset": 70.598768707483,
+    "duration": 0.24380952380953147,
+    "velocity": 42,
+    "confidence": 0.3327089846134186,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 33,
+    "onset": 50.8954081632653,
+    "offset": 51.03472789115646,
+    "duration": 0.13931972789115576,
+    "velocity": 51,
+    "confidence": 0.40324798226356506,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 64,
+    "onset": 50.82574829931973,
+    "offset": 51.092777777777776,
+    "duration": 0.26702947845804914,
+    "velocity": 47,
+    "confidence": 0.3690837025642395,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 55,
+    "onset": 30.63476870748299,
+    "offset": 30.948238095238093,
+    "duration": 0.31346938775510225,
+    "velocity": 49,
+    "confidence": 0.38400799036026,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 36,
+    "onset": 56.95966802721088,
+    "offset": 57.16864761904762,
+    "duration": 0.2089795918367372,
+    "velocity": 47,
+    "confidence": 0.37043172121047974,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 45,
+    "onset": 37.54655691609977,
+    "offset": 37.72070657596372,
+    "duration": 0.17414965986395003,
+    "velocity": 52,
+    "confidence": 0.40956345200538635,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 45,
+    "onset": 57.762040362811796,
+    "offset": 58.08711972789116,
+    "duration": 0.3250793650793611,
+    "velocity": 47,
+    "confidence": 0.3715255558490753,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 73,
+    "onset": 23.62881678004535,
+    "offset": 23.779746485260773,
+    "duration": 0.1509297052154217,
+    "velocity": 47,
+    "confidence": 0.36690381169319153,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 50,
+    "onset": 27.916750113378683,
+    "offset": 28.148949659863945,
+    "duration": 0.23219954648526198,
+    "velocity": 39,
+    "confidence": 0.31061768531799316,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 55,
+    "onset": 60.271079365079366,
+    "offset": 60.468448979591834,
+    "duration": 0.1973696145124677,
+    "velocity": 51,
+    "confidence": 0.4024105668067932,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 45,
+    "onset": 42.786508390022675,
+    "offset": 42.92582811791383,
+    "duration": 0.13931972789115576,
+    "velocity": 49,
+    "confidence": 0.38876470923423767,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 69,
+    "onset": 68.00845986394557,
+    "offset": 68.15938956916101,
+    "duration": 0.15092970521543236,
+    "velocity": 49,
+    "confidence": 0.38883575797080994,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 76,
+    "onset": 0.6385487528344671,
+    "offset": 0.9404081632653061,
+    "duration": 0.30185941043083897,
+    "velocity": 44,
+    "confidence": 0.34475278854370117,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 76,
+    "onset": 59.713800453514736,
+    "offset": 59.91117006802721,
+    "duration": 0.1973696145124748,
+    "velocity": 48,
+    "confidence": 0.3743434548377991,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 26,
+    "onset": 13.103757823129252,
+    "offset": 13.55654693877551,
+    "duration": 0.452789115646258,
+    "velocity": 45,
+    "confidence": 0.35258325934410095,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 73,
+    "onset": 72.62018866213151,
+    "offset": 72.88721814058957,
+    "duration": 0.26702947845805625,
+    "velocity": 48,
+    "confidence": 0.3785057067871094,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 45,
+    "onset": 52.289889342403626,
+    "offset": 52.452429024943314,
+    "duration": 0.16253968253968765,
+    "velocity": 47,
+    "confidence": 0.3692345917224884,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 45,
+    "onset": 22.78128843537415,
+    "offset": 22.978658049886622,
+    "duration": 0.19736961451247126,
+    "velocity": 45,
+    "confidence": 0.351898193359375,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 45,
+    "onset": 57.40084716553288,
+    "offset": 57.56338684807256,
+    "duration": 0.16253968253968054,
+    "velocity": 40,
+    "confidence": 0.3180325925350189,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 55,
+    "onset": 15.879826303854875,
+    "offset": 16.02042993197279,
+    "duration": 0.14060362811791371,
+    "velocity": 44,
+    "confidence": 0.3500622510910034,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 57,
+    "onset": 37.24469750566893,
+    "offset": 37.43045714285714,
+    "duration": 0.18575963718821242,
+    "velocity": 37,
+    "confidence": 0.2933277487754822,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 69,
+    "onset": 23.73330657596372,
+    "offset": 23.885520181405898,
+    "duration": 0.15221360544217788,
+    "velocity": 44,
+    "confidence": 0.3485684394836426,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 45,
+    "onset": 22.247229478458053,
+    "offset": 22.491039002267573,
+    "duration": 0.2438095238095208,
+    "velocity": 44,
+    "confidence": 0.3446354269981384,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 54,
+    "onset": 20.910798185941044,
+    "offset": 21.073337868480728,
+    "duration": 0.1625396825396841,
+    "velocity": 43,
+    "confidence": 0.3407672047615051,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 21,
+    "onset": 36.54809886621315,
+    "offset": 36.86156825396825,
+    "duration": 0.3134693877550987,
+    "velocity": 42,
+    "confidence": 0.3328826427459717,
+    "stem_label": "bass"
+  },
+  {
+    "pitch": 71,
+    "onset": 36.80351836734694,
+    "offset": 36.942838095238095,
+    "duration": 0.13931972789115576,
+    "velocity": 39,
+    "confidence": 0.304416686296463,
+    "stem_label": "bass"
+  }
+]

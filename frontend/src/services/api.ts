@@ -44,7 +44,11 @@ export function uploadAudio(file: File): Promise<Job> {
   return request<Job>("/upload", { method: "POST", body: formData });
 }
 
-/** GET /status/{job_id} — poll this until status is "done" or "failed". */
+/**
+ * GET /status/{job_id} — poll this until status is "awaiting_review" (a review
+ * checkpoint — see job.checkpoint for which one, and call continueJob() to
+ * resume), "done", or "failed".
+ */
 export function getStatus(jobId: string): Promise<Job> {
   return request<Job>(`/status/${jobId}`);
 }
@@ -52,6 +56,17 @@ export function getStatus(jobId: string): Promise<Job> {
 /** GET /result/{job_id} — throws ApiError(409) if not done yet, ApiError(422) if failed. */
 export function getResult(jobId: string): Promise<JobResult> {
   return request<JobResult>(`/result/${jobId}`);
+}
+
+/**
+ * POST /jobs/{job_id}/continue — resume a job paused at a review checkpoint
+ * (status === "awaiting_review"). Runs the next phase automatically based on
+ * the job's own stored checkpoint — there's no way to pass "which phase" in,
+ * by design, so the caller can't accidentally skip or repeat a phase.
+ * Throws ApiError(409) if the job isn't currently awaiting review.
+ */
+export function continueJob(jobId: string): Promise<Job> {
+  return request<Job>(`/jobs/${jobId}/continue`, { method: "POST" });
 }
 
 /**
