@@ -8,7 +8,7 @@
   <identification>
     <creator type="composer">Music21</creator>
     <encoding>
-      <encoding-date>2026-07-28</encoding-date>
+      <encoding-date>2026-07-29</encoding-date>
       <software>music21 v.10.5.0</software>
       <supports element="beam" type="yes" />
       <supports element="stem" type="yes" />
@@ -22,20 +22,20 @@
     </scaling>
   </defaults>
   <part-list>
-    <score-part id="P8031a5071dcbc33558ce62912d0932e1">
+    <score-part id="P7cfd9deb82884abb30bdedc77cfefa36">
       <part-name>Percussion</part-name>
       <part-abbreviation>Perc</part-abbreviation>
-      <score-instrument id="I72445c4b840fc05bb800bee6352f516a">
+      <score-instrument id="I9bc1cd00263389f688cc5e19160698d9">
         <instrument-name>Percussion</instrument-name>
         <instrument-abbreviation>Perc</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="I72445c4b840fc05bb800bee6352f516a">
+      <midi-instrument id="I9bc1cd00263389f688cc5e19160698d9">
         <midi-channel>10</midi-channel>
       </midi-instrument>
     </score-part>
   </part-list>
   <!--=========================== Part 1 ===========================-->
-  <part id="P8031a5071dcbc33558ce62912d0932e1">
+  <part id="P7cfd9deb82884abb30bdedc77cfefa36">
     <!--========================= Measure 1 ==========================-->
     <measure implicit="no" number="1">
       <attributes>

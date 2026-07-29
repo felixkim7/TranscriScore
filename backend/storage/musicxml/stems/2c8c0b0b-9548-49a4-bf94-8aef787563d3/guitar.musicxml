@@ -8,7 +8,7 @@
   <identification>
     <creator type="composer">Music21</creator>
     <encoding>
-      <encoding-date>2026-07-28</encoding-date>
+      <encoding-date>2026-07-29</encoding-date>
       <software>music21 v.10.5.0</software>
       <supports element="beam" type="yes" />
       <supports element="stem" type="yes" />
@@ -22,21 +22,21 @@
     </scaling>
   </defaults>
   <part-list>
-    <score-part id="Pa6ea3e9d3a83cca5cddb935294ff8335">
+    <score-part id="Paa5c32e4ea4954ef07cccd13ae5ee983">
       <part-name>Guitar</part-name>
       <part-abbreviation>Gtr</part-abbreviation>
-      <score-instrument id="Ifdcb3b27a38bb193c470df4196861adc">
+      <score-instrument id="If591bc0dfff63883a63632e61d9da194">
         <instrument-name>Guitar</instrument-name>
         <instrument-abbreviation>Gtr</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="Ifdcb3b27a38bb193c470df4196861adc">
+      <midi-instrument id="If591bc0dfff63883a63632e61d9da194">
         <midi-channel>1</midi-channel>
         <midi-program>25</midi-program>
       </midi-instrument>
     </score-part>
   </part-list>
   <!--=========================== Part 1 ===========================-->
-  <part id="Pa6ea3e9d3a83cca5cddb935294ff8335">
+  <part id="Paa5c32e4ea4954ef07cccd13ae5ee983">
     <!--========================= Measure 1 ==========================-->
     <measure implicit="no" number="1">
       <attributes>

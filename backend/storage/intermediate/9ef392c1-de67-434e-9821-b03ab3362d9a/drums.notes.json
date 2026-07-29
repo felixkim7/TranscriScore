@@ -1,0 +1,2756 @@
+[
+  {
+    "pitch": 36,
+    "onset": 1.7414965986394557,
+    "offset": 2.0414965986394558,
+    "duration": 0.30000000000000004,
+    "velocity": 100,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 2.2987755102040817,
+    "offset": 2.5987755102040815,
+    "duration": 0.2999999999999998,
+    "velocity": 109,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 2.8328344671201813,
+    "offset": 3.0743219954648526,
+    "duration": 0.24148752834467135,
+    "velocity": 103,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 3.1346938775510202,
+    "offset": 3.301877551020408,
+    "duration": 0.1671836734693879,
+    "velocity": 11,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 3.3436734693877552,
+    "offset": 3.5480090702947846,
+    "duration": 0.2043356009070294,
+    "velocity": 101,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 3.599092970521542,
+    "offset": 3.8034285714285714,
+    "duration": 0.2043356009070294,
+    "velocity": 84,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 3.8545124716553287,
+    "offset": 4.021696145124716,
+    "duration": 0.16718367346938745,
+    "velocity": 99,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 4.063492063492063,
+    "offset": 4.286403628117914,
+    "duration": 0.22291156462585082,
+    "velocity": 36,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 4.342131519274377,
+    "offset": 4.492131519274377,
+    "duration": 0.15000000000000036,
+    "velocity": 99,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 4.481451247165533,
+    "offset": 4.778666666666667,
+    "duration": 0.29721541950113384,
+    "velocity": 7,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 4.85297052154195,
+    "offset": 5.094458049886621,
+    "duration": 0.24148752834467135,
+    "velocity": 111,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 5.154829931972789,
+    "offset": 5.3591655328798184,
+    "duration": 0.2043356009070294,
+    "velocity": 36,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 5.410249433106576,
+    "offset": 5.614585034013605,
+    "duration": 0.2043356009070294,
+    "velocity": 101,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 5.6656689342403626,
+    "offset": 5.870004535147392,
+    "duration": 0.2043356009070294,
+    "velocity": 102,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 5.921088435374149,
+    "offset": 6.144,
+    "duration": 0.22291156462585082,
+    "velocity": 112,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 6.199727891156463,
+    "offset": 6.404063492063492,
+    "duration": 0.2043356009070294,
+    "velocity": 23,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 6.455147392290249,
+    "offset": 6.622331065759637,
+    "duration": 0.16718367346938745,
+    "velocity": 95,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 6.664126984126984,
+    "offset": 6.868462585034013,
+    "duration": 0.2043356009070294,
+    "velocity": 17,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 6.919546485260771,
+    "offset": 7.161034013605442,
+    "duration": 0.24148752834467135,
+    "velocity": 98,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 7.22140589569161,
+    "offset": 7.42574149659864,
+    "duration": 0.2043356009070303,
+    "velocity": 21,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 7.476825396825397,
+    "offset": 7.662585034013605,
+    "duration": 0.18575963718820798,
+    "velocity": 97,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 7.7090249433106575,
+    "offset": 7.894784580498866,
+    "duration": 0.18575963718820887,
+    "velocity": 98,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 7.9412244897959186,
+    "offset": 8.20128798185941,
+    "duration": 0.2600634920634919,
+    "velocity": 116,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 8.266303854875284,
+    "offset": 8.470639455782313,
+    "duration": 0.2043356009070294,
+    "velocity": 30,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 8.52172335600907,
+    "offset": 8.688907029478457,
+    "duration": 0.16718367346938656,
+    "velocity": 94,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 8.730702947845804,
+    "offset": 8.935038548752834,
+    "duration": 0.2043356009070294,
+    "velocity": 16,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 8.986122448979591,
+    "offset": 9.136122448979592,
+    "duration": 0.15000000000000036,
+    "velocity": 91,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 9.1718820861678,
+    "offset": 9.469097505668934,
+    "duration": 0.29721541950113384,
+    "velocity": 29,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 9.543401360544218,
+    "offset": 9.729160997732427,
+    "duration": 0.18575963718820887,
+    "velocity": 97,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 9.775600907029478,
+    "offset": 9.998512471655328,
+    "duration": 0.22291156462584993,
+    "velocity": 108,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 10.054240362811791,
+    "offset": 10.25857596371882,
+    "duration": 0.2043356009070294,
+    "velocity": 88,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 10.309659863945578,
+    "offset": 10.513995464852607,
+    "duration": 0.2043356009070294,
+    "velocity": 36,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 10.565079365079365,
+    "offset": 10.806566893424037,
+    "duration": 0.24148752834467224,
+    "velocity": 103,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 10.866938775510205,
+    "offset": 11.052698412698414,
+    "duration": 0.18575963718820887,
+    "velocity": 9,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 11.099138321995465,
+    "offset": 11.340625850340135,
+    "duration": 0.24148752834467047,
+    "velocity": 91,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 11.400997732426303,
+    "offset": 11.586757369614512,
+    "duration": 0.18575963718820887,
+    "velocity": 20,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 11.633197278911565,
+    "offset": 11.818956916099774,
+    "duration": 0.18575963718820887,
+    "velocity": 88,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 11.865396825396825,
+    "offset": 12.088308390022675,
+    "duration": 0.22291156462584993,
+    "velocity": 93,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 12.144036281179138,
+    "offset": 12.385523809523809,
+    "duration": 0.24148752834467047,
+    "velocity": 108,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 12.445895691609977,
+    "offset": 12.631655328798185,
+    "duration": 0.18575963718820887,
+    "velocity": 12,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 12.678095238095239,
+    "offset": 12.882430839002268,
+    "duration": 0.2043356009070294,
+    "velocity": 98,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 12.933514739229025,
+    "offset": 13.137850340136055,
+    "duration": 0.2043356009070294,
+    "velocity": 16,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 13.188934240362812,
+    "offset": 13.411845804988662,
+    "duration": 0.22291156462584993,
+    "velocity": 110,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 13.467573696145125,
+    "offset": 13.671909297052155,
+    "duration": 0.2043356009070294,
+    "velocity": 16,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 13.722993197278912,
+    "offset": 13.908752834467121,
+    "duration": 0.18575963718820887,
+    "velocity": 92,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 13.955192743764172,
+    "offset": 14.178104308390022,
+    "duration": 0.22291156462584993,
+    "velocity": 98,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 14.233832199546486,
+    "offset": 14.456743764172336,
+    "duration": 0.22291156462584993,
+    "velocity": 92,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 14.512471655328799,
+    "offset": 14.698231292517008,
+    "duration": 0.18575963718820887,
+    "velocity": 34,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 14.744671201814059,
+    "offset": 14.949006802721089,
+    "duration": 0.2043356009070294,
+    "velocity": 100,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 15.000090702947846,
+    "offset": 15.185850340136055,
+    "duration": 0.18575963718820887,
+    "velocity": 28,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 15.232290249433106,
+    "offset": 15.492353741496599,
+    "duration": 0.2600634920634928,
+    "velocity": 99,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 15.557369614512472,
+    "offset": 15.743129251700681,
+    "duration": 0.18575963718820887,
+    "velocity": 15,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 15.789569160997733,
+    "offset": 15.993904761904762,
+    "duration": 0.2043356009070294,
+    "velocity": 88,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 16.04498866213152,
+    "offset": 16.23074829931973,
+    "duration": 0.18575963718820887,
+    "velocity": 99,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 16.27718820861678,
+    "offset": 16.518675736961452,
+    "duration": 0.24148752834467047,
+    "velocity": 106,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 16.579047619047618,
+    "offset": 16.764807256235827,
+    "duration": 0.18575963718820887,
+    "velocity": 83,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 16.81124716553288,
+    "offset": 16.96124716553288,
+    "duration": 0.14999999999999858,
+    "velocity": 115,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 16.99700680272109,
+    "offset": 17.2756462585034,
+    "duration": 0.27863945578231153,
+    "velocity": 102,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 17.345306122448978,
+    "offset": 17.549641723356007,
+    "duration": 0.2043356009070294,
+    "velocity": 70,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 17.600725623582765,
+    "offset": 17.823637188208618,
+    "duration": 0.2229115646258535,
+    "velocity": 105,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 17.87936507936508,
+    "offset": 18.046548752834468,
+    "duration": 0.16718367346938834,
+    "velocity": 106,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 18.088344671201813,
+    "offset": 18.311256235827667,
+    "duration": 0.2229115646258535,
+    "velocity": 99,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 18.36698412698413,
+    "offset": 18.66698412698413,
+    "duration": 0.3000000000000007,
+    "velocity": 99,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 18.854603174603174,
+    "offset": 19.154603174603174,
+    "duration": 0.3000000000000007,
+    "velocity": 109,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 19.435102040816325,
+    "offset": 19.735102040816326,
+    "duration": 0.3000000000000007,
+    "velocity": 102,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 19.969160997732427,
+    "offset": 20.173496598639456,
+    "duration": 0.2043356009070294,
+    "velocity": 89,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 20.224580498866214,
+    "offset": 20.410340136054423,
+    "duration": 0.18575963718820887,
+    "velocity": 108,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 20.456780045351476,
+    "offset": 20.698267573696146,
+    "duration": 0.24148752834467047,
+    "velocity": 95,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 20.758639455782312,
+    "offset": 20.94439909297052,
+    "duration": 0.18575963718820887,
+    "velocity": 16,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 20.990839002267574,
+    "offset": 21.232326530612244,
+    "duration": 0.24148752834467047,
+    "velocity": 90,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 21.292698412698414,
+    "offset": 21.47845804988662,
+    "duration": 0.18575963718820532,
+    "velocity": 13,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 21.524897959183672,
+    "offset": 21.747809523809526,
+    "duration": 0.2229115646258535,
+    "velocity": 95,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 21.803537414965987,
+    "offset": 21.989297052154193,
+    "duration": 0.18575963718820532,
+    "velocity": 18,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 22.035736961451246,
+    "offset": 22.2586485260771,
+    "duration": 0.2229115646258535,
+    "velocity": 85,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 22.31437641723356,
+    "offset": 22.51871201814059,
+    "duration": 0.2043356009070294,
+    "velocity": 89,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 22.569795918367348,
+    "offset": 22.811283446712018,
+    "duration": 0.24148752834467047,
+    "velocity": 95,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 22.871655328798187,
+    "offset": 23.057414965986393,
+    "duration": 0.18575963718820532,
+    "velocity": 12,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 23.103854875283446,
+    "offset": 23.3267664399093,
+    "duration": 0.2229115646258535,
+    "velocity": 113,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 23.38249433106576,
+    "offset": 23.58682993197279,
+    "duration": 0.2043356009070294,
+    "velocity": 9,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 23.637913832199548,
+    "offset": 23.860825396825398,
+    "duration": 0.22291156462584993,
+    "velocity": 96,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 23.91655328798186,
+    "offset": 24.12088888888889,
+    "duration": 0.2043356009070294,
+    "velocity": 14,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 24.171972789115646,
+    "offset": 24.376308390022675,
+    "duration": 0.2043356009070294,
+    "velocity": 104,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 24.427392290249433,
+    "offset": 24.61315192743764,
+    "duration": 0.18575963718820887,
+    "velocity": 99,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 24.659591836734695,
+    "offset": 24.882503401360545,
+    "duration": 0.22291156462584993,
+    "velocity": 110,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 24.938231292517006,
+    "offset": 25.123990929705215,
+    "duration": 0.18575963718820887,
+    "velocity": 7,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 25.170430839002268,
+    "offset": 25.43049433106576,
+    "duration": 0.260063492063491,
+    "velocity": 93,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 25.495510204081633,
+    "offset": 25.66269387755102,
+    "duration": 0.16718367346938834,
+    "velocity": 4,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 25.704489795918366,
+    "offset": 25.92740136054422,
+    "duration": 0.2229115646258535,
+    "velocity": 94,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 25.98312925170068,
+    "offset": 26.20604081632653,
+    "duration": 0.22291156462584993,
+    "velocity": 12,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 26.261768707482993,
+    "offset": 26.466104308390022,
+    "duration": 0.2043356009070294,
+    "velocity": 95,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 26.51718820861678,
+    "offset": 26.72152380952381,
+    "duration": 0.2043356009070294,
+    "velocity": 84,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 26.772607709750567,
+    "offset": 26.995519274376417,
+    "duration": 0.22291156462584993,
+    "velocity": 99,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 27.051247165532878,
+    "offset": 27.25558276643991,
+    "duration": 0.20433560090703295,
+    "velocity": 11,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 27.30666666666667,
+    "offset": 27.511002267573698,
+    "duration": 0.2043356009070294,
+    "velocity": 97,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 27.562086167800455,
+    "offset": 27.74784580498866,
+    "duration": 0.18575963718820532,
+    "velocity": 9,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 27.794285714285714,
+    "offset": 28.054349206349205,
+    "duration": 0.260063492063491,
+    "velocity": 91,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 28.11936507936508,
+    "offset": 28.305124716553287,
+    "duration": 0.18575963718820887,
+    "velocity": 11,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 28.35156462585034,
+    "offset": 28.55590022675737,
+    "duration": 0.2043356009070294,
+    "velocity": 101,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 28.606984126984127,
+    "offset": 28.774167800453515,
+    "duration": 0.16718367346938834,
+    "velocity": 94,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 28.81596371882086,
+    "offset": 29.07602721088435,
+    "duration": 0.260063492063491,
+    "velocity": 99,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 29.141043083900225,
+    "offset": 29.326802721088434,
+    "duration": 0.18575963718820887,
+    "velocity": 10,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 29.373242630385487,
+    "offset": 29.577578231292517,
+    "duration": 0.2043356009070294,
+    "velocity": 101,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 29.628662131519274,
+    "offset": 29.795845804988662,
+    "duration": 0.16718367346938834,
+    "velocity": 9,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 29.837641723356008,
+    "offset": 30.097705215419502,
+    "duration": 0.26006349206349455,
+    "velocity": 89,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 30.162721088435376,
+    "offset": 30.367056689342405,
+    "duration": 0.2043356009070294,
+    "velocity": 16,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 30.418140589569163,
+    "offset": 30.622476190476192,
+    "duration": 0.2043356009070294,
+    "velocity": 88,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 30.67356009070295,
+    "offset": 30.859319727891155,
+    "duration": 0.18575963718820532,
+    "velocity": 96,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 30.905759637188208,
+    "offset": 31.110095238095237,
+    "duration": 0.2043356009070294,
+    "velocity": 121,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 31.161179138321994,
+    "offset": 31.384090702947848,
+    "duration": 0.2229115646258535,
+    "velocity": 22,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 31.43981859410431,
+    "offset": 31.66273015873016,
+    "duration": 0.22291156462584993,
+    "velocity": 106,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 31.71845804988662,
+    "offset": 31.90421768707483,
+    "duration": 0.18575963718820887,
+    "velocity": 11,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 31.950657596371883,
+    "offset": 32.21072108843537,
+    "duration": 0.26006349206348744,
+    "velocity": 89,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 32.275736961451244,
+    "offset": 32.46149659863946,
+    "duration": 0.18575963718821242,
+    "velocity": 10,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 32.507936507936506,
+    "offset": 32.675120181405894,
+    "duration": 0.16718367346938834,
+    "velocity": 91,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 32.71691609977324,
+    "offset": 32.902675736961456,
+    "duration": 0.18575963718821242,
+    "velocity": 98,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 32.949115646258505,
+    "offset": 33.20917913832199,
+    "duration": 0.26006349206348744,
+    "velocity": 101,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 33.274195011337866,
+    "offset": 33.45995464852608,
+    "duration": 0.18575963718821242,
+    "velocity": 87,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 33.50639455782313,
+    "offset": 33.69215419501134,
+    "duration": 0.18575963718821242,
+    "velocity": 118,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 33.73859410430839,
+    "offset": 33.98008163265306,
+    "duration": 0.24148752834467047,
+    "velocity": 95,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 34.04045351473923,
+    "offset": 34.244789115646256,
+    "duration": 0.2043356009070294,
+    "velocity": 87,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 34.29587301587301,
+    "offset": 34.51878458049887,
+    "duration": 0.2229115646258535,
+    "velocity": 107,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 34.57451247165533,
+    "offset": 34.74169614512471,
+    "duration": 0.16718367346938123,
+    "velocity": 91,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 34.78349206349206,
+    "offset": 35.02497959183674,
+    "duration": 0.24148752834467757,
+    "velocity": 100,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 35.085351473922906,
+    "offset": 35.3853514739229,
+    "duration": 0.29999999999999716,
+    "velocity": 107,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 35.59619047619048,
+    "offset": 35.896190476190476,
+    "duration": 0.29999999999999716,
+    "velocity": 114,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 36.10702947845805,
+    "offset": 36.40702947845805,
+    "duration": 0.29999999999999716,
+    "velocity": 104,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 36.664308390022676,
+    "offset": 36.85006802721089,
+    "duration": 0.18575963718821242,
+    "velocity": 88,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 36.89650793650794,
+    "offset": 37.10084353741497,
+    "duration": 0.2043356009070294,
+    "velocity": 105,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 37.151927437641724,
+    "offset": 37.37483900226757,
+    "duration": 0.22291156462584638,
+    "velocity": 112,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 37.430566893424036,
+    "offset": 37.634902494331065,
+    "duration": 0.2043356009070294,
+    "velocity": 23,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 37.68598639455782,
+    "offset": 37.89032199546485,
+    "duration": 0.2043356009070294,
+    "velocity": 96,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 37.94140589569161,
+    "offset": 38.14574149659864,
+    "duration": 0.2043356009070294,
+    "velocity": 9,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 38.196825396825396,
+    "offset": 38.401160997732426,
+    "duration": 0.2043356009070294,
+    "velocity": 96,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 38.45224489795918,
+    "offset": 38.65658049886621,
+    "duration": 0.2043356009070294,
+    "velocity": 11,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 38.70766439909297,
+    "offset": 38.912,
+    "duration": 0.2043356009070294,
+    "velocity": 94,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 38.963083900226756,
+    "offset": 39.1859954648526,
+    "duration": 0.22291156462584638,
+    "velocity": 107,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 39.24172335600907,
+    "offset": 39.42748299319728,
+    "duration": 0.18575963718821242,
+    "velocity": 91,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 39.47392290249433,
+    "offset": 39.71541043083901,
+    "duration": 0.24148752834467757,
+    "velocity": 16,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 39.77578231292517,
+    "offset": 39.96154195011338,
+    "duration": 0.18575963718820532,
+    "velocity": 91,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 40.00798185941043,
+    "offset": 40.23089342403628,
+    "duration": 0.2229115646258535,
+    "velocity": 9,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 40.28662131519275,
+    "offset": 40.52810884353742,
+    "duration": 0.24148752834467047,
+    "velocity": 100,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 40.58848072562358,
+    "offset": 40.774240362811796,
+    "duration": 0.18575963718821242,
+    "velocity": 11,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 40.820680272108845,
+    "offset": 41.025015873015874,
+    "duration": 0.2043356009070294,
+    "velocity": 99,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 41.07609977324263,
+    "offset": 41.28043537414966,
+    "duration": 0.2043356009070294,
+    "velocity": 93,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 41.33151927437642,
+    "offset": 41.53585487528345,
+    "duration": 0.2043356009070294,
+    "velocity": 88,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 41.586938775510205,
+    "offset": 41.80985034013605,
+    "duration": 0.22291156462584638,
+    "velocity": 24,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 41.86557823129252,
+    "offset": 42.05133786848073,
+    "duration": 0.18575963718821242,
+    "velocity": 107,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 42.09777777777778,
+    "offset": 42.320689342403625,
+    "duration": 0.22291156462584638,
+    "velocity": 9,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 42.37641723356009,
+    "offset": 42.61790476190476,
+    "duration": 0.24148752834467047,
+    "velocity": 105,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 42.67827664399093,
+    "offset": 42.882612244897956,
+    "duration": 0.2043356009070294,
+    "velocity": 8,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 42.93369614512471,
+    "offset": 43.13803174603174,
+    "duration": 0.2043356009070294,
+    "velocity": 87,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 43.1891156462585,
+    "offset": 43.39345124716553,
+    "duration": 0.2043356009070294,
+    "velocity": 102,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 43.44453514739229,
+    "offset": 43.66744671201814,
+    "duration": 0.2229115646258535,
+    "velocity": 86,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 43.723174603174606,
+    "offset": 43.927510204081635,
+    "duration": 0.2043356009070294,
+    "velocity": 11,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 43.97859410430839,
+    "offset": 44.145777777777774,
+    "duration": 0.16718367346938123,
+    "velocity": 99,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 44.18757369614512,
+    "offset": 44.4290612244898,
+    "duration": 0.24148752834467757,
+    "velocity": 10,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 44.489433106575966,
+    "offset": 44.71234467120181,
+    "duration": 0.22291156462584638,
+    "velocity": 81,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 44.76807256235828,
+    "offset": 44.97240816326531,
+    "duration": 0.2043356009070294,
+    "velocity": 15,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 45.023492063492064,
+    "offset": 45.20925170068028,
+    "duration": 0.18575963718821242,
+    "velocity": 87,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 45.255691609977326,
+    "offset": 45.47860317460317,
+    "duration": 0.22291156462584638,
+    "velocity": 92,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 45.53433106575964,
+    "offset": 45.757242630385484,
+    "duration": 0.22291156462584638,
+    "velocity": 96,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 45.81297052154195,
+    "offset": 45.99873015873016,
+    "duration": 0.18575963718821242,
+    "velocity": 13,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 46.04517006802721,
+    "offset": 46.230929705215424,
+    "duration": 0.18575963718821242,
+    "velocity": 99,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 46.27736961451247,
+    "offset": 46.50028117913832,
+    "duration": 0.22291156462584638,
+    "velocity": 8,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 46.556009070294785,
+    "offset": 46.797496598639455,
+    "duration": 0.24148752834467047,
+    "velocity": 97,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 46.85786848072562,
+    "offset": 47.06220408163265,
+    "duration": 0.2043356009070294,
+    "velocity": 8,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 47.11328798185941,
+    "offset": 47.31762358276644,
+    "duration": 0.2043356009070294,
+    "velocity": 82,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 47.368707482993194,
+    "offset": 47.55446712018141,
+    "duration": 0.18575963718821242,
+    "velocity": 89,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 47.600907029478456,
+    "offset": 47.8238185941043,
+    "duration": 0.22291156462584638,
+    "velocity": 96,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 47.87954648526077,
+    "offset": 48.02954648526077,
+    "duration": 0.14999999999999858,
+    "velocity": 15,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 48.06530612244898,
+    "offset": 48.30679365079365,
+    "duration": 0.24148752834467047,
+    "velocity": 101,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 48.36716553287982,
+    "offset": 48.571501133786846,
+    "duration": 0.2043356009070294,
+    "velocity": 10,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 48.6225850340136,
+    "offset": 48.86407256235828,
+    "duration": 0.24148752834467757,
+    "velocity": 105,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 48.92444444444445,
+    "offset": 49.11020408163265,
+    "duration": 0.18575963718820532,
+    "velocity": 11,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 49.1566439909297,
+    "offset": 49.36097959183674,
+    "duration": 0.2043356009070365,
+    "velocity": 78,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 49.412063492063496,
+    "offset": 49.5978231292517,
+    "duration": 0.18575963718820532,
+    "velocity": 88,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 49.64426303854875,
+    "offset": 49.88575056689343,
+    "duration": 0.24148752834467757,
+    "velocity": 99,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 49.946122448979594,
+    "offset": 50.131882086167806,
+    "duration": 0.18575963718821242,
+    "velocity": 106,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 50.178321995464856,
+    "offset": 50.4012335600907,
+    "duration": 0.22291156462584638,
+    "velocity": 112,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 50.45696145124717,
+    "offset": 50.64272108843538,
+    "duration": 0.18575963718821242,
+    "velocity": 97,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 50.68916099773243,
+    "offset": 50.912072562358276,
+    "duration": 0.22291156462584638,
+    "velocity": 89,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 50.96780045351474,
+    "offset": 51.19071201814059,
+    "duration": 0.22291156462584638,
+    "velocity": 103,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 51.24643990929705,
+    "offset": 51.39643990929705,
+    "duration": 0.14999999999999858,
+    "velocity": 99,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 51.43219954648526,
+    "offset": 51.69226303854875,
+    "duration": 0.26006349206349455,
+    "velocity": 97,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 51.757278911564626,
+    "offset": 52.05727891156462,
+    "duration": 0.29999999999999716,
+    "velocity": 111,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 52.2681179138322,
+    "offset": 52.5681179138322,
+    "duration": 0.29999999999999716,
+    "velocity": 90,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 52.82539682539682,
+    "offset": 53.0668843537415,
+    "duration": 0.24148752834467757,
+    "velocity": 101,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 53.127256235827666,
+    "offset": 53.31301587301588,
+    "duration": 0.18575963718821242,
+    "velocity": 14,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 53.35945578231293,
+    "offset": 53.54521541950113,
+    "duration": 0.18575963718820532,
+    "velocity": 89,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 53.59165532879818,
+    "offset": 53.75883900226757,
+    "duration": 0.16718367346938834,
+    "velocity": 100,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 53.80063492063492,
+    "offset": 54.07927437641723,
+    "duration": 0.27863945578231153,
+    "velocity": 100,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 54.14893424036281,
+    "offset": 54.334693877551025,
+    "duration": 0.18575963718821242,
+    "velocity": 24,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 54.381133786848075,
+    "offset": 54.585469387755104,
+    "duration": 0.2043356009070294,
+    "velocity": 100,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 54.63655328798186,
+    "offset": 54.85946485260771,
+    "duration": 0.22291156462584638,
+    "velocity": 9,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 54.91519274376417,
+    "offset": 55.156680272108844,
+    "duration": 0.24148752834467047,
+    "velocity": 96,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 55.21705215419501,
+    "offset": 55.40281179138322,
+    "duration": 0.18575963718821242,
+    "velocity": 8,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 55.44925170068027,
+    "offset": 55.6535873015873,
+    "duration": 0.2043356009070294,
+    "velocity": 94,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 55.70467120181406,
+    "offset": 55.89043083900227,
+    "duration": 0.18575963718821242,
+    "velocity": 112,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 55.93687074829932,
+    "offset": 56.17835827664399,
+    "duration": 0.24148752834467047,
+    "velocity": 93,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 56.23873015873016,
+    "offset": 56.443065759637186,
+    "duration": 0.2043356009070294,
+    "velocity": 6,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 56.49414965986394,
+    "offset": 56.69848526077097,
+    "duration": 0.2043356009070294,
+    "velocity": 101,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 56.74956916099773,
+    "offset": 56.95390476190476,
+    "duration": 0.2043356009070294,
+    "velocity": 7,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 57.00498866213152,
+    "offset": 57.22790022675737,
+    "duration": 0.2229115646258535,
+    "velocity": 96,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 57.283628117913835,
+    "offset": 57.487963718820865,
+    "duration": 0.2043356009070294,
+    "velocity": 13,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 57.53904761904762,
+    "offset": 57.72480725623583,
+    "duration": 0.18575963718820532,
+    "velocity": 81,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 57.77124716553288,
+    "offset": 57.99415873015873,
+    "duration": 0.2229115646258535,
+    "velocity": 108,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 58.049886621315196,
+    "offset": 58.27279818594104,
+    "duration": 0.22291156462584638,
+    "velocity": 93,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 58.32852607709751,
+    "offset": 58.51428571428572,
+    "duration": 0.18575963718821242,
+    "velocity": 10,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 58.56072562358277,
+    "offset": 58.7650612244898,
+    "duration": 0.2043356009070294,
+    "velocity": 97,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 58.816145124716556,
+    "offset": 59.0390566893424,
+    "duration": 0.22291156462584638,
+    "velocity": 10,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 59.09478458049887,
+    "offset": 59.317696145124714,
+    "duration": 0.22291156462584638,
+    "velocity": 90,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 59.37342403628118,
+    "offset": 59.55918367346939,
+    "duration": 0.18575963718821242,
+    "velocity": 6,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 59.60562358276644,
+    "offset": 59.82853514739229,
+    "duration": 0.22291156462584638,
+    "velocity": 82,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 59.88426303854875,
+    "offset": 60.03426303854875,
+    "duration": 0.14999999999999858,
+    "velocity": 101,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 60.04680272108843,
+    "offset": 60.325442176870745,
+    "duration": 0.27863945578231153,
+    "velocity": 108,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 60.395102040816326,
+    "offset": 60.545102040816325,
+    "duration": 0.14999999999999858,
+    "velocity": 6,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 60.58086167800454,
+    "offset": 60.803773242630385,
+    "duration": 0.22291156462584638,
+    "velocity": 87,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 60.85950113378685,
+    "offset": 61.082412698412696,
+    "duration": 0.22291156462584638,
+    "velocity": 7,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 61.13814058956916,
+    "offset": 61.37962811791383,
+    "duration": 0.24148752834467047,
+    "velocity": 116,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 61.44,
+    "offset": 61.64433560090703,
+    "duration": 0.2043356009070294,
+    "velocity": 16,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 61.695419501133784,
+    "offset": 61.899755102040814,
+    "duration": 0.2043356009070294,
+    "velocity": 97,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 61.95083900226757,
+    "offset": 62.136598639455784,
+    "duration": 0.18575963718821242,
+    "velocity": 94,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 62.18303854875283,
+    "offset": 62.42452607709751,
+    "duration": 0.24148752834467757,
+    "velocity": 106,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 62.48489795918368,
+    "offset": 62.67065759637188,
+    "duration": 0.18575963718820532,
+    "velocity": 15,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 62.71709750566893,
+    "offset": 62.92143310657596,
+    "duration": 0.2043356009070294,
+    "velocity": 94,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 62.97251700680272,
+    "offset": 63.15827664399093,
+    "duration": 0.18575963718821242,
+    "velocity": 8,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 63.20471655328798,
+    "offset": 63.42762811791383,
+    "duration": 0.22291156462584638,
+    "velocity": 95,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 63.48335600907029,
+    "offset": 63.68769160997732,
+    "duration": 0.2043356009070294,
+    "velocity": 8,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 63.73877551020408,
+    "offset": 63.961687074829925,
+    "duration": 0.22291156462584638,
+    "velocity": 92,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 64.01741496598639,
+    "offset": 64.22175056689342,
+    "duration": 0.2043356009070294,
+    "velocity": 95,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 64.27283446712018,
+    "offset": 64.49574603174602,
+    "duration": 0.22291156462584638,
+    "velocity": 97,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 64.55147392290249,
+    "offset": 64.7014739229025,
+    "duration": 0.15000000000000568,
+    "velocity": 26,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 64.7372335600907,
+    "offset": 64.97872108843536,
+    "duration": 0.24148752834466336,
+    "velocity": 87,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 65.03909297052154,
+    "offset": 65.26200453514738,
+    "duration": 0.22291156462584638,
+    "velocity": 85,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 65.31773242630385,
+    "offset": 65.61773242630385,
+    "duration": 0.29999999999999716,
+    "velocity": 91,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 65.85179138321996,
+    "offset": 66.05612698412699,
+    "duration": 0.2043356009070294,
+    "velocity": 71,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 66.10721088435375,
+    "offset": 66.3301224489796,
+    "duration": 0.22291156462584638,
+    "velocity": 90,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 66.38585034013606,
+    "offset": 66.68585034013606,
+    "duration": 0.29999999999999716,
+    "velocity": 85,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 66.89668934240363,
+    "offset": 67.10102494331066,
+    "duration": 0.2043356009070294,
+    "velocity": 82,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 67.15210884353742,
+    "offset": 67.39359637188208,
+    "duration": 0.24148752834466336,
+    "velocity": 95,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 67.45396825396826,
+    "offset": 67.69545578231292,
+    "duration": 0.24148752834466336,
+    "velocity": 96,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 42,
+    "onset": 67.75582766439909,
+    "offset": 67.92301133786849,
+    "duration": 0.16718367346939544,
+    "velocity": 43,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 67.96480725623583,
+    "offset": 68.11480725623584,
+    "duration": 0.15000000000000568,
+    "velocity": 101,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 68.08090702947845,
+    "offset": 68.23090702947846,
+    "duration": 0.15000000000000568,
+    "velocity": 87,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 68.22022675736962,
+    "offset": 68.37022675736962,
+    "duration": 0.15000000000000568,
+    "velocity": 92,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 68.33632653061224,
+    "offset": 68.48632653061225,
+    "duration": 0.15000000000000568,
+    "velocity": 46,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 68.4756462585034,
+    "offset": 68.62564625850341,
+    "duration": 0.15000000000000568,
+    "velocity": 86,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 68.59174603174603,
+    "offset": 68.74174603174603,
+    "duration": 0.15000000000000568,
+    "velocity": 43,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 68.73106575963719,
+    "offset": 68.8810657596372,
+    "duration": 0.15000000000000568,
+    "velocity": 86,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 68.87038548752834,
+    "offset": 69.02038548752834,
+    "duration": 0.15000000000000568,
+    "velocity": 35,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 68.98648526077098,
+    "offset": 69.22797278911564,
+    "duration": 0.24148752834466336,
+    "velocity": 91,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 69.28834467120181,
+    "offset": 69.49268027210884,
+    "duration": 0.2043356009070294,
+    "velocity": 97,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 69.5437641723356,
+    "offset": 69.74809977324263,
+    "duration": 0.2043356009070294,
+    "velocity": 97,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 69.79918367346939,
+    "offset": 70.02209523809523,
+    "duration": 0.22291156462584638,
+    "velocity": 82,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 70.0778231292517,
+    "offset": 70.28215873015873,
+    "duration": 0.2043356009070294,
+    "velocity": 88,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 70.33324263038548,
+    "offset": 70.53757823129251,
+    "duration": 0.2043356009070294,
+    "velocity": 95,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 70.58866213151927,
+    "offset": 70.81157369614512,
+    "duration": 0.22291156462584638,
+    "velocity": 90,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 70.86730158730158,
+    "offset": 71.07163718820861,
+    "duration": 0.2043356009070294,
+    "velocity": 85,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 71.12272108843537,
+    "offset": 71.3270566893424,
+    "duration": 0.2043356009070294,
+    "velocity": 90,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 71.37814058956916,
+    "offset": 71.56390022675737,
+    "duration": 0.18575963718821242,
+    "velocity": 101,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 71.61034013605442,
+    "offset": 71.85182766439908,
+    "duration": 0.24148752834466336,
+    "velocity": 96,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 71.91219954648525,
+    "offset": 72.11653514739228,
+    "duration": 0.2043356009070294,
+    "velocity": 85,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 72.16761904761904,
+    "offset": 72.35337868480725,
+    "duration": 0.18575963718821242,
+    "velocity": 87,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 72.3998185941043,
+    "offset": 72.60415419501133,
+    "duration": 0.2043356009070294,
+    "velocity": 89,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 72.65523809523809,
+    "offset": 72.82242176870749,
+    "duration": 0.16718367346939544,
+    "velocity": 101,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 72.86421768707483,
+    "offset": 73.10570521541949,
+    "duration": 0.24148752834466336,
+    "velocity": 94,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 73.16607709750566,
+    "offset": 73.38898866213151,
+    "duration": 0.22291156462584638,
+    "velocity": 96,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 73.44471655328798,
+    "offset": 73.649052154195,
+    "duration": 0.2043356009070294,
+    "velocity": 98,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 73.70013605442176,
+    "offset": 73.90447165532879,
+    "duration": 0.2043356009070294,
+    "velocity": 103,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 73.95555555555555,
+    "offset": 74.17846712018141,
+    "duration": 0.2229115646258606,
+    "velocity": 90,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 74.23419501133787,
+    "offset": 74.4385306122449,
+    "duration": 0.2043356009070294,
+    "velocity": 100,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 74.48961451247166,
+    "offset": 74.67537414965987,
+    "duration": 0.18575963718821242,
+    "velocity": 94,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 74.72181405895692,
+    "offset": 74.92614965986395,
+    "duration": 0.2043356009070294,
+    "velocity": 112,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 74.97723356009071,
+    "offset": 75.21872108843537,
+    "duration": 0.24148752834466336,
+    "velocity": 82,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 75.27909297052155,
+    "offset": 75.48342857142858,
+    "duration": 0.2043356009070294,
+    "velocity": 81,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 75.53451247165533,
+    "offset": 75.73884807256236,
+    "duration": 0.2043356009070294,
+    "velocity": 95,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 75.78993197278912,
+    "offset": 75.99426757369615,
+    "duration": 0.2043356009070294,
+    "velocity": 119,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 76.0453514739229,
+    "offset": 76.24968707482994,
+    "duration": 0.2043356009070294,
+    "velocity": 102,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 76.3007709750567,
+    "offset": 76.54225850340136,
+    "duration": 0.24148752834466336,
+    "velocity": 106,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 76.60263038548753,
+    "offset": 76.76981405895692,
+    "duration": 0.16718367346939544,
+    "velocity": 106,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 76.81160997732427,
+    "offset": 77.05309750566893,
+    "duration": 0.24148752834466336,
+    "velocity": 98,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 77.1134693877551,
+    "offset": 77.31780498866213,
+    "duration": 0.2043356009070294,
+    "velocity": 84,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 77.36888888888889,
+    "offset": 77.59180045351474,
+    "duration": 0.22291156462584638,
+    "velocity": 105,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 77.6475283446712,
+    "offset": 77.85186394557823,
+    "duration": 0.2043356009070294,
+    "velocity": 102,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 77.90294784580499,
+    "offset": 78.10728344671202,
+    "duration": 0.2043356009070294,
+    "velocity": 89,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 78.15836734693877,
+    "offset": 78.38127891156462,
+    "duration": 0.22291156462584638,
+    "velocity": 89,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 78.43700680272109,
+    "offset": 78.64134240362812,
+    "duration": 0.2043356009070294,
+    "velocity": 89,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 78.69242630385487,
+    "offset": 78.85960997732427,
+    "duration": 0.16718367346939544,
+    "velocity": 93,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 78.90140589569161,
+    "offset": 79.12431746031746,
+    "duration": 0.22291156462584638,
+    "velocity": 95,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 79.18004535147392,
+    "offset": 79.38438095238095,
+    "duration": 0.2043356009070294,
+    "velocity": 92,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 79.43546485260771,
+    "offset": 79.67695238095237,
+    "duration": 0.24148752834466336,
+    "velocity": 84,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 79.73732426303854,
+    "offset": 79.94165986394557,
+    "duration": 0.2043356009070294,
+    "velocity": 97,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 79.99274376417233,
+    "offset": 80.17850340136054,
+    "duration": 0.18575963718821242,
+    "velocity": 107,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 80.2249433106576,
+    "offset": 80.46643083900226,
+    "duration": 0.24148752834466336,
+    "velocity": 84,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 80.52680272108843,
+    "offset": 80.73113832199546,
+    "duration": 0.2043356009070294,
+    "velocity": 74,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 80.78222222222222,
+    "offset": 80.98655782312925,
+    "duration": 0.2043356009070294,
+    "velocity": 84,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 81.037641723356,
+    "offset": 81.337641723356,
+    "duration": 0.29999999999999716,
+    "velocity": 96,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 81.57170068027212,
+    "offset": 81.77603628117915,
+    "duration": 0.2043356009070294,
+    "velocity": 85,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 81.8271201814059,
+    "offset": 82.03145578231293,
+    "duration": 0.2043356009070294,
+    "velocity": 92,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 82.08253968253969,
+    "offset": 82.28687528344672,
+    "duration": 0.2043356009070294,
+    "velocity": 101,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 82.33795918367348,
+    "offset": 82.52371882086167,
+    "duration": 0.1857596371881982,
+    "velocity": 80,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 82.57015873015872,
+    "offset": 82.8116462585034,
+    "duration": 0.24148752834467757,
+    "velocity": 79,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 82.87201814058957,
+    "offset": 83.09492970521542,
+    "duration": 0.22291156462584638,
+    "velocity": 101,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 38,
+    "onset": 83.15065759637189,
+    "offset": 83.3364172335601,
+    "duration": 0.18575963718821242,
+    "velocity": 111,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 83.38285714285715,
+    "offset": 83.605768707483,
+    "duration": 0.22291156462584638,
+    "velocity": 97,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  },
+  {
+    "pitch": 36,
+    "onset": 83.66149659863946,
+    "offset": 83.96149659863946,
+    "duration": 0.29999999999999716,
+    "velocity": 110,
+    "confidence": 1.0,
+    "stem_label": "drums"
+  }
+]

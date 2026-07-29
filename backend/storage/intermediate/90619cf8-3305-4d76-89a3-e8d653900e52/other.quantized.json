@@ -1,0 +1,7702 @@
+{
+  "tempo_bpm": 160.71428571428572,
+  "stem_label": "other_accompaniment",
+  "time_signature": "4/4",
+  "notes": [
+    {
+      "pitch": 29,
+      "onset_beat": 363.75,
+      "offset_beat": 364.25,
+      "duration_beats": 0.5,
+      "velocity": 54,
+      "confidence": 0.42543965578079224,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 361.25,
+      "offset_beat": 362.25,
+      "duration_beats": 1.0,
+      "velocity": 67,
+      "confidence": 0.5271416902542114,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 53,
+      "onset_beat": 361.25,
+      "offset_beat": 362.5,
+      "duration_beats": 1.25,
+      "velocity": 53,
+      "confidence": 0.42082059383392334,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 49,
+      "onset_beat": 344.75,
+      "offset_beat": 354.25,
+      "duration_beats": 9.5,
+      "velocity": 62,
+      "confidence": 0.48791688680648804,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 342.0,
+      "offset_beat": 359.25,
+      "duration_beats": 17.25,
+      "velocity": 73,
+      "confidence": 0.5756698250770569,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 60,
+      "onset_beat": 341.5,
+      "offset_beat": 342.0,
+      "duration_beats": 0.5,
+      "velocity": 56,
+      "confidence": 0.4413783848285675,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 341.25,
+      "offset_beat": 342.25,
+      "duration_beats": 1.0,
+      "velocity": 66,
+      "confidence": 0.5221825838088989,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 338.5,
+      "offset_beat": 341.25,
+      "duration_beats": 2.75,
+      "velocity": 64,
+      "confidence": 0.5066860914230347,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 60,
+      "onset_beat": 338.25,
+      "offset_beat": 340.5,
+      "duration_beats": 2.25,
+      "velocity": 92,
+      "confidence": 0.7232023477554321,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 87,
+      "onset_beat": 336.25,
+      "offset_beat": 336.75,
+      "duration_beats": 0.5,
+      "velocity": 44,
+      "confidence": 0.3441285490989685,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 99,
+      "onset_beat": 334.0,
+      "offset_beat": 334.75,
+      "duration_beats": 0.75,
+      "velocity": 50,
+      "confidence": 0.39516255259513855,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 97,
+      "onset_beat": 333.25,
+      "offset_beat": 334.0,
+      "duration_beats": 0.75,
+      "velocity": 51,
+      "confidence": 0.4002664387226105,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 99,
+      "onset_beat": 332.25,
+      "offset_beat": 333.25,
+      "duration_beats": 1.0,
+      "velocity": 60,
+      "confidence": 0.47117650508880615,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 330.25,
+      "offset_beat": 334.0,
+      "duration_beats": 3.75,
+      "velocity": 60,
+      "confidence": 0.47242283821105957,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 58,
+      "onset_beat": 330.0,
+      "offset_beat": 334.0,
+      "duration_beats": 4.0,
+      "velocity": 61,
+      "confidence": 0.48061397671699524,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 330.0,
+      "offset_beat": 331.25,
+      "duration_beats": 1.25,
+      "velocity": 86,
+      "confidence": 0.6758213043212891,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 329.0,
+      "offset_beat": 330.0,
+      "duration_beats": 1.0,
+      "velocity": 71,
+      "confidence": 0.5620641708374023,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 97,
+      "onset_beat": 329.0,
+      "offset_beat": 330.25,
+      "duration_beats": 1.25,
+      "velocity": 65,
+      "confidence": 0.5119329690933228,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 92,
+      "onset_beat": 328.25,
+      "offset_beat": 329.25,
+      "duration_beats": 1.0,
+      "velocity": 51,
+      "confidence": 0.39794081449508667,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 65,
+      "onset_beat": 328.0,
+      "offset_beat": 329.0,
+      "duration_beats": 1.0,
+      "velocity": 70,
+      "confidence": 0.5533732175827026,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 53,
+      "onset_beat": 328.0,
+      "offset_beat": 330.25,
+      "duration_beats": 2.25,
+      "velocity": 74,
+      "confidence": 0.584915041923523,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 97,
+      "onset_beat": 327.0,
+      "offset_beat": 328.25,
+      "duration_beats": 1.25,
+      "velocity": 56,
+      "confidence": 0.4437006413936615,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 58,
+      "onset_beat": 327.0,
+      "offset_beat": 328.0,
+      "duration_beats": 1.0,
+      "velocity": 76,
+      "confidence": 0.5976634621620178,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 66,
+      "onset_beat": 326.25,
+      "offset_beat": 327.0,
+      "duration_beats": 0.75,
+      "velocity": 62,
+      "confidence": 0.4865137040615082,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 326.25,
+      "offset_beat": 327.75,
+      "duration_beats": 1.5,
+      "velocity": 74,
+      "confidence": 0.5866132974624634,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 94,
+      "onset_beat": 326.0,
+      "offset_beat": 327.25,
+      "duration_beats": 1.25,
+      "velocity": 54,
+      "confidence": 0.4281279444694519,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 54,
+      "onset_beat": 326.0,
+      "offset_beat": 328.0,
+      "duration_beats": 2.0,
+      "velocity": 75,
+      "confidence": 0.589405357837677,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 97,
+      "onset_beat": 324.0,
+      "offset_beat": 325.25,
+      "duration_beats": 1.25,
+      "velocity": 68,
+      "confidence": 0.5326772928237915,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 324.0,
+      "offset_beat": 326.0,
+      "duration_beats": 2.0,
+      "velocity": 61,
+      "confidence": 0.4767392575740814,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 99,
+      "onset_beat": 323.25,
+      "offset_beat": 324.0,
+      "duration_beats": 0.75,
+      "velocity": 54,
+      "confidence": 0.42880165576934814,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 323.25,
+      "offset_beat": 324.25,
+      "duration_beats": 1.0,
+      "velocity": 64,
+      "confidence": 0.5060015916824341,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 72,
+      "onset_beat": 323.0,
+      "offset_beat": 324.25,
+      "duration_beats": 1.25,
+      "velocity": 72,
+      "confidence": 0.568658709526062,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 322.25,
+      "offset_beat": 323.0,
+      "duration_beats": 0.75,
+      "velocity": 64,
+      "confidence": 0.5067045092582703,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 322.25,
+      "offset_beat": 323.0,
+      "duration_beats": 0.75,
+      "velocity": 73,
+      "confidence": 0.5769187211990356,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 101,
+      "onset_beat": 322.0,
+      "offset_beat": 322.25,
+      "duration_beats": 0.25,
+      "velocity": 50,
+      "confidence": 0.39227065443992615,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 58,
+      "onset_beat": 322.0,
+      "offset_beat": 324.25,
+      "duration_beats": 2.25,
+      "velocity": 77,
+      "confidence": 0.6025124788284302,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 60,
+      "onset_beat": 321.75,
+      "offset_beat": 322.0,
+      "duration_beats": 0.25,
+      "velocity": 72,
+      "confidence": 0.5635313987731934,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 72,
+      "onset_beat": 321.5,
+      "offset_beat": 322.25,
+      "duration_beats": 0.75,
+      "velocity": 59,
+      "confidence": 0.46094149351119995,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 99,
+      "onset_beat": 321.5,
+      "offset_beat": 322.0,
+      "duration_beats": 0.5,
+      "velocity": 48,
+      "confidence": 0.3799688518047333,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 70,
+      "onset_beat": 321.0,
+      "offset_beat": 321.75,
+      "duration_beats": 0.75,
+      "velocity": 58,
+      "confidence": 0.4588368535041809,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 97,
+      "onset_beat": 321.0,
+      "offset_beat": 321.75,
+      "duration_beats": 0.75,
+      "velocity": 67,
+      "confidence": 0.5252586603164673,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 96,
+      "onset_beat": 318.25,
+      "offset_beat": 319.0,
+      "duration_beats": 0.75,
+      "velocity": 45,
+      "confidence": 0.35239556431770325,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 68,
+      "onset_beat": 318.0,
+      "offset_beat": 321.0,
+      "duration_beats": 3.0,
+      "velocity": 83,
+      "confidence": 0.6544938087463379,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 66,
+      "onset_beat": 317.0,
+      "offset_beat": 318.25,
+      "duration_beats": 1.25,
+      "velocity": 65,
+      "confidence": 0.5138043165206909,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 65,
+      "onset_beat": 316.25,
+      "offset_beat": 317.0,
+      "duration_beats": 0.75,
+      "velocity": 84,
+      "confidence": 0.6610883474349976,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 315.25,
+      "offset_beat": 316.5,
+      "duration_beats": 1.25,
+      "velocity": 91,
+      "confidence": 0.7150528430938721,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 313.25,
+      "offset_beat": 318.25,
+      "duration_beats": 5.0,
+      "velocity": 76,
+      "confidence": 0.5982589721679688,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 99,
+      "onset_beat": 310.25,
+      "offset_beat": 311.5,
+      "duration_beats": 1.25,
+      "velocity": 60,
+      "confidence": 0.47289177775382996,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 97,
+      "onset_beat": 309.25,
+      "offset_beat": 310.75,
+      "duration_beats": 1.5,
+      "velocity": 76,
+      "confidence": 0.5996526479721069,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 99,
+      "onset_beat": 308.25,
+      "offset_beat": 309.25,
+      "duration_beats": 1.0,
+      "velocity": 69,
+      "confidence": 0.5431151986122131,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 101,
+      "onset_beat": 307.75,
+      "offset_beat": 308.25,
+      "duration_beats": 0.5,
+      "velocity": 75,
+      "confidence": 0.5935567021369934,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 306.25,
+      "offset_beat": 308.25,
+      "duration_beats": 2.0,
+      "velocity": 67,
+      "confidence": 0.5243667960166931,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 51,
+      "onset_beat": 306.25,
+      "offset_beat": 307.75,
+      "duration_beats": 1.5,
+      "velocity": 58,
+      "confidence": 0.4572422206401825,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 97,
+      "onset_beat": 305.25,
+      "offset_beat": 306.75,
+      "duration_beats": 1.5,
+      "velocity": 74,
+      "confidence": 0.5834648609161377,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 92,
+      "onset_beat": 304.25,
+      "offset_beat": 305.25,
+      "duration_beats": 1.0,
+      "velocity": 58,
+      "confidence": 0.45743343234062195,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 97,
+      "onset_beat": 303.25,
+      "offset_beat": 304.5,
+      "duration_beats": 1.25,
+      "velocity": 81,
+      "confidence": 0.6348694562911987,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 94,
+      "onset_beat": 302.25,
+      "offset_beat": 303.75,
+      "duration_beats": 1.5,
+      "velocity": 66,
+      "confidence": 0.5165495276451111,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 96,
+      "onset_beat": 301.5,
+      "offset_beat": 302.25,
+      "duration_beats": 0.75,
+      "velocity": 68,
+      "confidence": 0.538813591003418,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 97,
+      "onset_beat": 300.25,
+      "offset_beat": 301.5,
+      "duration_beats": 1.25,
+      "velocity": 84,
+      "confidence": 0.6646496057510376,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 99,
+      "onset_beat": 299.5,
+      "offset_beat": 300.25,
+      "duration_beats": 0.75,
+      "velocity": 72,
+      "confidence": 0.568984866142273,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 298.5,
+      "offset_beat": 299.25,
+      "duration_beats": 0.75,
+      "velocity": 62,
+      "confidence": 0.48509836196899414,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 101,
+      "onset_beat": 298.5,
+      "offset_beat": 299.25,
+      "duration_beats": 0.75,
+      "velocity": 66,
+      "confidence": 0.5201038122177124,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 58,
+      "onset_beat": 298.5,
+      "offset_beat": 300.0,
+      "duration_beats": 1.5,
+      "velocity": 64,
+      "confidence": 0.504993736743927,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 99,
+      "onset_beat": 297.75,
+      "offset_beat": 298.75,
+      "duration_beats": 1.0,
+      "velocity": 48,
+      "confidence": 0.3818148672580719,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 97,
+      "onset_beat": 297.25,
+      "offset_beat": 298.0,
+      "duration_beats": 0.75,
+      "velocity": 82,
+      "confidence": 0.6444277763366699,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 96,
+      "onset_beat": 294.5,
+      "offset_beat": 295.75,
+      "duration_beats": 1.25,
+      "velocity": 82,
+      "confidence": 0.6488121747970581,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 77,
+      "onset_beat": 290.75,
+      "offset_beat": 291.75,
+      "duration_beats": 1.0,
+      "velocity": 54,
+      "confidence": 0.42738234996795654,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 49,
+      "onset_beat": 283.25,
+      "offset_beat": 286.25,
+      "duration_beats": 3.0,
+      "velocity": 73,
+      "confidence": 0.5741094350814819,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 65,
+      "onset_beat": 280.25,
+      "offset_beat": 281.0,
+      "duration_beats": 0.75,
+      "velocity": 53,
+      "confidence": 0.41669711470603943,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 280.0,
+      "offset_beat": 287.0,
+      "duration_beats": 7.0,
+      "velocity": 58,
+      "confidence": 0.4602040946483612,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 65,
+      "onset_beat": 279.5,
+      "offset_beat": 280.0,
+      "duration_beats": 0.5,
+      "velocity": 59,
+      "confidence": 0.46829086542129517,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 279.5,
+      "offset_beat": 280.0,
+      "duration_beats": 0.5,
+      "velocity": 57,
+      "confidence": 0.44563382863998413,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 68,
+      "onset_beat": 279.5,
+      "offset_beat": 292.0,
+      "duration_beats": 12.5,
+      "velocity": 68,
+      "confidence": 0.5361064672470093,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 58,
+      "onset_beat": 277.75,
+      "offset_beat": 278.75,
+      "duration_beats": 1.0,
+      "velocity": 47,
+      "confidence": 0.36735785007476807,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 277.5,
+      "offset_beat": 277.75,
+      "duration_beats": 0.25,
+      "velocity": 53,
+      "confidence": 0.4162338078022003,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 274.25,
+      "offset_beat": 279.5,
+      "duration_beats": 5.25,
+      "velocity": 75,
+      "confidence": 0.5911516547203064,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 268.5,
+      "offset_beat": 269.25,
+      "duration_beats": 0.75,
+      "velocity": 49,
+      "confidence": 0.3843323588371277,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 267.5,
+      "offset_beat": 268.25,
+      "duration_beats": 0.75,
+      "velocity": 54,
+      "confidence": 0.42536839842796326,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 267.0,
+      "offset_beat": 267.25,
+      "duration_beats": 0.25,
+      "velocity": 56,
+      "confidence": 0.4387587606906891,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 266.25,
+      "offset_beat": 268.5,
+      "duration_beats": 2.25,
+      "velocity": 77,
+      "confidence": 0.6092944741249084,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 65,
+      "onset_beat": 264.5,
+      "offset_beat": 266.25,
+      "duration_beats": 1.75,
+      "velocity": 91,
+      "confidence": 0.7184621095657349,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 65,
+      "onset_beat": 264.0,
+      "offset_beat": 264.5,
+      "duration_beats": 0.5,
+      "velocity": 90,
+      "confidence": 0.7109683156013489,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 66,
+      "onset_beat": 262.0,
+      "offset_beat": 264.0,
+      "duration_beats": 2.0,
+      "velocity": 82,
+      "confidence": 0.6460832953453064,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 65,
+      "onset_beat": 261.5,
+      "offset_beat": 262.0,
+      "duration_beats": 0.5,
+      "velocity": 88,
+      "confidence": 0.6946172118186951,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 261.0,
+      "offset_beat": 261.25,
+      "duration_beats": 0.25,
+      "velocity": 58,
+      "confidence": 0.4594521224498749,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 261.0,
+      "offset_beat": 261.5,
+      "duration_beats": 0.5,
+      "velocity": 80,
+      "confidence": 0.6307928562164307,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 260.5,
+      "offset_beat": 261.0,
+      "duration_beats": 0.5,
+      "velocity": 62,
+      "confidence": 0.4850581884384155,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 260.25,
+      "offset_beat": 260.5,
+      "duration_beats": 0.25,
+      "velocity": 45,
+      "confidence": 0.3580901026725769,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 260.25,
+      "offset_beat": 260.5,
+      "duration_beats": 0.25,
+      "velocity": 73,
+      "confidence": 0.5710158348083496,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 65,
+      "onset_beat": 260.0,
+      "offset_beat": 260.25,
+      "duration_beats": 0.25,
+      "velocity": 83,
+      "confidence": 0.6544486880302429,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 66,
+      "onset_beat": 259.0,
+      "offset_beat": 259.75,
+      "duration_beats": 0.75,
+      "velocity": 84,
+      "confidence": 0.6639971733093262,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 68,
+      "onset_beat": 258.25,
+      "offset_beat": 259.0,
+      "duration_beats": 0.75,
+      "velocity": 86,
+      "confidence": 0.6779667735099792,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 258.0,
+      "offset_beat": 258.25,
+      "duration_beats": 0.25,
+      "velocity": 46,
+      "confidence": 0.35923516750335693,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 258.0,
+      "offset_beat": 258.25,
+      "duration_beats": 0.25,
+      "velocity": 83,
+      "confidence": 0.6551941633224487,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 257.75,
+      "offset_beat": 258.0,
+      "duration_beats": 0.25,
+      "velocity": 76,
+      "confidence": 0.5959339737892151,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 257.5,
+      "offset_beat": 257.75,
+      "duration_beats": 0.25,
+      "velocity": 83,
+      "confidence": 0.6505940556526184,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 69,
+      "onset_beat": 257.25,
+      "offset_beat": 257.5,
+      "duration_beats": 0.25,
+      "velocity": 75,
+      "confidence": 0.5902103781700134,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 255.5,
+      "offset_beat": 256.25,
+      "duration_beats": 0.75,
+      "velocity": 53,
+      "confidence": 0.41680634021759033,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 255.5,
+      "offset_beat": 257.5,
+      "duration_beats": 2.0,
+      "velocity": 86,
+      "confidence": 0.6771137714385986,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 255.0,
+      "offset_beat": 255.25,
+      "duration_beats": 0.25,
+      "velocity": 71,
+      "confidence": 0.5609655976295471,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 255.0,
+      "offset_beat": 255.25,
+      "duration_beats": 0.25,
+      "velocity": 77,
+      "confidence": 0.6080869436264038,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 78,
+      "onset_beat": 254.0,
+      "offset_beat": 254.25,
+      "duration_beats": 0.25,
+      "velocity": 61,
+      "confidence": 0.48018741607666016,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 66,
+      "onset_beat": 254.0,
+      "offset_beat": 254.5,
+      "duration_beats": 0.5,
+      "velocity": 78,
+      "confidence": 0.61052405834198,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 68,
+      "onset_beat": 253.5,
+      "offset_beat": 254.0,
+      "duration_beats": 0.5,
+      "velocity": 89,
+      "confidence": 0.699643611907959,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 253.25,
+      "offset_beat": 253.5,
+      "duration_beats": 0.25,
+      "velocity": 72,
+      "confidence": 0.5638074278831482,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 253.0,
+      "offset_beat": 253.25,
+      "duration_beats": 0.25,
+      "velocity": 71,
+      "confidence": 0.5562810301780701,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 253.0,
+      "offset_beat": 253.25,
+      "duration_beats": 0.25,
+      "velocity": 61,
+      "confidence": 0.4811919927597046,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 68,
+      "onset_beat": 252.5,
+      "offset_beat": 253.0,
+      "duration_beats": 0.5,
+      "velocity": 74,
+      "confidence": 0.5840888023376465,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 252.5,
+      "offset_beat": 253.0,
+      "duration_beats": 0.5,
+      "velocity": 55,
+      "confidence": 0.4321008026599884,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 252.5,
+      "offset_beat": 253.0,
+      "duration_beats": 0.5,
+      "velocity": 50,
+      "confidence": 0.3937365710735321,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 251.75,
+      "offset_beat": 252.25,
+      "duration_beats": 0.5,
+      "velocity": 78,
+      "confidence": 0.6104415655136108,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 251.25,
+      "offset_beat": 252.0,
+      "duration_beats": 0.75,
+      "velocity": 68,
+      "confidence": 0.5363359451293945,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 65,
+      "onset_beat": 251.0,
+      "offset_beat": 251.25,
+      "duration_beats": 0.25,
+      "velocity": 84,
+      "confidence": 0.6596470475196838,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 250.5,
+      "offset_beat": 250.75,
+      "duration_beats": 0.25,
+      "velocity": 65,
+      "confidence": 0.5125376582145691,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 250.5,
+      "offset_beat": 250.75,
+      "duration_beats": 0.25,
+      "velocity": 71,
+      "confidence": 0.5574362277984619,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 65,
+      "onset_beat": 250.0,
+      "offset_beat": 250.25,
+      "duration_beats": 0.25,
+      "velocity": 81,
+      "confidence": 0.6358163952827454,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 66,
+      "onset_beat": 249.5,
+      "offset_beat": 250.0,
+      "duration_beats": 0.5,
+      "velocity": 97,
+      "confidence": 0.7626350522041321,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 78,
+      "onset_beat": 249.5,
+      "offset_beat": 249.75,
+      "duration_beats": 0.25,
+      "velocity": 54,
+      "confidence": 0.42468026280403137,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 68,
+      "onset_beat": 249.0,
+      "offset_beat": 249.5,
+      "duration_beats": 0.5,
+      "velocity": 81,
+      "confidence": 0.6404806971549988,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 248.25,
+      "offset_beat": 248.75,
+      "duration_beats": 0.5,
+      "velocity": 69,
+      "confidence": 0.5451669692993164,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 248.0,
+      "offset_beat": 248.5,
+      "duration_beats": 0.5,
+      "velocity": 58,
+      "confidence": 0.45977699756622314,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 248.0,
+      "offset_beat": 248.5,
+      "duration_beats": 0.5,
+      "velocity": 67,
+      "confidence": 0.5238934755325317,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 245.75,
+      "offset_beat": 246.0,
+      "duration_beats": 0.25,
+      "velocity": 53,
+      "confidence": 0.4142770767211914,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 245.5,
+      "offset_beat": 245.75,
+      "duration_beats": 0.25,
+      "velocity": 56,
+      "confidence": 0.44101986289024353,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 92,
+      "onset_beat": 245.0,
+      "offset_beat": 245.5,
+      "duration_beats": 0.5,
+      "velocity": 56,
+      "confidence": 0.44019967317581177,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 92,
+      "onset_beat": 244.5,
+      "offset_beat": 245.0,
+      "duration_beats": 0.5,
+      "velocity": 50,
+      "confidence": 0.39517903327941895,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 87,
+      "onset_beat": 243.5,
+      "offset_beat": 243.75,
+      "duration_beats": 0.25,
+      "velocity": 63,
+      "confidence": 0.49596813321113586,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 90,
+      "onset_beat": 243.25,
+      "offset_beat": 243.5,
+      "duration_beats": 0.25,
+      "velocity": 64,
+      "confidence": 0.5033122301101685,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 89,
+      "onset_beat": 242.0,
+      "offset_beat": 242.5,
+      "duration_beats": 0.5,
+      "velocity": 44,
+      "confidence": 0.34928464889526367,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 82,
+      "onset_beat": 241.75,
+      "offset_beat": 242.0,
+      "duration_beats": 0.25,
+      "velocity": 60,
+      "confidence": 0.47382262349128723,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 90,
+      "onset_beat": 241.5,
+      "offset_beat": 241.75,
+      "duration_beats": 0.25,
+      "velocity": 57,
+      "confidence": 0.44819319248199463,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 58,
+      "onset_beat": 240.75,
+      "offset_beat": 241.5,
+      "duration_beats": 0.75,
+      "velocity": 53,
+      "confidence": 0.415494441986084,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 239.5,
+      "offset_beat": 239.75,
+      "duration_beats": 0.25,
+      "velocity": 54,
+      "confidence": 0.4233529269695282,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 239.25,
+      "offset_beat": 239.75,
+      "duration_beats": 0.5,
+      "velocity": 47,
+      "confidence": 0.3695093095302582,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 84,
+      "onset_beat": 239.0,
+      "offset_beat": 239.25,
+      "duration_beats": 0.25,
+      "velocity": 67,
+      "confidence": 0.5236620903015137,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 237.75,
+      "offset_beat": 238.0,
+      "duration_beats": 0.25,
+      "velocity": 57,
+      "confidence": 0.4479154944419861,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 84,
+      "onset_beat": 237.25,
+      "offset_beat": 237.5,
+      "duration_beats": 0.25,
+      "velocity": 77,
+      "confidence": 0.6082662343978882,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 84,
+      "onset_beat": 237.0,
+      "offset_beat": 237.25,
+      "duration_beats": 0.25,
+      "velocity": 66,
+      "confidence": 0.516125500202179,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 84,
+      "onset_beat": 235.75,
+      "offset_beat": 236.25,
+      "duration_beats": 0.5,
+      "velocity": 72,
+      "confidence": 0.5668928027153015,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 235.25,
+      "offset_beat": 235.5,
+      "duration_beats": 0.25,
+      "velocity": 59,
+      "confidence": 0.46420279145240784,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 84,
+      "onset_beat": 235.25,
+      "offset_beat": 235.75,
+      "duration_beats": 0.5,
+      "velocity": 60,
+      "confidence": 0.47333478927612305,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 234.75,
+      "offset_beat": 235.0,
+      "duration_beats": 0.25,
+      "velocity": 45,
+      "confidence": 0.35302621126174927,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 87,
+      "onset_beat": 234.5,
+      "offset_beat": 235.25,
+      "duration_beats": 0.75,
+      "velocity": 68,
+      "confidence": 0.5385589599609375,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 84,
+      "onset_beat": 234.25,
+      "offset_beat": 234.5,
+      "duration_beats": 0.25,
+      "velocity": 68,
+      "confidence": 0.5389158725738525,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 87,
+      "onset_beat": 233.75,
+      "offset_beat": 234.25,
+      "duration_beats": 0.5,
+      "velocity": 59,
+      "confidence": 0.46300560235977173,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 233.75,
+      "offset_beat": 234.0,
+      "duration_beats": 0.25,
+      "velocity": 59,
+      "confidence": 0.4668174684047699,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 232.75,
+      "offset_beat": 233.25,
+      "duration_beats": 0.5,
+      "velocity": 45,
+      "confidence": 0.35809025168418884,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 77,
+      "onset_beat": 232.25,
+      "offset_beat": 232.5,
+      "duration_beats": 0.25,
+      "velocity": 66,
+      "confidence": 0.5167162418365479,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 89,
+      "onset_beat": 232.0,
+      "offset_beat": 232.25,
+      "duration_beats": 0.25,
+      "velocity": 56,
+      "confidence": 0.4432857036590576,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 231.5,
+      "offset_beat": 232.25,
+      "duration_beats": 0.75,
+      "velocity": 62,
+      "confidence": 0.48682790994644165,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 84,
+      "onset_beat": 231.0,
+      "offset_beat": 231.25,
+      "duration_beats": 0.25,
+      "velocity": 67,
+      "confidence": 0.5286563634872437,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 84,
+      "onset_beat": 230.25,
+      "offset_beat": 230.5,
+      "duration_beats": 0.25,
+      "velocity": 61,
+      "confidence": 0.4813208281993866,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 92,
+      "onset_beat": 229.5,
+      "offset_beat": 230.0,
+      "duration_beats": 0.5,
+      "velocity": 58,
+      "confidence": 0.45887142419815063,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 90,
+      "onset_beat": 229.5,
+      "offset_beat": 229.75,
+      "duration_beats": 0.25,
+      "velocity": 54,
+      "confidence": 0.4289383292198181,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 229.0,
+      "offset_beat": 229.25,
+      "duration_beats": 0.25,
+      "velocity": 61,
+      "confidence": 0.4827415943145752,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 87,
+      "onset_beat": 229.0,
+      "offset_beat": 229.5,
+      "duration_beats": 0.5,
+      "velocity": 46,
+      "confidence": 0.3610086739063263,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 92,
+      "onset_beat": 227.75,
+      "offset_beat": 228.0,
+      "duration_beats": 0.25,
+      "velocity": 45,
+      "confidence": 0.3548826277256012,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 90,
+      "onset_beat": 227.5,
+      "offset_beat": 228.0,
+      "duration_beats": 0.5,
+      "velocity": 50,
+      "confidence": 0.3911341726779938,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 87,
+      "onset_beat": 227.0,
+      "offset_beat": 227.25,
+      "duration_beats": 0.25,
+      "velocity": 58,
+      "confidence": 0.45800939202308655,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 90,
+      "onset_beat": 226.75,
+      "offset_beat": 227.0,
+      "duration_beats": 0.25,
+      "velocity": 59,
+      "confidence": 0.4665067195892334,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 90,
+      "onset_beat": 226.5,
+      "offset_beat": 226.75,
+      "duration_beats": 0.25,
+      "velocity": 46,
+      "confidence": 0.36519479751586914,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 78,
+      "onset_beat": 226.25,
+      "offset_beat": 226.5,
+      "duration_beats": 0.25,
+      "velocity": 64,
+      "confidence": 0.502897322177887,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 82,
+      "onset_beat": 226.25,
+      "offset_beat": 226.5,
+      "duration_beats": 0.25,
+      "velocity": 63,
+      "confidence": 0.49735963344573975,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 87,
+      "onset_beat": 226.0,
+      "offset_beat": 226.25,
+      "duration_beats": 0.25,
+      "velocity": 60,
+      "confidence": 0.4700165092945099,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 78,
+      "onset_beat": 225.25,
+      "offset_beat": 225.5,
+      "duration_beats": 0.25,
+      "velocity": 67,
+      "confidence": 0.5272311568260193,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 82,
+      "onset_beat": 225.25,
+      "offset_beat": 225.5,
+      "duration_beats": 0.25,
+      "velocity": 65,
+      "confidence": 0.5091400146484375,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 225.0,
+      "offset_beat": 225.25,
+      "duration_beats": 0.25,
+      "velocity": 54,
+      "confidence": 0.4280698001384735,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 90,
+      "onset_beat": 224.75,
+      "offset_beat": 225.0,
+      "duration_beats": 0.25,
+      "velocity": 55,
+      "confidence": 0.42994800209999084,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 90,
+      "onset_beat": 224.5,
+      "offset_beat": 224.75,
+      "duration_beats": 0.25,
+      "velocity": 44,
+      "confidence": 0.3495287001132965,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 223.0,
+      "offset_beat": 223.25,
+      "duration_beats": 0.25,
+      "velocity": 58,
+      "confidence": 0.45460546016693115,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 222.25,
+      "offset_beat": 223.0,
+      "duration_beats": 0.75,
+      "velocity": 56,
+      "confidence": 0.43750762939453125,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 84,
+      "onset_beat": 221.5,
+      "offset_beat": 221.75,
+      "duration_beats": 0.25,
+      "velocity": 44,
+      "confidence": 0.34928882122039795,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 220.75,
+      "offset_beat": 221.0,
+      "duration_beats": 0.25,
+      "velocity": 47,
+      "confidence": 0.368252694606781,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 219.5,
+      "offset_beat": 220.5,
+      "duration_beats": 1.0,
+      "velocity": 58,
+      "confidence": 0.4548427164554596,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 219.25,
+      "offset_beat": 219.5,
+      "duration_beats": 0.25,
+      "velocity": 56,
+      "confidence": 0.44300076365470886,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 84,
+      "onset_beat": 219.0,
+      "offset_beat": 219.25,
+      "duration_beats": 0.25,
+      "velocity": 68,
+      "confidence": 0.5359434485435486,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 87,
+      "onset_beat": 218.75,
+      "offset_beat": 219.0,
+      "duration_beats": 0.25,
+      "velocity": 48,
+      "confidence": 0.3759816288948059,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 77,
+      "onset_beat": 218.25,
+      "offset_beat": 218.5,
+      "duration_beats": 0.25,
+      "velocity": 74,
+      "confidence": 0.5854573845863342,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 218.25,
+      "offset_beat": 218.5,
+      "duration_beats": 0.25,
+      "velocity": 59,
+      "confidence": 0.4630206525325775,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 84,
+      "onset_beat": 218.0,
+      "offset_beat": 218.5,
+      "duration_beats": 0.5,
+      "velocity": 54,
+      "confidence": 0.42273202538490295,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 217.5,
+      "offset_beat": 218.0,
+      "duration_beats": 0.5,
+      "velocity": 56,
+      "confidence": 0.4428569972515106,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 87,
+      "onset_beat": 217.5,
+      "offset_beat": 218.0,
+      "duration_beats": 0.5,
+      "velocity": 48,
+      "confidence": 0.381632000207901,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 217.0,
+      "offset_beat": 217.25,
+      "duration_beats": 0.25,
+      "velocity": 65,
+      "confidence": 0.5126926898956299,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 84,
+      "onset_beat": 216.5,
+      "offset_beat": 217.0,
+      "duration_beats": 0.5,
+      "velocity": 47,
+      "confidence": 0.37200915813446045,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 216.0,
+      "offset_beat": 216.5,
+      "duration_beats": 0.5,
+      "velocity": 54,
+      "confidence": 0.4275784194469452,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 77,
+      "onset_beat": 216.0,
+      "offset_beat": 216.5,
+      "duration_beats": 0.5,
+      "velocity": 59,
+      "confidence": 0.46588006615638733,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 216.0,
+      "offset_beat": 216.25,
+      "duration_beats": 0.25,
+      "velocity": 70,
+      "confidence": 0.5511589646339417,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 198.5,
+      "offset_beat": 198.75,
+      "duration_beats": 0.25,
+      "velocity": 57,
+      "confidence": 0.45190849900245667,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 196.25,
+      "offset_beat": 197.25,
+      "duration_beats": 1.0,
+      "velocity": 77,
+      "confidence": 0.6059283018112183,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 196.0,
+      "offset_beat": 196.25,
+      "duration_beats": 0.25,
+      "velocity": 60,
+      "confidence": 0.47516554594039917,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 70,
+      "onset_beat": 196.0,
+      "offset_beat": 196.25,
+      "duration_beats": 0.25,
+      "velocity": 48,
+      "confidence": 0.37722861766815186,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 68,
+      "onset_beat": 192.25,
+      "offset_beat": 192.75,
+      "duration_beats": 0.5,
+      "velocity": 64,
+      "confidence": 0.5002421736717224,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 191.5,
+      "offset_beat": 192.0,
+      "duration_beats": 0.5,
+      "velocity": 48,
+      "confidence": 0.3742983639240265,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 191.5,
+      "offset_beat": 195.75,
+      "duration_beats": 4.25,
+      "velocity": 72,
+      "confidence": 0.568561315536499,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 68,
+      "onset_beat": 191.5,
+      "offset_beat": 191.75,
+      "duration_beats": 0.25,
+      "velocity": 62,
+      "confidence": 0.49169105291366577,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 191.5,
+      "offset_beat": 192.25,
+      "duration_beats": 0.75,
+      "velocity": 46,
+      "confidence": 0.35961848497390747,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 191.25,
+      "offset_beat": 191.5,
+      "duration_beats": 0.25,
+      "velocity": 45,
+      "confidence": 0.351558119058609,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 95,
+      "onset_beat": 189.0,
+      "offset_beat": 189.5,
+      "duration_beats": 0.5,
+      "velocity": 47,
+      "confidence": 0.3710290491580963,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 76,
+      "onset_beat": 189.0,
+      "offset_beat": 190.75,
+      "duration_beats": 1.75,
+      "velocity": 51,
+      "confidence": 0.39856046438217163,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 189.0,
+      "offset_beat": 190.25,
+      "duration_beats": 1.25,
+      "velocity": 66,
+      "confidence": 0.5199832916259766,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 64,
+      "onset_beat": 189.0,
+      "offset_beat": 189.75,
+      "duration_beats": 0.75,
+      "velocity": 57,
+      "confidence": 0.44554612040519714,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 59,
+      "onset_beat": 189.0,
+      "offset_beat": 190.25,
+      "duration_beats": 1.25,
+      "velocity": 44,
+      "confidence": 0.34508633613586426,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 187.0,
+      "offset_beat": 187.5,
+      "duration_beats": 0.5,
+      "velocity": 58,
+      "confidence": 0.4544889032840729,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 187.0,
+      "offset_beat": 187.25,
+      "duration_beats": 0.25,
+      "velocity": 67,
+      "confidence": 0.5303458571434021,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 64,
+      "onset_beat": 187.0,
+      "offset_beat": 187.25,
+      "duration_beats": 0.25,
+      "velocity": 80,
+      "confidence": 0.6286227703094482,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 68,
+      "onset_beat": 186.0,
+      "offset_beat": 186.25,
+      "duration_beats": 0.25,
+      "velocity": 70,
+      "confidence": 0.5523544549942017,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 185.0,
+      "offset_beat": 186.5,
+      "duration_beats": 1.5,
+      "velocity": 65,
+      "confidence": 0.5132812261581421,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 185.0,
+      "offset_beat": 186.0,
+      "duration_beats": 1.0,
+      "velocity": 54,
+      "confidence": 0.4262481927871704,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 68,
+      "onset_beat": 185.0,
+      "offset_beat": 185.25,
+      "duration_beats": 0.25,
+      "velocity": 58,
+      "confidence": 0.4603562355041504,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 184.0,
+      "offset_beat": 184.25,
+      "duration_beats": 0.25,
+      "velocity": 75,
+      "confidence": 0.5893500447273254,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 182.25,
+      "offset_beat": 182.5,
+      "duration_beats": 0.25,
+      "velocity": 66,
+      "confidence": 0.5225290060043335,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 182.0,
+      "offset_beat": 182.25,
+      "duration_beats": 0.25,
+      "velocity": 85,
+      "confidence": 0.6730431914329529,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 70,
+      "onset_beat": 181.75,
+      "offset_beat": 182.0,
+      "duration_beats": 0.25,
+      "velocity": 70,
+      "confidence": 0.5516943335533142,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 180.25,
+      "offset_beat": 180.75,
+      "duration_beats": 0.5,
+      "velocity": 56,
+      "confidence": 0.4427555203437805,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 70,
+      "onset_beat": 180.0,
+      "offset_beat": 180.25,
+      "duration_beats": 0.25,
+      "velocity": 79,
+      "confidence": 0.6231154203414917,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 179.25,
+      "offset_beat": 180.0,
+      "duration_beats": 0.75,
+      "velocity": 62,
+      "confidence": 0.49107083678245544,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 177.0,
+      "offset_beat": 177.25,
+      "duration_beats": 0.25,
+      "velocity": 67,
+      "confidence": 0.5279754400253296,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 176.0,
+      "offset_beat": 176.25,
+      "duration_beats": 0.25,
+      "velocity": 77,
+      "confidence": 0.604221522808075,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 84,
+      "onset_beat": 174.5,
+      "offset_beat": 174.75,
+      "duration_beats": 0.25,
+      "velocity": 63,
+      "confidence": 0.4958261549472809,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 172.25,
+      "offset_beat": 172.5,
+      "duration_beats": 0.25,
+      "velocity": 68,
+      "confidence": 0.5354763865470886,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 68,
+      "onset_beat": 172.0,
+      "offset_beat": 172.25,
+      "duration_beats": 0.25,
+      "velocity": 78,
+      "confidence": 0.6161209344863892,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 68,
+      "onset_beat": 171.5,
+      "offset_beat": 171.75,
+      "duration_beats": 0.25,
+      "velocity": 66,
+      "confidence": 0.518528163433075,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 68,
+      "onset_beat": 170.0,
+      "offset_beat": 170.25,
+      "duration_beats": 0.25,
+      "velocity": 83,
+      "confidence": 0.6550352573394775,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 68,
+      "onset_beat": 169.5,
+      "offset_beat": 170.0,
+      "duration_beats": 0.5,
+      "velocity": 74,
+      "confidence": 0.5856506824493408,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 68,
+      "onset_beat": 169.0,
+      "offset_beat": 169.25,
+      "duration_beats": 0.25,
+      "velocity": 87,
+      "confidence": 0.6827254295349121,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 168.5,
+      "offset_beat": 168.75,
+      "duration_beats": 0.25,
+      "velocity": 69,
+      "confidence": 0.5457190275192261,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 167.0,
+      "offset_beat": 167.25,
+      "duration_beats": 0.25,
+      "velocity": 71,
+      "confidence": 0.5577143430709839,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 164.5,
+      "offset_beat": 164.75,
+      "duration_beats": 0.25,
+      "velocity": 82,
+      "confidence": 0.6453902125358582,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 79,
+      "onset_beat": 162.75,
+      "offset_beat": 163.0,
+      "duration_beats": 0.25,
+      "velocity": 67,
+      "confidence": 0.5313109755516052,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 66,
+      "onset_beat": 160.75,
+      "offset_beat": 161.0,
+      "duration_beats": 0.25,
+      "velocity": 60,
+      "confidence": 0.4728005826473236,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 156.5,
+      "offset_beat": 156.75,
+      "duration_beats": 0.25,
+      "velocity": 69,
+      "confidence": 0.5415229797363281,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 153.5,
+      "offset_beat": 153.75,
+      "duration_beats": 0.25,
+      "velocity": 66,
+      "confidence": 0.5198226571083069,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 152.75,
+      "offset_beat": 154.0,
+      "duration_beats": 1.25,
+      "velocity": 88,
+      "confidence": 0.6905444860458374,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 152.25,
+      "offset_beat": 152.5,
+      "duration_beats": 0.25,
+      "velocity": 74,
+      "confidence": 0.5827997922897339,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 66,
+      "onset_beat": 152.0,
+      "offset_beat": 152.25,
+      "duration_beats": 0.25,
+      "velocity": 45,
+      "confidence": 0.3544120192527771,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 54,
+      "onset_beat": 152.0,
+      "offset_beat": 152.25,
+      "duration_beats": 0.25,
+      "velocity": 67,
+      "confidence": 0.530306339263916,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 151.5,
+      "offset_beat": 151.75,
+      "duration_beats": 0.25,
+      "velocity": 66,
+      "confidence": 0.5204770565032959,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 151.25,
+      "offset_beat": 151.5,
+      "duration_beats": 0.25,
+      "velocity": 68,
+      "confidence": 0.5357915163040161,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 89,
+      "onset_beat": 148.5,
+      "offset_beat": 148.75,
+      "duration_beats": 0.25,
+      "velocity": 51,
+      "confidence": 0.40385866165161133,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 146.5,
+      "offset_beat": 146.75,
+      "duration_beats": 0.25,
+      "velocity": 51,
+      "confidence": 0.3997921347618103,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 144.25,
+      "offset_beat": 144.5,
+      "duration_beats": 0.25,
+      "velocity": 55,
+      "confidence": 0.43128952383995056,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 90,
+      "onset_beat": 144.0,
+      "offset_beat": 144.25,
+      "duration_beats": 0.25,
+      "velocity": 72,
+      "confidence": 0.5680669546127319,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 90,
+      "onset_beat": 143.75,
+      "offset_beat": 144.0,
+      "duration_beats": 0.25,
+      "velocity": 65,
+      "confidence": 0.5127158164978027,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 88,
+      "onset_beat": 143.5,
+      "offset_beat": 144.0,
+      "duration_beats": 0.5,
+      "velocity": 56,
+      "confidence": 0.4415028691291809,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 143.25,
+      "offset_beat": 143.5,
+      "duration_beats": 0.25,
+      "velocity": 62,
+      "confidence": 0.4898795783519745,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 90,
+      "onset_beat": 142.75,
+      "offset_beat": 143.25,
+      "duration_beats": 0.5,
+      "velocity": 59,
+      "confidence": 0.4632445275783539,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 88,
+      "onset_beat": 142.5,
+      "offset_beat": 143.0,
+      "duration_beats": 0.5,
+      "velocity": 59,
+      "confidence": 0.462066650390625,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 76,
+      "onset_beat": 142.25,
+      "offset_beat": 142.5,
+      "duration_beats": 0.25,
+      "velocity": 65,
+      "confidence": 0.5122488737106323,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 142.25,
+      "offset_beat": 142.5,
+      "duration_beats": 0.25,
+      "velocity": 76,
+      "confidence": 0.5949239134788513,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 142.0,
+      "offset_beat": 142.25,
+      "duration_beats": 0.25,
+      "velocity": 52,
+      "confidence": 0.4060510993003845,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 88,
+      "onset_beat": 141.5,
+      "offset_beat": 142.0,
+      "duration_beats": 0.5,
+      "velocity": 58,
+      "confidence": 0.45649850368499756,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 76,
+      "onset_beat": 141.25,
+      "offset_beat": 141.5,
+      "duration_beats": 0.25,
+      "velocity": 60,
+      "confidence": 0.471059113740921,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 141.0,
+      "offset_beat": 141.25,
+      "duration_beats": 0.25,
+      "velocity": 44,
+      "confidence": 0.3491385877132416,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 88,
+      "onset_beat": 140.5,
+      "offset_beat": 141.25,
+      "duration_beats": 0.75,
+      "velocity": 54,
+      "confidence": 0.42784780263900757,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 76,
+      "onset_beat": 140.25,
+      "offset_beat": 140.75,
+      "duration_beats": 0.5,
+      "velocity": 60,
+      "confidence": 0.4723735749721527,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 140.25,
+      "offset_beat": 140.5,
+      "duration_beats": 0.25,
+      "velocity": 65,
+      "confidence": 0.5131360292434692,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 139.75,
+      "offset_beat": 140.25,
+      "duration_beats": 0.5,
+      "velocity": 48,
+      "confidence": 0.375142902135849,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 88,
+      "onset_beat": 139.5,
+      "offset_beat": 140.25,
+      "duration_beats": 0.75,
+      "velocity": 70,
+      "confidence": 0.5505028963088989,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 76,
+      "onset_beat": 139.25,
+      "offset_beat": 139.5,
+      "duration_beats": 0.25,
+      "velocity": 76,
+      "confidence": 0.5999860167503357,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 139.0,
+      "offset_beat": 139.25,
+      "duration_beats": 0.25,
+      "velocity": 52,
+      "confidence": 0.4060796797275543,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 88,
+      "onset_beat": 139.0,
+      "offset_beat": 139.25,
+      "duration_beats": 0.25,
+      "velocity": 65,
+      "confidence": 0.5095522403717041,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 88,
+      "onset_beat": 138.75,
+      "offset_beat": 139.0,
+      "duration_beats": 0.25,
+      "velocity": 61,
+      "confidence": 0.47749876976013184,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 88,
+      "onset_beat": 138.5,
+      "offset_beat": 138.75,
+      "duration_beats": 0.25,
+      "velocity": 45,
+      "confidence": 0.35809987783432007,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 138.0,
+      "offset_beat": 138.5,
+      "duration_beats": 0.5,
+      "velocity": 51,
+      "confidence": 0.4011771082878113,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 137.5,
+      "offset_beat": 137.75,
+      "duration_beats": 0.25,
+      "velocity": 50,
+      "confidence": 0.3966595232486725,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 137.25,
+      "offset_beat": 137.5,
+      "duration_beats": 0.25,
+      "velocity": 57,
+      "confidence": 0.4473993480205536,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 136.5,
+      "offset_beat": 137.0,
+      "duration_beats": 0.5,
+      "velocity": 57,
+      "confidence": 0.4456765949726105,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 136.25,
+      "offset_beat": 136.5,
+      "duration_beats": 0.25,
+      "velocity": 67,
+      "confidence": 0.5252969861030579,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 136.0,
+      "offset_beat": 136.5,
+      "duration_beats": 0.5,
+      "velocity": 53,
+      "confidence": 0.42113181948661804,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 135.5,
+      "offset_beat": 136.0,
+      "duration_beats": 0.5,
+      "velocity": 65,
+      "confidence": 0.515227198600769,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 135.25,
+      "offset_beat": 135.75,
+      "duration_beats": 0.5,
+      "velocity": 69,
+      "confidence": 0.5408205986022949,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 135.25,
+      "offset_beat": 135.5,
+      "duration_beats": 0.25,
+      "velocity": 71,
+      "confidence": 0.5612438917160034,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 135.0,
+      "offset_beat": 135.5,
+      "duration_beats": 0.5,
+      "velocity": 64,
+      "confidence": 0.5046128034591675,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 135.0,
+      "offset_beat": 135.25,
+      "duration_beats": 0.25,
+      "velocity": 50,
+      "confidence": 0.3936893939971924,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 133.5,
+      "offset_beat": 134.0,
+      "duration_beats": 0.5,
+      "velocity": 59,
+      "confidence": 0.4682084918022156,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 133.5,
+      "offset_beat": 134.0,
+      "duration_beats": 0.5,
+      "velocity": 58,
+      "confidence": 0.45476213097572327,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 132.75,
+      "offset_beat": 133.0,
+      "duration_beats": 0.25,
+      "velocity": 72,
+      "confidence": 0.5690783262252808,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 132.5,
+      "offset_beat": 132.75,
+      "duration_beats": 0.25,
+      "velocity": 68,
+      "confidence": 0.5363348722457886,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 132.5,
+      "offset_beat": 133.25,
+      "duration_beats": 0.75,
+      "velocity": 70,
+      "confidence": 0.5506102442741394,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 132.25,
+      "offset_beat": 132.5,
+      "duration_beats": 0.25,
+      "velocity": 66,
+      "confidence": 0.5165737867355347,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 78,
+      "onset_beat": 132.0,
+      "offset_beat": 132.25,
+      "duration_beats": 0.25,
+      "velocity": 70,
+      "confidence": 0.5475243926048279,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 82,
+      "onset_beat": 131.75,
+      "offset_beat": 132.0,
+      "duration_beats": 0.25,
+      "velocity": 78,
+      "confidence": 0.6144348382949829,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 82,
+      "onset_beat": 131.5,
+      "offset_beat": 131.75,
+      "duration_beats": 0.25,
+      "velocity": 64,
+      "confidence": 0.5053893327713013,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 59,
+      "onset_beat": 131.25,
+      "offset_beat": 131.5,
+      "duration_beats": 0.25,
+      "velocity": 56,
+      "confidence": 0.4397555887699127,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 131.25,
+      "offset_beat": 131.5,
+      "duration_beats": 0.25,
+      "velocity": 66,
+      "confidence": 0.5185254812240601,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 131.0,
+      "offset_beat": 131.25,
+      "duration_beats": 0.25,
+      "velocity": 56,
+      "confidence": 0.43733832240104675,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 130.75,
+      "offset_beat": 131.0,
+      "duration_beats": 0.25,
+      "velocity": 54,
+      "confidence": 0.4232514798641205,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 130.5,
+      "offset_beat": 130.75,
+      "duration_beats": 0.25,
+      "velocity": 46,
+      "confidence": 0.36020350456237793,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 129.75,
+      "offset_beat": 130.5,
+      "duration_beats": 0.75,
+      "velocity": 48,
+      "confidence": 0.37799155712127686,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 78,
+      "onset_beat": 129.25,
+      "offset_beat": 129.75,
+      "duration_beats": 0.5,
+      "velocity": 76,
+      "confidence": 0.5981389880180359,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 88,
+      "onset_beat": 128.5,
+      "offset_beat": 129.0,
+      "duration_beats": 0.5,
+      "velocity": 66,
+      "confidence": 0.5210322141647339,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 88,
+      "onset_beat": 127.75,
+      "offset_beat": 128.0,
+      "duration_beats": 0.25,
+      "velocity": 72,
+      "confidence": 0.5687990784645081,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 88,
+      "onset_beat": 127.5,
+      "offset_beat": 127.75,
+      "duration_beats": 0.25,
+      "velocity": 54,
+      "confidence": 0.42884936928749084,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 127.25,
+      "offset_beat": 127.5,
+      "duration_beats": 0.25,
+      "velocity": 69,
+      "confidence": 0.5468825697898865,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 90,
+      "onset_beat": 126.75,
+      "offset_beat": 129.25,
+      "duration_beats": 2.5,
+      "velocity": 65,
+      "confidence": 0.5106648802757263,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 88,
+      "onset_beat": 126.5,
+      "offset_beat": 127.0,
+      "duration_beats": 0.5,
+      "velocity": 63,
+      "confidence": 0.4948292672634125,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 90,
+      "onset_beat": 126.5,
+      "offset_beat": 126.75,
+      "duration_beats": 0.25,
+      "velocity": 61,
+      "confidence": 0.47897446155548096,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 126.25,
+      "offset_beat": 126.5,
+      "duration_beats": 0.25,
+      "velocity": 70,
+      "confidence": 0.5515716671943665,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 88,
+      "onset_beat": 125.75,
+      "offset_beat": 126.0,
+      "duration_beats": 0.25,
+      "velocity": 65,
+      "confidence": 0.5080360770225525,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 88,
+      "onset_beat": 125.5,
+      "offset_beat": 125.75,
+      "duration_beats": 0.25,
+      "velocity": 57,
+      "confidence": 0.4472643733024597,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 76,
+      "onset_beat": 125.25,
+      "offset_beat": 125.75,
+      "duration_beats": 0.5,
+      "velocity": 57,
+      "confidence": 0.4522196650505066,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 125.25,
+      "offset_beat": 125.5,
+      "duration_beats": 0.25,
+      "velocity": 62,
+      "confidence": 0.4881989061832428,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 88,
+      "onset_beat": 124.75,
+      "offset_beat": 125.0,
+      "duration_beats": 0.25,
+      "velocity": 51,
+      "confidence": 0.40324750542640686,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 76,
+      "onset_beat": 124.25,
+      "offset_beat": 124.5,
+      "duration_beats": 0.25,
+      "velocity": 73,
+      "confidence": 0.578267514705658,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 124.0,
+      "offset_beat": 124.5,
+      "duration_beats": 0.5,
+      "velocity": 68,
+      "confidence": 0.5349993705749512,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 124.0,
+      "offset_beat": 124.25,
+      "duration_beats": 0.25,
+      "velocity": 61,
+      "confidence": 0.4767672121524811,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 88,
+      "onset_beat": 123.75,
+      "offset_beat": 124.0,
+      "duration_beats": 0.25,
+      "velocity": 67,
+      "confidence": 0.5256875157356262,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 88,
+      "onset_beat": 123.5,
+      "offset_beat": 123.75,
+      "duration_beats": 0.25,
+      "velocity": 49,
+      "confidence": 0.38681674003601074,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 123.25,
+      "offset_beat": 123.5,
+      "duration_beats": 0.25,
+      "velocity": 77,
+      "confidence": 0.6041752696037292,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 88,
+      "onset_beat": 123.0,
+      "offset_beat": 123.25,
+      "duration_beats": 0.25,
+      "velocity": 56,
+      "confidence": 0.44328927993774414,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 122.25,
+      "offset_beat": 122.5,
+      "duration_beats": 0.25,
+      "velocity": 67,
+      "confidence": 0.5291422605514526,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 122.25,
+      "offset_beat": 122.5,
+      "duration_beats": 0.25,
+      "velocity": 52,
+      "confidence": 0.4080944061279297,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 78,
+      "onset_beat": 122.0,
+      "offset_beat": 122.25,
+      "duration_beats": 0.25,
+      "velocity": 56,
+      "confidence": 0.43982887268066406,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 121.5,
+      "offset_beat": 121.75,
+      "duration_beats": 0.25,
+      "velocity": 67,
+      "confidence": 0.5254930853843689,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 121.25,
+      "offset_beat": 121.5,
+      "duration_beats": 0.25,
+      "velocity": 47,
+      "confidence": 0.3683791160583496,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 121.25,
+      "offset_beat": 121.5,
+      "duration_beats": 0.25,
+      "velocity": 63,
+      "confidence": 0.4952278733253479,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 121.0,
+      "offset_beat": 121.25,
+      "duration_beats": 0.25,
+      "velocity": 65,
+      "confidence": 0.5135898590087891,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 87,
+      "onset_beat": 120.75,
+      "offset_beat": 121.0,
+      "duration_beats": 0.25,
+      "velocity": 45,
+      "confidence": 0.3544718325138092,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 120.5,
+      "offset_beat": 121.0,
+      "duration_beats": 0.5,
+      "velocity": 58,
+      "confidence": 0.4594765305519104,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 120.25,
+      "offset_beat": 120.5,
+      "duration_beats": 0.25,
+      "velocity": 54,
+      "confidence": 0.42329737544059753,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 120.0,
+      "offset_beat": 120.5,
+      "duration_beats": 0.5,
+      "velocity": 48,
+      "confidence": 0.3771095871925354,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 119.5,
+      "offset_beat": 120.25,
+      "duration_beats": 0.75,
+      "velocity": 74,
+      "confidence": 0.5847393274307251,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 119.25,
+      "offset_beat": 119.5,
+      "duration_beats": 0.25,
+      "velocity": 69,
+      "confidence": 0.5404507517814636,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 119.0,
+      "offset_beat": 119.25,
+      "duration_beats": 0.25,
+      "velocity": 63,
+      "confidence": 0.49423515796661377,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 118.75,
+      "offset_beat": 119.0,
+      "duration_beats": 0.25,
+      "velocity": 79,
+      "confidence": 0.6255490779876709,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 118.5,
+      "offset_beat": 118.75,
+      "duration_beats": 0.25,
+      "velocity": 63,
+      "confidence": 0.49759164452552795,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 78,
+      "onset_beat": 118.25,
+      "offset_beat": 118.5,
+      "duration_beats": 0.25,
+      "velocity": 70,
+      "confidence": 0.5493398308753967,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 82,
+      "onset_beat": 118.0,
+      "offset_beat": 118.5,
+      "duration_beats": 0.5,
+      "velocity": 59,
+      "confidence": 0.46604257822036743,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 117.75,
+      "offset_beat": 118.25,
+      "duration_beats": 0.5,
+      "velocity": 62,
+      "confidence": 0.4846915900707245,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 117.5,
+      "offset_beat": 118.0,
+      "duration_beats": 0.5,
+      "velocity": 61,
+      "confidence": 0.478594034910202,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 117.5,
+      "offset_beat": 117.75,
+      "duration_beats": 0.25,
+      "velocity": 58,
+      "confidence": 0.45406997203826904,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 117.25,
+      "offset_beat": 117.5,
+      "duration_beats": 0.25,
+      "velocity": 65,
+      "confidence": 0.5144919753074646,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 78,
+      "onset_beat": 117.25,
+      "offset_beat": 117.5,
+      "duration_beats": 0.25,
+      "velocity": 46,
+      "confidence": 0.3651748597621918,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 82,
+      "onset_beat": 117.0,
+      "offset_beat": 117.25,
+      "duration_beats": 0.25,
+      "velocity": 54,
+      "confidence": 0.4275425374507904,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 116.75,
+      "offset_beat": 117.0,
+      "duration_beats": 0.25,
+      "velocity": 68,
+      "confidence": 0.5338118076324463,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 116.75,
+      "offset_beat": 117.0,
+      "duration_beats": 0.25,
+      "velocity": 57,
+      "confidence": 0.4469894766807556,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 116.5,
+      "offset_beat": 116.75,
+      "duration_beats": 0.25,
+      "velocity": 58,
+      "confidence": 0.455195814371109,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 116.25,
+      "offset_beat": 116.5,
+      "duration_beats": 0.25,
+      "velocity": 66,
+      "confidence": 0.5216524600982666,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 115.75,
+      "offset_beat": 116.25,
+      "duration_beats": 0.5,
+      "velocity": 70,
+      "confidence": 0.5477664470672607,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 115.5,
+      "offset_beat": 115.75,
+      "duration_beats": 0.25,
+      "velocity": 61,
+      "confidence": 0.4792565107345581,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 115.25,
+      "offset_beat": 115.5,
+      "duration_beats": 0.25,
+      "velocity": 84,
+      "confidence": 0.6586938500404358,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 115.0,
+      "offset_beat": 115.25,
+      "duration_beats": 0.25,
+      "velocity": 69,
+      "confidence": 0.542396068572998,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 114.75,
+      "offset_beat": 115.0,
+      "duration_beats": 0.25,
+      "velocity": 60,
+      "confidence": 0.4756363034248352,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 70,
+      "onset_beat": 114.0,
+      "offset_beat": 114.25,
+      "duration_beats": 0.25,
+      "velocity": 46,
+      "confidence": 0.36266621947288513,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 113.5,
+      "offset_beat": 113.75,
+      "duration_beats": 0.25,
+      "velocity": 47,
+      "confidence": 0.36806023120880127,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 112.5,
+      "offset_beat": 112.75,
+      "duration_beats": 0.25,
+      "velocity": 66,
+      "confidence": 0.520310640335083,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 112.0,
+      "offset_beat": 112.5,
+      "duration_beats": 0.5,
+      "velocity": 45,
+      "confidence": 0.3523653447628021,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 111.0,
+      "offset_beat": 113.25,
+      "duration_beats": 2.25,
+      "velocity": 74,
+      "confidence": 0.5837386846542358,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 110.5,
+      "offset_beat": 111.0,
+      "duration_beats": 0.5,
+      "velocity": 65,
+      "confidence": 0.5119733214378357,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 110.0,
+      "offset_beat": 110.5,
+      "duration_beats": 0.5,
+      "velocity": 70,
+      "confidence": 0.5479693412780762,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 97,
+      "onset_beat": 109.5,
+      "offset_beat": 110.0,
+      "duration_beats": 0.5,
+      "velocity": 51,
+      "confidence": 0.40308570861816406,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 104.5,
+      "offset_beat": 106.0,
+      "duration_beats": 1.5,
+      "velocity": 66,
+      "confidence": 0.520934522151947,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 68,
+      "onset_beat": 102.0,
+      "offset_beat": 102.25,
+      "duration_beats": 0.25,
+      "velocity": 69,
+      "confidence": 0.5439174771308899,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 101.0,
+      "offset_beat": 101.5,
+      "duration_beats": 0.5,
+      "velocity": 58,
+      "confidence": 0.4548981487751007,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 100.0,
+      "offset_beat": 101.0,
+      "duration_beats": 1.0,
+      "velocity": 53,
+      "confidence": 0.41459909081459045,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 68,
+      "onset_beat": 100.0,
+      "offset_beat": 101.5,
+      "duration_beats": 1.5,
+      "velocity": 61,
+      "confidence": 0.478921115398407,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 100.0,
+      "offset_beat": 101.0,
+      "duration_beats": 1.0,
+      "velocity": 69,
+      "confidence": 0.5414831638336182,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 99.0,
+      "offset_beat": 99.25,
+      "duration_beats": 0.25,
+      "velocity": 62,
+      "confidence": 0.48627325892448425,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 98.0,
+      "offset_beat": 98.25,
+      "duration_beats": 0.25,
+      "velocity": 64,
+      "confidence": 0.5055976510047913,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 97.0,
+      "offset_beat": 97.25,
+      "duration_beats": 0.25,
+      "velocity": 69,
+      "confidence": 0.543655514717102,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 70,
+      "onset_beat": 96.25,
+      "offset_beat": 96.5,
+      "duration_beats": 0.25,
+      "velocity": 73,
+      "confidence": 0.5740143656730652,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 95.25,
+      "offset_beat": 95.75,
+      "duration_beats": 0.5,
+      "velocity": 76,
+      "confidence": 0.5952125787734985,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 70,
+      "onset_beat": 95.0,
+      "offset_beat": 95.25,
+      "duration_beats": 0.25,
+      "velocity": 85,
+      "confidence": 0.6685324311256409,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 92.0,
+      "offset_beat": 92.5,
+      "duration_beats": 0.5,
+      "velocity": 54,
+      "confidence": 0.4223405718803406,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 54,
+      "onset_beat": 92.0,
+      "offset_beat": 92.25,
+      "duration_beats": 0.25,
+      "velocity": 50,
+      "confidence": 0.3921694755554199,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 54,
+      "onset_beat": 90.0,
+      "offset_beat": 90.25,
+      "duration_beats": 0.25,
+      "velocity": 50,
+      "confidence": 0.3900214731693268,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 88.75,
+      "offset_beat": 89.0,
+      "duration_beats": 0.25,
+      "velocity": 53,
+      "confidence": 0.4176262319087982,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 85.0,
+      "offset_beat": 85.25,
+      "duration_beats": 0.25,
+      "velocity": 58,
+      "confidence": 0.45733168721199036,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 83.75,
+      "offset_beat": 84.25,
+      "duration_beats": 0.5,
+      "velocity": 52,
+      "confidence": 0.40659987926483154,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 82.0,
+      "offset_beat": 82.5,
+      "duration_beats": 0.5,
+      "velocity": 64,
+      "confidence": 0.5049208998680115,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 54,
+      "onset_beat": 79.0,
+      "offset_beat": 79.25,
+      "duration_beats": 0.25,
+      "velocity": 58,
+      "confidence": 0.4548066556453705,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 58,
+      "onset_beat": 77.0,
+      "offset_beat": 77.25,
+      "duration_beats": 0.25,
+      "velocity": 53,
+      "confidence": 0.41574516892433167,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 54,
+      "onset_beat": 77.0,
+      "offset_beat": 77.25,
+      "duration_beats": 0.25,
+      "velocity": 55,
+      "confidence": 0.43512508273124695,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 54,
+      "onset_beat": 76.5,
+      "offset_beat": 76.75,
+      "duration_beats": 0.25,
+      "velocity": 47,
+      "confidence": 0.37142258882522583,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 54,
+      "onset_beat": 76.0,
+      "offset_beat": 76.25,
+      "duration_beats": 0.25,
+      "velocity": 70,
+      "confidence": 0.5519047379493713,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 54,
+      "onset_beat": 75.75,
+      "offset_beat": 76.0,
+      "duration_beats": 0.25,
+      "velocity": 47,
+      "confidence": 0.36760422587394714,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 72.0,
+      "offset_beat": 72.5,
+      "duration_beats": 0.5,
+      "velocity": 63,
+      "confidence": 0.4951622486114502,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 71.0,
+      "offset_beat": 71.25,
+      "duration_beats": 0.25,
+      "velocity": 71,
+      "confidence": 0.5558438897132874,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 69.0,
+      "offset_beat": 69.5,
+      "duration_beats": 0.5,
+      "velocity": 52,
+      "confidence": 0.40872564911842346,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 51,
+      "onset_beat": 69.0,
+      "offset_beat": 69.25,
+      "duration_beats": 0.25,
+      "velocity": 61,
+      "confidence": 0.48198533058166504,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 66,
+      "onset_beat": 61.0,
+      "offset_beat": 61.5,
+      "duration_beats": 0.5,
+      "velocity": 48,
+      "confidence": 0.37552690505981445,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 70,
+      "onset_beat": 59.0,
+      "offset_beat": 59.5,
+      "duration_beats": 0.5,
+      "velocity": 44,
+      "confidence": 0.3426688015460968,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 59.0,
+      "offset_beat": 59.75,
+      "duration_beats": 0.75,
+      "velocity": 76,
+      "confidence": 0.5947254300117493,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 58.75,
+      "offset_beat": 59.0,
+      "duration_beats": 0.25,
+      "velocity": 69,
+      "confidence": 0.5423611998558044,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 68,
+      "onset_beat": 58.0,
+      "offset_beat": 58.5,
+      "duration_beats": 0.5,
+      "velocity": 63,
+      "confidence": 0.49894803762435913,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 58.0,
+      "offset_beat": 58.5,
+      "duration_beats": 0.5,
+      "velocity": 83,
+      "confidence": 0.6556402444839478,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 68,
+      "onset_beat": 57.5,
+      "offset_beat": 57.75,
+      "duration_beats": 0.25,
+      "velocity": 56,
+      "confidence": 0.4429436922073364,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 49,
+      "onset_beat": 57.5,
+      "offset_beat": 57.75,
+      "duration_beats": 0.25,
+      "velocity": 53,
+      "confidence": 0.4211184084415436,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 57.5,
+      "offset_beat": 58.0,
+      "duration_beats": 0.5,
+      "velocity": 53,
+      "confidence": 0.4183773100376129,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 68,
+      "onset_beat": 57.0,
+      "offset_beat": 57.5,
+      "duration_beats": 0.5,
+      "velocity": 45,
+      "confidence": 0.35315844416618347,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 76,
+      "onset_beat": 56.25,
+      "offset_beat": 56.5,
+      "duration_beats": 0.25,
+      "velocity": 59,
+      "confidence": 0.4607064723968506,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 88,
+      "onset_beat": 56.25,
+      "offset_beat": 56.5,
+      "duration_beats": 0.25,
+      "velocity": 64,
+      "confidence": 0.5006698966026306,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 56.25,
+      "offset_beat": 56.75,
+      "duration_beats": 0.5,
+      "velocity": 62,
+      "confidence": 0.4913512170314789,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 78,
+      "onset_beat": 55.25,
+      "offset_beat": 55.5,
+      "duration_beats": 0.25,
+      "velocity": 59,
+      "confidence": 0.4681496024131775,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 55.25,
+      "offset_beat": 55.5,
+      "duration_beats": 0.25,
+      "velocity": 49,
+      "confidence": 0.3857702910900116,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 55.25,
+      "offset_beat": 56.25,
+      "duration_beats": 1.0,
+      "velocity": 69,
+      "confidence": 0.5445131659507751,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 54.5,
+      "offset_beat": 54.75,
+      "duration_beats": 0.25,
+      "velocity": 44,
+      "confidence": 0.34905508160591125,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 54.5,
+      "offset_beat": 54.75,
+      "duration_beats": 0.25,
+      "velocity": 54,
+      "confidence": 0.42582154273986816,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 66,
+      "onset_beat": 54.0,
+      "offset_beat": 54.25,
+      "duration_beats": 0.25,
+      "velocity": 52,
+      "confidence": 0.40948352217674255,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 76,
+      "onset_beat": 53.5,
+      "offset_beat": 53.75,
+      "duration_beats": 0.25,
+      "velocity": 65,
+      "confidence": 0.5088294148445129,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 53.5,
+      "offset_beat": 53.75,
+      "duration_beats": 0.25,
+      "velocity": 51,
+      "confidence": 0.4050191640853882,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 88,
+      "onset_beat": 53.5,
+      "offset_beat": 53.75,
+      "duration_beats": 0.25,
+      "velocity": 61,
+      "confidence": 0.48006924986839294,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 68,
+      "onset_beat": 53.5,
+      "offset_beat": 53.75,
+      "duration_beats": 0.25,
+      "velocity": 79,
+      "confidence": 0.6205756068229675,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 49.0,
+      "offset_beat": 52.75,
+      "duration_beats": 3.75,
+      "velocity": 75,
+      "confidence": 0.587512195110321,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 78,
+      "onset_beat": 48.5,
+      "offset_beat": 48.75,
+      "duration_beats": 0.25,
+      "velocity": 54,
+      "confidence": 0.4288567900657654,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 48.0,
+      "offset_beat": 48.25,
+      "duration_beats": 0.25,
+      "velocity": 67,
+      "confidence": 0.5241785049438477,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 48.0,
+      "offset_beat": 48.25,
+      "duration_beats": 0.25,
+      "velocity": 53,
+      "confidence": 0.41407495737075806,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 68,
+      "onset_beat": 47.25,
+      "offset_beat": 47.75,
+      "duration_beats": 0.5,
+      "velocity": 55,
+      "confidence": 0.4355730712413788,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 76,
+      "onset_beat": 47.25,
+      "offset_beat": 47.5,
+      "duration_beats": 0.25,
+      "velocity": 47,
+      "confidence": 0.3734862506389618,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 64,
+      "onset_beat": 47.25,
+      "offset_beat": 47.75,
+      "duration_beats": 0.5,
+      "velocity": 67,
+      "confidence": 0.5293996930122375,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 47.25,
+      "offset_beat": 47.5,
+      "duration_beats": 0.25,
+      "velocity": 68,
+      "confidence": 0.5391930341720581,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 46.5,
+      "offset_beat": 46.75,
+      "duration_beats": 0.25,
+      "velocity": 67,
+      "confidence": 0.5238029360771179,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 46.0,
+      "offset_beat": 46.5,
+      "duration_beats": 0.5,
+      "velocity": 73,
+      "confidence": 0.5744470357894897,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 46.0,
+      "offset_beat": 46.25,
+      "duration_beats": 0.25,
+      "velocity": 54,
+      "confidence": 0.42590972781181335,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 46.0,
+      "offset_beat": 46.5,
+      "duration_beats": 0.5,
+      "velocity": 64,
+      "confidence": 0.506780743598938,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 90,
+      "onset_beat": 45.25,
+      "offset_beat": 45.5,
+      "duration_beats": 0.25,
+      "velocity": 59,
+      "confidence": 0.4653160870075226,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 43.75,
+      "offset_beat": 45.75,
+      "duration_beats": 2.0,
+      "velocity": 58,
+      "confidence": 0.4572411775588989,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 78,
+      "onset_beat": 43.5,
+      "offset_beat": 46.0,
+      "duration_beats": 2.5,
+      "velocity": 70,
+      "confidence": 0.5482257604598999,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 43.5,
+      "offset_beat": 45.75,
+      "duration_beats": 2.25,
+      "velocity": 63,
+      "confidence": 0.4926040470600128,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 43.5,
+      "offset_beat": 43.75,
+      "duration_beats": 0.25,
+      "velocity": 51,
+      "confidence": 0.39890429377555847,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 78,
+      "onset_beat": 43.0,
+      "offset_beat": 43.5,
+      "duration_beats": 0.5,
+      "velocity": 68,
+      "confidence": 0.5359318852424622,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 43.0,
+      "offset_beat": 43.5,
+      "duration_beats": 0.5,
+      "velocity": 60,
+      "confidence": 0.47305119037628174,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 43.0,
+      "offset_beat": 43.5,
+      "duration_beats": 0.5,
+      "velocity": 48,
+      "confidence": 0.3780413568019867,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 42.75,
+      "offset_beat": 43.0,
+      "duration_beats": 0.25,
+      "velocity": 45,
+      "confidence": 0.3505581021308899,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 92,
+      "onset_beat": 42.25,
+      "offset_beat": 42.5,
+      "duration_beats": 0.25,
+      "velocity": 55,
+      "confidence": 0.43082237243652344,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 78,
+      "onset_beat": 41.5,
+      "offset_beat": 42.25,
+      "duration_beats": 0.75,
+      "velocity": 57,
+      "confidence": 0.45067447423934937,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 41.25,
+      "offset_beat": 41.5,
+      "duration_beats": 0.25,
+      "velocity": 44,
+      "confidence": 0.3462730050086975,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 78,
+      "onset_beat": 40.5,
+      "offset_beat": 41.0,
+      "duration_beats": 0.5,
+      "velocity": 59,
+      "confidence": 0.4676663279533386,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 40.0,
+      "offset_beat": 40.25,
+      "duration_beats": 0.25,
+      "velocity": 74,
+      "confidence": 0.5837767720222473,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 76,
+      "onset_beat": 39.75,
+      "offset_beat": 40.0,
+      "duration_beats": 0.25,
+      "velocity": 68,
+      "confidence": 0.53386390209198,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 38.5,
+      "offset_beat": 38.75,
+      "duration_beats": 0.25,
+      "velocity": 70,
+      "confidence": 0.547960102558136,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 76,
+      "onset_beat": 37.75,
+      "offset_beat": 38.0,
+      "duration_beats": 0.25,
+      "velocity": 70,
+      "confidence": 0.5518337488174438,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 37.5,
+      "offset_beat": 37.75,
+      "duration_beats": 0.25,
+      "velocity": 68,
+      "confidence": 0.5391919612884521,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 37.0,
+      "offset_beat": 37.25,
+      "duration_beats": 0.25,
+      "velocity": 69,
+      "confidence": 0.5452584028244019,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 36.75,
+      "offset_beat": 37.0,
+      "duration_beats": 0.25,
+      "velocity": 72,
+      "confidence": 0.5699257850646973,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 36.5,
+      "offset_beat": 36.75,
+      "duration_beats": 0.25,
+      "velocity": 76,
+      "confidence": 0.5994388461112976,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 35.75,
+      "offset_beat": 36.0,
+      "duration_beats": 0.25,
+      "velocity": 70,
+      "confidence": 0.5528728365898132,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 35.5,
+      "offset_beat": 35.75,
+      "duration_beats": 0.25,
+      "velocity": 77,
+      "confidence": 0.6068270206451416,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 35.0,
+      "offset_beat": 35.25,
+      "duration_beats": 0.25,
+      "velocity": 46,
+      "confidence": 0.36594149470329285,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 35.0,
+      "offset_beat": 35.25,
+      "duration_beats": 0.25,
+      "velocity": 62,
+      "confidence": 0.48661160469055176,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 34.5,
+      "offset_beat": 35.0,
+      "duration_beats": 0.5,
+      "velocity": 77,
+      "confidence": 0.6052742600440979,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 88,
+      "onset_beat": 34.0,
+      "offset_beat": 34.5,
+      "duration_beats": 0.5,
+      "velocity": 56,
+      "confidence": 0.4427744746208191,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 76,
+      "onset_beat": 34.0,
+      "offset_beat": 34.5,
+      "duration_beats": 0.5,
+      "velocity": 72,
+      "confidence": 0.5700328946113586,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 33.25,
+      "offset_beat": 33.5,
+      "duration_beats": 0.25,
+      "velocity": 68,
+      "confidence": 0.5381799340248108,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 76,
+      "onset_beat": 32.75,
+      "offset_beat": 33.0,
+      "duration_beats": 0.25,
+      "velocity": 68,
+      "confidence": 0.5347393155097961,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 32.5,
+      "offset_beat": 32.75,
+      "duration_beats": 0.25,
+      "velocity": 82,
+      "confidence": 0.649109423160553,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 95,
+      "onset_beat": 32.5,
+      "offset_beat": 32.75,
+      "duration_beats": 0.25,
+      "velocity": 48,
+      "confidence": 0.3765701949596405,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 32.5,
+      "offset_beat": 32.75,
+      "duration_beats": 0.25,
+      "velocity": 51,
+      "confidence": 0.40106645226478577,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 32.0,
+      "offset_beat": 32.5,
+      "duration_beats": 0.5,
+      "velocity": 76,
+      "confidence": 0.5994834303855896,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 87,
+      "onset_beat": 32.0,
+      "offset_beat": 32.5,
+      "duration_beats": 0.5,
+      "velocity": 49,
+      "confidence": 0.3834744393825531,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 76,
+      "onset_beat": 31.25,
+      "offset_beat": 32.0,
+      "duration_beats": 0.75,
+      "velocity": 73,
+      "confidence": 0.5757271647453308,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 88,
+      "onset_beat": 31.25,
+      "offset_beat": 32.0,
+      "duration_beats": 0.75,
+      "velocity": 62,
+      "confidence": 0.4869825839996338,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 30.5,
+      "offset_beat": 30.75,
+      "duration_beats": 0.25,
+      "velocity": 53,
+      "confidence": 0.41899657249450684,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 30.5,
+      "offset_beat": 30.75,
+      "duration_beats": 0.25,
+      "velocity": 60,
+      "confidence": 0.475879043340683,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 29.0,
+      "offset_beat": 30.0,
+      "duration_beats": 1.0,
+      "velocity": 75,
+      "confidence": 0.5924457907676697,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 28.75,
+      "offset_beat": 29.0,
+      "duration_beats": 0.25,
+      "velocity": 68,
+      "confidence": 0.535643458366394,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 28.25,
+      "offset_beat": 28.75,
+      "duration_beats": 0.5,
+      "velocity": 70,
+      "confidence": 0.554705023765564,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 64,
+      "onset_beat": 27.0,
+      "offset_beat": 27.5,
+      "duration_beats": 0.5,
+      "velocity": 75,
+      "confidence": 0.58872389793396,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 76,
+      "onset_beat": 27.0,
+      "offset_beat": 27.5,
+      "duration_beats": 0.5,
+      "velocity": 53,
+      "confidence": 0.4155873954296112,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 78,
+      "onset_beat": 26.25,
+      "offset_beat": 27.0,
+      "duration_beats": 0.75,
+      "velocity": 70,
+      "confidence": 0.5503833293914795,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 26.0,
+      "offset_beat": 26.25,
+      "duration_beats": 0.25,
+      "velocity": 76,
+      "confidence": 0.6019679307937622,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 24.0,
+      "offset_beat": 25.25,
+      "duration_beats": 1.25,
+      "velocity": 71,
+      "confidence": 0.559837281703949,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 78,
+      "onset_beat": 24.0,
+      "offset_beat": 25.75,
+      "duration_beats": 1.75,
+      "velocity": 74,
+      "confidence": 0.5842500925064087,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 90,
+      "onset_beat": 23.75,
+      "offset_beat": 24.75,
+      "duration_beats": 1.0,
+      "velocity": 44,
+      "confidence": 0.3485071659088135,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 23.75,
+      "offset_beat": 24.0,
+      "duration_beats": 0.25,
+      "velocity": 49,
+      "confidence": 0.38924938440322876,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 23.0,
+      "offset_beat": 25.0,
+      "duration_beats": 2.0,
+      "velocity": 48,
+      "confidence": 0.3811204433441162,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 22.75,
+      "offset_beat": 23.5,
+      "duration_beats": 0.75,
+      "velocity": 64,
+      "confidence": 0.5069758296012878,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 82,
+      "onset_beat": 22.75,
+      "offset_beat": 23.75,
+      "duration_beats": 1.0,
+      "velocity": 55,
+      "confidence": 0.43607768416404724,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 78,
+      "onset_beat": 22.75,
+      "offset_beat": 24.0,
+      "duration_beats": 1.25,
+      "velocity": 73,
+      "confidence": 0.5734400153160095,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 21.0,
+      "offset_beat": 21.5,
+      "duration_beats": 0.5,
+      "velocity": 61,
+      "confidence": 0.47900283336639404,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 20.5,
+      "offset_beat": 20.75,
+      "duration_beats": 0.25,
+      "velocity": 74,
+      "confidence": 0.5826460123062134,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 20.0,
+      "offset_beat": 20.25,
+      "duration_beats": 0.25,
+      "velocity": 56,
+      "confidence": 0.4403895139694214,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 19.5,
+      "offset_beat": 20.0,
+      "duration_beats": 0.5,
+      "velocity": 87,
+      "confidence": 0.6842027306556702,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 87,
+      "onset_beat": 19.5,
+      "offset_beat": 20.0,
+      "duration_beats": 0.5,
+      "velocity": 44,
+      "confidence": 0.34545382857322693,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 76,
+      "onset_beat": 19.0,
+      "offset_beat": 19.5,
+      "duration_beats": 0.5,
+      "velocity": 69,
+      "confidence": 0.541922926902771,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 88,
+      "onset_beat": 19.0,
+      "offset_beat": 19.5,
+      "duration_beats": 0.5,
+      "velocity": 59,
+      "confidence": 0.46606582403182983,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 18.75,
+      "offset_beat": 19.0,
+      "duration_beats": 0.25,
+      "velocity": 76,
+      "confidence": 0.5989724397659302,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 18.5,
+      "offset_beat": 18.75,
+      "duration_beats": 0.25,
+      "velocity": 74,
+      "confidence": 0.5803123712539673,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 18.0,
+      "offset_beat": 18.5,
+      "duration_beats": 0.5,
+      "velocity": 72,
+      "confidence": 0.5652567744255066,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 17.75,
+      "offset_beat": 18.0,
+      "duration_beats": 0.25,
+      "velocity": 75,
+      "confidence": 0.5882495045661926,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 87,
+      "onset_beat": 17.0,
+      "offset_beat": 17.25,
+      "duration_beats": 0.25,
+      "velocity": 60,
+      "confidence": 0.47587794065475464,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 17.0,
+      "offset_beat": 17.25,
+      "duration_beats": 0.25,
+      "velocity": 91,
+      "confidence": 0.7139514088630676,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 76,
+      "onset_beat": 16.5,
+      "offset_beat": 17.0,
+      "duration_beats": 0.5,
+      "velocity": 75,
+      "confidence": 0.5867224931716919,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 88,
+      "onset_beat": 16.25,
+      "offset_beat": 17.0,
+      "duration_beats": 0.75,
+      "velocity": 64,
+      "confidence": 0.5078307390213013,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 15.5,
+      "offset_beat": 15.75,
+      "duration_beats": 0.25,
+      "velocity": 49,
+      "confidence": 0.38750919699668884,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 15.5,
+      "offset_beat": 16.0,
+      "duration_beats": 0.5,
+      "velocity": 63,
+      "confidence": 0.49495968222618103,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 14.5,
+      "offset_beat": 15.0,
+      "duration_beats": 0.5,
+      "velocity": 71,
+      "confidence": 0.5616087317466736,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 59,
+      "onset_beat": 14.0,
+      "offset_beat": 15.0,
+      "duration_beats": 1.0,
+      "velocity": 68,
+      "confidence": 0.539287805557251,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 14.0,
+      "offset_beat": 14.5,
+      "duration_beats": 0.5,
+      "velocity": 69,
+      "confidence": 0.5471442341804504,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 13.75,
+      "offset_beat": 14.0,
+      "duration_beats": 0.25,
+      "velocity": 79,
+      "confidence": 0.6257110238075256,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 13.25,
+      "offset_beat": 13.5,
+      "duration_beats": 0.25,
+      "velocity": 52,
+      "confidence": 0.41260653734207153,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 13.25,
+      "offset_beat": 13.5,
+      "duration_beats": 0.25,
+      "velocity": 76,
+      "confidence": 0.5969647765159607,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 76,
+      "onset_beat": 12.0,
+      "offset_beat": 12.5,
+      "duration_beats": 0.5,
+      "velocity": 54,
+      "confidence": 0.421274334192276,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 64,
+      "onset_beat": 12.0,
+      "offset_beat": 12.5,
+      "duration_beats": 0.5,
+      "velocity": 69,
+      "confidence": 0.540090799331665,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 78,
+      "onset_beat": 11.25,
+      "offset_beat": 11.75,
+      "duration_beats": 0.5,
+      "velocity": 74,
+      "confidence": 0.5858996510505676,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 66,
+      "onset_beat": 11.25,
+      "offset_beat": 11.5,
+      "duration_beats": 0.25,
+      "velocity": 68,
+      "confidence": 0.5341497659683228,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 90,
+      "onset_beat": 11.25,
+      "offset_beat": 11.75,
+      "duration_beats": 0.5,
+      "velocity": 49,
+      "confidence": 0.38197633624076843,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 10.5,
+      "offset_beat": 11.25,
+      "duration_beats": 0.75,
+      "velocity": 58,
+      "confidence": 0.4557281732559204,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 10.5,
+      "offset_beat": 11.0,
+      "duration_beats": 0.5,
+      "velocity": 58,
+      "confidence": 0.4603007137775421,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 90,
+      "onset_beat": 8.5,
+      "offset_beat": 9.5,
+      "duration_beats": 1.0,
+      "velocity": 82,
+      "confidence": 0.6468927264213562,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 90,
+      "onset_beat": 7.5,
+      "offset_beat": 8.5,
+      "duration_beats": 1.0,
+      "velocity": 74,
+      "confidence": 0.582080602645874,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 90,
+      "onset_beat": 7.0,
+      "offset_beat": 7.5,
+      "duration_beats": 0.5,
+      "velocity": 72,
+      "confidence": 0.5649797320365906,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 5.25,
+      "offset_beat": 5.5,
+      "duration_beats": 0.25,
+      "velocity": 44,
+      "confidence": 0.34883007407188416,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 78,
+      "onset_beat": 5.25,
+      "offset_beat": 9.25,
+      "duration_beats": 4.0,
+      "velocity": 73,
+      "confidence": 0.5726460814476013,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 5.25,
+      "offset_beat": 9.75,
+      "duration_beats": 4.5,
+      "velocity": 84,
+      "confidence": 0.6642574071884155,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 70,
+      "onset_beat": 5.0,
+      "offset_beat": 9.75,
+      "duration_beats": 4.75,
+      "velocity": 82,
+      "confidence": 0.6475629210472107,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 5.0,
+      "offset_beat": 5.25,
+      "duration_beats": 0.25,
+      "velocity": 58,
+      "confidence": 0.45415496826171875,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 3.75,
+      "offset_beat": 4.25,
+      "duration_beats": 0.5,
+      "velocity": 48,
+      "confidence": 0.3792293667793274,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 3.75,
+      "offset_beat": 4.5,
+      "duration_beats": 0.75,
+      "velocity": 50,
+      "confidence": 0.39457711577415466,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 3.25,
+      "offset_beat": 3.75,
+      "duration_beats": 0.5,
+      "velocity": 53,
+      "confidence": 0.42082035541534424,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 3.25,
+      "offset_beat": 3.5,
+      "duration_beats": 0.25,
+      "velocity": 51,
+      "confidence": 0.40508273243904114,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 2.25,
+      "offset_beat": 2.75,
+      "duration_beats": 0.5,
+      "velocity": 51,
+      "confidence": 0.40325242280960083,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 1.75,
+      "offset_beat": 2.25,
+      "duration_beats": 0.5,
+      "velocity": 62,
+      "confidence": 0.4879912734031677,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 1.5,
+      "offset_beat": 2.0,
+      "duration_beats": 0.5,
+      "velocity": 58,
+      "confidence": 0.45460110902786255,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 1.5,
+      "offset_beat": 1.75,
+      "duration_beats": 0.25,
+      "velocity": 50,
+      "confidence": 0.3938407003879547,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 0.75,
+      "offset_beat": 1.25,
+      "duration_beats": 0.5,
+      "velocity": 52,
+      "confidence": 0.40558451414108276,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 0.0,
+      "offset_beat": 0.5,
+      "duration_beats": 0.5,
+      "velocity": 69,
+      "confidence": 0.5407487750053406,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 159.25,
+      "offset_beat": 160.5,
+      "duration_beats": 1.25,
+      "velocity": 75,
+      "confidence": 0.5870174169540405,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 68,
+      "onset_beat": 294.5,
+      "offset_beat": 298.5,
+      "duration_beats": 4.0,
+      "velocity": 86,
+      "confidence": 0.673981249332428,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 342.0,
+      "offset_beat": 362.75,
+      "duration_beats": 20.75,
+      "velocity": 80,
+      "confidence": 0.6284695863723755,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 174.75,
+      "offset_beat": 176.0,
+      "duration_beats": 1.25,
+      "velocity": 83,
+      "confidence": 0.6519683599472046,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 60,
+      "onset_beat": 314.25,
+      "offset_beat": 318.5,
+      "duration_beats": 4.25,
+      "velocity": 76,
+      "confidence": 0.6007372140884399,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 163.0,
+      "offset_beat": 163.5,
+      "duration_beats": 0.5,
+      "velocity": 85,
+      "confidence": 0.6690745949745178,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 60,
+      "onset_beat": 294.5,
+      "offset_beat": 297.25,
+      "duration_beats": 2.75,
+      "velocity": 68,
+      "confidence": 0.5350788831710815,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 84,
+      "onset_beat": 232.5,
+      "offset_beat": 232.75,
+      "duration_beats": 0.25,
+      "velocity": 81,
+      "confidence": 0.6415226459503174,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 298.5,
+      "offset_beat": 300.25,
+      "duration_beats": 1.75,
+      "velocity": 78,
+      "confidence": 0.6153871417045593,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 60,
+      "onset_beat": 338.0,
+      "offset_beat": 338.25,
+      "duration_beats": 0.25,
+      "velocity": 72,
+      "confidence": 0.5664696097373962,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 336.75,
+      "offset_beat": 337.75,
+      "duration_beats": 1.0,
+      "velocity": 83,
+      "confidence": 0.656862735748291,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 106.25,
+      "offset_beat": 109.25,
+      "duration_beats": 3.0,
+      "velocity": 60,
+      "confidence": 0.47078701853752136,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 54,
+      "onset_beat": 330.25,
+      "offset_beat": 333.75,
+      "duration_beats": 3.5,
+      "velocity": 66,
+      "confidence": 0.5185925364494324,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 65,
+      "onset_beat": 294.5,
+      "offset_beat": 302.5,
+      "duration_beats": 8.0,
+      "velocity": 75,
+      "confidence": 0.592829167842865,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 65,
+      "onset_beat": 287.25,
+      "offset_beat": 287.75,
+      "duration_beats": 0.5,
+      "velocity": 74,
+      "confidence": 0.5845407843589783,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 66,
+      "onset_beat": 10.0,
+      "offset_beat": 10.25,
+      "duration_beats": 0.25,
+      "velocity": 77,
+      "confidence": 0.6074795722961426,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 314.25,
+      "offset_beat": 315.25,
+      "duration_beats": 1.0,
+      "velocity": 75,
+      "confidence": 0.5897085666656494,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 309.75,
+      "offset_beat": 310.25,
+      "duration_beats": 0.5,
+      "velocity": 71,
+      "confidence": 0.5584565997123718,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 39,
+      "onset_beat": 333.75,
+      "offset_beat": 339.75,
+      "duration_beats": 6.0,
+      "velocity": 65,
+      "confidence": 0.5112922787666321,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 53,
+      "onset_beat": 318.5,
+      "offset_beat": 322.5,
+      "duration_beats": 4.0,
+      "velocity": 63,
+      "confidence": 0.4959632456302643,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 65,
+      "onset_beat": 281.75,
+      "offset_beat": 285.5,
+      "duration_beats": 3.75,
+      "velocity": 58,
+      "confidence": 0.45371150970458984,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 251.25,
+      "offset_beat": 251.75,
+      "duration_beats": 0.5,
+      "velocity": 77,
+      "confidence": 0.609278678894043,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 51,
+      "onset_beat": 330.5,
+      "offset_beat": 342.25,
+      "duration_beats": 11.75,
+      "velocity": 61,
+      "confidence": 0.4827333688735962,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 33.75,
+      "offset_beat": 34.0,
+      "duration_beats": 0.25,
+      "velocity": 72,
+      "confidence": 0.5680187344551086,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 87,
+      "onset_beat": 229.5,
+      "offset_beat": 230.25,
+      "duration_beats": 0.75,
+      "velocity": 66,
+      "confidence": 0.5180186629295349,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 361.75,
+      "offset_beat": 363.0,
+      "duration_beats": 1.25,
+      "velocity": 76,
+      "confidence": 0.5970975756645203,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 25.5,
+      "offset_beat": 25.75,
+      "duration_beats": 0.25,
+      "velocity": 72,
+      "confidence": 0.565850555896759,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 36.25,
+      "offset_beat": 36.5,
+      "duration_beats": 0.25,
+      "velocity": 69,
+      "confidence": 0.5434339642524719,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 41,
+      "onset_beat": 328.5,
+      "offset_beat": 330.0,
+      "duration_beats": 1.5,
+      "velocity": 62,
+      "confidence": 0.4877300262451172,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 318.25,
+      "offset_beat": 322.0,
+      "duration_beats": 3.75,
+      "velocity": 75,
+      "confidence": 0.591277003288269,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 68,
+      "onset_beat": 325.25,
+      "offset_beat": 326.25,
+      "duration_beats": 1.0,
+      "velocity": 66,
+      "confidence": 0.522495687007904,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 49,
+      "onset_beat": 88.25,
+      "offset_beat": 88.75,
+      "duration_beats": 0.5,
+      "velocity": 67,
+      "confidence": 0.5294865965843201,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 134.25,
+      "offset_beat": 135.0,
+      "duration_beats": 0.75,
+      "velocity": 66,
+      "confidence": 0.5170938968658447,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 102,
+      "onset_beat": 307.25,
+      "offset_beat": 307.75,
+      "duration_beats": 0.5,
+      "velocity": 78,
+      "confidence": 0.6148399114608765,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 54,
+      "onset_beat": 302.75,
+      "offset_beat": 304.25,
+      "duration_beats": 1.5,
+      "velocity": 66,
+      "confidence": 0.5159997344017029,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 68,
+      "onset_beat": 160.5,
+      "offset_beat": 160.75,
+      "duration_beats": 0.25,
+      "velocity": 71,
+      "confidence": 0.5605040788650513,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 49,
+      "onset_beat": 325.25,
+      "offset_beat": 326.75,
+      "duration_beats": 1.5,
+      "velocity": 63,
+      "confidence": 0.49322617053985596,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 125.0,
+      "offset_beat": 125.25,
+      "duration_beats": 0.25,
+      "velocity": 67,
+      "confidence": 0.5243892669677734,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 78,
+      "onset_beat": 128.0,
+      "offset_beat": 129.0,
+      "duration_beats": 1.0,
+      "velocity": 52,
+      "confidence": 0.40976619720458984,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 310.75,
+      "offset_beat": 312.25,
+      "duration_beats": 1.5,
+      "velocity": 65,
+      "confidence": 0.5137085914611816,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 59,
+      "onset_beat": 49.25,
+      "offset_beat": 50.0,
+      "duration_beats": 0.75,
+      "velocity": 64,
+      "confidence": 0.5031399130821228,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 49,
+      "onset_beat": 357.75,
+      "offset_beat": 359.75,
+      "duration_beats": 2.0,
+      "velocity": 58,
+      "confidence": 0.45949533581733704,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 51.0,
+      "offset_beat": 52.5,
+      "duration_beats": 1.5,
+      "velocity": 64,
+      "confidence": 0.5003236532211304,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 272.25,
+      "offset_beat": 274.25,
+      "duration_beats": 2.0,
+      "velocity": 60,
+      "confidence": 0.4759894609451294,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 65,
+      "onset_beat": 285.75,
+      "offset_beat": 286.25,
+      "duration_beats": 0.5,
+      "velocity": 68,
+      "confidence": 0.5318383574485779,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 151.25,
+      "offset_beat": 151.5,
+      "duration_beats": 0.25,
+      "velocity": 48,
+      "confidence": 0.3752158582210541,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 44,
+      "onset_beat": 334.0,
+      "offset_beat": 342.25,
+      "duration_beats": 8.25,
+      "velocity": 61,
+      "confidence": 0.4821764826774597,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 41,
+      "onset_beat": 342.25,
+      "offset_beat": 355.75,
+      "duration_beats": 13.5,
+      "velocity": 58,
+      "confidence": 0.45951738953590393,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 131.25,
+      "offset_beat": 131.5,
+      "duration_beats": 0.25,
+      "velocity": 66,
+      "confidence": 0.5173108577728271,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 68,
+      "onset_beat": 158.5,
+      "offset_beat": 158.75,
+      "duration_beats": 0.25,
+      "velocity": 65,
+      "confidence": 0.5088309645652771,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 53,
+      "onset_beat": 345.5,
+      "offset_beat": 347.25,
+      "duration_beats": 1.75,
+      "velocity": 56,
+      "confidence": 0.4392474889755249,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 90,
+      "onset_beat": 143.25,
+      "offset_beat": 143.75,
+      "duration_beats": 0.5,
+      "velocity": 54,
+      "confidence": 0.4216462969779968,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 310.25,
+      "offset_beat": 313.25,
+      "duration_beats": 3.0,
+      "velocity": 63,
+      "confidence": 0.49604567885398865,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 90,
+      "onset_beat": 43.0,
+      "offset_beat": 45.25,
+      "duration_beats": 2.25,
+      "velocity": 52,
+      "confidence": 0.41152387857437134,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 77,
+      "onset_beat": 264.25,
+      "offset_beat": 266.25,
+      "duration_beats": 2.0,
+      "velocity": 49,
+      "confidence": 0.38386455178260803,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 312.5,
+      "offset_beat": 314.0,
+      "duration_beats": 1.5,
+      "velocity": 62,
+      "confidence": 0.4907820224761963,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 65,
+      "onset_beat": 333.25,
+      "offset_beat": 334.0,
+      "duration_beats": 0.75,
+      "velocity": 60,
+      "confidence": 0.4714941680431366,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 68,
+      "onset_beat": 329.0,
+      "offset_beat": 330.25,
+      "duration_beats": 1.25,
+      "velocity": 68,
+      "confidence": 0.5351865887641907,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 65,
+      "onset_beat": 318.75,
+      "offset_beat": 320.0,
+      "duration_beats": 1.25,
+      "velocity": 65,
+      "confidence": 0.5104876160621643,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 8.0,
+      "offset_beat": 9.25,
+      "duration_beats": 1.25,
+      "velocity": 56,
+      "confidence": 0.4371493458747864,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 334.5,
+      "offset_beat": 338.5,
+      "duration_beats": 4.0,
+      "velocity": 61,
+      "confidence": 0.48160025477409363,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 53,
+      "onset_beat": 354.0,
+      "offset_beat": 355.5,
+      "duration_beats": 1.5,
+      "velocity": 63,
+      "confidence": 0.49924901127815247,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 182.5,
+      "offset_beat": 182.75,
+      "duration_beats": 0.25,
+      "velocity": 64,
+      "confidence": 0.5006120800971985,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 65,
+      "onset_beat": 255.25,
+      "offset_beat": 255.5,
+      "duration_beats": 0.25,
+      "velocity": 69,
+      "confidence": 0.5428398251533508,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 65,
+      "onset_beat": 320.25,
+      "offset_beat": 321.25,
+      "duration_beats": 1.0,
+      "velocity": 60,
+      "confidence": 0.4685251712799072,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 54.0,
+      "offset_beat": 54.25,
+      "duration_beats": 0.25,
+      "velocity": 64,
+      "confidence": 0.5020856261253357,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 58,
+      "onset_beat": 309.5,
+      "offset_beat": 310.0,
+      "duration_beats": 0.5,
+      "velocity": 69,
+      "confidence": 0.5455067753791809,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 70,
+      "onset_beat": 64.0,
+      "offset_beat": 64.25,
+      "duration_beats": 0.25,
+      "velocity": 66,
+      "confidence": 0.5236177444458008,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 317.25,
+      "offset_beat": 318.0,
+      "duration_beats": 0.75,
+      "velocity": 56,
+      "confidence": 0.43703848123550415,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 68,
+      "onset_beat": 208.25,
+      "offset_beat": 208.5,
+      "duration_beats": 0.25,
+      "velocity": 54,
+      "confidence": 0.42375874519348145,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 53,
+      "onset_beat": 356.5,
+      "offset_beat": 360.0,
+      "duration_beats": 3.5,
+      "velocity": 53,
+      "confidence": 0.42037540674209595,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 76,
+      "onset_beat": 123.25,
+      "offset_beat": 123.5,
+      "duration_beats": 0.25,
+      "velocity": 63,
+      "confidence": 0.49650606513023376,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 271.0,
+      "offset_beat": 272.0,
+      "duration_beats": 1.0,
+      "velocity": 56,
+      "confidence": 0.44328656792640686,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 354.0,
+      "offset_beat": 355.5,
+      "duration_beats": 1.5,
+      "velocity": 58,
+      "confidence": 0.4580753445625305,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 327.75,
+      "offset_beat": 329.25,
+      "duration_beats": 1.5,
+      "velocity": 54,
+      "confidence": 0.42376580834388733,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 92,
+      "onset_beat": 318.25,
+      "offset_beat": 320.5,
+      "duration_beats": 2.25,
+      "velocity": 50,
+      "confidence": 0.3962516188621521,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 59,
+      "onset_beat": 268.75,
+      "offset_beat": 275.75,
+      "duration_beats": 7.0,
+      "velocity": 55,
+      "confidence": 0.4322631359100342,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 92,
+      "onset_beat": 228.25,
+      "offset_beat": 229.0,
+      "duration_beats": 0.75,
+      "velocity": 52,
+      "confidence": 0.40628787875175476,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 355.75,
+      "offset_beat": 361.25,
+      "duration_beats": 5.5,
+      "velocity": 55,
+      "confidence": 0.4348476231098175,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 76,
+      "onset_beat": 22.25,
+      "offset_beat": 22.5,
+      "duration_beats": 0.25,
+      "velocity": 63,
+      "confidence": 0.4932413399219513,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 94.25,
+      "offset_beat": 94.75,
+      "duration_beats": 0.5,
+      "velocity": 52,
+      "confidence": 0.40708082914352417,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 46.5,
+      "offset_beat": 46.75,
+      "duration_beats": 0.25,
+      "velocity": 66,
+      "confidence": 0.5162440538406372,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 153.25,
+      "offset_beat": 153.5,
+      "duration_beats": 0.25,
+      "velocity": 50,
+      "confidence": 0.39221346378326416,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 66,
+      "onset_beat": 332.0,
+      "offset_beat": 333.0,
+      "duration_beats": 1.0,
+      "velocity": 60,
+      "confidence": 0.47175636887550354,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 233.0,
+      "offset_beat": 233.25,
+      "duration_beats": 0.25,
+      "velocity": 63,
+      "confidence": 0.49504199624061584,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 267.25,
+      "offset_beat": 268.25,
+      "duration_beats": 1.0,
+      "velocity": 56,
+      "confidence": 0.4429258406162262,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 78,
+      "onset_beat": 262.0,
+      "offset_beat": 263.75,
+      "duration_beats": 1.75,
+      "velocity": 52,
+      "confidence": 0.4085184931755066,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 83.0,
+      "offset_beat": 83.25,
+      "duration_beats": 0.25,
+      "velocity": 63,
+      "confidence": 0.4970158040523529,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 13.0,
+      "offset_beat": 13.25,
+      "duration_beats": 0.25,
+      "velocity": 64,
+      "confidence": 0.5033095479011536,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 70,
+      "onset_beat": 61.0,
+      "offset_beat": 61.75,
+      "duration_beats": 0.75,
+      "velocity": 52,
+      "confidence": 0.40644320845603943,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 54,
+      "onset_beat": 266.75,
+      "offset_beat": 267.75,
+      "duration_beats": 1.0,
+      "velocity": 62,
+      "confidence": 0.48873376846313477,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 70,
+      "onset_beat": 96.0,
+      "offset_beat": 96.25,
+      "duration_beats": 0.25,
+      "velocity": 54,
+      "confidence": 0.42734789848327637,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 49,
+      "onset_beat": 327.75,
+      "offset_beat": 330.25,
+      "duration_beats": 2.5,
+      "velocity": 64,
+      "confidence": 0.5021594166755676,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 53,
+      "onset_beat": 323.0,
+      "offset_beat": 325.75,
+      "duration_beats": 2.75,
+      "velocity": 58,
+      "confidence": 0.45532476902008057,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 239.5,
+      "offset_beat": 240.0,
+      "duration_beats": 0.5,
+      "velocity": 47,
+      "confidence": 0.37118497490882874,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 68,
+      "onset_beat": 170.75,
+      "offset_beat": 171.0,
+      "duration_beats": 0.25,
+      "velocity": 64,
+      "confidence": 0.5016615986824036,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 46,
+      "onset_beat": 322.25,
+      "offset_beat": 324.0,
+      "duration_beats": 1.75,
+      "velocity": 56,
+      "confidence": 0.439413458108902,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 51,
+      "onset_beat": 266.75,
+      "offset_beat": 268.25,
+      "duration_beats": 1.5,
+      "velocity": 55,
+      "confidence": 0.43542027473449707,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 100.25,
+      "offset_beat": 100.75,
+      "duration_beats": 0.5,
+      "velocity": 59,
+      "confidence": 0.4642477333545685,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 82,
+      "onset_beat": 242.75,
+      "offset_beat": 243.0,
+      "duration_beats": 0.25,
+      "velocity": 62,
+      "confidence": 0.4858112633228302,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 90,
+      "onset_beat": 225.5,
+      "offset_beat": 226.0,
+      "duration_beats": 0.5,
+      "velocity": 48,
+      "confidence": 0.378383994102478,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 51,
+      "onset_beat": 314.25,
+      "offset_beat": 318.0,
+      "duration_beats": 3.75,
+      "velocity": 59,
+      "confidence": 0.46740707755088806,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 66,
+      "onset_beat": 161.25,
+      "offset_beat": 161.75,
+      "duration_beats": 0.5,
+      "velocity": 51,
+      "confidence": 0.4000730514526367,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 360.0,
+      "offset_beat": 360.25,
+      "duration_beats": 0.25,
+      "velocity": 60,
+      "confidence": 0.47599223256111145,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 98.5,
+      "offset_beat": 98.75,
+      "duration_beats": 0.25,
+      "velocity": 61,
+      "confidence": 0.4824703633785248,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 328.75,
+      "offset_beat": 329.0,
+      "duration_beats": 0.25,
+      "velocity": 48,
+      "confidence": 0.3797023296356201,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 53,
+      "onset_beat": 350.0,
+      "offset_beat": 353.5,
+      "duration_beats": 3.5,
+      "velocity": 55,
+      "confidence": 0.4293229579925537,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 64,
+      "onset_beat": 270.0,
+      "offset_beat": 270.5,
+      "duration_beats": 0.5,
+      "velocity": 63,
+      "confidence": 0.49559786915779114,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 49,
+      "onset_beat": 322.5,
+      "offset_beat": 325.0,
+      "duration_beats": 2.5,
+      "velocity": 57,
+      "confidence": 0.4459318518638611,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 25,
+      "onset_beat": 342.5,
+      "offset_beat": 351.5,
+      "duration_beats": 9.0,
+      "velocity": 52,
+      "confidence": 0.40584027767181396,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 238.0,
+      "offset_beat": 238.5,
+      "duration_beats": 0.5,
+      "velocity": 57,
+      "confidence": 0.4477154612541199,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 44,
+      "onset_beat": 328.25,
+      "offset_beat": 329.75,
+      "duration_beats": 1.5,
+      "velocity": 56,
+      "confidence": 0.43923768401145935,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 82,
+      "onset_beat": 7.25,
+      "offset_beat": 9.25,
+      "duration_beats": 2.0,
+      "velocity": 55,
+      "confidence": 0.431668221950531,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 49,
+      "onset_beat": 280.0,
+      "offset_beat": 282.0,
+      "duration_beats": 2.0,
+      "velocity": 52,
+      "confidence": 0.4111415147781372,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 88,
+      "onset_beat": 105.25,
+      "offset_beat": 105.5,
+      "duration_beats": 0.25,
+      "velocity": 64,
+      "confidence": 0.5012766718864441,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 289.5,
+      "offset_beat": 291.5,
+      "duration_beats": 2.0,
+      "velocity": 49,
+      "confidence": 0.38761937618255615,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 256.5,
+      "offset_beat": 256.75,
+      "duration_beats": 0.25,
+      "velocity": 60,
+      "confidence": 0.4739455282688141,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 101,
+      "onset_beat": 331.5,
+      "offset_beat": 332.25,
+      "duration_beats": 0.75,
+      "velocity": 52,
+      "confidence": 0.41209572553634644,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 70,
+      "onset_beat": 25.0,
+      "offset_beat": 25.25,
+      "duration_beats": 0.25,
+      "velocity": 63,
+      "confidence": 0.4931797981262207,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 300.5,
+      "offset_beat": 302.25,
+      "duration_beats": 1.75,
+      "velocity": 53,
+      "confidence": 0.4199032485485077,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 68,
+      "onset_beat": 311.0,
+      "offset_beat": 313.25,
+      "duration_beats": 2.25,
+      "velocity": 47,
+      "confidence": 0.37226954102516174,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 331.75,
+      "offset_beat": 332.25,
+      "duration_beats": 0.5,
+      "velocity": 54,
+      "confidence": 0.4230650067329407,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 192.5,
+      "offset_beat": 194.5,
+      "duration_beats": 2.0,
+      "velocity": 48,
+      "confidence": 0.37482738494873047,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 230.25,
+      "offset_beat": 230.5,
+      "duration_beats": 0.25,
+      "velocity": 60,
+      "confidence": 0.47169679403305054,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 337.5,
+      "offset_beat": 339.25,
+      "duration_beats": 1.75,
+      "velocity": 52,
+      "confidence": 0.4111523926258087,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 90,
+      "onset_beat": 142.5,
+      "offset_beat": 142.75,
+      "duration_beats": 0.25,
+      "velocity": 45,
+      "confidence": 0.354054719209671,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 77,
+      "onset_beat": 318.25,
+      "offset_beat": 319.25,
+      "duration_beats": 1.0,
+      "velocity": 53,
+      "confidence": 0.41435205936431885,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 123.75,
+      "offset_beat": 124.0,
+      "duration_beats": 0.25,
+      "velocity": 45,
+      "confidence": 0.3539169728755951,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 104.0,
+      "offset_beat": 104.5,
+      "duration_beats": 0.5,
+      "velocity": 53,
+      "confidence": 0.41865551471710205,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 70,
+      "onset_beat": 324.25,
+      "offset_beat": 325.0,
+      "duration_beats": 0.75,
+      "velocity": 59,
+      "confidence": 0.46469882130622864,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 87,
+      "onset_beat": 122.5,
+      "offset_beat": 122.75,
+      "duration_beats": 0.25,
+      "velocity": 63,
+      "confidence": 0.49343356490135193,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 54,
+      "onset_beat": 308.25,
+      "offset_beat": 310.0,
+      "duration_beats": 1.75,
+      "velocity": 58,
+      "confidence": 0.45696625113487244,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 361.25,
+      "offset_beat": 361.75,
+      "duration_beats": 0.5,
+      "velocity": 54,
+      "confidence": 0.4275705814361572,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 87,
+      "onset_beat": 310.25,
+      "offset_beat": 311.5,
+      "duration_beats": 1.25,
+      "velocity": 46,
+      "confidence": 0.3647393584251404,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 70,
+      "onset_beat": 327.0,
+      "offset_beat": 328.25,
+      "duration_beats": 1.25,
+      "velocity": 52,
+      "confidence": 0.4114476442337036,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 50.25,
+      "offset_beat": 50.5,
+      "duration_beats": 0.25,
+      "velocity": 60,
+      "confidence": 0.4736524522304535,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 65,
+      "onset_beat": 288.0,
+      "offset_beat": 288.75,
+      "duration_beats": 0.75,
+      "velocity": 55,
+      "confidence": 0.4329450726509094,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 49,
+      "onset_beat": 342.0,
+      "offset_beat": 344.75,
+      "duration_beats": 2.75,
+      "velocity": 59,
+      "confidence": 0.4630016088485718,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 77,
+      "onset_beat": 294.75,
+      "offset_beat": 295.25,
+      "duration_beats": 0.5,
+      "velocity": 54,
+      "confidence": 0.42776939272880554,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 58,
+      "onset_beat": 302.75,
+      "offset_beat": 304.25,
+      "duration_beats": 1.5,
+      "velocity": 51,
+      "confidence": 0.4045427739620209,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 127.0,
+      "offset_beat": 127.25,
+      "duration_beats": 0.25,
+      "velocity": 63,
+      "confidence": 0.4940448999404907,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 51,
+      "onset_beat": 309.25,
+      "offset_beat": 310.75,
+      "duration_beats": 1.5,
+      "velocity": 56,
+      "confidence": 0.4430636167526245,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 53,
+      "onset_beat": 343.5,
+      "offset_beat": 344.75,
+      "duration_beats": 1.25,
+      "velocity": 56,
+      "confidence": 0.43830835819244385,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 41,
+      "onset_beat": 358.5,
+      "offset_beat": 359.5,
+      "duration_beats": 1.0,
+      "velocity": 57,
+      "confidence": 0.4455093741416931,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 82,
+      "onset_beat": 220.75,
+      "offset_beat": 221.0,
+      "duration_beats": 0.25,
+      "velocity": 54,
+      "confidence": 0.4270530939102173,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 304.0,
+      "offset_beat": 305.0,
+      "duration_beats": 1.0,
+      "velocity": 47,
+      "confidence": 0.3662096858024597,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 334.25,
+      "offset_beat": 336.5,
+      "duration_beats": 2.25,
+      "velocity": 54,
+      "confidence": 0.42744582891464233,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 53,
+      "onset_beat": 360.25,
+      "offset_beat": 361.25,
+      "duration_beats": 1.0,
+      "velocity": 50,
+      "confidence": 0.39371204376220703,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 64,
+      "onset_beat": 190.25,
+      "offset_beat": 190.75,
+      "duration_beats": 0.5,
+      "velocity": 55,
+      "confidence": 0.43529921770095825,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 77,
+      "onset_beat": 319.5,
+      "offset_beat": 320.25,
+      "duration_beats": 0.75,
+      "velocity": 54,
+      "confidence": 0.4212613105773926,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 87,
+      "onset_beat": 118.75,
+      "offset_beat": 119.0,
+      "duration_beats": 0.25,
+      "velocity": 59,
+      "confidence": 0.46157070994377136,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 75,
+      "onset_beat": 266.5,
+      "offset_beat": 267.0,
+      "duration_beats": 0.5,
+      "velocity": 54,
+      "confidence": 0.42577189207077026,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 49,
+      "onset_beat": 282.25,
+      "offset_beat": 282.75,
+      "duration_beats": 0.5,
+      "velocity": 62,
+      "confidence": 0.4871833920478821,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 231.25,
+      "offset_beat": 231.5,
+      "duration_beats": 0.25,
+      "velocity": 50,
+      "confidence": 0.39616063237190247,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 68,
+      "onset_beat": 52.25,
+      "offset_beat": 52.5,
+      "duration_beats": 0.25,
+      "velocity": 58,
+      "confidence": 0.45277902483940125,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 90,
+      "onset_beat": 228.5,
+      "offset_beat": 228.75,
+      "duration_beats": 0.25,
+      "velocity": 45,
+      "confidence": 0.3511945307254791,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 49,
+      "onset_beat": 87.75,
+      "offset_beat": 88.0,
+      "duration_beats": 0.25,
+      "velocity": 55,
+      "confidence": 0.43176156282424927,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 340.5,
+      "offset_beat": 341.75,
+      "duration_beats": 1.25,
+      "velocity": 47,
+      "confidence": 0.36723706126213074,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 279.5,
+      "offset_beat": 280.0,
+      "duration_beats": 0.5,
+      "velocity": 46,
+      "confidence": 0.36298421025276184,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 247.75,
+      "offset_beat": 248.0,
+      "duration_beats": 0.25,
+      "velocity": 46,
+      "confidence": 0.3596045970916748,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 70,
+      "onset_beat": 331.0,
+      "offset_beat": 331.75,
+      "duration_beats": 0.75,
+      "velocity": 51,
+      "confidence": 0.40526241064071655,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 56.75,
+      "offset_beat": 57.5,
+      "duration_beats": 0.75,
+      "velocity": 45,
+      "confidence": 0.35186609625816345,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 192.75,
+      "offset_beat": 194.25,
+      "duration_beats": 1.5,
+      "velocity": 53,
+      "confidence": 0.41931647062301636,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 77,
+      "onset_beat": 217.0,
+      "offset_beat": 217.25,
+      "duration_beats": 0.25,
+      "velocity": 53,
+      "confidence": 0.41966068744659424,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 49.5,
+      "offset_beat": 49.75,
+      "duration_beats": 0.25,
+      "velocity": 57,
+      "confidence": 0.4503096342086792,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 300.75,
+      "offset_beat": 301.25,
+      "duration_beats": 0.5,
+      "velocity": 50,
+      "confidence": 0.39483582973480225,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 285.0,
+      "offset_beat": 285.5,
+      "duration_beats": 0.5,
+      "velocity": 44,
+      "confidence": 0.34571513533592224,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 100,
+      "onset_beat": 193.75,
+      "offset_beat": 195.25,
+      "duration_beats": 1.5,
+      "velocity": 52,
+      "confidence": 0.4077572226524353,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 278.5,
+      "offset_beat": 279.25,
+      "duration_beats": 0.75,
+      "velocity": 58,
+      "confidence": 0.4570966362953186,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 52,
+      "onset_beat": 269.0,
+      "offset_beat": 270.0,
+      "duration_beats": 1.0,
+      "velocity": 54,
+      "confidence": 0.42564231157302856,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 354.0,
+      "offset_beat": 359.75,
+      "duration_beats": 5.75,
+      "velocity": 55,
+      "confidence": 0.43239039182662964,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 58,
+      "onset_beat": 326.75,
+      "offset_beat": 327.0,
+      "duration_beats": 0.25,
+      "velocity": 60,
+      "confidence": 0.4723118245601654,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 284.5,
+      "offset_beat": 284.75,
+      "duration_beats": 0.25,
+      "velocity": 56,
+      "confidence": 0.44369885325431824,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 76,
+      "onset_beat": 191.5,
+      "offset_beat": 191.75,
+      "duration_beats": 0.25,
+      "velocity": 57,
+      "confidence": 0.44741490483283997,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 48,
+      "onset_beat": 338.25,
+      "offset_beat": 339.75,
+      "duration_beats": 1.5,
+      "velocity": 58,
+      "confidence": 0.4603993892669678,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 40.75,
+      "offset_beat": 41.0,
+      "duration_beats": 0.25,
+      "velocity": 56,
+      "confidence": 0.442480206489563,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 109.75,
+      "offset_beat": 110.0,
+      "duration_beats": 0.25,
+      "velocity": 45,
+      "confidence": 0.3568311631679535,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 58,
+      "onset_beat": 306.25,
+      "offset_beat": 307.5,
+      "duration_beats": 1.25,
+      "velocity": 56,
+      "confidence": 0.43927156925201416,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 78,
+      "onset_beat": 20.25,
+      "offset_beat": 20.5,
+      "duration_beats": 0.25,
+      "velocity": 56,
+      "confidence": 0.44315290451049805,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 189.25,
+      "offset_beat": 190.25,
+      "duration_beats": 1.0,
+      "velocity": 54,
+      "confidence": 0.4233209490776062,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 68,
+      "onset_beat": 310.5,
+      "offset_beat": 310.75,
+      "duration_beats": 0.25,
+      "velocity": 55,
+      "confidence": 0.4358291029930115,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 54,
+      "onset_beat": 306.25,
+      "offset_beat": 307.0,
+      "duration_beats": 0.75,
+      "velocity": 53,
+      "confidence": 0.4154982566833496,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 59,
+      "onset_beat": 29.25,
+      "offset_beat": 29.5,
+      "duration_beats": 0.25,
+      "velocity": 54,
+      "confidence": 0.422380656003952,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 51,
+      "onset_beat": 308.0,
+      "offset_beat": 308.5,
+      "duration_beats": 0.5,
+      "velocity": 57,
+      "confidence": 0.451133668422699,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 97,
+      "onset_beat": 195.5,
+      "offset_beat": 197.0,
+      "duration_beats": 1.5,
+      "velocity": 55,
+      "confidence": 0.43427547812461853,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 58.25,
+      "offset_beat": 58.5,
+      "duration_beats": 0.25,
+      "velocity": 53,
+      "confidence": 0.41723746061325073,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 194.5,
+      "offset_beat": 195.5,
+      "duration_beats": 1.0,
+      "velocity": 49,
+      "confidence": 0.38431718945503235,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 59,
+      "onset_beat": 276.25,
+      "offset_beat": 276.75,
+      "duration_beats": 0.5,
+      "velocity": 49,
+      "confidence": 0.38842079043388367,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 64,
+      "onset_beat": 54.5,
+      "offset_beat": 54.75,
+      "duration_beats": 0.25,
+      "velocity": 58,
+      "confidence": 0.4531829059123993,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 41,
+      "onset_beat": 357.25,
+      "offset_beat": 358.5,
+      "duration_beats": 1.25,
+      "velocity": 53,
+      "confidence": 0.4174171984195709,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 287.25,
+      "offset_beat": 289.25,
+      "duration_beats": 2.0,
+      "velocity": 56,
+      "confidence": 0.4411236643791199,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 76,
+      "onset_beat": 187.0,
+      "offset_beat": 187.25,
+      "duration_beats": 0.25,
+      "velocity": 53,
+      "confidence": 0.4174540638923645,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 82,
+      "onset_beat": 181.0,
+      "offset_beat": 181.75,
+      "duration_beats": 0.75,
+      "velocity": 45,
+      "confidence": 0.35154154896736145,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 20.75,
+      "offset_beat": 21.0,
+      "duration_beats": 0.25,
+      "velocity": 54,
+      "confidence": 0.4255825877189636,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 49,
+      "onset_beat": 336.25,
+      "offset_beat": 338.0,
+      "duration_beats": 1.75,
+      "velocity": 50,
+      "confidence": 0.39400801062583923,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 97,
+      "onset_beat": 194.0,
+      "offset_beat": 195.0,
+      "duration_beats": 1.0,
+      "velocity": 47,
+      "confidence": 0.3682091236114502,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 48,
+      "onset_beat": 320.0,
+      "offset_beat": 321.0,
+      "duration_beats": 1.0,
+      "velocity": 49,
+      "confidence": 0.3881177306175232,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 52,
+      "onset_beat": 189.5,
+      "offset_beat": 190.0,
+      "duration_beats": 0.5,
+      "velocity": 49,
+      "confidence": 0.3883732855319977,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 82,
+      "onset_beat": 24.0,
+      "offset_beat": 24.5,
+      "duration_beats": 0.5,
+      "velocity": 45,
+      "confidence": 0.3546937108039856,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 335.25,
+      "offset_beat": 335.5,
+      "duration_beats": 0.25,
+      "velocity": 55,
+      "confidence": 0.43025001883506775,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 70,
+      "onset_beat": 181.0,
+      "offset_beat": 181.25,
+      "duration_beats": 0.25,
+      "velocity": 55,
+      "confidence": 0.43382373452186584,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 90,
+      "onset_beat": 5.25,
+      "offset_beat": 7.0,
+      "duration_beats": 1.75,
+      "velocity": 49,
+      "confidence": 0.38418591022491455,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 9.5,
+      "offset_beat": 9.75,
+      "duration_beats": 0.25,
+      "velocity": 53,
+      "confidence": 0.4148317277431488,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 6.5,
+      "offset_beat": 7.75,
+      "duration_beats": 1.25,
+      "velocity": 48,
+      "confidence": 0.3813646733760834,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 53,
+      "onset_beat": 349.25,
+      "offset_beat": 349.75,
+      "duration_beats": 0.5,
+      "velocity": 45,
+      "confidence": 0.3543417453765869,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 60,
+      "onset_beat": 340.75,
+      "offset_beat": 341.5,
+      "duration_beats": 0.75,
+      "velocity": 55,
+      "confidence": 0.43150919675827026,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 336.0,
+      "offset_beat": 336.75,
+      "duration_beats": 0.75,
+      "velocity": 50,
+      "confidence": 0.3957662880420685,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 44,
+      "onset_beat": 324.75,
+      "offset_beat": 326.0,
+      "duration_beats": 1.25,
+      "velocity": 54,
+      "confidence": 0.42207956314086914,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 302.5,
+      "offset_beat": 303.25,
+      "duration_beats": 0.75,
+      "velocity": 49,
+      "confidence": 0.38551202416419983,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 350.75,
+      "offset_beat": 351.5,
+      "duration_beats": 0.75,
+      "velocity": 50,
+      "confidence": 0.3927842974662781,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 305.5,
+      "offset_beat": 305.75,
+      "duration_beats": 0.25,
+      "velocity": 57,
+      "confidence": 0.44500836730003357,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 89,
+      "onset_beat": 233.25,
+      "offset_beat": 233.5,
+      "duration_beats": 0.25,
+      "velocity": 56,
+      "confidence": 0.44087186455726624,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 192.25,
+      "offset_beat": 192.5,
+      "duration_beats": 0.25,
+      "velocity": 53,
+      "confidence": 0.41782888770103455,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 241.5,
+      "offset_beat": 241.75,
+      "duration_beats": 0.25,
+      "velocity": 55,
+      "confidence": 0.435674786567688,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 49.25,
+      "offset_beat": 51.0,
+      "duration_beats": 1.75,
+      "velocity": 45,
+      "confidence": 0.3560994565486908,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 70,
+      "onset_beat": 169.25,
+      "offset_beat": 169.5,
+      "duration_beats": 0.25,
+      "velocity": 56,
+      "confidence": 0.4399571418762207,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 87,
+      "onset_beat": 114.75,
+      "offset_beat": 115.0,
+      "duration_beats": 0.25,
+      "velocity": 55,
+      "confidence": 0.4339407980442047,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 247.0,
+      "offset_beat": 247.25,
+      "duration_beats": 0.25,
+      "velocity": 55,
+      "confidence": 0.42923691868782043,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 70,
+      "onset_beat": 308.0,
+      "offset_beat": 308.25,
+      "duration_beats": 0.25,
+      "velocity": 51,
+      "confidence": 0.39931854605674744,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 53,
+      "onset_beat": 356.0,
+      "offset_beat": 356.25,
+      "duration_beats": 0.25,
+      "velocity": 51,
+      "confidence": 0.3987356126308441,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 349.75,
+      "offset_beat": 350.5,
+      "duration_beats": 0.75,
+      "velocity": 50,
+      "confidence": 0.39755740761756897,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 29.75,
+      "offset_beat": 30.0,
+      "duration_beats": 0.25,
+      "velocity": 51,
+      "confidence": 0.4048842489719391,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 345.25,
+      "offset_beat": 346.0,
+      "duration_beats": 0.75,
+      "velocity": 50,
+      "confidence": 0.3932253122329712,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 104.75,
+      "offset_beat": 105.0,
+      "duration_beats": 0.25,
+      "velocity": 54,
+      "confidence": 0.4215995967388153,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 326.75,
+      "offset_beat": 327.5,
+      "duration_beats": 0.75,
+      "velocity": 50,
+      "confidence": 0.39266839623451233,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 272.5,
+      "offset_beat": 273.0,
+      "duration_beats": 0.5,
+      "velocity": 49,
+      "confidence": 0.38211074471473694,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 39,
+      "onset_beat": 341.0,
+      "offset_beat": 342.0,
+      "duration_beats": 1.0,
+      "velocity": 51,
+      "confidence": 0.405273973941803,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 25,
+      "onset_beat": 285.75,
+      "offset_beat": 287.0,
+      "duration_beats": 1.25,
+      "velocity": 47,
+      "confidence": 0.3730386793613434,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 176.5,
+      "offset_beat": 176.75,
+      "duration_beats": 0.25,
+      "velocity": 55,
+      "confidence": 0.4310556650161743,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 52,
+      "onset_beat": 270.75,
+      "offset_beat": 271.0,
+      "duration_beats": 0.25,
+      "velocity": 54,
+      "confidence": 0.4239087700843811,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 44,
+      "onset_beat": 267.0,
+      "offset_beat": 267.5,
+      "duration_beats": 0.5,
+      "velocity": 52,
+      "confidence": 0.4080584943294525,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 84,
+      "onset_beat": 319.25,
+      "offset_beat": 319.75,
+      "duration_beats": 0.5,
+      "velocity": 51,
+      "confidence": 0.4015107750892639,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 298.0,
+      "offset_beat": 298.25,
+      "duration_beats": 0.25,
+      "velocity": 45,
+      "confidence": 0.3522948920726776,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 328.25,
+      "offset_beat": 328.75,
+      "duration_beats": 0.5,
+      "velocity": 56,
+      "confidence": 0.43773990869522095,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 324.75,
+      "offset_beat": 326.0,
+      "duration_beats": 1.25,
+      "velocity": 48,
+      "confidence": 0.3762238621711731,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 49,
+      "onset_beat": 354.5,
+      "offset_beat": 356.0,
+      "duration_beats": 1.5,
+      "velocity": 50,
+      "confidence": 0.3905162215232849,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 30,
+      "onset_beat": 330.25,
+      "offset_beat": 331.0,
+      "duration_beats": 0.75,
+      "velocity": 47,
+      "confidence": 0.3714938461780548,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 97,
+      "onset_beat": 322.0,
+      "offset_beat": 322.25,
+      "duration_beats": 0.25,
+      "velocity": 50,
+      "confidence": 0.3933059275150299,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 87,
+      "onset_beat": 334.0,
+      "offset_beat": 334.5,
+      "duration_beats": 0.5,
+      "velocity": 44,
+      "confidence": 0.3501107692718506,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 87,
+      "onset_beat": 308.75,
+      "offset_beat": 309.25,
+      "duration_beats": 0.5,
+      "velocity": 46,
+      "confidence": 0.36510521173477173,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 112.25,
+      "offset_beat": 112.5,
+      "duration_beats": 0.25,
+      "velocity": 47,
+      "confidence": 0.3738824725151062,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 59,
+      "onset_beat": 51.25,
+      "offset_beat": 51.5,
+      "duration_beats": 0.25,
+      "velocity": 48,
+      "confidence": 0.3740217089653015,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 352.0,
+      "offset_beat": 352.25,
+      "duration_beats": 0.25,
+      "velocity": 51,
+      "confidence": 0.4025972783565521,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 97,
+      "onset_beat": 337.25,
+      "offset_beat": 337.75,
+      "duration_beats": 0.5,
+      "velocity": 47,
+      "confidence": 0.3739670515060425,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 53,
+      "onset_beat": 347.5,
+      "offset_beat": 348.75,
+      "duration_beats": 1.25,
+      "velocity": 45,
+      "confidence": 0.3569188714027405,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 68,
+      "onset_beat": 246.75,
+      "offset_beat": 247.25,
+      "duration_beats": 0.5,
+      "velocity": 47,
+      "confidence": 0.3708447813987732,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 87,
+      "onset_beat": 34.5,
+      "offset_beat": 35.0,
+      "duration_beats": 0.5,
+      "velocity": 50,
+      "confidence": 0.39669644832611084,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 78,
+      "onset_beat": 162.25,
+      "offset_beat": 162.5,
+      "duration_beats": 0.25,
+      "velocity": 44,
+      "confidence": 0.3441755473613739,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 44,
+      "onset_beat": 284.75,
+      "offset_beat": 285.0,
+      "duration_beats": 0.25,
+      "velocity": 53,
+      "confidence": 0.4163464605808258,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 87,
+      "onset_beat": 121.5,
+      "offset_beat": 121.75,
+      "duration_beats": 0.25,
+      "velocity": 44,
+      "confidence": 0.34488239884376526,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 275.25,
+      "offset_beat": 275.5,
+      "duration_beats": 0.25,
+      "velocity": 52,
+      "confidence": 0.405678391456604,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 77,
+      "onset_beat": 301.75,
+      "offset_beat": 302.0,
+      "duration_beats": 0.25,
+      "velocity": 52,
+      "confidence": 0.41018587350845337,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 304.75,
+      "offset_beat": 305.25,
+      "duration_beats": 0.5,
+      "velocity": 47,
+      "confidence": 0.36864393949508667,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 89,
+      "onset_beat": 220.5,
+      "offset_beat": 220.75,
+      "duration_beats": 0.25,
+      "velocity": 52,
+      "confidence": 0.4080079197883606,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 100,
+      "onset_beat": 190.25,
+      "offset_beat": 190.75,
+      "duration_beats": 0.5,
+      "velocity": 44,
+      "confidence": 0.34629490971565247,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 190.5,
+      "offset_beat": 190.75,
+      "duration_beats": 0.25,
+      "velocity": 52,
+      "confidence": 0.4098064601421356,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 44,
+      "onset_beat": 345.0,
+      "offset_beat": 345.25,
+      "duration_beats": 0.25,
+      "velocity": 48,
+      "confidence": 0.3795323669910431,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 54,
+      "onset_beat": 307.75,
+      "offset_beat": 308.0,
+      "duration_beats": 0.25,
+      "velocity": 50,
+      "confidence": 0.3918135464191437,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 249.0,
+      "offset_beat": 249.5,
+      "duration_beats": 0.5,
+      "velocity": 47,
+      "confidence": 0.3706181049346924,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 46,
+      "onset_beat": 331.5,
+      "offset_beat": 332.25,
+      "duration_beats": 0.75,
+      "velocity": 45,
+      "confidence": 0.35376155376434326,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 58,
+      "onset_beat": 308.5,
+      "offset_beat": 308.75,
+      "duration_beats": 0.25,
+      "velocity": 52,
+      "confidence": 0.4065946042537689,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 276.75,
+      "offset_beat": 277.0,
+      "duration_beats": 0.25,
+      "velocity": 48,
+      "confidence": 0.3813644349575043,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 352.25,
+      "offset_beat": 353.5,
+      "duration_beats": 1.25,
+      "velocity": 46,
+      "confidence": 0.3652162551879883,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 49,
+      "onset_beat": 72.25,
+      "offset_beat": 72.75,
+      "duration_beats": 0.5,
+      "velocity": 52,
+      "confidence": 0.40977656841278076,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 64,
+      "onset_beat": 194.5,
+      "offset_beat": 194.75,
+      "duration_beats": 0.25,
+      "velocity": 51,
+      "confidence": 0.4024209678173065,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 25,
+      "onset_beat": 282.0,
+      "offset_beat": 284.25,
+      "duration_beats": 2.25,
+      "velocity": 46,
+      "confidence": 0.36089372634887695,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 59,
+      "onset_beat": 50.25,
+      "offset_beat": 50.75,
+      "duration_beats": 0.5,
+      "velocity": 50,
+      "confidence": 0.390781432390213,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 25,
+      "onset_beat": 284.25,
+      "offset_beat": 285.0,
+      "duration_beats": 0.75,
+      "velocity": 47,
+      "confidence": 0.3705746829509735,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 97,
+      "onset_beat": 334.5,
+      "offset_beat": 337.0,
+      "duration_beats": 2.5,
+      "velocity": 44,
+      "confidence": 0.34568068385124207,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 341.25,
+      "offset_beat": 342.0,
+      "duration_beats": 0.75,
+      "velocity": 52,
+      "confidence": 0.40839436650276184,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 49,
+      "onset_beat": 327.25,
+      "offset_beat": 327.5,
+      "duration_beats": 0.25,
+      "velocity": 51,
+      "confidence": 0.4002610146999359,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 277.75,
+      "offset_beat": 278.25,
+      "duration_beats": 0.5,
+      "velocity": 45,
+      "confidence": 0.35127943754196167,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 44,
+      "onset_beat": 284.0,
+      "offset_beat": 284.25,
+      "duration_beats": 0.25,
+      "velocity": 51,
+      "confidence": 0.4026382863521576,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 52,
+      "onset_beat": 271.75,
+      "offset_beat": 272.5,
+      "duration_beats": 0.75,
+      "velocity": 49,
+      "confidence": 0.38435885310173035,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 145.0,
+      "offset_beat": 145.5,
+      "duration_beats": 0.5,
+      "velocity": 47,
+      "confidence": 0.36614805459976196,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 249.0,
+      "offset_beat": 249.25,
+      "duration_beats": 0.25,
+      "velocity": 50,
+      "confidence": 0.39387890696525574,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 32,
+      "onset_beat": 336.0,
+      "offset_beat": 336.75,
+      "duration_beats": 0.75,
+      "velocity": 48,
+      "confidence": 0.3747803270816803,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 44,
+      "onset_beat": 282.25,
+      "offset_beat": 282.75,
+      "duration_beats": 0.5,
+      "velocity": 49,
+      "confidence": 0.38536378741264343,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 324.75,
+      "offset_beat": 325.25,
+      "duration_beats": 0.5,
+      "velocity": 45,
+      "confidence": 0.3526853024959564,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 82,
+      "onset_beat": 6.25,
+      "offset_beat": 6.5,
+      "duration_beats": 0.25,
+      "velocity": 51,
+      "confidence": 0.4045112431049347,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 42,
+      "onset_beat": 61.0,
+      "offset_beat": 61.5,
+      "duration_beats": 0.5,
+      "velocity": 47,
+      "confidence": 0.3678199052810669,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 88,
+      "onset_beat": 189.5,
+      "offset_beat": 189.75,
+      "duration_beats": 0.25,
+      "velocity": 45,
+      "confidence": 0.355678915977478,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 66,
+      "onset_beat": 26.5,
+      "offset_beat": 26.75,
+      "duration_beats": 0.25,
+      "velocity": 46,
+      "confidence": 0.36421701312065125,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 89,
+      "onset_beat": 239.25,
+      "offset_beat": 239.5,
+      "duration_beats": 0.25,
+      "velocity": 50,
+      "confidence": 0.39576324820518494,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 65,
+      "onset_beat": 324.75,
+      "offset_beat": 325.25,
+      "duration_beats": 0.5,
+      "velocity": 49,
+      "confidence": 0.38834866881370544,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 76,
+      "onset_beat": 194.25,
+      "offset_beat": 194.5,
+      "duration_beats": 0.25,
+      "velocity": 48,
+      "confidence": 0.38039660453796387,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 271.75,
+      "offset_beat": 272.0,
+      "duration_beats": 0.25,
+      "velocity": 46,
+      "confidence": 0.3604530096054077,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 326.25,
+      "offset_beat": 326.75,
+      "duration_beats": 0.5,
+      "velocity": 48,
+      "confidence": 0.3793417513370514,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 279.75,
+      "offset_beat": 280.0,
+      "duration_beats": 0.25,
+      "velocity": 50,
+      "confidence": 0.39576324820518494,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 39,
+      "onset_beat": 330.25,
+      "offset_beat": 330.5,
+      "duration_beats": 0.25,
+      "velocity": 49,
+      "confidence": 0.3852435052394867,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 59,
+      "onset_beat": 62.25,
+      "offset_beat": 63.0,
+      "duration_beats": 0.75,
+      "velocity": 46,
+      "confidence": 0.36606916785240173,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 334.0,
+      "offset_beat": 334.75,
+      "duration_beats": 0.75,
+      "velocity": 47,
+      "confidence": 0.37323448061943054,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 97,
+      "onset_beat": 107.75,
+      "offset_beat": 108.25,
+      "duration_beats": 0.5,
+      "velocity": 49,
+      "confidence": 0.3829551935195923,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 40,
+      "onset_beat": 269.25,
+      "offset_beat": 270.25,
+      "duration_beats": 1.0,
+      "velocity": 46,
+      "confidence": 0.36303508281707764,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 305.25,
+      "offset_beat": 305.5,
+      "duration_beats": 0.25,
+      "velocity": 50,
+      "confidence": 0.39422252774238586,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 335.25,
+      "offset_beat": 335.5,
+      "duration_beats": 0.25,
+      "velocity": 45,
+      "confidence": 0.3563709557056427,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 51,
+      "onset_beat": 242.0,
+      "offset_beat": 242.25,
+      "duration_beats": 0.25,
+      "velocity": 50,
+      "confidence": 0.3904167413711548,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 68,
+      "onset_beat": 193.5,
+      "offset_beat": 193.75,
+      "duration_beats": 0.25,
+      "velocity": 48,
+      "confidence": 0.3816462755203247,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 87,
+      "onset_beat": 119.5,
+      "offset_beat": 120.0,
+      "duration_beats": 0.5,
+      "velocity": 51,
+      "confidence": 0.4016285836696625,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 82,
+      "onset_beat": 96.5,
+      "offset_beat": 96.75,
+      "duration_beats": 0.25,
+      "velocity": 49,
+      "confidence": 0.3852311372756958,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 278.0,
+      "offset_beat": 278.25,
+      "duration_beats": 0.25,
+      "velocity": 44,
+      "confidence": 0.3425653576850891,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 353.0,
+      "offset_beat": 353.5,
+      "duration_beats": 0.5,
+      "velocity": 48,
+      "confidence": 0.3752072751522064,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 84,
+      "onset_beat": 318.25,
+      "offset_beat": 319.0,
+      "duration_beats": 0.75,
+      "velocity": 45,
+      "confidence": 0.3567999303340912,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 89,
+      "onset_beat": 221.0,
+      "offset_beat": 221.75,
+      "duration_beats": 0.75,
+      "velocity": 44,
+      "confidence": 0.34863197803497314,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 334.0,
+      "offset_beat": 334.25,
+      "duration_beats": 0.25,
+      "velocity": 47,
+      "confidence": 0.36733198165893555,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 80,
+      "onset_beat": 340.0,
+      "offset_beat": 341.75,
+      "duration_beats": 1.75,
+      "velocity": 44,
+      "confidence": 0.34377193450927734,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 53,
+      "onset_beat": 284.75,
+      "offset_beat": 285.0,
+      "duration_beats": 0.25,
+      "velocity": 47,
+      "confidence": 0.3668772578239441,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 99,
+      "onset_beat": 266.5,
+      "offset_beat": 266.75,
+      "duration_beats": 0.25,
+      "velocity": 45,
+      "confidence": 0.3535875082015991,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 78,
+      "onset_beat": 317.5,
+      "offset_beat": 318.0,
+      "duration_beats": 0.5,
+      "velocity": 48,
+      "confidence": 0.37739887833595276,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 87,
+      "onset_beat": 330.5,
+      "offset_beat": 330.75,
+      "duration_beats": 0.25,
+      "velocity": 48,
+      "confidence": 0.37678077816963196,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 37,
+      "onset_beat": 361.25,
+      "offset_beat": 361.5,
+      "duration_beats": 0.25,
+      "velocity": 46,
+      "confidence": 0.361604243516922,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 89,
+      "onset_beat": 222.5,
+      "offset_beat": 223.0,
+      "duration_beats": 0.5,
+      "velocity": 44,
+      "confidence": 0.3428584933280945,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 48,
+      "onset_beat": 318.5,
+      "offset_beat": 319.5,
+      "duration_beats": 1.0,
+      "velocity": 45,
+      "confidence": 0.35636985301971436,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 64,
+      "onset_beat": 270.75,
+      "offset_beat": 271.0,
+      "duration_beats": 0.25,
+      "velocity": 47,
+      "confidence": 0.37323126196861267,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 44,
+      "onset_beat": 291.25,
+      "offset_beat": 291.5,
+      "duration_beats": 0.25,
+      "velocity": 45,
+      "confidence": 0.3516760468482971,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 78,
+      "onset_beat": 54.0,
+      "offset_beat": 54.25,
+      "duration_beats": 0.25,
+      "velocity": 48,
+      "confidence": 0.38059985637664795,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 347.25,
+      "offset_beat": 347.5,
+      "duration_beats": 0.25,
+      "velocity": 46,
+      "confidence": 0.36126190423965454,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 77,
+      "onset_beat": 300.0,
+      "offset_beat": 300.5,
+      "duration_beats": 0.5,
+      "velocity": 44,
+      "confidence": 0.3488016426563263,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 48,
+      "onset_beat": 341.5,
+      "offset_beat": 341.75,
+      "duration_beats": 0.25,
+      "velocity": 46,
+      "confidence": 0.36454498767852783,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 77,
+      "onset_beat": 321.5,
+      "offset_beat": 321.75,
+      "duration_beats": 0.25,
+      "velocity": 47,
+      "confidence": 0.37244129180908203,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 25,
+      "onset_beat": 351.75,
+      "offset_beat": 352.5,
+      "duration_beats": 0.75,
+      "velocity": 46,
+      "confidence": 0.3622744083404541,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 68,
+      "onset_beat": 331.75,
+      "offset_beat": 332.0,
+      "duration_beats": 0.25,
+      "velocity": 45,
+      "confidence": 0.3577337861061096,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 283.5,
+      "offset_beat": 284.0,
+      "duration_beats": 0.5,
+      "velocity": 45,
+      "confidence": 0.3522270619869232,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 71,
+      "onset_beat": 104.25,
+      "offset_beat": 104.5,
+      "duration_beats": 0.25,
+      "velocity": 44,
+      "confidence": 0.3473028838634491,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 44,
+      "onset_beat": 324.25,
+      "offset_beat": 324.5,
+      "duration_beats": 0.25,
+      "velocity": 46,
+      "confidence": 0.35906901955604553,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 73,
+      "onset_beat": 301.0,
+      "offset_beat": 301.25,
+      "duration_beats": 0.25,
+      "velocity": 45,
+      "confidence": 0.3517291247844696,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 61,
+      "onset_beat": 303.75,
+      "offset_beat": 304.0,
+      "duration_beats": 0.25,
+      "velocity": 46,
+      "confidence": 0.36263197660446167,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 68,
+      "onset_beat": 51.25,
+      "offset_beat": 51.5,
+      "duration_beats": 0.25,
+      "velocity": 48,
+      "confidence": 0.3795343339443207,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 5.5,
+      "offset_beat": 6.0,
+      "duration_beats": 0.5,
+      "velocity": 44,
+      "confidence": 0.34303364157676697,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 83,
+      "onset_beat": 51.25,
+      "offset_beat": 51.75,
+      "duration_beats": 0.5,
+      "velocity": 44,
+      "confidence": 0.3457004427909851,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 279.5,
+      "offset_beat": 279.75,
+      "duration_beats": 0.25,
+      "velocity": 46,
+      "confidence": 0.3605208992958069,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 72,
+      "onset_beat": 317.5,
+      "offset_beat": 317.75,
+      "duration_beats": 0.25,
+      "velocity": 46,
+      "confidence": 0.363742858171463,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 343.5,
+      "offset_beat": 343.75,
+      "duration_beats": 0.25,
+      "velocity": 45,
+      "confidence": 0.35397082567214966,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 94,
+      "onset_beat": 331.25,
+      "offset_beat": 331.5,
+      "duration_beats": 0.25,
+      "velocity": 45,
+      "confidence": 0.3538937270641327,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 90,
+      "onset_beat": 326.0,
+      "offset_beat": 326.25,
+      "duration_beats": 0.25,
+      "velocity": 46,
+      "confidence": 0.3604491055011749,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 56,
+      "onset_beat": 280.75,
+      "offset_beat": 281.0,
+      "duration_beats": 0.25,
+      "velocity": 46,
+      "confidence": 0.3629191219806671,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 85,
+      "onset_beat": 360.5,
+      "offset_beat": 360.75,
+      "duration_beats": 0.25,
+      "velocity": 44,
+      "confidence": 0.34514766931533813,
+      "stem_label": "other_accompaniment"
+    },
+    {
+      "pitch": 63,
+      "onset_beat": 339.0,
+      "offset_beat": 339.25,
+      "duration_beats": 0.25,
+      "velocity": 45,
+      "confidence": 0.35092782974243164,
+      "stem_label": "other_accompaniment"
+    }
+  ]
+}

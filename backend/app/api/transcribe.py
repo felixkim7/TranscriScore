@@ -132,8 +132,9 @@ def _run_final_phase(job_id: str) -> None:
 
     try:
         output_name = pipeline_service.readable_output_name(job.original_filename, job_id)
+        title = pipeline_service.readable_title(job.original_filename)
         result = pipeline_service.run_final_phase(
-            job.input_audio_path, job.stem_labels, on_stage=on_stage, output_name=output_name
+            job.input_audio_path, job.stem_labels, on_stage=on_stage, output_name=output_name, title=title
         )
         job_service.update_job(job_id, status=JobStatus.DONE, result=result)
     except Exception:  # noqa: BLE001 — job failures must be captured, not crash the worker

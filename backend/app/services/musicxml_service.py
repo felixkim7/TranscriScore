@@ -57,14 +57,20 @@ class Segment(NamedTuple):
     pitches: List[int]  # empty list = rest
 
 
-def run(result: QuantizationResult, output_name: str) -> Path:
+def run(result: QuantizationResult, output_name: str, title: Optional[str] = None) -> Path:
     """Convert a single QuantizationResult into its own MusicXML score/file.
 
     This is the single-stem entry point (used by test_musicxml.py/test_export.py and
     anywhere else only one stem's notation is needed). For combining multiple stems'
     transcriptions into one multi-part score, see run_combined() below.
+
+    output_name is the on-disk filename stem only. title is what's shown as the
+    score's visible title (defaults to output_name) — callers with a filename that
+    isn't human-readable (e.g. readable_output_name()'s job-id-suffixed form) should
+    pass the clean track name separately here so the job id never ends up rendered
+    on the sheet music itself. See run_combined()'s docstring for the full reasoning.
     """
-    score = build_score([result], title=output_name)
+    score = build_score([result], title=title if title is not None else output_name)
 
     MUSICXML_DIR.mkdir(parents=True, exist_ok=True)
     output_path = MUSICXML_DIR / f"{output_name}.musicxml"
@@ -73,7 +79,7 @@ def run(result: QuantizationResult, output_name: str) -> Path:
     return output_path
 
 
-def run_combined(results: List[QuantizationResult], output_name: str) -> Path:
+def run_combined(results: List[QuantizationResult], output_name: str, title: Optional[str] = None) -> Path:
     """Combine multiple stems' QuantizationResults into one multi-part MusicXML score.
 
     Each stem becomes its own part (or treble/bass PartStaff pair, for stems that get
@@ -81,8 +87,15 @@ def run_combined(results: List[QuantizationResult], output_name: str) -> Path:
     instrument transcription opens as one file — the user can mute/hide/extract
     individual parts later in MuseScore or any other notation program, rather than
     juggling one file per stem.
+
+    output_name is the on-disk filename stem only, not what gets displayed. It's
+    allowed to carry a collision-proofing suffix (e.g. a job-id fragment, see
+    pipeline_service.readable_output_name()) that has no place on the actual sheet
+    music. title is the human-readable name actually drawn on the score (and, since
+    export_service.to_mscz() converts from this file, on the MSCZ too) — defaults to
+    output_name for callers (tests, the CLI script) that pass an already-clean name.
     """
-    score = build_score(results, title=output_name)
+    score = build_score(results, title=title if title is not None else output_name)
 
     MUSICXML_DIR.mkdir(parents=True, exist_ok=True)
     output_path = MUSICXML_DIR / f"{output_name}.musicxml"
@@ -218,14 +231,36 @@ def build_score(results: List[QuantizationResult], title: str) -> stream.Score:
             bass_notes = _drop_octave_overflow(bass_notes)
             treble_segments = _pad_to_end_beat(_sweep_line_segments(treble_notes), stem_end_beat)
             bass_segments = _pad_to_end_beat(_sweep_line_segments(bass_notes), stem_end_beat)
+            # part_instrument is required here (unlike the single-staff branches
+            # above, where it's a nice-to-have) — without it, music21 invents its
+            # own Instrument with a random id at export time, and OSMD/MuseScore
+            # fall back to displaying THAT id (e.g. "Instr. Pe0993900b...") as the
+            # part's label whenever partName is unset.
+            #
+            # The name has to be set on the INSTRUMENT, not just the Part (below) —
+            # confirmed by direct repro: when two-PartStaff groups are grouped under
+            # a StaffGroup, music21's MusicXML writer merges each pair into one
+            # combined <part> at export time, and only the Instrument's partName
+            # survives that merge. Part.partName alone left one twin's <score-part>
+            # declaration empty (<part-name />), which is what caused OSMD to fall
+            # back to the random instrument id — same class of bug as the id
+            # fallback above, just surfacing because Part.partName wasn't actually
+            # the authoritative source here.
+            treble_instrument = instrument.Piano()
+            treble_instrument.partName = treble_instrument.partAbbreviation = group_name
+            bass_instrument = instrument.Piano()
+            bass_instrument.partName = bass_instrument.partAbbreviation = group_name
             treble = _build_staff_part(
                 treble_segments, result.tempo_bpm, clef.TrebleClef(), detected_key,
-                result.time_signature, as_part_staff=True,
+                result.time_signature, part_instrument=treble_instrument, as_part_staff=True,
             )
             bass = _build_staff_part(
                 bass_segments, result.tempo_bpm, clef.BassClef(), detected_key,
-                result.time_signature, as_part_staff=True,
+                result.time_signature, part_instrument=bass_instrument, as_part_staff=True,
             )
+            if multi_stem:
+                treble.partName = treble.partAbbreviation = group_name
+                bass.partName = bass.partAbbreviation = group_name
             score.insert(0, treble)
             score.insert(0, bass)
             score.insert(0, layout.StaffGroup(

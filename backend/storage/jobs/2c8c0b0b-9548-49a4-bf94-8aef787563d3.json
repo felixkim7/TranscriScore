@@ -6,11 +6,11 @@
   "original_filename": "sample7.mp3",
   "input_audio_path": "C:\\Users\\minso\\HateSlop\\final project\\TranscriScore\\backend\\storage\\uploads\\2c8c0b0b-9548-49a4-bf94-8aef787563d3.mp3",
   "created_at": "2026-07-28T02:55:58.434903Z",
-  "updated_at": "2026-07-28T02:57:52.889098Z",
+  "updated_at": "2026-07-29T06:57:45.381927Z",
   "error": null,
   "result": {
-    "combined_musicxml_path": "C:\\Users\\minso\\HateSlop\\final project\\TranscriScore\\backend\\storage\\musicxml\\2c8c0b0b-9548-49a4-bf94-8aef787563d3.musicxml",
-    "combined_mscz_path": "C:\\Users\\minso\\HateSlop\\final project\\TranscriScore\\backend\\storage\\mscz\\2c8c0b0b-9548-49a4-bf94-8aef787563d3.mscz",
+    "combined_musicxml_path": "C:\\Users\\minso\\HateSlop\\final project\\TranscriScore\\backend\\storage\\musicxml\\sample7-2c8c0b0b.musicxml",
+    "combined_mscz_path": "C:\\Users\\minso\\HateSlop\\final project\\TranscriScore\\backend\\storage\\mscz\\sample7-2c8c0b0b.mscz",
     "stems": [
       {
         "stem_name": "drums",
