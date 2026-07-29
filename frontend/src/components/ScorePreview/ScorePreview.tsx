@@ -34,8 +34,21 @@ export function ScorePreview({ musicXmlUrl, onRenderError }: ScorePreviewProps) 
       drawingParameters: 'compacttight',
       drawTitle: true,
       drawPartNames: true,
+      // Part name ABBREVIATIONS (not full names) are what OSMD draws on every
+      // system after the first — and at this page width they render squeezed
+      // into/overlapping the staff lines rather than fitting the left margin
+      // (confirmed: happens even with short real names like "Drums", so it's a
+      // layout issue, not the earlier empty/oversized-name bug). Full names still
+      // show once at the top of the piece via drawPartNames.
+      drawPartAbbreviations: false,
       drawMeasureNumbers: true,
       drawCredits: false,
+      // Default page format is "Endless" (one continuous unbroken strip) — with a
+      // fixed-height, scrollable container that made the score look cut off rather
+      // than divided into pages. A4 makes OSMD lay the score out as real, separate
+      // pages (each fitting the container's width, stacked vertically to scroll
+      // between), matching actual sheet music pagination.
+      pageFormat: 'A4_P',
     });
 
     return () => {

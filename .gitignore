@@ -47,3 +47,12 @@ env/
 
 # repomix code base
 repomix-output.xml
+
+# Generated pipeline output (uploads, stems, midi, musicxml, mscz, job records) —
+# regenerated per-run, not source. Was tracked in git and grew to ~2GB, making
+# every push heavy. Ignoring contents (not the directories themselves) so the
+# !.gitkeep negation below can still apply — a trailing-slash directory pattern
+# (e.g. "backend/storage/*/") stops git from descending into the dir at all,
+# which silently breaks any negation for files inside it.
+backend/storage/*/*
+!backend/storage/*/.gitkeep

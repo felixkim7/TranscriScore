@@ -5,17 +5,27 @@
   --preview-muted: #8a8272;
 
   width: 100%;
-  min-height: 480px;
+  max-height: 80vh;
   background: var(--preview-paper);
   border: 1px solid var(--preview-border);
   border-radius: 6px;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   box-shadow: 0 1px 2px rgba(43, 38, 32, 0.06);
 }
 
 .score-preview__canvas {
   padding: 24px;
-  min-height: 480px;
+}
+
+/* OSMD renders each A4 page as its own <svg> under the container — scale each to
+   the container's width instead of the page's native pixel size, and separate
+   pages visually so a multi-page score reads as distinct pages, not one strip. */
+.score-preview__canvas svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 16px;
 }
 
 .score-preview__placeholder {
