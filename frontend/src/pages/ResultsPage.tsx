@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import CheckpointReview from "../components/CheckpointReview";
 import ProcessingStatus from "../components/ProcessingStatus";
 import StemPlayer from "../components/StemPlayer";
+import { ScoreWorkspace } from "../components/ScoreWorkspace/ScoreWorkspace";
 import { useJobStatus } from "../hooks/useJobStatus";
 
 // A stem's audio is servable as soon as separation has finished — see
@@ -54,8 +55,7 @@ export default function ResultsPage() {
 
       {job.status === "done" && (
         <div className="score-section">
-          {/* Track 2: score preview (OSMD) + export buttons go here. */}
-          <p className="placeholder">Score preview and export coming soon.</p>
+          <ScoreWorkspace jobId={job.job_id} />
         </div>
       )}
     </div>
