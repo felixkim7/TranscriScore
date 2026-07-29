@@ -14,10 +14,17 @@ a real lock or a database if this ever runs with multiple worker processes.
 import json
 import uuid
 from datetime import datetime, timezone
-from typing import Optional
+from typing import Dict, List, Optional
 
 from app.config.settings import JOBS_DIR
-from app.schemas.job import Job, JobStage, JobStatus
+from app.schemas.job import (
+    Checkpoint,
+    Job,
+    JobStage,
+    JobStatus,
+    SeparationCheckpointStem,
+    TranscriptionCheckpointStem,
+)
 
 
 def create_job(original_filename: str, input_audio_path: str) -> Job:
@@ -41,9 +48,13 @@ def update_job(
     job_id: str,
     status: Optional[JobStatus] = None,
     stage: Optional[JobStage] = None,
+    checkpoint: Optional[Checkpoint] = None,
     error: Optional[str] = None,
     result=None,
     input_audio_path: Optional[str] = None,
+    separation_checkpoint: Optional[List[SeparationCheckpointStem]] = None,
+    transcription_checkpoint: Optional[List[TranscriptionCheckpointStem]] = None,
+    stem_labels: Optional[Dict[str, str]] = None,
 ) -> Job:
     job = get_job(job_id)
     if job is None:
@@ -53,12 +64,20 @@ def update_job(
         job.status = status
     if stage is not None:
         job.stage = stage
+    if checkpoint is not None:
+        job.checkpoint = checkpoint
     if error is not None:
         job.error = error
     if result is not None:
         job.result = result
     if input_audio_path is not None:
         job.input_audio_path = input_audio_path
+    if separation_checkpoint is not None:
+        job.separation_checkpoint = separation_checkpoint
+    if transcription_checkpoint is not None:
+        job.transcription_checkpoint = transcription_checkpoint
+    if stem_labels is not None:
+        job.stem_labels = stem_labels
     job.updated_at = datetime.now(timezone.utc)
 
     _save(job)

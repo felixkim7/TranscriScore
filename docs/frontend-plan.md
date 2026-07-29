@@ -124,16 +124,46 @@ treating the track boundary as fixed.
    job to be DONE, only that separation has finished, so Track 1's stem player
    can start working before transcription/export finish for the rest of the
    pipeline.
-2. **Track 1:** upload → poll → "done" state (bare-bones, no score view yet) —
-   proves the whole async chain works end-to-end from the browser.
-3. **Track 2, parallel to step 2 (the API client now exists):** OSMD read-only
-   render against a MusicXML file (can start from a `curl`-uploaded job's result
-   while Track 1's upload screen isn't done yet — no need to block on it), then
-   export buttons.
-4. **Track 1:** waveform + stem player — the audio-serving endpoint from step 1
-   is ready, no longer blocking.
-5. **Both:** wire the two tracks into one flow (upload → status → preview + export
-   + stem player all on one results page), final polish.
+2. **Done — Track 1: upload → poll → "done" state, plus waveform + stem player.**
+   Built in one pass rather than two separate steps, since the audio-serving
+   endpoint was already ready:
+   - `src/pages/UploadPage.tsx` — file picker (validates extension client-side
+     to match the backend's `ALLOWED_EXTENSIONS`), calls `uploadAudio()`,
+     navigates to `/job/:jobId` on success.
+   - `src/hooks/useJobStatus.ts` — polls `GET /status/{job_id}` every 3s,
+     stops once the job reaches `done`/`failed`. Reusable — `ResultsPage` is
+     its only consumer so far, but nothing about it is page-specific.
+   - `src/components/ProcessingStatus.tsx` — renders the 7-stage progress list
+     using the real `JobStage` order, marking each done/active/pending; shows
+     the error message directly if the job failed.
+   - `src/components/StemPlayer.tsx` — plain HTML5 `<audio>` elements for the
+     original mix + all 6 stems (native controls, no waveform visuals yet —
+     decided explicitly to prove the real flow first, see this doc's history).
+   - `src/pages/ResultsPage.tsx` — wires the above together; only renders the
+     stem player once the job's stage indicates separation has actually
+     finished (`transcribing` or later — checked directly against the real
+     stage sequence, not assumed), not gated on the whole job being done. Has a
+     clearly-marked placeholder (`.score-section`) for Track 2's OSMD preview +
+     export buttons.
+   - `src/App.tsx` / `main.tsx` — `react-router-dom` wired up (`/` upload,
+     `/job/:jobId` results), replacing the default Vite demo content
+     (`App.css`/unused demo assets removed).
+
+   Verified against the REAL running backend end-to-end, not just typechecked:
+   started both `uvicorn` and `vite dev`, uploaded `sample.mp3` through a fresh
+   real job, polled it through every real stage to `done`, confirmed the stem
+   player's audio sources (`GET /audio/{job_id}` and `/audio/{job_id}/{stem}`)
+   return real, correctly-sized files once available. Every new `.tsx`/`.ts`
+   file confirmed to compile cleanly through Vite's actual transform pipeline
+   (not just `tsc`, which only checks types) via direct requests to the dev
+   server. `npx tsc -b` and `npm run build` both clean.
+3. **Track 2, can start now (the API client and page routing both exist):**
+   OSMD read-only render against a MusicXML file (can start from a
+   `curl`-uploaded job's result — several real completed jobs already exist in
+   `storage/jobs/` from testing — no need to wait on anything else), rendered
+   into `ResultsPage.tsx`'s `.score-section` placeholder, then export buttons.
+4. **Both:** final polish once Track 2's piece lands — layout, loading states,
+   error handling consistency between the two tracks' components.
 
 ## Related backlog item — done
 

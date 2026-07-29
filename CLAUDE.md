@@ -171,8 +171,10 @@ steps 2-4 and 6 only need a raw/stem clip from `samples/`, not Teammate A's actu
 - [~] 9. Frontend (upload/status/read-only OSMD preview/export — NOT an in-browser
       correction UI) — **shared**, split by feature into two tracks (pipeline+media
       vs. score preview+export) — see `docs/frontend-plan.md` for the concrete
-      split and build order. Scaffolding + shared API client done (see Quality
-      backlog below); actual screens not started.
+      split and build order. Scaffolding + shared API client done, and Track 1
+      (upload → status → stem player) is done and verified end-to-end against a
+      real backend (see Quality backlog below). Track 2 (OSMD score preview +
+      export buttons) not started.
       Scope decision: editing happens in MuseScore (opening the downloaded
       `.mscz`), not in the browser — this is consistent with the human-in-the-loop
       workflow already described above ("the model produces a draft, the user
@@ -893,6 +895,128 @@ backbone was working, the plan was to circle back and improve each stage:
       utils}/` are still empty. This was scaffolding + the shared contract only,
       per explicit scope (`docs/frontend-plan.md`'s build order step 1);
       building the real Track 1/Track 2 screens is still fully ahead.
+
+- [x] **Track 1 (pipeline + media) — upload screen, status polling, waveform +
+      stem player — done.** Built in one pass since the audio-serving endpoint
+      from the scaffolding step was already ready, rather than splitting into
+      the two originally-planned separate steps.
+
+      New files: `src/pages/UploadPage.tsx` (file picker with client-side
+      extension validation matching the backend's `ALLOWED_EXTENSIONS`, calls
+      `uploadAudio()`, navigates to `/job/:jobId`), `src/hooks/useJobStatus.ts`
+      (polls `GET /status/{job_id}` every 3s, stops on a terminal status —
+      reusable, not page-specific), `src/components/ProcessingStatus.tsx`
+      (7-stage progress list using the real `JobStage` order, done/active/
+      pending per stage, shows the error directly on failure),
+      `src/components/StemPlayer.tsx` (plain HTML5 `<audio>` elements for the
+      original mix + all 6 stems — native controls, no waveform visuals;
+      decided explicitly to prove the real flow first before adding a
+      wavesurfer.js-style dependency), `src/pages/ResultsPage.tsx` (wires it
+      together, plus `react-router-dom` routing in `App.tsx`/`main.tsx`,
+      replacing the default Vite demo content).
+
+      One real piece of logic worth flagging: the stem player does NOT wait
+      for `job.status === "done"` — `GET /audio/{job_id}/{stem}` only needs
+      separation to have finished, well before transcription/quantization/
+      export complete (see the audio-serving endpoint's own docstring in
+      `app/api/export.py`, added during scaffolding). `ResultsPage.tsx` checks
+      the job's `stage` directly against the real stage sequence
+      (`transcribing` or later) rather than assuming — traced through all 7
+      real stage values plus the terminal `done` state to confirm the gating
+      flips at the right point, not just at start/end.
+
+      Verified against a REAL running backend end-to-end, not just
+      typechecked or built: started both `uvicorn` and `vite dev` together,
+      uploaded `sample.mp3` through a fresh real job via the actual running
+      frontend's dev server, polled it through every real stage to `done`,
+      confirmed the stem player's audio sources return real, correctly-sized
+      files once available (matching sizes from earlier direct `curl` tests).
+      Every new `.tsx`/`.ts` file confirmed to compile cleanly through Vite's
+      actual transform pipeline (fetched each file's transformed output
+      directly from the dev server — this catches real JSX/import errors that
+      `tsc` alone wouldn't, since `tsc` only checks types, not that Vite can
+      actually build the module). `npx tsc -b` and `npm run build` both clean.
+
+      Track 2's OSMD score preview + export buttons have a clearly-marked
+      placeholder to plug into (`ResultsPage.tsx`'s `.score-section`, currently
+      just a "coming soon" message), so the two tracks' work won't collide.
+
+- [x] **Pipeline review checkpoints — pause after separation and after
+      transcription, done.** User asked for the pipeline to stop mid-way so the
+      user can check individual stages before proceeding, rather than the whole
+      thing running start-to-finish automatically. Real backend change, not
+      just more granular progress reporting — the pipeline genuinely stops and
+      waits for an explicit "continue" action at two points (decided via
+      `AskUserQuestion`, not assumed): after separation (review/listen to the
+      separated stems before spending several minutes transcribing all 6), and
+      after transcription (review per-stem note counts/labels before
+      quantization/tempo reconciliation/export run).
+
+      Split `pipeline_service.run_full_pipeline()` into three phase functions —
+      `run_until_separation()`, `run_transcription_phase()`, `run_final_phase()`
+      — each a plain function that runs to completion and returns; the actual
+      "pausing" happens at the API layer (a background task runs one phase,
+      sets the job to a new `AWAITING_REVIEW` status, and nothing further runs
+      until a new endpoint, `POST /jobs/{job_id}/continue`, starts the next
+      phase as a NEW background task). Between phases, nothing is held in
+      memory — state needed to resume lives on disk (Demucs's stem wavs,
+      each stem's transcribed notes JSON, both already written by existing
+      services) or in the job record itself (`Job.stem_labels`, the label
+      decisions made during transcription/classification, needed so
+      `run_final_phase()` can reload the right per-stem note events without
+      re-running classification). A server restart between phases loses
+      nothing. `scripts/run_pipeline.py` (no "review and continue" concept for
+      a CLI script) still runs all three phases back-to-back via a new
+      `run_full_pipeline_no_pauses()` — verified this still works end-to-end
+      on a real file after the refactor, not just assumed unchanged.
+
+      Schema additions (`app/schemas/job.py`): `JobStatus.AWAITING_REVIEW`,
+      a new `Checkpoint` enum (`after_separation`/`after_transcription`) stored
+      on the job so `/continue` knows which phase to run next WITHOUT the
+      caller specifying it (prevents a client from accidentally skipping or
+      re-running a phase out of order), `SeparationCheckpointStem`/
+      `TranscriptionCheckpointStem` for what each checkpoint shows the
+      frontend, `Job.stem_labels` (internal resume bookkeeping, not really
+      "status" but has to live somewhere durable across the pause).
+
+      `POST /jobs/{job_id}/continue` (new, in `app/api/transcribe.py`): 409 if
+      the job isn't currently `AWAITING_REVIEW`; otherwise reads
+      `job.checkpoint` and schedules the matching next phase as a background
+      task, immediately returning the job with its now-`PROCESSING` status.
+      `POST /upload` (`app/api/upload.py`) now only runs phase 1 before
+      pausing, instead of the whole pipeline.
+
+      Frontend: `Job`/checkpoint types updated to match
+      (`frontend/src/services/types.ts`), `continueJob()` added to the API
+      client. `useJobStatus.ts`'s polling now also stops on `awaiting_review`
+      (nothing will change until the user acts) and exposes `resumePolling()`
+      for the results page to call after a successful `/continue`, since a new
+      phase starting is invisible to the hook otherwise (it's a new background
+      task the frontend has to explicitly start watching again, not a
+      continuation of state the hook was already tracking). New
+      `CheckpointReview.tsx` component shows what each checkpoint produced
+      (stem list, or per-stem note count/label table) with a "Continue"
+      button; wired into `ResultsPage.tsx`, which also had to fix its
+      stem-player-ready check — it previously only looked at `job.stage`
+      reaching `"transcribing"`, but a job paused at the `after_separation`
+      checkpoint has `stage: "separating"` for the whole pause (stage only
+      advances once `/continue` starts the next phase) even though the stems
+      are genuinely already playable at that point; fixed by also checking
+      `status === "awaiting_review" && checkpoint === "after_separation"`.
+
+      Verified end-to-end against the REAL running backend + frontend
+      together, not just unit-level: uploaded a real file, watched it correctly
+      pause at `awaiting_review`/`after_separation` (confirmed stem audio
+      already downloadable at this point via a direct request), called
+      `/continue`, watched it pause again at `awaiting_review`/
+      `after_transcription` with real per-stem note counts, called `/continue`
+      again, watched it reach `done` with a complete, correct result; final
+      MSCZ verified to open/convert cleanly in MuseScore. Error path checked:
+      calling `/continue` on an already-`done` job correctly 409s. Left one
+      real paused job sitting at the `after_separation` checkpoint
+      specifically as a live test fixture for whoever opens the frontend next
+      (findable via `storage/jobs/*.json`, `status: "awaiting_review"`).
+      `npx tsc -b` and `npm run build` both clean on the frontend changes.
 
 ## Known gotchas
 

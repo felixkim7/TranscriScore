@@ -171,16 +171,27 @@ Once it's up:
 
 ### API shape
 
-Processing is async — the pipeline takes several minutes per file (Demucs separation +
-transcribing all 6 stems), so `POST /upload` returns immediately with a job ID instead
-of blocking; poll `GET /status/{job_id}` until it's done, then fetch the result.
+Processing is async AND split into 3 phases with 2 review checkpoints in between —
+`POST /upload` only runs separation, then pauses; the pipeline doesn't run straight
+through to a final result automatically. Poll `GET /status/{job_id}`; when `status`
+is `awaiting_review`, call `POST /jobs/{job_id}/continue` to run the next phase.
+Repeat until `status` is `done` (or `failed`).
+
+```
+upload -> [separating] -> awaiting_review (after_separation)
+       -> continue -> [transcribing] -> awaiting_review (after_transcription)
+       -> continue -> [quantizing -> reconciling_tempo -> rendering_musicxml -> exporting] -> done
+```
 
 | Endpoint | Method | Does |
 |---|---|---|
-| `/upload` | POST | Accepts an audio file (`.mp3`/`.wav`/`.flac`/`.m4a`, multipart form field `file`), saves it, starts the pipeline in the background, returns a `Job` with a `job_id` |
-| `/status/{job_id}` | GET | Current `status` (pending/processing/done/failed) and `stage` (separating/transcribing/quantizing/reconciling_tempo/rendering_musicxml/exporting) |
+| `/upload` | POST | Accepts an audio file (`.mp3`/`.wav`/`.flac`/`.m4a`, multipart form field `file`), saves it, runs separation in the background, returns a `Job` with a `job_id` |
+| `/status/{job_id}` | GET | Current `status` (pending/processing/awaiting_review/done/failed), `stage`, and — while `awaiting_review` — `checkpoint` (`after_separation`/`after_transcription`) plus that checkpoint's data (`separation_checkpoint` or `transcription_checkpoint`) |
+| `/jobs/{job_id}/continue` | POST | Resumes a job paused at `awaiting_review`, running whichever phase comes next (decided from the job's own `checkpoint`, not passed in). 409 if the job isn't currently awaiting review |
 | `/result/{job_id}` | GET | Once done: combined MusicXML/MSCZ paths + per-stem breakdown (tempo, note count, stem MusicXML path). 409 if not finished yet, 422 if the job failed |
 | `/export/{job_id}/{format}` | GET | Downloads the actual file. `format` is `musicxml`, `mscz`, or `stem-musicxml` (needs `?stem=<name>`, e.g. `?stem=guitar`) |
+| `/audio/{job_id}` | GET | The original uploaded audio, for a full-mix waveform view |
+| `/audio/{job_id}/{stem}` | GET | One separated stem's WAV audio. Available as soon as separation finishes — doesn't require the whole job to be `done` |
 
 Example with `curl`:
 
@@ -188,6 +199,15 @@ Example with `curl`:
 curl -X POST http://127.0.0.1:8000/upload -F "file=@../samples/YOUR_FILE.mp3;type=audio/mpeg"
 # -> {"job_id": "...", "status": "pending", ...}
 
+curl http://127.0.0.1:8000/status/YOUR_JOB_ID
+# -> poll until "status": "awaiting_review" (checkpoint: "after_separation")
+# -> at this point, GET /audio/YOUR_JOB_ID/<stem> already works if you want to listen first
+
+curl -X POST http://127.0.0.1:8000/jobs/YOUR_JOB_ID/continue
+curl http://127.0.0.1:8000/status/YOUR_JOB_ID
+# -> poll until "status": "awaiting_review" (checkpoint: "after_transcription")
+
+curl -X POST http://127.0.0.1:8000/jobs/YOUR_JOB_ID/continue
 curl http://127.0.0.1:8000/status/YOUR_JOB_ID
 # -> poll until "status": "done"
 
@@ -198,7 +218,15 @@ curl -o output.mscz http://127.0.0.1:8000/export/YOUR_JOB_ID/mscz
 
 Job records persist to `storage/jobs/<job_id>.json`; uploaded files land in
 `storage/uploads/<job_id>.<ext>` (named after the job ID, not the original filename, so
-two uploads sharing a name never collide).
+two uploads sharing a name never collide) and all intermediate/per-stem output
+(`storage/intermediate/`, `storage/musicxml/stems/`, etc.) stays nested under that same
+job ID for the same reason. The FINAL combined output — `storage/musicxml/<name>.musicxml`
+and `storage/mscz/<name>.mscz` — uses a readable name instead: the original uploaded
+filename plus a short slice of the job ID (e.g. `sample4-cf7d8563.musicxml`), so browsing
+those two folders looks like the old CLI-script runs rather than a wall of UUIDs, while
+the suffix still keeps two same-named uploads from colliding. Between checkpoints, nothing
+is held in memory — resumable state lives on disk (separated stems, transcribed note
+events) or in the job record itself, so a server restart mid-pause loses nothing.
 
 ### Quick reference
 
