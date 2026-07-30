@@ -98,6 +98,93 @@ function base64ToArrayBuffer(base64: string): ArrayBuffer {
   return bytes.buffer;
 }
 
+// --- Drums ---
+//
+// The melodic-soundfont path above (gleitz/midi-js-soundfonts) has no real GM
+// drum kit -- confirmed directly, its FluidR3_GM set only has melodic
+// percussion (marimba, xylophone, etc), and a community fork claiming to add
+// one (dave4mpls/midi-js-soundfonts-with-drums) was checked directly and
+// found broken (its "drums-mp3.js" file actually contains piano audio data
+// under a misleading filename).
+//
+// But drum_transcription_service.py (backend) only ever emits 3 fixed GM
+// percussion pitches -- settings.DRUM_VOICE_MIDI_PITCH: kick=36, snare=38,
+// hihat=42 -- so this doesn't need a full 47-sound GM percussion kit, just 3
+// real one-shot hits. Sourced from tidalcycles/sounds-tr808-fischer, a real
+// TR-808 drum machine sample set released under CC0 1.0 (public domain
+// dedication, confirmed by fetching its actual LICENSE file directly, unlike
+// the broken fork checked earlier) and maintained by the same organization
+// behind Dirt-Samples/Tidal Cycles, not an anonymous/unclear-provenance
+// source. Each WAV was fetched and its header inspected directly (RIFF/WAVE/
+// fmt, PCM, 44.1kHz) to confirm real, valid, decodable audio before trusting
+// this — not assumed from the repo's file listing alone.
+const DRUM_SAMPLE_BASE_URL = "https://raw.githubusercontent.com/tidalcycles/sounds-tr808-fischer/main";
+
+const DRUM_SAMPLE_PATHS: Record<number, string> = {
+  36: "bd8/BD0000.WAV", // kick
+  38: "sd8/SD0000.WAV", // snare
+  42: "ch8/CH.WAV", // closed hi-hat
+};
+
+export interface DrumKit {
+  /** GM percussion pitch number (36/38/42) -> decoded AudioBuffer. */
+  buffers: Map<number, AudioBuffer>;
+}
+
+/**
+ * Fetch and decode the 3 fixed drum one-shots this project's backend ever
+ * emits. Unlike loadSoundfont() (one instrument = dozens of per-note pitched
+ * samples), each drum voice is exactly one fixed-pitch hit -- no note-name
+ * mapping, no JS-source-as-JSON parsing, just 3 direct WAV fetches.
+ */
+export async function loadDrumKit(audioContext: AudioContext): Promise<DrumKit> {
+  const buffers = new Map<number, AudioBuffer>();
+
+  await Promise.all(
+    Object.entries(DRUM_SAMPLE_PATHS).map(async ([pitchStr, path]) => {
+      const response = await fetch(`${DRUM_SAMPLE_BASE_URL}/${path}`);
+      if (!response.ok) {
+        throw new Error(`Drum sample fetch failed for "${path}" (${response.status})`);
+      }
+      const bytes = await response.arrayBuffer();
+      const buffer = await audioContext.decodeAudioData(bytes);
+      buffers.set(Number(pitchStr), buffer);
+    }),
+  );
+
+  return { buffers };
+}
+
+/**
+ * Play one drum hit through audioContext, starting at `when`. Unlike
+ * playNote() (a sampled instrument's note rings for the note's own
+ * duration), a one-shot drum sample plays its own natural length regardless
+ * of the transcribed note's duration -- source.stop() is deliberately NOT
+ * called with a fixed end time here, since these are short percussive hits,
+ * not sustained pitched notes, and cutting one off early would sound wrong.
+ */
+export function playDrumHit(
+  audioContext: AudioContext,
+  drumKit: DrumKit,
+  gmPitch: number,
+  when: number,
+  gain: number,
+): AudioBufferSourceNode | null {
+  const buffer = drumKit.buffers.get(gmPitch);
+  if (!buffer) return null; // not one of the 3 known drum voices
+
+  const source = audioContext.createBufferSource();
+  source.buffer = buffer;
+
+  const gainNode = audioContext.createGain();
+  gainNode.gain.value = Math.max(0, Math.min(1, gain));
+  source.connect(gainNode);
+  gainNode.connect(audioContext.destination);
+
+  source.start(when);
+  return source;
+}
+
 const NOTE_NAMES = ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"];
 
 /** MIDI note number (0-127) -> scientific pitch notation (e.g. 60 -> "C4"),

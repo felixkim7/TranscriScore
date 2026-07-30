@@ -1,6 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { Midi } from "@tonejs/midi";
-import { loadSoundfont, playNote, type Soundfont } from "../services/soundfont";
+import {
+  loadDrumKit,
+  loadSoundfont,
+  playDrumHit,
+  playNote,
+  type DrumKit,
+  type Soundfont,
+} from "../services/soundfont";
 import { stemMidiUrl } from "../services/api";
 import { STEM_NAMES, type StemName } from "../services/types";
 
@@ -20,18 +27,17 @@ const GM_PROGRAM_TO_SOUNDFONT_NAME: Record<number, string> = {
   53: "voice_oohs",
 };
 
-// Drums are deliberately NOT supported here yet. The soundfont source
-// (gleitz/midi-js-soundfonts) has no real GM drum kit (channel-10, note-keyed
-// kick/snare/hihat) -- confirmed directly: its FluidR3_GM set only has
-// melodic percussion (marimba, xylophone, taiko_drum, etc), not a kit. A
-// community fork claiming to add one (dave4mpls/midi-js-soundfonts-with-
-// drums) was checked directly and found broken -- its "drums-mp3.js" file
-// actually contains piano audio data under a misleading filename, and its
-// drums-mp3/ folder has chromatic note samples (Ab2, Ab3, Ab4...), which is a
-// melodic instrument's sample layout, not a real kit. Rather than build on
-// broken/guessed data, drums are excluded until a real, working GM drum-kit
-// soundfont source is found -- see MidiPlayer's "not yet supported" state.
-const PLAYABLE_STEMS = STEM_NAMES.filter((stem) => stem !== "drums");
+// Drums now play back too, via a dedicated 3-sample TR-808 kit (see
+// services/soundfont.ts's loadDrumKit()/playDrumHit() docstrings) rather than
+// the melodic-instrument soundfont path — the gleitz/midi-js-soundfonts
+// source used for every other stem has no real GM drum kit (channel-10,
+// note-keyed kick/snare/hihat), confirmed directly, and a community fork
+// claiming to add one was checked directly and found broken (its
+// "drums-mp3.js" file actually contains piano audio data under a misleading
+// filename). drum_transcription_service.py (backend) only ever emits 3 fixed
+// GM percussion pitches, so a small dedicated one-shot kit is a better fit
+// than a full melodic soundfont anyway.
+const PLAYABLE_STEMS = STEM_NAMES;
 
 const STEM_EMOJI: Record<StemName, string> = {
   vocals: "🎤",
@@ -67,9 +73,16 @@ interface MidiTileProps {
  * One stem's MIDI player tile. Unlike StemPlayer.tsx's plain <audio> (browsers
  * don't decode .mid natively -- confirmed directly, HTML5 audio only supports
  * wav/mp3/ogg), this fetches the raw MIDI bytes, parses them with @tonejs/midi
- * (gives real note/instrument/timing data), loads a matching GM instrument
- * soundfont via services/soundfont.ts, and schedules each note as a WebAudio
- * event relative to audioContext.currentTime.
+ * (gives real note/instrument/timing data), loads a matching sound source via
+ * services/soundfont.ts, and schedules each note as a WebAudio event relative
+ * to audioContext.currentTime.
+ *
+ * Two different sound sources depending on stem: pitched stems (vocals/bass/
+ * guitar/piano/other) load a GM instrument soundfont, keyed by note name, and
+ * play through playNote(). Drums load the small dedicated 3-sample one-shot
+ * kit instead (no real GM drum kit exists in the soundfont source used for
+ * everything else — see PLAYABLE_STEMS's comment), keyed by fixed GM
+ * percussion pitch number, and play through playDrumHit().
  *
  * WebAudio scheduling has no native "seek" the way <audio>.currentTime does --
  * pausing/seeking here means: stop every currently-scheduled/sounding note,
@@ -77,6 +90,8 @@ interface MidiTileProps {
  * start reference. This is a coarser transport than StemPlayer's, but correct.
  */
 function MidiTile({ jobId, stem, isOpen, onToggle, audioContext }: MidiTileProps) {
+  const isDrums = stem === "drums";
+
   const [status, setStatus] = useState<LoadStatus>("idle");
   const [errorMessage, setErrorMessage] = useState("");
   const [isPlaying, setIsPlaying] = useState(false);
@@ -85,6 +100,7 @@ function MidiTile({ jobId, stem, isOpen, onToggle, audioContext }: MidiTileProps
 
   const midiRef = useRef<Midi | null>(null);
   const soundfontRef = useRef<Soundfont | null>(null);
+  const drumKitRef = useRef<DrumKit | null>(null);
   const scheduledNodesRef = useRef<AudioBufferSourceNode[]>([]);
   // audioContext.currentTime when the CURRENT playback run started, minus
   // however far into the piece it started from -- lets currentTime be
@@ -134,27 +150,32 @@ function MidiTile({ jobId, stem, isOpen, onToggle, audioContext }: MidiTileProps
           if (!response.ok) {
             throw new Error(`MIDI not available yet (${response.status})`);
           }
-
           const midi = new Midi(await response.arrayBuffer());
+
+          if (isDrums) {
+            const drumKit = await loadDrumKit(audioContext);
+            return { midi, soundfont: null, drumKit };
+          }
+
           const firstTrackWithNotes = midi.tracks.find((track) => track.notes.length > 0);
           const programNumber = firstTrackWithNotes?.instrument.number ?? 0;
           const soundfontName = GM_PROGRAM_TO_SOUNDFONT_NAME[programNumber] ?? "acoustic_grand_piano";
           const soundfont = await loadSoundfont(audioContext, soundfontName);
-
-          return { midi, soundfont };
+          return { midi, soundfont, drumKit: null };
         })();
 
         const timeout = new Promise<never>((_, reject) => {
           timeoutId = window.setTimeout(() => {
-            reject(new Error("시간 초과 (MIDI 또는 사운드폰트 로딩 실패)"));
+            reject(new Error("시간 초과 (MIDI 또는 사운드 로딩 실패)"));
           }, TIMEOUT_MS);
         });
 
-        const { midi, soundfont } = await Promise.race([loadWork, timeout]);
+        const { midi, soundfont, drumKit } = await Promise.race([loadWork, timeout]);
         if (!mountedRef.current) return;
 
         midiRef.current = midi;
         soundfontRef.current = soundfont;
+        drumKitRef.current = drumKit;
         setDuration(midi.duration);
         setStatus("ready");
       } catch (err: unknown) {
@@ -194,7 +215,8 @@ function MidiTile({ jobId, stem, isOpen, onToggle, audioContext }: MidiTileProps
   function scheduleFrom(offsetSeconds: number) {
     const midi = midiRef.current;
     const soundfont = soundfontRef.current;
-    if (!midi || !soundfont) return;
+    const drumKit = drumKitRef.current;
+    if (!midi || (isDrums ? !drumKit : !soundfont)) return;
 
     stopAllScheduled();
     const startedAt = audioContext.currentTime - offsetSeconds;
@@ -204,7 +226,12 @@ function MidiTile({ jobId, stem, isOpen, onToggle, audioContext }: MidiTileProps
       for (const note of track.notes) {
         if (note.time + note.duration <= offsetSeconds) continue; // already past
         const when = startedAt + note.time;
-        const node = playNote(audioContext, soundfont, note.midi, when, note.duration, note.velocity);
+        const node =
+          isDrums && drumKit
+            ? playDrumHit(audioContext, drumKit, note.midi, when, note.velocity)
+            : soundfont
+              ? playNote(audioContext, soundfont, note.midi, when, note.duration, note.velocity)
+              : null;
         if (node) scheduledNodesRef.current.push(node);
       }
     }
@@ -372,16 +399,6 @@ export default function MidiPlayer({ jobId }: MidiPlayerProps) {
             audioContext={audioContextRef.current!}
           />
         ))}
-
-        <div className="track-tile" data-track="drums">
-          <div className="track-circle track-circle-disabled" aria-disabled="true">
-            <span className="track-emoji" aria-hidden="true">
-              {STEM_EMOJI.drums}
-            </span>
-            <span className="track-name">drums</span>
-          </div>
-          <span className="track-unsupported-note">MIDI 재생 미지원</span>
-        </div>
       </div>
     </div>
   );
