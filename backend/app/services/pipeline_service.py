@@ -83,6 +83,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Callable, Dict, List, Optional
 
+import numpy as np
+
 from app.config.settings import DEMUCS_MODEL, DEMUCS_STEM_NAMES, MUSICXML_STEMS_DIR, STEMS_DIR, stem_output_dir
 from app.schemas.job import JobStage
 from app.schemas.transcription import NoteEvent, QuantizationResult
@@ -307,9 +309,22 @@ def run_final_phase(
     on_stage: Optional[ProgressCallback] = None,
     output_name: Optional[str] = None,
     title: Optional[str] = None,
+    reference_tempo_bpm: Optional[float] = None,
+    reference_beat_times: Optional[List[float]] = None,
 ) -> dict:
     """Phase 3: quantize -> reconcile tempo -> render MusicXML -> export.
     Assumes phases 1 and 2 already ran (separation + transcription).
+
+    reference_tempo_bpm / reference_beat_times: the tempo/beat grid detected
+    ONCE from the original pre-separation mixed audio during phase 1
+    (run_until_separation()'s SeparationPhaseResult, persisted as
+    Job.reference_tempo_bpm/reference_beat_times) — EVERY stem is quantized
+    against this SAME grid (see _quantize_stems()), replacing each stem's own
+    independently-redetected tempo/beats. app/api/transcribe.py passes these
+    from the Job record. When omitted (the CLI script, which has no Job to
+    read from), falls back to detecting once here instead — still ONE
+    detection shared by every stem, just not persisted anywhere durable
+    between phases the way the API path's Job record is.
 
     stem_labels: stem_name -> stem_label, as returned by run_transcription_phase()
     (and persisted on the Job in between) — needed to reload each stem's note
@@ -343,14 +358,26 @@ def run_final_phase(
     if output_name is None:
         output_name = input_stem
 
+    if reference_tempo_bpm is None or reference_beat_times is None:
+        # No Job record to read from (the CLI script) — detect once here
+        # instead, from the same original pre-separation audio phase 1 would
+        # have used, so every stem still shares ONE detection.
+        y, sr = preprocessing_service.load_audio(input_audio_path, sr=None)
+        tempo_onset = preprocessing_service.detect_tempo_onset(y, sr)
+        reference_tempo_bpm = tempo_onset.tempo_bpm
+        reference_beat_times = tempo_onset.beat_times.tolist()
+    print(f"Reference tempo (from original mixed audio): {reference_tempo_bpm:.2f} BPM")
+
     transcriptions: Dict[str, List[NoteEvent]] = {
         stem_name: transcription_service.load_note_events(stem_name, input_stem=input_stem)
         for stem_name in stem_labels
     }
 
     _report(on_stage, JobStage.QUANTIZING, "Quantizing notes...")
-    quantized = _quantize_stems(input_audio_path, transcriptions)
-    print("Quantization complete (per-stem tempo, before reconciliation)")
+    quantized = _quantize_stems(
+        input_audio_path, transcriptions, reference_tempo_bpm, np.asarray(reference_beat_times, dtype=float)
+    )
+    print("Quantization complete (every stem against the shared reference tempo/beat grid)")
     for stem_name, result in quantized.items():
         print(f"  {stem_name:8s}: {result.tempo_bpm:.2f} BPM, {len(result.notes)} quantized notes")
 
@@ -358,14 +385,14 @@ def run_final_phase(
         raise RuntimeError("No stems produced any notes - nothing to combine.")
 
     _report(on_stage, JobStage.RECONCILING_TEMPO, "Reconciling tempo across stems...")
-    # Reference tempo comes from the ORIGINAL mixed audio, not a vote among the
-    # stems — the fullest, most reliable single signal (see this module's
-    # docstring for the full reasoning).
-    reference_tempo = quantization_service.detect_tempo(input_audio_path)
-    print(f"Reference tempo (from original mixed audio): {reference_tempo:.2f} BPM")
-
+    # Every stem was already quantized against the SAME reference tempo/beat
+    # grid above, so this is now a guaranteed no-op (every result.tempo_bpm
+    # already equals reference_tempo_bpm) — kept in place rather than removed,
+    # since reconcile_tempo()'s duration-sanity-check logic is still real,
+    # tested behavior that a future per-stem-tempo mode (if ever reintroduced)
+    # would still need.
     quantized = quantization_service.reconcile_tempo(
-        reference_tempo,
+        reference_tempo_bpm,
         quantized,
         {name: transcriptions[name] for name in quantized},
         stem_audio_paths(input_audio_path, quantized.keys()),
@@ -404,15 +431,24 @@ def run_final_phase(
 
 
 def _quantize_stems(
-    input_audio_path: str, transcriptions: Dict[str, List[NoteEvent]]
+    input_audio_path: str,
+    transcriptions: Dict[str, List[NoteEvent]],
+    reference_tempo_bpm: float,
+    reference_beat_times: np.ndarray,
 ) -> Dict[str, QuantizationResult]:
-    """Quantize each stem's note events against its own independently-detected tempo.
+    """Quantize every stem's note events against the SAME reference tempo/beat
+    grid — detected once from the original pre-separation mixed audio (see
+    run_final_phase()'s docstring), not each stem's own independently-detected
+    tempo. Previously each stem redetected its own tempo/beats from its own
+    (lossier, separated) audio here, which could disagree with other stems (or
+    be a straight-up octave error) purely from separation-quality variance —
+    reconcile_tempo() existed specifically to patch that up after the fact.
+    Quantizing every stem against one shared, known-good detection from the
+    start removes that disagreement at the source instead.
 
-    This is the FIRST quantization pass — before tempo reconciliation (see
-    run_final_phase()). Each stem's tempo/beat grid here reflects only that
-    stem's own separated audio, which may disagree with other stems (or be a
-    straight-up octave error) since separation quality and how much real
-    rhythmic content survives varies per stem.
+    audio_path is still passed to quantization_service.run() per stem — needed
+    for _beat_grid()'s synthetic-grid fallback duration if reference_beat_times
+    is too sparse to interpolate against, not for tempo/beat detection itself.
     """
     input_stem = Path(input_audio_path).stem
     audio_paths = stem_audio_paths(input_audio_path, transcriptions.keys())
@@ -423,7 +459,11 @@ def _quantize_stems(
             print(f"  [!] {stem_name}: no note events, skipping quantization")
             continue
         results[stem_name] = quantization_service.run(
-            note_events, audio_path=audio_paths[stem_name], input_stem=input_stem
+            note_events,
+            audio_path=audio_paths[stem_name],
+            tempo_bpm=reference_tempo_bpm,
+            input_stem=input_stem,
+            reference_beat_times=reference_beat_times,
         )
 
     return results
@@ -434,6 +474,12 @@ def run_full_pipeline_no_pauses(input_audio_path: str, on_stage: Optional[Progre
     scripts/run_pipeline.py (a CLI script has no "review and click continue"
     concept) so it still works as a single command.
     """
-    run_until_separation(input_audio_path, on_stage)  # reference tempo/beats not persisted here — no Job record for a CLI run
+    separation_result = run_until_separation(input_audio_path, on_stage)
     stem_labels = run_transcription_phase(input_audio_path, on_stage)
-    return run_final_phase(input_audio_path, stem_labels, on_stage)
+    return run_final_phase(
+        input_audio_path,
+        stem_labels,
+        on_stage,
+        reference_tempo_bpm=separation_result.reference_tempo_bpm,
+        reference_beat_times=separation_result.reference_beat_times,
+    )
