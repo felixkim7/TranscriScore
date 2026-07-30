@@ -2,7 +2,7 @@ import math
 from pathlib import Path
 from typing import List, NamedTuple, Optional
 
-from music21 import chord, clef, duration, instrument, key, layout, metadata, meter, note, stream, tempo
+from music21 import chord, clef, duration, instrument, key, layout, metadata, meter, note, percussion, stream, tempo
 
 from app.config.settings import MUSICXML_DIR, MUSICXML_STEMS_DIR, stem_output_dir
 from app.schemas.transcription import QuantizationResult
@@ -29,13 +29,24 @@ DRUM_STAFF_POSITIONS = {
     38: ("C5", "normal", "Snare"),
     42: ("G5", "x", "Hi-Hat"),
 }
-# When multiple drum voices land in the same sweep-line segment (simultaneous hits,
-# e.g. kick+hihat together), only one Unpitched notehead is notated per segment —
-# real independent multi-voice percussion notation (stacking noteheads at different
-# staff positions in one beat) is a bigger scope than this pass covers. Priority:
-# kick and snare carry the main rhythmic/downbeat information, so they're kept over
-# a simultaneous hi-hat rather than the reverse.
-DRUM_VOICE_PRIORITY = [36, 38, 42]  # kick, snare, hihat — lower index wins on overlap
+# Simultaneous drum hits (e.g. kick+hihat on a real backbeat) are notated as a
+# single music21.percussion.PercussionChord — multiple Unpitched noteheads
+# sharing ONE stem/note-position, each keeping its own staff position and
+# notehead shape (round for kick/snare, "x" for hi-hat). See
+# _build_percussion_part()'s docstring for why this replaced two earlier
+# attempts (drop-to-one-winner, then two independent music21 Voices).
+#
+# TRIED two-voice notation first (kick+snare in one Voice, hi-hat in a second,
+# sharing one staff) and REVERTED — technically correct MusicXML, but each
+# voice is an independent rest-filled stream, so every segment where only ONE
+# voice has real content still emits an explicit rest in the OTHER voice.
+# At real note density this produced constant small interleaved rests
+# cluttering both voices, confirmed unreadable from an actual rendered page.
+# PercussionChord has no such problem: it's still ONE linear stream (like the
+# original single-winner version), just with more than one Unpitched note at
+# a shared position when a segment genuinely has simultaneous hits — no second
+# voice, no rest-filling, no interleaving.
+DRUM_VOICE_PRIORITY = [36, 38, 42]  # kick, snare, hihat — stacking/display order
 
 # Stem label -> display name used for each stem's group in a combined multi-stem
 # score (StaffGroup name/abbreviation, or the single Part's instrument name for
@@ -547,10 +558,12 @@ def _build_percussion_part(
     doesn't have one) and no accidental suppression (nothing to suppress).
 
     Each segment's "pitches" are GM percussion pitch numbers from
-    drum_transcription_service.py (see DRUM_STAFF_POSITIONS/DRUM_VOICE_PRIORITY
-    above) — when a segment has more than one (simultaneous kick+hihat, etc), only
-    the highest-priority voice is notated; see DRUM_VOICE_PRIORITY's docstring for
-    why (real independent multi-voice percussion notation is out of scope here).
+    drum_transcription_service.py (see DRUM_STAFF_POSITIONS above). A segment
+    with more than one simultaneous pitch (e.g. kick+hihat together) is notated
+    as a music21.percussion.PercussionChord — multiple Unpitched noteheads
+    sharing one stem/position — via _drum_pitches_to_element(), rather than
+    dropping to a single winner or splitting into a second music21 Voice (both
+    tried first; see DRUM_VOICE_PRIORITY's comment for why PercussionChord won).
 
     One instrument.UnpitchedPercussion() for the whole part/drum kit (not one per
     note — that was tried and reverted: giving each note its own concrete Instrument
@@ -579,7 +592,7 @@ def _build_percussion_part(
         if seg.start_beat > cursor:
             part.append(note.Rest(duration=duration.Duration(quarterLength=seg.start_beat - cursor)))
 
-        drum_pitch = _pick_drum_voice(seg.pitches)
+        drum_pitches = _drum_voices_present(seg.pitches)
 
         # Same over-length splitting as _build_staff_part() — see that function's
         # comment for why this matters (silently-dropped content / MuseScore
@@ -588,13 +601,7 @@ def _build_percussion_part(
         while remaining > 1e-9:
             span = min(remaining, MAX_DURATION_BEATS)
             note_duration = duration.Duration(quarterLength=span)
-
-            if drum_pitch is None:
-                element = note.Rest(duration=note_duration)
-            else:
-                staff_position, notehead, _display_name = DRUM_STAFF_POSITIONS[drum_pitch]
-                element = note.Unpitched(displayName=staff_position, duration=note_duration)
-                element.notehead = notehead
+            element = _drum_pitches_to_element(drum_pitches, note_duration)
             part.append(element)
 
             remaining -= span
@@ -607,18 +614,44 @@ def _build_percussion_part(
     return part
 
 
-def _pick_drum_voice(pitches: List[int]) -> int | None:
-    """Pick which single GM percussion pitch to notate for a segment's pitch set.
+def _drum_voices_present(pitches: List[int]) -> List[int]:
+    """Which known GM percussion pitches are sounding in a segment, in
+    DRUM_VOICE_PRIORITY's display order (kick, snare, hihat).
 
-    Empty (rest) -> None. A single pitch -> that pitch. Multiple simultaneous
-    pitches (e.g. kick+hihat) -> whichever comes first in DRUM_VOICE_PRIORITY.
     Any pitch not in DRUM_STAFF_POSITIONS (shouldn't happen — drum_transcription_
-    service.py only emits the 3 known GM numbers) is ignored rather than crashing.
+    service.py only emits the 3 known GM numbers) is dropped rather than crashing.
     """
     known = [p for p in pitches if p in DRUM_STAFF_POSITIONS]
-    if not known:
-        return None
-    return min(known, key=lambda p: DRUM_VOICE_PRIORITY.index(p))
+    return sorted(known, key=lambda p: DRUM_VOICE_PRIORITY.index(p))
+
+
+def _drum_pitches_to_element(drum_pitches: List[int], note_duration: duration.Duration):
+    """Build the actual music21 element for a segment's drum pitch set.
+
+    Empty -> Rest. One pitch -> a plain Unpitched note (same as before this
+    supported simultaneous hits at all). Two or more -> a PercussionChord, all
+    sharing note_duration, each keeping its own staff position/notehead shape —
+    this is what actually notates simultaneous hits (e.g. kick+hihat) as real
+    independent noteheads instead of picking one and dropping the rest.
+    """
+    if not drum_pitches:
+        return note.Rest(duration=note_duration)
+
+    unpitched_notes = []
+    for pitch in drum_pitches:
+        staff_position, notehead, _display_name = DRUM_STAFF_POSITIONS[pitch]
+        n = note.Unpitched(displayName=staff_position)
+        n.notehead = notehead
+        unpitched_notes.append(n)
+
+    if len(unpitched_notes) == 1:
+        element = unpitched_notes[0]
+        element.duration = note_duration
+        return element
+
+    p_chord = percussion.PercussionChord(unpitched_notes)
+    p_chord.duration = note_duration
+    return p_chord
 
 
 def _suppress_redundant_accidentals(part: stream.Part, staff_key: key.Key) -> None:
