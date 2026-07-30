@@ -187,6 +187,7 @@ def run(
     audio_path: str,
     tempo_bpm: Optional[float] = None,
     input_stem: Optional[str] = None,
+    reference_beat_times: Optional[np.ndarray] = None,
 ) -> QuantizationResult:
     """Snap raw note events onto a beat grid derived from real detected beat positions.
 
@@ -203,10 +204,19 @@ def run(
     distribution are dropped, along with any note that collapses to zero duration
     after snapping.
 
-    If tempo_bpm is given explicitly (e.g. by reconcile_tempo(), forcing a stem onto
-    a shared reference tempo instead of its own detection), audio_path is still used
-    for beat POSITIONS (the shape of the tempo curve — where the beats actually fall
-    in time), just not for what BPM number to treat those beats as.
+    tempo_bpm / reference_beat_times: both given together by pipeline_service.py's
+    _quantize_stems() now — EVERY stem uses the SAME tempo/beat grid, detected ONCE
+    from the original pre-separation mixed audio in phase 1
+    (run_until_separation() -> Job.reference_tempo_bpm/reference_beat_times), rather
+    than each stem independently redetecting its own tempo/beats from its own
+    (lossier, separated) audio. When reference_beat_times is given, audio_path is
+    used ONLY for _beat_grid()'s synthetic-grid fallback duration (len(y)/sr) if
+    reference_beat_times itself is too sparse to interpolate against — not for
+    detecting tempo/beats at all.
+
+    When reference_beat_times is omitted (e.g. the CLI script's simpler flow, or a
+    caller that genuinely wants per-stem detection), falls back to the OLD behavior:
+    detect tempo/beats from audio_path itself.
 
     input_stem: the ORIGINAL sample's filename stem (e.g. "sample5"), not
     audio_path's own stem (e.g. "drums") — when given, nests the saved result
@@ -218,16 +228,21 @@ def run(
     note_events = _merge_sustained_fragments(note_events)
 
     y, sr = preprocessing_service.load_audio(audio_path, sr=None)
-    tempo_onset = preprocessing_service.detect_tempo_onset(y, sr)
-    if tempo_bpm is None:
-        tempo_bpm = tempo_onset.tempo_bpm
+
+    if reference_beat_times is not None:
+        beat_times_seconds = np.asarray(reference_beat_times, dtype=float)
+        if tempo_bpm is None:
+            raise ValueError("tempo_bpm must be given alongside reference_beat_times")
+    else:
+        tempo_onset = preprocessing_service.detect_tempo_onset(y, sr)
+        beat_times_seconds = tempo_onset.beat_times
+        if tempo_bpm is None:
+            tempo_bpm = tempo_onset.tempo_bpm
 
     # _beat_grid()'s first arg wants beat positions in SECONDS (it's named
     # beat_frames for historical reasons, from when this call used
-    # librosa.beat.beat_track(..., units="time") directly) — pass
-    # tempo_onset.beat_times, not .beat_frames (which is librosa's raw frame
-    # index domain, not seconds).
-    beat_times, beat_indices = _beat_grid(tempo_onset.beat_times, y, sr, tempo_bpm)
+    # librosa.beat.beat_track(..., units="time") directly).
+    beat_times, beat_indices = _beat_grid(beat_times_seconds, y, sr, tempo_bpm)
 
     confidence_floor = (
         float(np.percentile([n.confidence for n in note_events], CONFIDENCE_DROP_PERCENTILE))
