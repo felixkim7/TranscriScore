@@ -79,6 +79,7 @@ same reference-audio approach should apply.
 """
 
 import re
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Callable, Dict, List, Optional
 
@@ -91,9 +92,25 @@ from app.services import (
     drum_transcription_service,
     export_service,
     musicxml_service,
+    preprocessing_service,
     quantization_service,
     transcription_service,
 )
+
+
+@dataclass
+class SeparationPhaseResult:
+    stem_names: List[str]
+    # Tempo/beat tracking, detected once on the ORIGINAL pre-separation audio
+    # (per the user's plan) rather than per-stem — the full mixed signal is the
+    # most reliable single source for this (same reasoning already used for
+    # quantization_service.detect_tempo()'s "reference tempo" in
+    # run_final_phase(), just moved earlier so it's available right after
+    # upload instead of only at the final phase). NOT yet consumed by
+    # transcription/quantization anywhere — detected and persisted on the Job
+    # for later use, per explicit instruction not to wire it in yet.
+    reference_tempo_bpm: float
+    reference_beat_times: List[float]
 
 TRUSTED_STEM_LABELS = {
     "vocals": "vocal_melody",
@@ -166,25 +183,75 @@ def stem_audio_paths(input_audio_path: str, stem_names) -> Dict[str, str]:
     return {name: str(input_stem_dir / f"{name}.wav") for name in stem_names}
 
 
-def run_until_separation(input_audio_path: str, on_stage: Optional[ProgressCallback] = None) -> List[str]:
-    """Phase 1: run Demucs separation only, then stop.
+def run_until_separation(
+    input_audio_path: str, on_stage: Optional[ProgressCallback] = None
+) -> SeparationPhaseResult:
+    """Phase 1: run Demucs separation, and detect tempo/beat tracking on the
+    ORIGINAL pre-separation audio, then stop.
 
-    Returns the list of stem names produced (matches settings.DEMUCS_STEM_NAMES —
-    Demucs itself decides what it can split out, this doesn't vary per file).
-    The actual stem audio is left on disk (storage/stems/...) for the caller to
-    serve via GET /audio/{job_id}/{stem} and for run_transcription_phase() to
-    read back later.
+    Tempo/beat detection runs on input_audio_path BEFORE separation — the full
+    mixed signal, not a lossy separated stem — matching the same "most reliable
+    single source" reasoning already used for the final phase's reference-tempo
+    reconciliation (see this module's docstring), just run earlier so it's
+    available immediately after upload. Order relative to demucs_service.run()
+    doesn't matter (separation doesn't modify or consume the original file), so
+    it runs after separation simply so a Demucs failure still surfaces first.
+
+    Returns stem names produced (matches settings.DEMUCS_STEM_NAMES — Demucs
+    itself decides what it can split out, this doesn't vary per file) plus the
+    detected reference tempo/beat times. The actual stem audio is left on disk
+    (storage/stems/...) for the caller to serve via GET /audio/{job_id}/{stem}
+    and for run_transcription_phase() to read back later.
     """
     _report(on_stage, JobStage.SEPARATING, "Separating into stems (Demucs)...")
     demucs_service.run(input_audio_path)
-    return list(DEMUCS_STEM_NAMES)
+
+    y, sr = preprocessing_service.load_audio(input_audio_path, sr=None)
+    tempo_onset = preprocessing_service.detect_tempo_onset(y, sr)
+
+    return SeparationPhaseResult(
+        stem_names=list(DEMUCS_STEM_NAMES),
+        reference_tempo_bpm=tempo_onset.tempo_bpm,
+        reference_beat_times=tempo_onset.beat_times.tolist(),
+    )
 
 
 def run_transcription_phase(
     input_audio_path: str, on_stage: Optional[ProgressCallback] = None
 ) -> Dict[str, str]:
-    """Phase 2: transcribe every stem (assumes separation already ran — phase 1),
-    then stop.
+    """Phase 2: preprocess + transcribe every stem (assumes separation already
+    ran — phase 1), then stop.
+
+    Every PITCHED stem (everything except drums, which never goes through
+    Basic Pitch — see this module's docstring) is preprocessed via
+    preprocessing_service.preprocess_stem() BEFORE transcription_service.run()
+    is called: loudness-normalized (written to a new wav — this is what
+    actually changes the audio bytes Basic Pitch reads, since predict() only
+    accepts a file path, not pre-loaded audio/features), then mel-spectrogram/
+    tempo/beat/onset-detected. Only the loudness-normalized audio path is
+    currently passed on to transcription_service.run() — the mel-spectrogram/
+    tempo/beats/onsets are computed but not otherwise consumed here.
+
+    Two other uses of this preprocessing pass were tried and REMOVED after
+    real testing on sample7's vocals stem: passing settings.STEM_FREQUENCY_
+    RANGES to predict()'s minimum_frequency/maximum_frequency (negligible
+    effect, kept out mainly for being unvalidated), and cross-checking Basic
+    Pitch's note onsets against preprocess_stem()'s independently-detected
+    onset times to filter unsupported notes (REMOVED because it overfiltered:
+    cut 190->109 notes, 43%, and on listening was found to cut real content,
+    not just phantom notes — same failure mode as the frame_threshold=0.4
+    experiment elsewhere in this project's history). See
+    transcription_service.run()'s docstring for the full writeup.
+
+    Drums deliberately skip preprocess_stem() — drum_transcription_service.run()
+    already does its own load_audio()/detect_tempo_onset() at DRUM_SAMPLE_RATE
+    (a fixed rate for its spectral classification, different from what
+    preprocess_stem() would use), and doesn't call Basic Pitch at all, so
+    loudness normalization (tuned for Basic Pitch's thresholds) doesn't apply.
+
+    classification_service.check_stem_label_confidence() below still reads the
+    RAW (non-preprocessed) stem — that's Teammate A's stage, and changing what
+    audio it classifies from is out of scope here.
 
     Returns a dict of stem_name -> stem_label (the label decisions made here,
     e.g. after classification re-checks) — this needs to be persisted on the Job
@@ -205,8 +272,16 @@ def run_transcription_phase(
     drum_transcription_service.run(stems["drums"], stem_label="drums", input_stem=input_stem)
     stem_labels["drums"] = "drums"
 
+    def _transcribe_pitched(stem_name: str, stem_label: str) -> None:
+        preprocessed = preprocessing_service.preprocess_stem(stems[stem_name], stem_name, input_stem=input_stem)
+        transcription_service.run(
+            preprocessed.normalized_audio_path,
+            stem_label=stem_label,
+            input_stem=input_stem,
+        )
+
     for stem_name, stem_label in TRUSTED_STEM_LABELS.items():
-        transcription_service.run(stems[stem_name], stem_label=stem_label, input_stem=input_stem)
+        _transcribe_pitched(stem_name, stem_label)
         stem_labels[stem_name] = stem_label
 
     for stem_name, expected_label in VERIFIED_STEM_LABELS.items():
@@ -220,7 +295,7 @@ def run_transcription_phase(
             print(f"  [!] {stem_name}.wav: expected {expected_label!r}, "
                   f"re-check predicted {predicted_label!r} - keeping {expected_label!r} "
                   f"(logged only, doesn't change notation layout)")
-        transcription_service.run(stems[stem_name], stem_label=expected_label, input_stem=input_stem)
+        _transcribe_pitched(stem_name, expected_label)
         stem_labels[stem_name] = expected_label
 
     return stem_labels
@@ -359,6 +434,6 @@ def run_full_pipeline_no_pauses(input_audio_path: str, on_stage: Optional[Progre
     scripts/run_pipeline.py (a CLI script has no "review and click continue"
     concept) so it still works as a single command.
     """
-    run_until_separation(input_audio_path, on_stage)
+    run_until_separation(input_audio_path, on_stage)  # reference tempo/beats not persisted here — no Job record for a CLI run
     stem_labels = run_transcription_phase(input_audio_path, on_stage)
     return run_final_phase(input_audio_path, stem_labels, on_stage)

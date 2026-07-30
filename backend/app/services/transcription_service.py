@@ -27,14 +27,25 @@ ONSET_THRESHOLD = 0.6
 MONOPHONIC_STEM_LABELS = {"vocal_melody"}
 
 
-def run(input_path: str, stem_label: str = "unknown", input_stem: Optional[str] = None) -> List[NoteEvent]:
+def run(
+    input_path: str,
+    stem_label: str = "unknown",
+    input_stem: Optional[str] = None,
+) -> List[NoteEvent]:
     """Transcribe an audio file into note events using Spotify Basic Pitch.
 
     Writes the resulting MIDI to storage/midi/ and the note events as JSON to
     storage/intermediate/ (so later stages can be re-run without re-transcribing).
 
     Args:
-        input_path: path to the audio stem to transcribe.
+        input_path: path to the audio stem to transcribe. Should be the
+            LOUDNESS-NORMALIZED path from preprocessing_service.preprocess_stem()
+            (its .normalized_audio_path), not the raw separated stem — Basic
+            Pitch only accepts a file path and does its own internal loading,
+            so normalizing loudness before this call is the one way to actually
+            change what audio bytes it transcribes. Still works with a raw
+            stem path (e.g. from the CLI script's simpler flow), just without
+            that benefit.
         stem_label: role of this stem (e.g. "piano_accompaniment"), typically
             from classification_service.classify_stem() or a trusted Demucs
             label (e.g. "vocals", "drums"). Defaults to "unknown" so existing
@@ -46,6 +57,19 @@ def run(input_path: str, stem_label: str = "unknown", input_stem: Optional[str] 
             on real audio: notes at exact octave multiples of each other,
             overlapping in time — physically impossible for a single voice to
             sing three octaves at once).
+
+            NOTE: per-stem-type minimum_frequency/maximum_frequency restriction
+            and an onset-cross-check filter (dropping notes with no nearby
+            independently-detected onset) were both tried here and REMOVED —
+            the onset filter in particular cut 190->109 notes (43%) on a real
+            vocals stem (sample7), and on listening it turned out to be
+            overfiltering, cutting real content rather than just phantom notes
+            (same failure mode as the frame_threshold=0.4 experiment
+            elsewhere in this project's history: looked like a clean
+            improvement by the numbers, wrong once actually heard). See
+            preprocessing_service.py — preprocess_stem() still computes
+            onset times/tempo/beats/mel-spectrogram, they're just no longer
+            used to filter transcription output.
         input_stem: the ORIGINAL sample's filename stem (e.g. "sample5"), not
             input_path's own stem (e.g. "drums") — when given, nests output
             under storage/midi/<input_stem>/ and storage/intermediate/<input_stem>/

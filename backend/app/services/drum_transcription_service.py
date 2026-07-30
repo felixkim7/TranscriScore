@@ -59,6 +59,7 @@ from app.config.settings import (
     stem_output_dir,
 )
 from app.schemas.transcription import NoteEvent
+from app.services import preprocessing_service
 
 import json
 
@@ -76,9 +77,9 @@ def run(input_path: str, stem_label: str = "drums", input_stem: Optional[str] = 
     sample's filename stem, for nesting output per-sample in a multi-stem run.
     """
     audio_path = Path(input_path)
-    y, sr = librosa.load(str(audio_path), sr=DRUM_SAMPLE_RATE, mono=True)
+    y, sr = preprocessing_service.load_audio(str(audio_path), sr=DRUM_SAMPLE_RATE, mono=True)
 
-    onset_times = librosa.onset.onset_detect(y=y, sr=sr, units="time", backtrack=True)
+    onset_times = preprocessing_service.detect_tempo_onset(y, sr).onset_times
     clip_duration = len(y) / sr
 
     note_events = []

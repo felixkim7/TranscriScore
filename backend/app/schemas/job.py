@@ -94,4 +94,14 @@ class Job(BaseModel):
     # mechanism for one dict.
     stem_labels: Optional[Dict[str, str]] = None
 
+    # Tempo/beat tracking, detected once from the ORIGINAL pre-separation audio
+    # during phase 1 (see pipeline_service.run_until_separation()'s
+    # SeparationPhaseResult) — the fullest, most reliable single signal, same
+    # reasoning as run_final_phase()'s reference-tempo reconciliation, just run
+    # earlier. Populated as soon as separation finishes; NOT currently consumed
+    # by transcription/quantization anywhere — detected and persisted for later
+    # use, per explicit instruction not to wire it in yet.
+    reference_tempo_bpm: Optional[float] = None
+    reference_beat_times: Optional[List[float]] = None
+
     model_config = {"use_enum_values": False}
