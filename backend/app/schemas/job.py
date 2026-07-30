@@ -104,4 +104,16 @@ class Job(BaseModel):
     reference_tempo_bpm: Optional[float] = None
     reference_beat_times: Optional[List[float]] = None
 
+    # Set from POST /upload's form fields (see app/api/upload.py) when the
+    # user indicates this recording has only one instrument/voice, so Demucs
+    # separation should be skipped entirely — see pipeline_service.py's
+    # run_until_separation(skip_separation=...) / run_transcription_phase(
+    # single_instrument_label=...). single_instrument_label is required
+    # (and validated against pipeline_service.SINGLE_INSTRUMENT_LABELS at the
+    # API layer, not here, to avoid a schemas->services import) whenever
+    # skip_separation is True; both stay at their defaults for the normal
+    # multi-stem path.
+    skip_separation: bool = False
+    single_instrument_label: Optional[str] = None
+
     model_config = {"use_enum_values": False}

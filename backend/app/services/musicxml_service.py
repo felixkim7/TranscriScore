@@ -184,13 +184,6 @@ def build_score(results: List[QuantizationResult], title: str) -> stream.Score:
         default=0,
     )
 
-    # A tempo marking belongs to the SCORE (shown once, at the top), not to
-    # every individual part — only the FIRST part built below gets one;
-    # every part after it passes show_tempo=False. Single-stem scores
-    # (write_stem_musicxml(), len(results) == 1) are unaffected: the one
-    # part is always "first," so it still gets its marking exactly as before.
-    show_tempo = True
-
     for result in results:
         segments = _sweep_line_segments(result.notes)
         beats_per_measure = _beats_per_measure(result.time_signature)
@@ -202,8 +195,7 @@ def build_score(results: List[QuantizationResult], title: str) -> stream.Score:
             # No _detect_key() here — GM percussion pitch numbers (36/38/42) aren't
             # real melodic pitches, so key analysis on them would be meaningless.
             # Percussion staves conventionally have no key signature at all.
-            part = _build_percussion_part(segments, result.tempo_bpm, result.time_signature, show_tempo=show_tempo)
-            show_tempo = False
+            part = _build_percussion_part(segments, result.tempo_bpm, result.time_signature)
             if multi_stem:
                 part.partName = part.partAbbreviation = group_name
             score.insert(0, part)
@@ -214,18 +206,16 @@ def build_score(results: List[QuantizationResult], title: str) -> stream.Score:
         if result.stem_label == "guitar_accompaniment":
             part = _build_staff_part(
                 segments, result.tempo_bpm, clef.TrebleClef(), detected_key, result.time_signature,
-                part_instrument=instrument.Guitar(), as_part_staff=False, show_tempo=show_tempo,
+                part_instrument=instrument.Guitar(), as_part_staff=False,
             )
-            show_tempo = False
             if multi_stem:
                 part.partName = part.partAbbreviation = group_name
             score.insert(0, part)
         elif result.stem_label == "bass":
             part = _build_staff_part(
                 segments, result.tempo_bpm, clef.BassClef(), detected_key, result.time_signature,
-                part_instrument=instrument.ElectricBass(), as_part_staff=False, show_tempo=show_tempo,
+                part_instrument=instrument.ElectricBass(), as_part_staff=False,
             )
-            show_tempo = False
             if multi_stem:
                 part.partName = part.partAbbreviation = group_name
             score.insert(0, part)
@@ -241,9 +231,8 @@ def build_score(results: List[QuantizationResult], title: str) -> stream.Score:
             # fixed here.
             part = _build_staff_part(
                 segments, result.tempo_bpm, clef.TrebleClef(), detected_key, result.time_signature,
-                part_instrument=instrument.Vocalist(), as_part_staff=False, show_tempo=show_tempo,
+                part_instrument=instrument.Vocalist(), as_part_staff=False,
             )
-            show_tempo = False
             if multi_stem:
                 part.partName = part.partAbbreviation = group_name
             score.insert(0, part)
@@ -275,14 +264,11 @@ def build_score(results: List[QuantizationResult], title: str) -> stream.Score:
             treble = _build_staff_part(
                 treble_segments, result.tempo_bpm, clef.TrebleClef(), detected_key,
                 result.time_signature, part_instrument=treble_instrument, as_part_staff=True,
-                show_tempo=show_tempo,
             )
             bass = _build_staff_part(
                 bass_segments, result.tempo_bpm, clef.BassClef(), detected_key,
                 result.time_signature, part_instrument=bass_instrument, as_part_staff=True,
-                show_tempo=False,
             )
-            show_tempo = False
             if multi_stem:
                 treble.partName = treble.partAbbreviation = group_name
                 bass.partName = bass.partAbbreviation = group_name
@@ -503,7 +489,6 @@ def _build_staff_part(
     time_signature: str = "4/4",
     part_instrument=None,
     as_part_staff: bool = True,
-    show_tempo: bool = True,
 ) -> stream.Part:
     part = stream.PartStaff() if as_part_staff else stream.Part()
     if part_instrument is not None:
@@ -513,17 +498,7 @@ def _build_staff_part(
     # multiple streams (music21 elements are generally not meant to be shared).
     part.append(key.Key(staff_key.tonic.name, staff_key.mode))
     part.append(meter.TimeSignature(time_signature))
-    # A tempo marking belongs to the SCORE (shown once at the top), not to
-    # every individual part — show_tempo=False lets build_score() suppress it
-    # on every part after the first in a combined multi-stem score, instead
-    # of every single-staff/grand-staff part in the piece redundantly
-    # printing its own "♩ = N" (confirmed as a real bug: a real combined
-    # score had 8 separate <sound tempo=...>/<metronome> markings, one per
-    # part, all showing the same number). Still defaults to True: a
-    # single-stem score (write_stem_musicxml(), the per-stem debug files)
-    # has exactly one part and genuinely needs its own marking.
-    if show_tempo:
-        part.append(tempo.MetronomeMark(number=round(tempo_bpm)))
+    part.append(tempo.MetronomeMark(number=round(tempo_bpm)))
 
     cursor = 0.0
     for seg in segments:
@@ -574,7 +549,6 @@ def _build_percussion_part(
     segments: List[Segment],
     tempo_bpm: float,
     time_signature: str = "4/4",
-    show_tempo: bool = True,
 ) -> stream.Part:
     """Build a single percussion-clef staff of Unpitched notes from drum hit segments.
 
@@ -611,10 +585,7 @@ def _build_percussion_part(
     part.append(instrument.UnpitchedPercussion())
     part.append(clef.PercussionClef())
     part.append(meter.TimeSignature(time_signature))
-    # See _build_staff_part()'s show_tempo comment — same reasoning, just the
-    # percussion-part equivalent.
-    if show_tempo:
-        part.append(tempo.MetronomeMark(number=round(tempo_bpm)))
+    part.append(tempo.MetronomeMark(number=round(tempo_bpm)))
 
     cursor = 0.0
     for seg in segments:

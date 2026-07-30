@@ -124,6 +124,36 @@ VERIFIED_STEM_LABELS = {
     "piano": "piano_accompaniment",
 }
 
+# Synthetic "stem name" for single-instrument uploads that skip Demucs
+# separation entirely (see run_until_separation()'s skip_separation param) —
+# the original upload IS the one and only stem in this mode, so it needs a
+# name of its own for the same per-stem storage keys (storage/midi/<job_id>/
+# <name>.mid, storage/musicxml/stems/<job_id>/<name>.musicxml, etc.) that
+# every Demucs stem name (vocals/drums/bass/guitar/piano/other) already uses —
+# "main" rather than one of those 6 names specifically because none of them
+# are semantically correct (this file was never actually separated FROM
+# anything), and reusing e.g. "vocals" as a fake Demucs name risked being
+# confused with a real separated vocals stem elsewhere in the codebase.
+SINGLE_INSTRUMENT_STEM_NAME = "main"
+
+# GM-instrument-family labels the user can pick when uploading a single-
+# instrument recording (skip_separation=True) — the same stem_label
+# vocabulary every Demucs-derived stem already gets routed through
+# (TRUSTED_STEM_LABELS/VERIFIED_STEM_LABELS above, plus "drums"), so every
+# downstream stage (MIDI GM program in transcription_service.py, staff
+# layout/instrument in musicxml_service.py) already knows how to handle
+# these without new branching — only WHICH label applies is decided
+# differently (explicit user choice instead of "which Demucs stem produced
+# this audio").
+SINGLE_INSTRUMENT_LABELS = {
+    "vocal_melody",
+    "bass",
+    "guitar_accompaniment",
+    "piano_accompaniment",
+    "drums",
+    "other_accompaniment",
+}
+
 # Callback signature for progress reporting: (stage, message) -> None. message is a
 # short human-readable line (what run_pipeline.py used to just print()); stage is
 # one of JobStage so a caller like job_service can persist structured progress.
@@ -180,13 +210,27 @@ def stem_audio_paths(input_audio_path: str, stem_names) -> Dict[str, str]:
 
     Demucs writes each stem's wav under storage/stems/<model>/<input_stem>/
     <stem_name>.wav, matching demucs_service's output layout.
+
+    SINGLE_INSTRUMENT_STEM_NAME ("main") is special-cased to map back to
+    input_audio_path itself, not a Demucs output path — for a skip_separation
+    job, no Demucs run ever happened, so there's no storage/stems/... file to
+    find; the original upload IS the "stem." Every caller of this function
+    (quantization, tempo reconciliation) only needs a real, valid audio file
+    to read from here, not specifically a Demucs one — see _quantize_stems()'s
+    docstring for confirmation that this path is only used for a duration
+    fallback, not tempo detection itself.
     """
     input_stem_dir = STEMS_DIR / DEMUCS_MODEL / Path(input_audio_path).stem
-    return {name: str(input_stem_dir / f"{name}.wav") for name in stem_names}
+    return {
+        name: input_audio_path if name == SINGLE_INSTRUMENT_STEM_NAME else str(input_stem_dir / f"{name}.wav")
+        for name in stem_names
+    }
 
 
 def run_until_separation(
-    input_audio_path: str, on_stage: Optional[ProgressCallback] = None
+    input_audio_path: str,
+    on_stage: Optional[ProgressCallback] = None,
+    skip_separation: bool = False,
 ) -> SeparationPhaseResult:
     """Phase 1: run Demucs separation, and detect tempo/beat tracking on the
     ORIGINAL pre-separation audio, then stop.
@@ -199,30 +243,61 @@ def run_until_separation(
     doesn't matter (separation doesn't modify or consume the original file), so
     it runs after separation simply so a Demucs failure still surfaces first.
 
+    skip_separation: for a single-instrument recording, where running Demucs
+    just to end up with one dominant "stem" (plus 5 mostly-empty ones) is
+    wasted time and a real source of spurious content in the other 5 stems
+    (bleed/silence Basic Pitch could still find phantom notes in). When True,
+    demucs_service.run() is never called — the upload stays exactly as
+    uploaded, and stem_names is [SINGLE_INSTRUMENT_STEM_NAME] instead of the
+    real DEMUCS_STEM_NAMES list, so every later phase treats the original
+    file as the one and only stem (see stem_audio_paths()'s special-casing
+    of that name). Tempo/beat detection is unaffected either way — it always
+    ran on the original pre-separation audio already, skip_separation or not.
+
     Returns stem names produced (matches settings.DEMUCS_STEM_NAMES — Demucs
-    itself decides what it can split out, this doesn't vary per file) plus the
-    detected reference tempo/beat times. The actual stem audio is left on disk
-    (storage/stems/...) for the caller to serve via GET /audio/{job_id}/{stem}
-    and for run_transcription_phase() to read back later.
+    itself decides what it can split out, this doesn't vary per file — unless
+    skip_separation, see above) plus the detected reference tempo/beat times.
+    The actual stem audio is left on disk (storage/stems/...) for the caller
+    to serve via GET /audio/{job_id}/{stem} and for run_transcription_phase()
+    to read back later — not applicable when skip_separation, since there's
+    no separated audio, only the original upload.
     """
-    _report(on_stage, JobStage.SEPARATING, "Separating into stems (Demucs)...")
-    demucs_service.run(input_audio_path)
+    if skip_separation:
+        _report(on_stage, JobStage.SEPARATING, "Skipping stem separation (single instrument)...")
+        stem_names = [SINGLE_INSTRUMENT_STEM_NAME]
+    else:
+        _report(on_stage, JobStage.SEPARATING, "Separating into stems (Demucs)...")
+        demucs_service.run(input_audio_path)
+        stem_names = list(DEMUCS_STEM_NAMES)
 
     y, sr = preprocessing_service.load_audio(input_audio_path, sr=None)
     tempo_onset = preprocessing_service.detect_tempo_onset(y, sr)
 
     return SeparationPhaseResult(
-        stem_names=list(DEMUCS_STEM_NAMES),
+        stem_names=stem_names,
         reference_tempo_bpm=tempo_onset.tempo_bpm,
         reference_beat_times=tempo_onset.beat_times.tolist(),
     )
 
 
 def run_transcription_phase(
-    input_audio_path: str, on_stage: Optional[ProgressCallback] = None
+    input_audio_path: str,
+    on_stage: Optional[ProgressCallback] = None,
+    single_instrument_label: Optional[str] = None,
 ) -> Dict[str, str]:
     """Phase 2: preprocess + transcribe every stem (assumes separation already
     ran — phase 1), then stop.
+
+    single_instrument_label: set when phase 1 ran with skip_separation=True
+    (must be one of SINGLE_INSTRUMENT_LABELS — the same stem_label vocabulary
+    every Demucs-derived stem already uses). When given, the ENTIRE Demucs-
+    stem iteration below is bypassed — the original upload is transcribed
+    directly, once, under SINGLE_INSTRUMENT_STEM_NAME ("main"), routed to
+    drum_transcription_service.run() or transcription_service.run() by the
+    same drums-vs-pitched rule as any other stem. No classification check
+    (classification_service.check_stem_label_confidence() exists specifically
+    to re-verify Demucs's OWN guitar/piano split — there's no Demucs split
+    here to re-verify, the user's label IS the ground truth for this upload).
 
     Every PITCHED stem (everything except drums, which never goes through
     Basic Pitch — see this module's docstring) is preprocessed via
@@ -266,6 +341,25 @@ def run_transcription_phase(
     transcription_service.load_note_events() in run_final_phase().
     """
     input_stem = Path(input_audio_path).stem
+
+    if single_instrument_label is not None:
+        if single_instrument_label not in SINGLE_INSTRUMENT_LABELS:
+            raise ValueError(
+                f"single_instrument_label={single_instrument_label!r} is not one of {SINGLE_INSTRUMENT_LABELS}"
+            )
+        _report(on_stage, JobStage.TRANSCRIBING, "Transcribing...")
+        stem_name = SINGLE_INSTRUMENT_STEM_NAME
+        if single_instrument_label == "drums":
+            drum_transcription_service.run(input_audio_path, stem_label="drums", input_stem=input_stem)
+        else:
+            preprocessed = preprocessing_service.preprocess_stem(input_audio_path, stem_name, input_stem=input_stem)
+            transcription_service.run(
+                preprocessed.normalized_audio_path,
+                stem_label=single_instrument_label,
+                input_stem=input_stem,
+            )
+        return {stem_name: single_instrument_label}
+
     stems = stem_audio_paths(input_audio_path, DEMUCS_STEM_NAMES)
 
     _report(on_stage, JobStage.TRANSCRIBING, "Transcribing stems...")

@@ -1,8 +1,22 @@
 import { type ChangeEvent, type DragEvent, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ApiError, uploadAudio } from "../services/api";
+import { SINGLE_INSTRUMENT_LABELS, type SingleInstrumentLabel } from "../services/types";
 
 const ALLOWED_EXTENSIONS = [".mp3", ".wav", ".flac", ".m4a"];
+
+// Human-readable label per SingleInstrumentLabel value — shown to the user
+// instead of the raw backend stem_label strings (e.g. "vocal_melody").
+const INSTRUMENT_DISPLAY_NAMES: Record<SingleInstrumentLabel, string> = {
+  vocal_melody: "Vocals",
+  bass: "Bass",
+  guitar_accompaniment: "Guitar",
+  piano_accompaniment: "Piano",
+  drums: "Drums",
+  other_accompaniment: "Other",
+};
+
+type SeparationMode = "multiple" | "single";
 
 function hasAllowedExtension(filename: string): boolean {
   const lower = filename.toLowerCase();
@@ -21,6 +35,8 @@ export default function UploadPage() {
   const [isUploading, setIsUploading] = useState(false);
   const [isDragActive, setIsDragActive] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [separationMode, setSeparationMode] = useState<SeparationMode>("multiple");
+  const [singleInstrument, setSingleInstrument] = useState<SingleInstrumentLabel | "">("");
 
   function applyFile(file: File | null) {
     setError(null);
@@ -80,10 +96,17 @@ export default function UploadPage() {
 
   async function handleUpload() {
     if (!selectedFile) return;
+    if (separationMode === "single" && !singleInstrument) {
+      setError("Choose which instrument this recording is.");
+      return;
+    }
     setIsUploading(true);
     setError(null);
     try {
-      const job = await uploadAudio(selectedFile);
+      const job = await uploadAudio(
+        selectedFile,
+        separationMode === "single" ? (singleInstrument as SingleInstrumentLabel) : undefined,
+      );
       navigate(`/job/${job.job_id}`);
     } catch (e) {
       // The backend pipeline takes several minutes — upload() only waits for the
@@ -175,6 +198,50 @@ export default function UploadPage() {
         )}
       </div>
 
+      <fieldset className="instrument-mode" disabled={isUploading}>
+        <legend>How many instruments/voices are in this recording?</legend>
+
+        <label className="radio-option">
+          <input
+            type="radio"
+            name="separationMode"
+            value="multiple"
+            checked={separationMode === "multiple"}
+            onChange={() => setSeparationMode("multiple")}
+          />
+          Multiple instruments (separate into stems)
+        </label>
+
+        <label className="radio-option">
+          <input
+            type="radio"
+            name="separationMode"
+            value="single"
+            checked={separationMode === "single"}
+            onChange={() => setSeparationMode("single")}
+          />
+          Single instrument (skip separation)
+        </label>
+
+        {separationMode === "single" && (
+          <select
+            className="instrument-select"
+            value={singleInstrument}
+            onChange={(e) => setSingleInstrument(e.target.value as SingleInstrumentLabel | "")}
+            aria-label="Which instrument"
+          >
+            <option value="" disabled>
+              Choose an instrument…
+            </option>
+            {SINGLE_INSTRUMENT_LABELS.map((label) => (
+              <option key={label} value={label}>
+                {INSTRUMENT_DISPLAY_NAMES[label]}
+              </option>
+            ))}
+          </select>
+        )}
+      </fieldset>
+
       {error && (
         <p role="alert" className="error">
           {error}
@@ -185,7 +252,7 @@ export default function UploadPage() {
         type="button"
         className="btn-primary"
         onClick={handleUpload}
-        disabled={!selectedFile || isUploading}
+        disabled={!selectedFile || isUploading || (separationMode === "single" && !singleInstrument)}
       >
         {isUploading ? "Uploading…" : "Transcribe"}
       </button>

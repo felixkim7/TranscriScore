@@ -22,7 +22,7 @@ from fastapi.responses import FileResponse
 
 from app.config.settings import DEMUCS_MODEL, DEMUCS_STEM_NAMES, MIDI_DIR, STEMS_DIR
 from app.schemas.job import JobStatus
-from app.services import job_service
+from app.services import job_service, pipeline_service
 
 router = APIRouter(tags=["export"])
 
@@ -107,16 +107,31 @@ def download_stem_audio(job_id: str, stem: str) -> FileResponse:
     Doesn't require the job to be DONE — only that separation has actually run
     and written this stem's file to disk. A stem player can start working while
     later pipeline stages (transcription/quantization/export) are still running.
+
+    SINGLE_INSTRUMENT_STEM_NAME ("main") is accepted too, for a
+    skip_separation job — see pipeline_service.py's module-level constant and
+    run_until_separation() docstring. There's no separated file to serve in
+    that case (no Demucs run ever happened), so this returns the ORIGINAL
+    upload instead — the same file GET /audio/{job_id} already serves,
+    exposed under the per-stem URL shape too so the frontend's stem player
+    doesn't need a special case for "the one stem in a single-instrument job."
     """
+    job = job_service.get_job(job_id)
+    if job is None:
+        raise HTTPException(status_code=404, detail=f"No job found with id {job_id!r}")
+
+    if stem == pipeline_service.SINGLE_INSTRUMENT_STEM_NAME:
+        file_path = Path(job.input_audio_path)
+        if not file_path.exists():
+            raise HTTPException(status_code=404, detail=f"Uploaded audio file is missing: {file_path}")
+        media_type = ORIGINAL_AUDIO_MEDIA_TYPES.get(file_path.suffix.lower(), "application/octet-stream")
+        return FileResponse(path=file_path, media_type=media_type, filename=job.original_filename)
+
     if stem not in DEMUCS_STEM_NAMES:
         raise HTTPException(
             status_code=400,
             detail=f"Unknown stem {stem!r}. Valid stems: {list(DEMUCS_STEM_NAMES)}",
         )
-
-    job = job_service.get_job(job_id)
-    if job is None:
-        raise HTTPException(status_code=404, detail=f"No job found with id {job_id!r}")
 
     input_stem = Path(job.input_audio_path).stem
     stem_path = STEMS_DIR / DEMUCS_MODEL / input_stem / f"{stem}.wav"
@@ -158,10 +173,11 @@ def download_stem_midi(job_id: str, stem: str) -> FileResponse:
     player/soundfont renders each stem sounding like its actual instrument,
     not just "generic MIDI."
     """
-    if stem not in DEMUCS_STEM_NAMES:
+    valid_stems = set(DEMUCS_STEM_NAMES) | {pipeline_service.SINGLE_INSTRUMENT_STEM_NAME}
+    if stem not in valid_stems:
         raise HTTPException(
             status_code=400,
-            detail=f"Unknown stem {stem!r}. Valid stems: {list(DEMUCS_STEM_NAMES)}",
+            detail=f"Unknown stem {stem!r}. Valid stems: {sorted(valid_stems)}",
         )
 
     job = job_service.get_job(job_id)
