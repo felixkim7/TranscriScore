@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import CheckpointReview from "../components/CheckpointReview";
 import ProcessingStatus from "../components/ProcessingStatus";
 import StemPlayer from "../components/StemPlayer";
+import MidiPlayer from "../components/MidiPlayer";
 import { ScoreWorkspace } from "../components/ScoreWorkspace/ScoreWorkspace";
 import { useJobStatus } from "../hooks/useJobStatus";
 
@@ -14,6 +15,20 @@ import { useJobStatus } from "../hooks/useJobStatus";
 // again once /continue kicks off the next phase).
 const STEM_PLAYER_READY_STAGES = new Set([
   "transcribing",
+  "quantizing",
+  "reconciling_tempo",
+  "rendering_musicxml",
+  "exporting",
+]);
+
+// A stem's TRANSCRIBED MIDI (backend/app/api/export.py's GET /midi/{job_id}/
+// {stem}) is written once that stem's transcription phase finishes — the
+// same "after_transcription" checkpoint used to show CheckpointReview's
+// per-stem note counts, not the whole job reaching "done". Same
+// status/checkpoint + stage pairing as STEM_PLAYER_READY_STAGES above, just
+// one phase later (transcription must have actually FINISHED, not just be
+// running) since MIDI files don't exist mid-transcription.
+const MIDI_PLAYER_READY_STAGES = new Set([
   "quantizing",
   "reconciling_tempo",
   "rendering_musicxml",
@@ -45,6 +60,11 @@ export default function ResultsPage() {
     (job.status === "awaiting_review" && job.checkpoint === "after_separation") ||
     (job.stage !== null && STEM_PLAYER_READY_STAGES.has(job.stage));
 
+  const transcriptionDone =
+    job.status === "done" ||
+    (job.status === "awaiting_review" && job.checkpoint === "after_transcription") ||
+    (job.stage !== null && MIDI_PLAYER_READY_STAGES.has(job.stage));
+
   return (
     <div className="results-page">
       <ProcessingStatus job={job} />
@@ -52,6 +72,8 @@ export default function ResultsPage() {
       {job.status === "awaiting_review" && <CheckpointReview job={job} onContinued={resumePolling} />}
 
       {separationDone && <StemPlayer jobId={job.job_id} />}
+
+      {transcriptionDone && <MidiPlayer jobId={job.job_id} />}
 
       {job.status === "done" && (
         <div className="score-section">

@@ -92,3 +92,18 @@ export function originalAudioUrl(jobId: string): string {
 export function stemAudioUrl(jobId: string, stem: StemName): string {
   return `${API_BASE_URL}/audio/${jobId}/${stem}`;
 }
+
+/**
+ * GET /midi/{job_id}/{stem} — one stem's TRANSCRIBED note events as MIDI (not
+ * the separated audio — see stemAudioUrl() for that). Available as soon as
+ * that stem's transcription phase finishes, before the whole job is DONE —
+ * same availability rule as stemAudioUrl(), gate on job.stage having passed
+ * "transcribing", not job.status === "done".
+ *
+ * Not directly usable in <audio src>: browsers don't natively decode .mid —
+ * MidiPlayer.tsx fetches this URL as bytes and plays it through
+ * @tonejs/midi + soundfont-player instead.
+ */
+export function stemMidiUrl(jobId: string, stem: StemName): string {
+  return `${API_BASE_URL}/midi/${jobId}/${stem}`;
+}

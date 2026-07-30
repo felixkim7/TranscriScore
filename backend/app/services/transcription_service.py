@@ -26,6 +26,30 @@ ONSET_THRESHOLD = 0.6
 # octave apart.
 MONOPHONIC_STEM_LABELS = {"vocal_melody"}
 
+# General MIDI program number per stem_label, applied to every stem's .mid
+# after transcription — General MIDI program 0-127, per the GM spec (0 =
+# Acoustic Grand Piano, 24 = Acoustic Guitar (nylon), etc). Needed because,
+# left alone, every pitched stem's raw MIDI sounds wrong: Basic Pitch's own
+# predict() hardcodes program=4 "Electric Piano 1" for EVERY note it
+# transcribes regardless of source instrument (confirmed directly in
+# venv/Lib/site-packages/basic_pitch/note_creation.py — not something this
+# project's code ever set, and not fixable by changing how predict() is
+# called), and the vocals cleanup path's _to_midi() below separately
+# hardcoded program=0 "Acoustic Grand Piano". So a guitar stem's .mid played
+# back as electric piano and a vocals stem's played back as grand piano,
+# while only drums (routed via is_drum=True to GM channel 10, a completely
+# different mechanism) already sounded correct. Values match the
+# music21.instrument classes musicxml_service.py already assigns for the
+# SAME stem_labels (Guitar/ElectricBass/Vocalist/Piano), confirmed via each
+# class's own .midiProgram, so the raw MIDI and the notated MSCZ agree on
+# what each part should sound like.
+STEM_LABEL_MIDI_PROGRAMS = {
+    "vocal_melody": 53,          # Voice Oohs (music21 Vocalist's default)
+    "bass": 33,                  # Electric Bass (finger)
+    "guitar_accompaniment": 24,  # Acoustic Guitar (nylon)
+    "piano_accompaniment": 0,    # Acoustic Grand Piano (already correct, listed for completeness)
+}
+
 
 def run(
     input_path: str,
@@ -105,6 +129,8 @@ def run(
     else:
         midi_to_write = midi_data
 
+    _apply_stem_instrument(midi_to_write, stem_label)
+
     midi_dir = stem_output_dir(MIDI_DIR, input_stem)
     midi_dir.mkdir(parents=True, exist_ok=True)
     midi_path = midi_dir / f"{audio_path.stem}.mid"
@@ -174,6 +200,27 @@ def _remove_harmonic_duplicates(note_events: List[NoteEvent]) -> List[NoteEvent]
     return [n for i, n in enumerate(sorted_notes) if i not in dropped]
 
 
+def _apply_stem_instrument(midi: pretty_midi.PrettyMIDI, stem_label: str) -> None:
+    """Set every instrument's GM program (and a matching name) in-place, based
+    on stem_label, via STEM_LABEL_MIDI_PROGRAMS.
+
+    Applied to ALL pitched-stem MIDI right before writing to disk — both the
+    Basic-Pitch-produced midi_data (always program=4 "Electric Piano 1",
+    Basic Pitch's own hardcoded choice) and _to_midi()'s freshly-built object
+    (previously hardcoded program=0 here). No-op for a stem_label not in
+    STEM_LABEL_MIDI_PROGRAMS (e.g. "other_accompaniment", "unknown", or
+    "drums" — drums never calls this; it's already correctly routed via
+    is_drum=True to GM channel 10 in drum_transcription_service.py, a
+    separate mechanism this doesn't need to touch).
+    """
+    program = STEM_LABEL_MIDI_PROGRAMS.get(stem_label)
+    if program is None:
+        return
+    for inst in midi.instruments:
+        inst.program = program
+        inst.name = pretty_midi.program_to_instrument_name(program)
+
+
 def _to_midi(note_events: List[NoteEvent]) -> pretty_midi.PrettyMIDI:
     """Build a PrettyMIDI object directly from NoteEvents.
 
@@ -181,9 +228,13 @@ def _to_midi(note_events: List[NoteEvent]) -> pretty_midi.PrettyMIDI:
     predict() call (currently just vocal harmonic-duplicate removal) — Basic
     Pitch's own returned midi_data object doesn't reflect that cleanup, so
     writing it directly would silently keep the removed notes in the MIDI file.
+
+    Instrument program is set afterward by _apply_stem_instrument() (run()
+    calls it on whatever this returns), not here — this only builds the note
+    content.
     """
     midi = pretty_midi.PrettyMIDI()
-    voice = pretty_midi.Instrument(program=0)  # generic instrument; caller's MIDI is for inspection, not final export
+    voice = pretty_midi.Instrument(program=0)  # overridden by _apply_stem_instrument() right after this returns
 
     for n in note_events:
         voice.notes.append(
