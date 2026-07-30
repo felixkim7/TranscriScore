@@ -27,11 +27,18 @@ from app.schemas.job import (
 )
 
 
-def create_job(original_filename: str, input_audio_path: str) -> Job:
+def create_job(
+    original_filename: str,
+    input_audio_path: str,
+    skip_separation: bool = False,
+    single_instrument_label: Optional[str] = None,
+) -> Job:
     job = Job(
         job_id=str(uuid.uuid4()),
         original_filename=original_filename,
         input_audio_path=input_audio_path,
+        skip_separation=skip_separation,
+        single_instrument_label=single_instrument_label,
     )
     _save(job)
     return job

@@ -20,9 +20,9 @@ from pathlib import Path
 from fastapi import APIRouter, HTTPException, Query
 from fastapi.responses import FileResponse
 
-from app.config.settings import DEMUCS_MODEL, DEMUCS_STEM_NAMES, STEMS_DIR
+from app.config.settings import DEMUCS_MODEL, DEMUCS_STEM_NAMES, MIDI_DIR, STEMS_DIR
 from app.schemas.job import JobStatus
-from app.services import job_service
+from app.services import job_service, pipeline_service
 
 router = APIRouter(tags=["export"])
 
@@ -107,16 +107,31 @@ def download_stem_audio(job_id: str, stem: str) -> FileResponse:
     Doesn't require the job to be DONE — only that separation has actually run
     and written this stem's file to disk. A stem player can start working while
     later pipeline stages (transcription/quantization/export) are still running.
+
+    SINGLE_INSTRUMENT_STEM_NAME ("main") is accepted too, for a
+    skip_separation job — see pipeline_service.py's module-level constant and
+    run_until_separation() docstring. There's no separated file to serve in
+    that case (no Demucs run ever happened), so this returns the ORIGINAL
+    upload instead — the same file GET /audio/{job_id} already serves,
+    exposed under the per-stem URL shape too so the frontend's stem player
+    doesn't need a special case for "the one stem in a single-instrument job."
     """
+    job = job_service.get_job(job_id)
+    if job is None:
+        raise HTTPException(status_code=404, detail=f"No job found with id {job_id!r}")
+
+    if stem == pipeline_service.SINGLE_INSTRUMENT_STEM_NAME:
+        file_path = Path(job.input_audio_path)
+        if not file_path.exists():
+            raise HTTPException(status_code=404, detail=f"Uploaded audio file is missing: {file_path}")
+        media_type = ORIGINAL_AUDIO_MEDIA_TYPES.get(file_path.suffix.lower(), "application/octet-stream")
+        return FileResponse(path=file_path, media_type=media_type, filename=job.original_filename)
+
     if stem not in DEMUCS_STEM_NAMES:
         raise HTTPException(
             status_code=400,
             detail=f"Unknown stem {stem!r}. Valid stems: {list(DEMUCS_STEM_NAMES)}",
         )
-
-    job = job_service.get_job(job_id)
-    if job is None:
-        raise HTTPException(status_code=404, detail=f"No job found with id {job_id!r}")
 
     input_stem = Path(job.input_audio_path).stem
     stem_path = STEMS_DIR / DEMUCS_MODEL / input_stem / f"{stem}.wav"
@@ -131,4 +146,54 @@ def download_stem_audio(job_id: str, stem: str) -> FileResponse:
         path=stem_path,
         media_type="audio/wav",
         filename=f"{job.original_filename}.{stem}.wav",
+    )
+
+
+@router.get("/midi/{job_id}/{stem}")
+def download_stem_midi(job_id: str, stem: str) -> FileResponse:
+    """One stem's TRANSCRIBED note events, as MIDI — not the separated audio
+    (see GET /audio/{job_id}/{stem} for that). Lets the frontend offer "listen
+    to what got transcribed" per stem, same as it already offers "listen to
+    the separated audio" per stem — a different thing to check: this is
+    Basic Pitch's (or drum_transcription_service's) output, so it reveals
+    transcription quality/errors that the separated audio itself wouldn't.
+
+    Written by transcription_service.run()/drum_transcription_service.run()
+    at storage/midi/<job_id>/<stem>.mid as soon as that stem's transcription
+    phase finishes — doesn't require the whole job to be DONE, same
+    availability timing as the stem audio endpoint (checks the file exists
+    directly rather than gating on job.status).
+
+    Real per-instrument GM programs are baked into the file itself (see
+    transcription_service.STEM_LABEL_MIDI_PROGRAMS /
+    _apply_stem_instrument()) — vocals/bass/guitar/piano each carry their own
+    General MIDI program (not all identically "Electric Piano," which is
+    what Basic Pitch's own predict() hardcodes for every stem otherwise), and
+    drums are on GM channel 10 (is_drum=True) — so a standards-compliant
+    player/soundfont renders each stem sounding like its actual instrument,
+    not just "generic MIDI."
+    """
+    valid_stems = set(DEMUCS_STEM_NAMES) | {pipeline_service.SINGLE_INSTRUMENT_STEM_NAME}
+    if stem not in valid_stems:
+        raise HTTPException(
+            status_code=400,
+            detail=f"Unknown stem {stem!r}. Valid stems: {sorted(valid_stems)}",
+        )
+
+    job = job_service.get_job(job_id)
+    if job is None:
+        raise HTTPException(status_code=404, detail=f"No job found with id {job_id!r}")
+
+    midi_path = MIDI_DIR / job_id / f"{stem}.mid"
+    if not midi_path.exists():
+        raise HTTPException(
+            status_code=404,
+            detail=f"MIDI for stem {stem!r} not available yet (transcription may still be running, or the "
+            f"job failed before it completed). Check GET /status/{job_id} first.",
+        )
+
+    return FileResponse(
+        path=midi_path,
+        media_type="audio/midi",
+        filename=f"{job.original_filename}.{stem}.mid",
     )

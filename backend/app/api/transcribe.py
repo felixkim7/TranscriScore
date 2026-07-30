@@ -96,7 +96,11 @@ def _run_transcription_phase(job_id: str) -> None:
         job_service.update_job(job_id, status=JobStatus.PROCESSING, stage=stage)
 
     try:
-        stem_labels = pipeline_service.run_transcription_phase(job.input_audio_path, on_stage=on_stage)
+        stem_labels = pipeline_service.run_transcription_phase(
+            job.input_audio_path,
+            on_stage=on_stage,
+            single_instrument_label=job.single_instrument_label if job.skip_separation else None,
+        )
         checkpoint_stems = [
             TranscriptionCheckpointStem(
                 stem_name=stem_name,

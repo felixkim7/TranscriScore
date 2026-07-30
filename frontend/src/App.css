@@ -152,6 +152,54 @@
   color: #fff;
 }
 
+/* --- Single-instrument upload options --- */
+
+.instrument-mode {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 0;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.instrument-mode legend {
+  padding: 0 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.instrument-mode:disabled,
+.instrument-mode[disabled] {
+  opacity: 0.6;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.radio-option input[type="radio"] {
+  accent-color: var(--accent);
+}
+
+.instrument-select {
+  margin-top: 4px;
+  margin-left: 24px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-h);
+  font-size: 14px;
+  width: fit-content;
+}
+
 /* --- Buttons --- */
 
 .btn-primary {
@@ -329,6 +377,22 @@
   background: none;
   font-size: 15px;
   cursor: pointer;
+}
+
+.midi-player {
+  margin-top: 24px;
+}
+
+.track-circle-disabled {
+  cursor: default;
+  opacity: 0.45;
+}
+
+.track-unsupported-note {
+  font-size: 11px;
+  color: var(--text);
+  opacity: 0.6;
+  text-align: center;
 }
 
 .score-section {

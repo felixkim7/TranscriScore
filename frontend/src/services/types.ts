@@ -54,12 +54,29 @@ export interface Job {
   result: JobResult | null;
   separation_checkpoint: SeparationCheckpointStem[] | null;
   transcription_checkpoint: TranscriptionCheckpointStem[] | null;
+  skip_separation: boolean;
+  single_instrument_label: SingleInstrumentLabel | null;
 }
 
 // Demucs stems this project actually separates into — see
 // backend/app/config/settings.py's DEMUCS_STEM_NAMES.
 export const STEM_NAMES = ["vocals", "drums", "bass", "guitar", "piano", "other"] as const;
 export type StemName = (typeof STEM_NAMES)[number];
+
+// The stem_label vocabulary a single-instrument upload (skip_separation)
+// picks from — mirrors backend/app/services/pipeline_service.py's
+// SINGLE_INSTRUMENT_LABELS exactly (the same labels every Demucs-derived
+// stem already gets routed through: TRUSTED_STEM_LABELS/VERIFIED_STEM_LABELS
+// plus "drums"), so keep both lists in sync by hand if either changes.
+export const SINGLE_INSTRUMENT_LABELS = [
+  "vocal_melody",
+  "bass",
+  "guitar_accompaniment",
+  "piano_accompaniment",
+  "drums",
+  "other_accompaniment",
+] as const;
+export type SingleInstrumentLabel = (typeof SINGLE_INSTRUMENT_LABELS)[number];
 
 // Every format GET /export/{job_id}/{format} accepts.
 export type ExportFormat = "musicxml" | "mscz" | "stem-musicxml";

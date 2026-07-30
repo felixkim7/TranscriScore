@@ -4,7 +4,7 @@
 // point at the same running backend without hardcoding a port in source. Default
 // matches how the backend is started in README.md's "Running the server" section
 // (uvicorn on 127.0.0.1:8000).
-import type { ExportFormat, Job, JobResult, StemName } from "./types";
+import type { ExportFormat, Job, JobResult, SingleInstrumentLabel, StemName } from "./types";
 
 const API_BASE_URL: string = import.meta.env.VITE_API_BASE_URL ?? "http://127.0.0.1:8000";
 
@@ -37,10 +37,22 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
   return response.json() as Promise<T>;
 }
 
-/** POST /upload — kicks off the pipeline in the background, returns immediately. */
-export function uploadAudio(file: File): Promise<Job> {
+/**
+ * POST /upload — kicks off the pipeline in the background, returns immediately.
+ *
+ * singleInstrumentLabel: when given, sends skip_separation=true plus the
+ * label alongside the file — see backend/app/api/upload.py's form fields.
+ * The backend 400s if skip_separation is requested without a label (or with
+ * one outside SINGLE_INSTRUMENT_LABELS), so omit this entirely for a normal
+ * multi-instrument upload rather than passing a falsy/empty value.
+ */
+export function uploadAudio(file: File, singleInstrumentLabel?: SingleInstrumentLabel): Promise<Job> {
   const formData = new FormData();
   formData.append("file", file);
+  if (singleInstrumentLabel) {
+    formData.append("skip_separation", "true");
+    formData.append("single_instrument_label", singleInstrumentLabel);
+  }
   return request<Job>("/upload", { method: "POST", body: formData });
 }
 
@@ -91,4 +103,19 @@ export function originalAudioUrl(jobId: string): string {
  */
 export function stemAudioUrl(jobId: string, stem: StemName): string {
   return `${API_BASE_URL}/audio/${jobId}/${stem}`;
+}
+
+/**
+ * GET /midi/{job_id}/{stem} — one stem's TRANSCRIBED note events as MIDI (not
+ * the separated audio — see stemAudioUrl() for that). Available as soon as
+ * that stem's transcription phase finishes, before the whole job is DONE —
+ * same availability rule as stemAudioUrl(), gate on job.stage having passed
+ * "transcribing", not job.status === "done".
+ *
+ * Not directly usable in <audio src>: browsers don't natively decode .mid —
+ * MidiPlayer.tsx fetches this URL as bytes and plays it through
+ * @tonejs/midi + soundfont-player instead.
+ */
+export function stemMidiUrl(jobId: string, stem: StemName): string {
+  return `${API_BASE_URL}/midi/${jobId}/${stem}`;
 }

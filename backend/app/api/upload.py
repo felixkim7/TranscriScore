@@ -17,8 +17,9 @@ than the whole pipeline running start-to-finish automatically.
 
 import traceback
 from pathlib import Path
+from typing import Optional
 
-from fastapi import APIRouter, BackgroundTasks, HTTPException, UploadFile
+from fastapi import APIRouter, BackgroundTasks, Form, HTTPException, UploadFile
 
 from app.config.settings import UPLOADS_DIR
 from app.schemas.job import Checkpoint, Job, JobStage, JobStatus, SeparationCheckpointStem
@@ -30,7 +31,25 @@ ALLOWED_EXTENSIONS = {".mp3", ".wav", ".flac", ".m4a"}
 
 
 @router.post("/upload", response_model=Job)
-async def upload_audio(file: UploadFile, background_tasks: BackgroundTasks) -> Job:
+async def upload_audio(
+    file: UploadFile,
+    background_tasks: BackgroundTasks,
+    skip_separation: bool = Form(default=False),
+    single_instrument_label: Optional[str] = Form(default=None),
+) -> Job:
+    """
+    skip_separation / single_instrument_label: set by the client when the
+    upload is a single-instrument recording (solo vocal, solo guitar, etc.) —
+    running Demucs separation on audio that was never actually a mix just
+    wastes several minutes and risks phantom content in the other 5 mostly-
+    silent stems (bleed/noise Basic Pitch could still find "notes" in). See
+    pipeline_service.py's run_until_separation(skip_separation=...) /
+    run_transcription_phase(single_instrument_label=...) for how this changes
+    the pipeline; SINGLE_INSTRUMENT_LABELS there is the source of truth for
+    valid label values, checked here so a bad value 400s immediately instead
+    of failing later inside a background task where the only signal is
+    job.status becoming FAILED with a traceback to dig through.
+    """
     suffix = Path(file.filename or "").suffix.lower()
     if suffix not in ALLOWED_EXTENSIONS:
         raise HTTPException(
@@ -38,10 +57,25 @@ async def upload_audio(file: UploadFile, background_tasks: BackgroundTasks) -> J
             detail=f"Unsupported file type {suffix!r}. Allowed: {sorted(ALLOWED_EXTENSIONS)}",
         )
 
+    if skip_separation:
+        if single_instrument_label not in pipeline_service.SINGLE_INSTRUMENT_LABELS:
+            raise HTTPException(
+                status_code=400,
+                detail=(
+                    f"single_instrument_label={single_instrument_label!r} is required and must be one of "
+                    f"{sorted(pipeline_service.SINGLE_INSTRUMENT_LABELS)} when skip_separation=true"
+                ),
+            )
+
     # Job is created before the file is written (input_audio_path filled in via
     # update_job() right after) so the saved file can be named after the job ID —
     # two uploads sharing an original filename should never collide on disk.
-    job = job_service.create_job(original_filename=file.filename or "upload", input_audio_path="")
+    job = job_service.create_job(
+        original_filename=file.filename or "upload",
+        input_audio_path="",
+        skip_separation=skip_separation,
+        single_instrument_label=single_instrument_label,
+    )
 
     UPLOADS_DIR.mkdir(parents=True, exist_ok=True)
     saved_path = UPLOADS_DIR / f"{job.job_id}{suffix}"
@@ -71,7 +105,9 @@ def _run_separation_phase(job_id: str) -> None:
 
     try:
         job_service.update_job(job_id, status=JobStatus.PROCESSING, stage=JobStage.SEPARATING)
-        separation_result = pipeline_service.run_until_separation(job.input_audio_path, on_stage=on_stage)
+        separation_result = pipeline_service.run_until_separation(
+            job.input_audio_path, on_stage=on_stage, skip_separation=job.skip_separation
+        )
         job_service.update_job(
             job_id,
             status=JobStatus.AWAITING_REVIEW,
