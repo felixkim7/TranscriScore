@@ -71,12 +71,16 @@ def _run_separation_phase(job_id: str) -> None:
 
     try:
         job_service.update_job(job_id, status=JobStatus.PROCESSING, stage=JobStage.SEPARATING)
-        stem_names = pipeline_service.run_until_separation(job.input_audio_path, on_stage=on_stage)
+        separation_result = pipeline_service.run_until_separation(job.input_audio_path, on_stage=on_stage)
         job_service.update_job(
             job_id,
             status=JobStatus.AWAITING_REVIEW,
             checkpoint=Checkpoint.AFTER_SEPARATION,
-            separation_checkpoint=[SeparationCheckpointStem(stem_name=name) for name in stem_names],
+            separation_checkpoint=[
+                SeparationCheckpointStem(stem_name=name) for name in separation_result.stem_names
+            ],
+            reference_tempo_bpm=separation_result.reference_tempo_bpm,
+            reference_beat_times=separation_result.reference_beat_times,
         )
     except Exception:  # noqa: BLE001 — job failures must be captured, not crash the worker
         # Full traceback, not just str(e) — a bare exception message (e.g.

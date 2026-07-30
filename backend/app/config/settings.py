@@ -12,6 +12,12 @@ UPLOADS_DIR = STORAGE_DIR / "uploads"
 # a pure in-memory dict.
 JOBS_DIR = STORAGE_DIR / "jobs"
 STEMS_DIR = STORAGE_DIR / "stems"
+# Loudness-normalized copies of each stem, written by preprocessing_service
+# before transcription — kept separate from STEMS_DIR (Demucs's own raw
+# separation output) so it's obvious which files are the as-separated
+# originals vs. the altered-for-transcription copies. transcription_service.run()
+# is pointed at these instead of the raw stem wav.
+PREPROCESSED_AUDIO_DIR = STORAGE_DIR / "preprocessed"
 INTERMEDIATE_DIR = STORAGE_DIR / "intermediate"
 MIDI_DIR = STORAGE_DIR / "midi"
 QUANTIZED_MIDI_DIR = MIDI_DIR / "quantized"
@@ -124,3 +130,23 @@ DRUM_SPECTRAL_CENTROID_SNARE_HZ = 4200.0  # below this (and not a kick): snare; 
 DRUM_ONSET_DURATION_FRACTION_OF_GAP = 0.8
 DRUM_ONSET_MIN_DURATION_SECONDS = 0.15
 DRUM_ONSET_MAX_DURATION_SECONDS = 0.3
+
+# --- preprocessing stage (before transcription) ---
+# Target loudness for each stem before it's handed to Basic Pitch. Basic
+# Pitch's onset_threshold/frame_threshold (transcription_service.py) are fixed
+# energy thresholds, tuned once against real clips at whatever loudness those
+# clips happened to be — a quiet stem (bleed-heavy "other", a soft vocal take)
+# can have real notes fall under threshold and get missed entirely; a hot/
+# clipped stem can trigger spurious activations. Normalizing every stem to the
+# same peak level before transcription puts them all in the range those
+# thresholds were actually validated against, rather than leaving it to
+# whatever gain Demucs's separation happened to produce.
+PREPROCESSING_TARGET_PEAK_DBFS = -1.0  # near-0dBFS peak without clipping
+
+# Per-stem-type frequency restriction (predict()'s minimum_frequency/
+# maximum_frequency) and an onset-cross-check filter were both tried and
+# REMOVED after real testing on sample7's vocals stem: the onset filter cut
+# 190->109 notes (43%) and, on listening, turned out to be overfiltering real
+# content, not just phantom notes — same failure mode as the frame_threshold
+# experiment below (looks like a clean improvement by the numbers, wrong once
+# actually heard). See transcription_service.run()'s docstring.

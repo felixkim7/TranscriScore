@@ -2,13 +2,13 @@ import json
 from pathlib import Path
 from typing import List, Optional
 
-import librosa
 import numpy as np
 import pretty_midi
 import soundfile as sf
 
 from app.config.settings import INTERMEDIATE_DIR, QUANTIZED_MIDI_DIR, stem_output_dir
 from app.schemas.transcription import NoteEvent, QuantizationResult, QuantizedNoteEvent
+from app.services import preprocessing_service
 
 GRID_SUBDIVISION = 0.25  # snap to 16th notes (in beats)
 CONFIDENCE_DROP_PERCENTILE = 10  # drop the bottom 10% of notes by confidence
@@ -68,9 +68,8 @@ def detect_tempo(audio_path: str) -> float:
     "reference" tempo — full signal, not a lossy separated stem) and reused by
     reconcile_tempo() below, independent of any one stem's own quantization pass.
     """
-    y, sr = librosa.load(audio_path, sr=None)
-    detected_tempo, _beat_frames = librosa.beat.beat_track(y=y, sr=sr, units="time")
-    return float(np.asarray(detected_tempo).item())
+    y, sr = preprocessing_service.load_audio(audio_path, sr=None)
+    return preprocessing_service.detect_tempo_onset(y, sr).tempo_bpm
 
 
 def reconcile_tempo(
@@ -218,13 +217,17 @@ def run(
     """
     note_events = _merge_sustained_fragments(note_events)
 
-    y, sr = librosa.load(audio_path, sr=None)
-    detected_tempo, beat_frames = librosa.beat.beat_track(y=y, sr=sr, units="time")
-    detected_tempo = float(np.asarray(detected_tempo).item())
+    y, sr = preprocessing_service.load_audio(audio_path, sr=None)
+    tempo_onset = preprocessing_service.detect_tempo_onset(y, sr)
     if tempo_bpm is None:
-        tempo_bpm = detected_tempo
+        tempo_bpm = tempo_onset.tempo_bpm
 
-    beat_times, beat_indices = _beat_grid(beat_frames, y, sr, tempo_bpm)
+    # _beat_grid()'s first arg wants beat positions in SECONDS (it's named
+    # beat_frames for historical reasons, from when this call used
+    # librosa.beat.beat_track(..., units="time") directly) — pass
+    # tempo_onset.beat_times, not .beat_frames (which is librosa's raw frame
+    # index domain, not seconds).
+    beat_times, beat_indices = _beat_grid(tempo_onset.beat_times, y, sr, tempo_bpm)
 
     confidence_floor = (
         float(np.percentile([n.confidence for n in note_events], CONFIDENCE_DROP_PERCENTILE))

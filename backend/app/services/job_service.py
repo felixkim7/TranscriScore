@@ -55,6 +55,8 @@ def update_job(
     separation_checkpoint: Optional[List[SeparationCheckpointStem]] = None,
     transcription_checkpoint: Optional[List[TranscriptionCheckpointStem]] = None,
     stem_labels: Optional[Dict[str, str]] = None,
+    reference_tempo_bpm: Optional[float] = None,
+    reference_beat_times: Optional[List[float]] = None,
 ) -> Job:
     job = get_job(job_id)
     if job is None:
@@ -78,6 +80,10 @@ def update_job(
         job.transcription_checkpoint = transcription_checkpoint
     if stem_labels is not None:
         job.stem_labels = stem_labels
+    if reference_tempo_bpm is not None:
+        job.reference_tempo_bpm = reference_tempo_bpm
+    if reference_beat_times is not None:
+        job.reference_beat_times = reference_beat_times
     job.updated_at = datetime.now(timezone.utc)
 
     _save(job)
